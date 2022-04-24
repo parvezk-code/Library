@@ -1,48 +1,14 @@
-export const SIGN_IN = 'SIGN_IN';
-export const SIGN_OUT = 'SIGN_OUT';
-
-// Reducer definition
-const INTIAL_STATE = {
-    isSignedIn: null,
-    userId: null
-};
-  
-export const userReducer =  (state = INTIAL_STATE, action) => 
-{    
-    switch (action.type) 
-    {
-      case SIGN_IN:
-        return { ...state, isSignedIn: true, userId: action.payload };
-      case SIGN_OUT:
-        return { ...state, isSignedIn: false, userId: null };
-      default:
-        return state;
-    }
-};
-
-
-// Action creator definition
-export const signIn = userId => {
-    return {
-      type: SIGN_IN,
-      payload: userId
-    };
-  };
-  
-export const signOut = () => {
-    return {
-      type: SIGN_OUT
-    };
-};
-
-// Store creation
-import { createStore, combineReducers } from 'redux';
+import { userReducer } from './reducers';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import reduxThunk from 'redux-thunk';
 
 export const combinedReducerList = combineReducers({
-    user: userReducer
+    user: userReducer,
+    form: formReducer  // this reducer is provided by redux-form API
 });
 
-export const store = createStore(combinedReducerList);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const storeEnhancers = composeEnhancers(applyMiddleware(reduxThunk));
 
-
-
+export const store = createStore(combinedReducerList, storeEnhancers);
