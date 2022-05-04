@@ -1,3 +1,5 @@
+// https://codesinsider.com/category/flutter/
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -110,6 +112,11 @@ CircleAvatar(
   radius: 40.0
 );
 
+// BoxDecoration widget for docoration of widget such as background image
+BoxDecoration(
+  image: DecorationImage( image:AssetImage('path'), fit:Boxfit.cover)
+);
+
 // EdgeInsets object properties controls padding and margine for Container widget.
 // EdgeInsets.symmetric(horizontral:20.0, vertical:10.0)
 // EdgeInsets.all(20.0)
@@ -121,6 +128,7 @@ Container(
   padding: EdgeInsets.all(20.0),
   margin:  EdgeInsets.fromTRB(left:10.0, top:5.0, right:20.0, bottom:7.0 ), 
   color: Colors.red[600],  // background color
+  decoration: BoxDecoration(),
   child: Text(" hello")
 );
 
@@ -181,12 +189,70 @@ Card(
 // SafeArea widget, moves the widget down to avoid overlapping from android Appbar
 SafeArea( child: c ) 
 
+// Navigator object to pop current route
+Navigator.pop(context, {'key':val})
 // Navigator object to display a route on top of current 
 Navigator.pushNamed(context, '/route')
+dynamic retValue = await Navigator.pushNamed(context, '/route')
+// Navigator object to display a route but replace current route 
+Navigator.pushReplcementNamed(context, '/route', arguments:{'key':val})
+// receive navigation arguments inside a widget
+argMap = ModalRoute.of(context).settings.arguments;
 
 //Lifecycle methods of stateful widget
 initState(){ super.initState() }   // called only once when widget is created
 Build()       // builds widget tree, called on every call to setState()
 Dispose()     // when widget/state object is removed
 
-//flutter packages : 
+// flutter packages : https://pub.dev/
+
+
+// library for making HTTP requests. https://pub.dev/packages/http
+// add following line to your package's pubspec.yaml 
+dependencies:
+  http: ^0.13.4
+
+// json data
+import 'dart:convert';
+jsonDecode(response.body); //convert json_string to a map
+
+//async function can return void but return type shuld be Future<void>
+Future<void> fun() async{
+  // body
+}
+
+// async-await exception handling
+try{
+      res = await networkRequest();
+}
+catch(e){
+
+}
+
+// date formating package : https://pub.dev/packages/intl
+// loading animation package : https://pub.dev/packages/flutter_spinkit 
+SpinKitRotatingCircle(
+  color: Colors.white,
+  size: 50.0,
+); 
+
+// ListView.builder constructor to create list of items
+ListView.builder(
+  itemCount: 10,
+  itemBuilder: (context, index){ return Card(...); }
+)
+
+// ListTile widget to crete list item.
+ListTile(
+  onTap: (){ },   // function to call when we click on the contents
+  leading: CircleAvatar(),
+  title: 'Description',
+  subtitle: "message"
+
+)
+
+// CircleAvatar widget to display rounded images
+CircleAvatar(
+  backgroundImage:AssertImage('img_path'),
+  radius: 40.0
+);

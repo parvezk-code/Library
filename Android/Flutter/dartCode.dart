@@ -23,3 +23,7 @@ void getData() async {
   String v = await getNetworkResource1();
   String t = await getNetworkResource2();
 }
+
+List<String> names = ["amit","gaurav", "ravi"]
+
+// new feature in dart -- null safty 
