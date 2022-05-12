@@ -1,0 +1,28 @@
+VS-code plugins
+
+# General
+Error Lens                                      Alexander
+Bracket pair Colorizer
+Remote Development                              microsoft
+
+open command palet              : ctr+shift+P
+
+# Js, react 
+JavaScript (ES6) code snippets                  charalampos karypidis
+thunder client                                  Ranga Vadhineni 
+ES7 React/Redux/GraphQL/React-Native snippets   dsznajder
+Auto Rename Tag                                 Jun Han 
+Live Server                                     Ritwick Dey
+Prettier - Code formatter                       Prettier
+Thunder Client(Postman alternative)
+Vs-code settings : In the add languages section of Emmet add(javascript, javascriptreact).
+
+
+# Flutter ---> flutter, dart, bloc(Felix Angelov)
+
+# choose a device to run flutter app
+from command palette choose : Flutter:select device
+
+
+
+
