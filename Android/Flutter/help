@@ -1,12 +1,22 @@
 # https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 # https://www.udemy.com/course/dart-and-flutter-the-complete-developers-guide/
+# https://www.udemy.com/user/muslim-helalee-2/
 # https://www.udemy.com/course/flutter-advanced-course-clean-architecture-with-mvvm/
 # https://www.udemy.com/course/dart-flutter-the-complete-flutter-development-course/
 # new flutter version : flutter-2
 
-# commands
+# important files/dirs ---> ./pubspec.yml, ./lib, ./lib/main.dart, 
+#                           ./android/build.gradle, 
+#                           ./android/gradle/wrapper/gradle-wrapper.properties
 
+flutter upgrade                     # upgrades flutter
+dart migrate                        #
+dart pub upgrade                    #
+
+
+# commands
 flutter create app-name             # creats a flutter project
+flutter packages get                # downloads packages from pubspec.yml(like npm install)
 flutter devices                     # lists devices(id) to run flutter app
 flutter run                         # Run project on single device
 flutter run -v                      # to get execution in details of tasks app failed

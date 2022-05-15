@@ -2,13 +2,22 @@
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
 class MyApp extends StatelessWidget {  //StatefullWidget
   @override
   Widget build(BuildContext context) {
     return MaterialApp( title: 't',  home: Text('Hello world') );
   }
+}
+
+void main() => runApp(MyApp());
+
+// every widget is a dart class with build()
+
+
+void main(){
+    
+    var xApp = MaterialApp( title: 't',  home: Text('Hello world') );
+    runApp(xApp);
 }
 
 // hover mouse ove a widget to see its properties
