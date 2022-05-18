@@ -1,3 +1,4 @@
+// sample flutter apps on github : https://flutter.github.io/samples/#
 // https://codesinsider.com/category/flutter/
 
 import 'package:flutter/material.dart';
@@ -123,7 +124,8 @@ CircleAvatar(
 
 // BoxDecoration widget for docoration of widget such as background image
 BoxDecoration(
-  image: DecorationImage( image:AssetImage('path'), fit:Boxfit.cover)
+  image: DecorationImage( image:AssetImage('path'), fit:Boxfit.cover),
+  border: Border.all(color: Colors.grey)
 );
 
 // EdgeInsets object properties controls padding and margine for Container widget.
@@ -137,7 +139,7 @@ Container(
   padding: EdgeInsets.all(20.0),
   margin:  EdgeInsets.fromTRB(left:10.0, top:5.0, right:20.0, bottom:7.0 ), 
   color: Colors.red[600],  // background color
-  decoration: BoxDecoration(),
+  decoration: BoxDecoration(), // border
   child: Text(" hello")
 );
 
@@ -245,7 +247,7 @@ SpinKitRotatingCircle(
   size: 50.0,
 ); 
 
-// ListView.builder constructor to create list of items
+// ListView.builder named-constructor to create list of items on demand(lazy building)
 ListView.builder(
   itemCount: 10,
   itemBuilder: (context, index){ return Card(...); }
@@ -265,3 +267,42 @@ CircleAvatar(
   backgroundImage:AssertImage('img_path'),
   radius: 40.0
 );
+
+// setState(fun) is used to update instance variable of the state class.
+// setState() informs the widget to re-render its self.
+
+//instance variables inside stateless widgets should be final
+// always make non changing variables as final in flutter
+
+InputDecoration( icon:i, border: b, fillColor: c, contentPadding: cp, prefixIcon: pi, 
+                 labelText: t,   labelStyle:s, label: l,
+                 errorText:et,   errorStyle: es, 
+                 helperText:ht,  helperStyle:hs,
+                 hintText: hit,  hintStyle:his,
+                 prefixText:pt,  prefixStyle: pes,
+                 suffixText:st,  suffixStyle: ss
+
+);
+
+TextFormField(decoration :d, validator: fun, onSaved: fun, controller:c, initialvalue:v, style:s, textAlign:ta, 
+              onChange:oc, ontap:ot, obscureText: bool
+);
+
+RaiseButton(
+  child: Text("Click Me"), onPressed: fun, 
+);
+
+// https://api.flutter.dev/flutter/widgets/GlobalKey-class.html
+// create reference of a widget class. useRef in react. 
+final formKey = GlobalKey<FormState>();  
+
+formKey.currentState.reset(); 
+formKey.currentState.validate();
+formKey.currentState.save();
+
+Form(key: formKey, child: c);
+
+// FormState class : https://api.flutter.dev/flutter/widgets/FormState-class.html
+
+
+// Mixin(with) : a class without a constructor. 
