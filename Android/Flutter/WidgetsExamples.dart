@@ -1,5 +1,16 @@
 // sample flutter apps on github : https://flutter.github.io/samples/#
+// architecture : https://fluttersamples.com/
+// https://github.com/brianegan/flutter_architecture_samples
+
 // https://codesinsider.com/category/flutter/
+
+// flutter widget of the week : 
+// https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
+
+// flutter event loops : https://www.youtube.com/watch?v=vl_AaCgudcY
+
+// flutter state management 
+// https://docs.flutter.dev/development/data-and-backend/state-mgmt/options
 
 import 'package:flutter/material.dart';
 
@@ -284,9 +295,13 @@ InputDecoration( icon:i, border: b, fillColor: c, contentPadding: cp, prefixIcon
 
 );
 
+// TextFormField configured to work with form methods--> reset(), save(), validate()
 TextFormField(decoration :d, validator: fun, onSaved: fun, controller:c, initialvalue:v, style:s, textAlign:ta, 
               onChange:oc, ontap:ot, obscureText: bool
 );
+
+// no integration with form
+TextField(keyboardType:TextInputType.emailAddress, decoration:InputDecoration(...));
 
 RaiseButton(
   child: Text("Click Me"), onPressed: fun, 
@@ -300,9 +315,10 @@ formKey.currentState.reset();
 formKey.currentState.validate();
 formKey.currentState.save();
 
-Form(key: formKey, child: c);
+Form(key: formKey, child: c);   //formKey can controll childrens of the form
 
 // FormState class : https://api.flutter.dev/flutter/widgets/FormState-class.html
 
 
 // Mixin(with) : a class without a constructor. 
+

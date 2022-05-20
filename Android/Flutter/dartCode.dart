@@ -7,13 +7,19 @@
 
 // EVERY value in Dart is an object. Even a simple number.
 
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' show get;
+
+import 'WidgetsExamples.dart';
+
 
 class Student {
   String roll;
   int age;
 
   // constructor taking names parameters {...} in any order
-  Student({this.roll, this.age=30});
+  Student({required this.roll, this.age=30});
 }
 
 // params can in any order, since constructor takes named parameters {this.roll, this.age}
@@ -25,8 +31,8 @@ print(details['name']);
 
 // async-await in dart
 Future.delayed( 
-  Duratioin(seconds:3), // delay by 3 secponds
-  () {..}               // call back function
+  Duration(seconds:3), // delay by 3 secponds
+  () {print('hello');}   // call back function
 );
 
 void getData() async {
@@ -43,7 +49,7 @@ List<String> names = ["amit","gaurav", "ravi"]
 // iterable
 
 // json data
-import 'dart:convert';
+
 
 var mapData = jsonDecode(str_Json); //convert json_string to a map
 var mapValu = json.decode(str_Json);
@@ -55,8 +61,6 @@ Map<String, dynamic> studentMap = {'id': 101, 'name':'ravi'};
 // https://github.com/dart-lang/http
 // https://pub.dev/packages/http
 // https://pub.dev/documentation/http/latest/
-
-import 'package:http/http.dart' show get;
 
 
 // Mixin(with) : a class without a constructor. 
@@ -211,7 +215,65 @@ Iterable<int> output = numbers.map((number) => number * 10);
 
 
 // takeWhile()  skipWhile()
- 
+
+// using await with for loop
+//adding numbers inside a stream 
+Future<int> sum(Stream<int> list) async {
+
+  int total=0;
+
+  await for(n in list){
+    total += n;
+  }
+
+  return(total);
+}
+
+// https://api.flutter.dev/flutter/dart-async/Stream-class.html
+// streams are source of events : https://dart.dev/tutorials/language/streams
+// dart,flutter provides us many built in streams to interact with the events
+// htmlButton.onClick is a stream of events when-ever a button is clicked.
+// htmlinput.onInput is a stream of events when-ever we type in text field.
+
+
+class Validator{
+  
+  final validateEmail =  StreamTransformer<String, String>.fromHandlers(
+    handleData: (email, sink){
+      if(email.contains('@')){
+        sink.add(email);
+      }else{
+        sink.addError("invalid email");
+      }
+    }
+  );
+
+}
+
+
+class Bloc extends Object with Validator{
+  // _ makes the variable private to the class
+  final _emailController = StreamController<String>();
+
+  Function(String) get changeEmail => _emailController.sink.add;
+
+  Stream<String> get email => _emailController.stream.transform(validateEmail);
+
+  dispose(){
+    _emailController.close();
+  }
+}
+
+final bloc = Bloc();
+
+// StreamBuilder Widget : re-renders its-self on stream change
+ Streambuilder(
+   stream: bloc.email,
+   builder: (context, snapshot){ 
+     return TextField(onChanged:bloc.changeEmail, 
+                      decoration:InputDecoration(errorText: snapshot.error)) 
+     }
+ );
 
 
 
