@@ -253,7 +253,9 @@ class Validator{
 
 class Bloc extends Object with Validator{
   // _ makes the variable private to the class
-  final _emailController = StreamController<String>();
+  final _emailController  = StreamController<String>();
+  // broadcast stream: following stream can be listened more than once
+  final _emailController1 = StreamController<String>.broadcast()();
 
   Function(String) get changeEmail => _emailController.sink.add;
 
@@ -266,16 +268,11 @@ class Bloc extends Object with Validator{
 
 final bloc = Bloc();
 
-// StreamBuilder Widget : re-renders its-self on stream change
- Streambuilder(
-   stream: bloc.email,
-   builder: (context, snapshot){ 
-     return TextField(onChanged:bloc.changeEmail, 
-                      decoration:InputDecoration(errorText: snapshot.error)) 
-     }
- );
-
-
+// https://pub.dev/packages/rxdart
+// https://pub.dev/documentation/rxdart/latest/rx/rx-library.html
+// Observable class corrosponds to Stream  class
+// Subject class corrosponds to StreamController class
+// BehaviourSubjects class corrosponds to StreamController class
 
 
 
