@@ -1,7 +1,11 @@
+// https://dart.dev/codelabs/dart-cheatsheet
+// https://dart.dev/samples
+
 void main() 
 {
     print('Hello, World!');
-
+    // EVERY value in Dart is an object. Even a simple number.
+    
     // data types --> num, int, double, bool, String
     int age = 10;  
     print(" variable   inside string $age      "); 

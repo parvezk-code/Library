@@ -1,8 +1,9 @@
+// https://dart.dev/codelabs/async-await
+
 import 'dart:async';
 
 // using await with for loop
 //adding numbers inside a stream 
-
 Future<int> fun(Stream<int> list) async 
 {
     int total=0;
@@ -58,3 +59,15 @@ class Bloc extends Object with Validator{
 }
 
 final bloc = Bloc();
+
+// https://pub.dev/packages/rxdart
+// https://pub.dev/documentation/rxdart/latest/rx/rx-library.html
+// Observable class corrosponds to Stream  class
+// Subject class corrosponds to StreamController class
+// BehaviourSubjects class corrosponds to StreamController class
+
+// https://api.flutter.dev/flutter/dart-async/Stream-class.html
+// streams are source of events : https://dart.dev/tutorials/language/streams
+// dart,flutter provides us many built in streams to interact with the events
+// htmlButton.onClick is a stream of events when-ever a button is clicked.
+// htmlinput.onInput is a stream of events when-ever we type in text field.
