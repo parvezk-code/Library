@@ -6,12 +6,12 @@ void main()
     print('Hello, World!');
     // EVERY value in Dart is an object. Even a simple number.
     
-    // data types --> num, int, double, bool, String
+    // data types --> num, int, double, bool, String, var(not type)
     int age = 10;  
     print(" variable   inside string $age      "); 
     print(" expression inside string ${age + 1}");
 
-    //type inferencing
+    // var : type inferencing
     var msg = 'Hello, World';  //type of msg is String
     // msg = 5;      error
 
@@ -48,11 +48,12 @@ void main()
 
     usr?.age?.fun();      // chain multiple uses of ?.
     
-    v1 = usr.age ?? 18;   // If usr.age is null then v1 = 18
+    v1 = usr ?? 18;       // If usr is null then v1 = 18
     v1 = v1 ?? 3;         // if v1 is null then v1 = 3
     v1 ??= 3;             // if v1 is null then v1 = 3
 
-    //int a = null;     // INVALID in null-safe Dart.
+    /*
+    int  a  = null;     // INVALID in null-safe Dart. */
     int? a  = null;     // Valid   in null-safe Dart.
     int? b;             // initial value is null.
 
@@ -60,8 +61,8 @@ void main()
     print(a ?? 12);     // Prints 12, since a is null.
     
     // cascades (..)
-    obj.f1();          // invokes f1() on obj, return value from fun()
-    obj..f2();         // invokes f2() on obj, return reference to obj
+    obj.f1(b);          // invokes f1() on obj, return value from fun()
+    obj..f2();          // invokes f2() on obj, return reference to obj
     obj..f1()..f2();    // calls obj.f1() then obj.f2()
     
     // Type Test Operators -->  is  as
