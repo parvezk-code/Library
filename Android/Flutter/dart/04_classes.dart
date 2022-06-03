@@ -1,39 +1,80 @@
+// Mixin(with) : a class without a constructor. for usability
+mixin m1 {
+  void f1(){ print('hello'); }
+}
+
+mixin m2 {
+  void f2(){ print('hello'); }
+}
+
+class Point with m1, m2{
+  double x, y;    // non-nullable fileds should be initialized in constructors.
+  double? z;      // nullable  fileds  need not be initialized in constructors.
+
+  // constructor taking named parameters {...} in any order
+  // required keyword not needed if defaul values are provided
+  Point({required this.x, this.y=10, this.z});
+
+  // named constructors: to allow multiple constructors
+  Point.blue(this.x, this.y);
+
+  // initializer list
+  Point.origin() 
+    : x=0,
+      y=0{
+        // constructor body
+      }
+
+  // Redirecting constructors
+  // my understanding : can not have body
+  Point.red() : this.origin();
+}
+
+// params can in any order, since constructor takes named parameters {this.x, this.y, this.z}
+final myPoint = Point(z:20, x:40);
+final nyPoint = Point.origin();
+
+// initializer list is also a handy place to put asserts, which run only during development:
+/*
+  Point(this.x, this.y)
+      : assert(x >= 0),
+        assert(y >= 0) {
+    print('I just made a NonNegativePoint: ($x, $y)');
+  }
+*/
+
 class Rectangle {
 
     // final fields can never be re-assigned. assign them a value in the constructor. 
     final int len, wid;
-    int? area;
-    String? color;
 
-    // Initializer Lists inside constructors
-    Rectangle(this.len, this.wid, this.color)
-      : area = len*wid {
-        // constructor body
-      }
-
-    // Named constructors
-    Rectangle.red(this.len, this.wid);
+    Rectangle(this.len, this.wid);
 
     @override
     String toString() => "${this.len}, ${this.wid}";
 
+    //static members
+
+    // private members : start with under-score(_) 
     void _privateMethod() {} // starts with undescore(_)
 
     void publicMethod()   {_privateMethod();}
 
-    int get perimeter => (len + wid)*2;  // getters methods are treated as properties
-
+    // getters methods are treated as properties
+    int get perimeter => (len + wid)*2;  
 }
 
-void main() 
-{
-  Rectangle a = new Rectangle(4, 5, 20);
-  Rectangle b = new Rectangle.red(a.len, 9);
-  print(b);
-  // class can have private(_) and static members
-  // Factory methods and factory constructors : return instance of class
+    // Factory methods and factory constructors : return instance of class
+    // Singleton classes : have only one instance variable.
 
-  // Singleton classes : have only one instance variable.
-  // Mixins : are like classes, for usability 
-}
+    // Const constructors :
+    // define a const constructor and make sure that all instance variables are final.
+
+    // Factory constructors: can return subtypes(child class obj) or even null.
+
+
+
+
+
+
 
