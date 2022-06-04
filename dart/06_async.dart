@@ -56,7 +56,8 @@ Future<void> getNwData() async
 {
   try
   {
-      final response = await http.get("https://example.com");
+      var url = Uri.https('www.googleapis.com', '/books', {'q': '{http}'});
+      final response = await http.get(url);
       print(response.body);
   }
   catch(e)

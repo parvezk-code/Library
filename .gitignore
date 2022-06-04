@@ -1,1 +1,12 @@
 JS/temp.js
+
+dart/.dart_tool
+dart/.dart_tool/package_config.json
+dart/.packages
+dart/pubspec.lock
+
+Android/Flutter/.dart_tool
+Android/Flutter/.dart_tool/package_config.json
+Android/Flutter/.dart_tool/package_config_subset
+Android/Flutter/.packages
+Android/Flutter/pubspec.lock
