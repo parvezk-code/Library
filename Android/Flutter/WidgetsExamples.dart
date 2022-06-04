@@ -372,3 +372,28 @@ final bloc = Bloc();
 // BehaviourSubjects class corrosponds to StreamController class
 
 
+class MyStatelessWidget extends StatelessWidget 
+{
+  final Stream<String> dataStream;
+
+  const MyStatelessWidget({Key key, this.dataStream}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) 
+  {
+    return StreamBuilder<ConnectionState>(
+      stream: dataStream,
+      builder: (BuildContext context, AsyncSnapshot<ConnectionState> snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        }
+
+        if (snapshot.hasData) {
+          return Text(snapshot.data);
+        }
+
+        return Container();
+      },
+    );
+  }
+}

@@ -64,13 +64,23 @@ class Rectangle {
     int get perimeter => (len + wid)*2;  
 }
 
-    // Factory methods and factory constructors : return instance of class
+
+// Const constructors :
+// define a const constructor and make sure that all instance variables are final.
+class Pt 
+{
+  final int x;
+  final int y;
+  static const Pt origin = Pt(0, 0);
+
+  const Pt(this.x, this.y);
+}
+
+
+
+    // Factory methods and 
+    // factory constructors : return instance of sub-class or null.
     // Singleton classes : have only one instance variable.
-
-    // Const constructors :
-    // define a const constructor and make sure that all instance variables are final.
-
-    // Factory constructors: can return subtypes(child class obj) or even null.
 
 
 

@@ -3,16 +3,16 @@ void main()
     //Function arguments: named , optional, default
     void fun1(int lineNum) { }
 
-    //Named parameters: a is optional, b is compulsary
-    void fun2(String name, {String? roll, required int dob}) { 
-      fun1(4); 
-    }
+    //Named parameters: roll is optional, dob is compulsary
+    void fun2(String name, {String? roll, required int dob}) { fun1(4); }
+
     fun2("ravi", dob:4, roll:'cat'); // named parameter can be in any order
-    fun2("amit", dob:5);             // parameter(a) is optional so can be ignored
+    fun2("amit", dob:5);             // parameter(roll) is optional so can be ignored
 
     // A function can’t have both optional positional and named parameters.
     // Positional optional parameters
-    int fun3(int x, int y, [int? z, int? p]) {
+    int fun3(int x, int y, [int? z, int? p]) 
+    {
       var sum = x + y ;
       sum += z ?? 0;
       return(sum);

@@ -25,7 +25,8 @@ void main(){
     {
       print(e);
     }
-    catch(e){
+    catch(e)
+    {
       print(e);
     }
     finally 

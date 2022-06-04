@@ -2,72 +2,67 @@
 
 import 'dart:async';
 
-// using await with for loop
-//adding numbers inside a stream 
-Future<int> fun(Stream<int> list) async 
+import '../WidgetsExamples.dart';
+
+// asynchronous operations:  read file, write to database, n/w request
+// Future: result of asynchronous computations. 
+// Stream: if result has multiple parts then async computation produces a stream.
+
+// A future can be in one of two states: uncompleted or completed.
+// A Future<T> instance produces a value of type T. 
+// Future<void> when on value is produced.
+// future completes with a value or with an error.
+Future<void> fetchUserOrder() 
 {
-    int total=0;
-    await for(var n in list)
-    {
-      total += n;
-    }
-    return(total);
+  // Imagine that this function is fetching user info from another service or database.
+  return Future.delayed( 
+          Duration(seconds: 2), 
+          () => print('done')       // Future<void>
+        );
 }
 
-/*
-    Future.delayed(const Duration(seconds: 1), () {
-      print('One second has passed.'); // Prints after 1 second.
-    });
-*/
-
-
-
-void getData() async {
-  // String v = await getNetworkResource1();
-  // String t = await getNetworkResource2();
+Future<void> fetchUsrOrder() 
+{
+  // Imagine that this function is fetching user info from another service or database.
+  return Future.delayed( 
+          Duration(seconds: 2), 
+          () => 'data'       // Future<String>
+        );
 }
 
-class Validator{
-  
-  final validateEmail =  StreamTransformer<String, String>.fromHandlers(
-    handleData: (email, sink){
-      if(email.contains('@')){
-        sink.add(email);
-      }else{
-        sink.addError("invalid email");
-      }
-    }
-  );
-
-}
-
-
-class Bloc extends Object with Validator{
-  // _ makes the variable private to the class
-  final _emailController  = StreamController<String>();
-  // broadcast stream: following stream can be listened more than once
-  final _emailController1 = StreamController<String>.broadcast();
-
-  Function(String) get changeEmail => _emailController.sink.add;
-
-  Stream<String> get email => _emailController.stream.transform(validateEmail);
-
-  dispose(){
-    _emailController.close();
-    _emailController1.close();
+// async keyword : allows to use await keyword 
+// my-understanding : async function always returns a Future.
+Future<void> getData() async 
+{
+  try
+  {
+    await fetchUserOrder();   // add await keyword to wait for async operation to complete
+    await fetchUsrOrder();
+  }
+  catch(e)
+  {
+    print(e);
   }
 }
 
-final bloc = Bloc();
+void countSeconds(int s) 
+{
+  for (var i = 1; i <= s; i++) 
+  {
+    Future.delayed(Duration(seconds: i), () => print(i));
+  }
+}
 
-// https://pub.dev/packages/rxdart
-// https://pub.dev/documentation/rxdart/latest/rx/rx-library.html
-// Observable class corrosponds to Stream  class
-// Subject class corrosponds to StreamController class
-// BehaviourSubjects class corrosponds to StreamController class
+Future<void> getNwData() async 
+{
+  try
+  {
+      final response = await http.get("https://example.com");
+      print(response.body);
+  }
+  catch(e)
+  {
+      print(e);
+  }
+}
 
-// https://api.flutter.dev/flutter/dart-async/Stream-class.html
-// streams are source of events : https://dart.dev/tutorials/language/streams
-// dart,flutter provides us many built in streams to interact with the events
-// htmlButton.onClick is a stream of events when-ever a button is clicked.
-// htmlinput.onInput is a stream of events when-ever we type in text field.

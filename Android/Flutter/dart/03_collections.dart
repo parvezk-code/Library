@@ -17,10 +17,11 @@ void main()
     print(map.length+set.length+list.length);
 
     // list methods ---> shuffel, where(filter in JS), subList, sort
-    var l1        = [1, 2, 3];   // l1.first, l1.last
+    var l1        = [1, 2, 3];
     List<int> l2  = [1, 2, 3];
 
     l2.add(4);
+    l2.addAll([5, 6]);
 
     // Spread operator ...
     l2 = [10, ...l1];
@@ -47,9 +48,6 @@ void main()
     // operations : length, isEmpty, putIfAbsent
     print(studentMap['id']);
 
-    // list and set are child of Iterable class
-    // Iterable.first, Iterable.last
-
     // indexOf(e), contains(e)
     
     // insert operations: add(e), addAll([..]), insert(index, e), insertAll(index, [..])                                       
@@ -60,37 +58,40 @@ void main()
     // create your own Iterators
 
     
-
+    // Iterable class : list and set are its child
     Iterable<int> nList = [ 1, 2, 3 ]; // Lists, Sets are Iterable 
     Iterable<String> cList = [ "red", "blue", "green"]; 
     
+    // Iterable.first, Iterable.last
+
     // for : iterating over an iterator
     for (final e in cList) {print(e);}
     
     // for-each() : iterating over an iterator
     cList.forEach( (item) => print(item) );
 
-    // first string in the iterable whose length>5
+    // firstWhere(): returns first item which match the condition
     String element = cList.firstWhere((element) => element.length > 5);
     print(element);
 
-    // every() : verify that all elements satisfy a condition. (true/false)
+    // every() : returns true is all elements satisfy a condition.
     bool flag = cList.every((item) => item.length >= 5);
 
-    // any() : verify that atlest one element satisfy a condition. (true/false)
+    // any() : returns true is atlest one element satisfy a condition.
     flag =  cList.any((item) => item.length >= 5);
     print(flag);
 
 
-    // where() filter : returns new list which satisfy a condition
+    // where() filter : returns new list of items which satisfy a condition
     var newList = nList.where((number) => number.isEven);
+    
+    // filters(return new Iterable) : takeWhile(call-bk), skipWhile(cl-bk)
+
 
     // filters : map(call-back), expand(call-back)
     // map() : returns new list by applying a function over each element
     nList = newList.map((number) => number * 10);
 
-    // where(), takeWhile()  skipWhile()
-    // filters(return new Iterable) : where(call-back), takeWhile(call-bk), skipWhile(cl-bk)
     // reduce( (total, item) => {..} )
     // fold(call-back)
 
