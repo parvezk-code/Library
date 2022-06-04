@@ -76,11 +76,21 @@ class Pt
   const Pt(this.x, this.y);
 }
 
+// Singleton classes : have only one instance variable.
+class Store 
+{
+    static final Store _instance = Store._internal();
+  
+    // factory promises to return _an_ object of this type not necessary a new one.
+    factory Store() { return _instance; }
+    
+    // private named constructor, so it can only be called in this class
+    Store._internal() { /* initialization logic */ }
+}
 
-
-    // Factory methods and 
-    // factory constructors : return instance of sub-class or null.
-    // Singleton classes : have only one instance variable.
+// Factory methods and 
+// factory constructors : return instance of sub-class or null.
+    
 
 
 

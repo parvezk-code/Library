@@ -93,7 +93,12 @@ void main()
     nList = newList.map((number) => number * 10);
 
     // reduce( (total, item) => {..} )
-    // fold(call-back)
+    var sum = nList.reduce((int sumSoFar, int currentInt) {
+      return sumSoFar + currentInt;
+    });
+    print(sum);
+
+    // fold(call-back) : similar to reduce(), but can return value of different type
 
     // Type casting collections: cast, as, retype, toSet, toList
 }

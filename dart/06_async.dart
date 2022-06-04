@@ -1,8 +1,7 @@
 // https://dart.dev/codelabs/async-await
 
 import 'dart:async';
-
-import '../WidgetsExamples.dart';
+import 'package:http/http.dart' as http;
 
 // asynchronous operations:  read file, write to database, n/w request
 // Future: result of asynchronous computations. 
