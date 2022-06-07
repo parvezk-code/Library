@@ -1,21 +1,23 @@
-// https://pub.dev/packages/flutter_bloc
+// https://pub.dev/packages/provider
+// https://medium.com/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd
+
 
 import 'package:flutter/foundation.dart';
 
 // ChangeNotifier widget, Consumer widget, Selector widget 
 // context.select, context.watch, context.read
 
-class Store_CN with ChangeNotifier, DiagnosticableTreeMixin 
+class StoreCN with ChangeNotifier, DiagnosticableTreeMixin 
 {
     int _count = 0;
     String _color= "red";
 
-    //context.select<Store_CN, int>((Store_CN c) => c.counter);
-    //context.watch<Store_CN>().count
+    //context.select<StoreCN, int>((StoreCN c) => c.counter);
+    //context.watch<StoreCN>().count
     int get count => _count;
     String get color => _color;
 
-    //context.read<Store_CN>().increment()
+    //context.read<StoreCN>().increment()
     void increment() 
     {
       _count++;
@@ -40,31 +42,32 @@ class Store_CN with ChangeNotifier, DiagnosticableTreeMixin
     /*
       runApp(
           MultiProvider(
-              providers: [ ChangeNotifierProvider(create: (context) => Store_CN()) ],
-              child: const MyApp(),
+              providers: [ ChangeNotifierProvider(create: (context) => StoreCN()) ],
+              child: MyApp(),
           ) 
-      )
+      );
+
       // new way : context extensions technique
-      context.read<Store_CN>().increment()
-      context.watch<Store_CN>().count
-      final color   = context.select<Store_CN, String>((Store_CN c) => c.color);
-      final counter = context.select<Store_CN, int>((Store_CN c) => c.counter);
+      context.read<StoreCN>().increment()
+      context.watch<StoreCN>().count
+      final color   = context.select<StoreCN, String>((StoreCN c) => c.color);
+      final counter = context.select<StoreCN, int>((StoreCN c) => c.count);
 
       runApp(
           ChangeNotifierProvider(
-              create: (_) => Store_CN(),
+              create: (_) => StoreCN(),
               child: MyApp(),
           )
       )
       // old way
-      Provider.of<Store_CN>(context).count;
-      Provider.of<Store_CN>(context, listen: false).increment()
+      Provider.of<StoreCN>(context).count;
+      Provider.of<StoreCN>(context, listen: false).increment()
       
       // old way : Consumer Widget
-      Consumer<Store_CN>( builder: (context, storeCN_Obj, t){} )
+      Consumer<StoreCN>( builder: (context, storeCN_Obj, t){} )
 
       // old way : Selector Widget
-      Selector<Store_CN, int>( 
+      Selector<StoreCN, int>( 
                           selector: (context, storeCN_Obj) => storeCN_Obj.counter,
                           builder:  (context, int counter, t){}
                         )
@@ -74,7 +77,7 @@ class Store_CN with ChangeNotifier, DiagnosticableTreeMixin
 
 
 // Store: Singleton classes, have only one instance variable.
-class Store 
+class Store
 {
     static final Store _instance = Store._internal();
 
