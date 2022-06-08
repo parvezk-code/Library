@@ -3,11 +3,15 @@
 
 
 /*
- Riverpod is from same author as Provider.
- Riverpod is inspired by Provider but solves some of it's key issues such as 
- supporting multiple providers of the same type; awaiting asynchronous providers; 
- adding providers from anywhere. 
- https://riverpod.dev/
+  By design, Provider is an improvement over InheritedWidget and it depends on the 
+  widget tree.
+
+  Riverpod is from same author as Provider.
+  Riverpod is inspired by Provider but solves some of it's key issues such as...
+  supporting multiple providers of the same type; awaiting asynchronous providers; 
+  adding providers from anywhere. 
+  Riverpod is completely independent from the widget tree.
+  https://riverpod.dev/
 */
 
 import 'package:flutter/material.dart';

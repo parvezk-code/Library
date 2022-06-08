@@ -5,6 +5,8 @@
 // https://www.kindacode.com/article/how-to-locally-save-data-in-flutter/
 // https://www.kindacode.com/article/how-to-encode-decode-json-in-flutter/
 // https://www.kindacode.com/article/flutter-streambuilder/
+// https://fluttergems.dev/state-management/
+// https://docs.flutter.dev/codelabs#good-for-beginners
 
 import 'package:flutter/material.dart';
 
