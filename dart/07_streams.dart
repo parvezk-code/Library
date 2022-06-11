@@ -124,6 +124,22 @@ Stream<int> count(int countTo) async*
 
 final sub3 = count(10).listen(print);
 
+// Creates a single-subscription stream that gets its data from Iterable
+// stream starts to emit when a listener is added. stops when listner cancel subscription
+Stream<int> s1 = Stream.fromIterable([1, 2, 3, 5, 6, 7]);
+
+// stream that repeatedly emits events at period intervals.
+Stream<int> s2 = Stream<int>.periodic(
+                            const Duration(seconds: 1), 
+                            (count) => count * count
+                          )
+                          .take(5)
+                          ..forEach(print); // prints 0,1,4,9,16.
+
+
+// transform() : creats new stream(s3)  by applying StreamTransformer to stream s1 
+// Stream<int> s3 = s1.transform(streamTransformer)
+
 /*
 
 class MyStatelessWidget extends StatelessWidget 
