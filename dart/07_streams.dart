@@ -25,7 +25,7 @@ import 'dart:async';
       allows any number of listeners
       fires its events when they are ready, whether there are listeners or not.
       used for independent events/observers.
-      asBroadcastStream creates a broadcast stream on top of the non-broadcast stream.
+      asBroadcastStream() creates a broadcast stream on top of the non-broadcast stream.
 
   3.Stream Controller: 
       to create streams of your own.
@@ -46,7 +46,9 @@ import 'dart:async';
 
       sub.pause(), sub.resume(), sub.cancel()
 
-  4.async*
+  4.transformations : where, skip 
+  
+  5.async*
       Marking a function with async* turns it into a data generator function
 
 */
@@ -58,6 +60,65 @@ import 'dart:async';
   which is available inside an async or async* function, or by forwarding its events 
   directly using yield* inside an async* function
 */
+
+/*
+  Stream Class
+
+  01. constructors
+      Stream()
+      Stream.empty()      : Creates an empty broadcast stream. 
+      Stream.multi()      : Creates a multi-subscription stream. 
+      Stream.periodic()   : stream that repeatedly emits events at period intervals. 
+      Stream.fromIterable : single-subscription stream that gets its data from iterable. 
+      Stream.value()      : stream which emits a single data event before closing. 
+      Stream.error()      : stream which emits a single error event before completing.
+      Stream.fromFuture   : single-subscription stream from the future.
+      Stream.fromFutures  : single-subscription stream from a group of futures. 
+      Stream.eventTransformed()
+
+  02. properties
+      first       : The first element of this stream. 
+      last        : The last element of this stream. 
+      length      : The number of elements in this stream. 
+      isBroadcast : Whether this stream is a broadcast stream. 
+      isEmpty     : Whether this stream contains any elements. 
+
+  03. Methods
+
+      asBroadcastStream : Returns a multi-subscription stream 
+      elementAt         :
+      drain             : Discards all data, but signals when done or an error occurred. 
+      any()             : Checks whether test accepts any element of stream. 
+      every()           : Checks whether test accepts all element of stream. 
+      firstWhere        : first element of this stream matching test()
+      lastWhere         : Finds the last element in this stream matching test()
+      contains          : 
+
+      forEach           : Executes fun() on each element of this stream. 
+      fold              : Combines all values by repeatedly applying combine()
+      reduce            : Combines a sequence of values by repeatedly applying combine()
+      join              : Combines the string representation of elements
+
+      toList, toSet     : Collects all elements of this stream
+      toString          :
+      cast
+
+      transforamtion methods():
+      transform         : Applies given streamTransformer to this stream.
+      distinct          : Skips data events if they are equal to the previous data event.
+      where             : discards some elements based on test()
+      skip              : Skips the first count data events from this stream.
+      skipWhile         : Skip data events from this stream while they are matched by test()
+      take              : Provides at most the first count data events 
+      takeWhile         : Forwards data events while test() is successful 
+      expand            : Transforms each element into a sequence of events
+      asyncExpand       : Transforms each element into a sequence of asynchronous events.
+      map               : Transforms each element of this stream into a new stream event.  
+      asyncMap          : new stream which maps data event to new event
+      handleError       : Creates a wrapper Stream that intercepts some errors
+      timeout           : Creates a new stream with the same events as this stream. 
+*/
+
 
 
 final stmCtr = StreamController<String>();            //single subscription stream ctr
