@@ -1,17 +1,60 @@
+sudo apt remove pkg_name
+
+apt autoremove --purge
+
+sudo apt autoremove
+sudo apt -f install
+sudo apt clean
+sudo apt autoclean
+sudo apt update
 
 
-netstat -tulpn
-ps aux | grep tomcat
-killall 32796
-grep "lookgood"  -R *
-tail -f *
-tailf /var/log/apache2/error.log
-scp   source_file_location    user@server_ip:destination_location
-sftp://user@server_ip
-sudo dpkg -i package_file.deb
+touch                               #
+mkdir                               #
+cp, cp -r                           #
+mv                                  #
+rm, rm -rf                          #
+pwd                                 #
+whoami                              #
+who                                 # Display who is currently logged into the system
+w                                   # Show which users are logged in and their activity:
+cat, more, head, tail               # show contents of file
+ls -la | grep firefox               # list files and dir
+chmod 751  file_dir_name            # u=7, g=5, o=1, (r=4, w=2, x=1)
+chmod g=rx,o=rwx file_dir_name      # change permissions of file_dir
+chmod -R g=rx,o=rwx dir_name        # change permissions of dir and its contents recursivelly
+chown user:group    dir_file        # change owner
+awk '[pattern] {print $0}' [file]   # Print all lines matching a pattern in a file:
+grep pattern file_name              # Search for a specific pattern
+grep -r pattern dir_name            # Recursively search for a pattern in a directory:
+which flutter                       # Find where a command in PATH is located
+locate [name]                       # Find all files and directories related to a particular name:
+find [dir_path] -name [a]           #
+find [dir_path] -size [+100M]       # See files larger than a specified size [+100M] in a dir:
+source [filename]                   # Read and execute the file content in the current shell:
+finger user_name                    # display  info of user
+wget [file_name]                    #
+dmesg                               # Show bootup messages:
+uname -a                            # kernal info
+hostname -i                         # ip-address
+cat /proc/cpuinfo                   # CPU information:
+free -h                             # memory usage
+df -h                               # info about free and used space on mounted systems
+lshw                                # list hw config
+lspci -tv                           # show pci devices
+lsusb -tv                           # show usb devices
+dmidecode                           # Show hardware information from the BIOS
+ssh -p port user@host               # Connect to host using a particular port
+scp [file] [usr@host:dir]           # copy a file to remote machine
+rsync -a [dir] [/backup/]           # Synchronize the contents of a directory with a backup directory
+ifconfig                            # Display IP addresses of all network interfaces
+history                             #
+sudo dpkg -i package_file.deb       #
+netstat -tulpn                      #
+ps aux | grep tomcat                #
+sftp://user@server_ip               #
 
-
-
+https://linuxconfig.org/linux-commands-cheat-sheet
 
 -------------------wifi commands-----------------------
 lspci -k
@@ -24,5 +67,5 @@ nmcli device wifi
 nmcli radio
 nmcli radio wifi on
 
-
+Edits the /etc/passwd, /etc/shadow, /etc/group, and /etc/gshadow files for the newly created accounts.
 
