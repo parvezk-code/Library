@@ -1,0 +1,33 @@
+
+
+------------------------------------Putty--------------------------------------
+
+enable X11 forwarding
+    # However you can open remote GUI applications using ssh from the command line:
+    # ssh -X username@host
+    # This will enable X11 forwarding in your SSH session.
+    # TigerVNC is a high-performance, platform-neutral implementation of VNC (Virtual Network Computing), a client/server application that allows users to launch and interact with graphical applications on remote machines.
+
+X server architecture :
+
+In the Host Name field, enter the IP address or the network name of the remote computer
+
+X11 menu of left side : Enable X11 forwarding
+
+Optional : give session name and save it for later to reuse
+
+Click the “Open” button to connect to the remote computer.
+
+The first time you connect to a remote computer, you’ll see a warning that you have not connected to this computer before. Click the “Accept” button to complete the connection.
+
+Login inside the x-terminal
+
+To start a graphical application enter its name on the command line. For example to open firefox type firefox and press enter. This will open firefox on the remote computer and you will see GUI on your machine.
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+

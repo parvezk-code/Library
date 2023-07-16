@@ -1,4 +1,6 @@
 
+putty : remote open a GUI software on your local machine
+
 disks : copy complete file system to other usb derive by creating images
 
 test desk : recover deleted data from filesystem
