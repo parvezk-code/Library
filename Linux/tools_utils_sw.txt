@@ -1,0 +1,10 @@
+
+disks : copy complete file system to other usb derive by creating images
+
+test desk : recover deleted data from filesystem
+
+PXE Booting :
+
+Cisco Packet Tracer : network simulator tool
+
+Ansible : configure remote machines

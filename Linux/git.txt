@@ -1,0 +1,11 @@
+
+
+Library         :   https://github.com/parvezk-code/Library.git
+Home Docker     :   https://github.com/parvezk-code/Home-Docker-Env.git
+
+==> using git in debian
+
+    git clone  https_url
+    git config --global user.email "parvezk"
+    git config --global user.name "parvezk"
+

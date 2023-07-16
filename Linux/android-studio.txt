@@ -1,0 +1,3 @@
+https://flathub.org/apps/com.google.AndroidStudio
+
+https://snapcraft.io/android-studio

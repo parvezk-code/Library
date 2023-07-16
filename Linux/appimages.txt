@@ -1,0 +1,9 @@
+==> adding an appimage software to linux for all users
+
+    add execution permision to the appimage
+    login with root
+    ./soft.AppImage --appimage-extract
+    move the extracted directory to desired location which is comman to all users
+    permision of this directory and its content : group=r_x, others=r_x
+
+

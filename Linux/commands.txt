@@ -1,0 +1,28 @@
+
+
+netstat -tulpn
+ps aux | grep tomcat
+killall 32796
+grep "lookgood"  -R *
+tail -f *
+tailf /var/log/apache2/error.log
+scp   source_file_location    user@server_ip:destination_location
+sftp://user@server_ip
+sudo dpkg -i package_file.deb
+
+
+
+
+-------------------wifi commands-----------------------
+lspci -k
+lspci -vv -s 02:00.0
+lspci
+sudo service NetworkManager restart
+nmcli device status
+nmcli dev show wlp2s0
+nmcli device wifi
+nmcli radio
+nmcli radio wifi on
+
+
+
