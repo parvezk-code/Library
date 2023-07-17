@@ -1,0 +1,48 @@
+
+
+Library(ssh)        :   git@github.com:parvezk-code/Library.git
+Home Docker(ssh)    :   git@github.com:parvezk-code/Home-Docker-Env.git
+
+==> setup git in debian
+
+    set user email                  :   git config --global user.email "parvezk"
+
+    set user name                   :   git config --global user.name "parvezk"
+
+    Generate ssh key                :   ssh-keygen -t ed25519 -C "parvez@newuser.com"
+
+    Get agent id (Ex pid 7925)      :   eval "$(ssh-agent -s)"
+
+    Add key to agent                :   ssh-add ~/.ssh/id_ed25519
+
+    Copy ssh key                    :   cat  ~/.ssh/id_ed25519.pub
+                                        #ssh-ed25519 AAAA....LpL parvez@newuser.com
+
+    Add key to github account       :   settings => SSH and GPG keys => New SSH key => paste the key => Add SSH key
+
+
+
+---------------------------------commands---------------------------------------
+
+git  clone  ssh_url                     # clone remote repo
+git  remote add origin ssh_url          # Create alias origin for remote_url(remote repository).
+git  remote -v                          # display branches
+git  remote set-url origin new_url      # Update alias origin for new remote_url(remote repository).
+git  status                             #
+git  push   origin --delete b_name      # Deletes b_name on origin(remote)
+git  pull   origin master               # Merge master branch on origin(remote) into our current local branch.
+
+
+git 	init
+git 	add            file_name
+git 	commit 	-m     "first commit"
+git 	branch 	-M     main
+git 	remote 	add    origin https://github.com/parvezk-code/temp01.git
+git 	push   -u      origin main
+git 	push   -u      origin master
+git     pull    origin  master
+
+
+
+
+

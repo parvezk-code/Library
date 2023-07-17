@@ -1,0 +1,40 @@
+
+---------------------------------Installation rootless docker---------------------------
+
+
+==> ubuntu: setup rootless docker
+
+    Help                        :   https://rootlesscontaine.rs/getting-started/docker/
+    install dependencies        :   sudo apt-get install -y uidmap
+    Check env variables         :   Ex. XDG_RUNTIME_DIR=/run/user/1000
+    download install script     :   curl -o rootless-install.sh -fsSL https://get.docker.com/rootless
+    run install script          :   sh rootless-install.sh
+    set PATH in ~/.bashrc       :   export PATH=$HOME/bin:$PATH
+
+    setup                       :   set env variables(DOCKER_HOST) or run--> docker context use rootless
+                                        export DOCKER_HOST=unix:///run/user/1000/docker.sock
+                                        or
+                                        run cmd --> docker context use rootless
+
+    test                        :   docker run hello-world
+
+
+==> set up docker-compose
+
+    curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o $HOME/bin/docker-compose
+
+
+==> important links
+
+    # https://www.docker.com/blog/experimenting-with-rootless-docker/
+    # Expose Docker API socket through TCP : https://docs.docker.com/engine/security/rootless/
+    # https://katacoda.com/courses/docker/rootless
+    # User mapping in rootless mode : https://www.docker.com/blog/experimenting-with-rootless-docker/
+    # https://itnext.io/docker-running-in-rootless-mode-bdbcfc728b3a
+    # https://thenewstack.io/how-to-run-docker-in-rootless-mode/
+    # https://docs.docker.com/engine/security/rootless/
+
+
+
+
+

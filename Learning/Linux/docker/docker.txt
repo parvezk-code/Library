@@ -1,0 +1,17 @@
+
+
+
+
+==> important links
+
+    # https://www.docker.com/blog/experimenting-with-rootless-docker/
+    # Expose Docker API socket through TCP : https://docs.docker.com/engine/security/rootless/
+    # https://katacoda.com/courses/docker/rootless
+    # User mapping in rootless mode : https://www.docker.com/blog/experimenting-with-rootless-docker/
+    # https://itnext.io/docker-running-in-rootless-mode-bdbcfc728b3a
+    # https://thenewstack.io/how-to-run-docker-in-rootless-mode/
+    # https://docs.docker.com/engine/security/rootless/
+
+
+
+
