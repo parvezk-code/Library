@@ -1,4 +1,0 @@
-sudo snap install snapcraft --classic
-
-
-
