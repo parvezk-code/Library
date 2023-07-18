@@ -9,17 +9,7 @@ sudo apt autoclean
 sudo apt update
 
 
-touch                               #
-mkdir                               #
-cp, cp -r                           #
-mv                                  #
-rm, rm -rf                          #
-pwd                                 #
-whoami                              #
-who                                 # Display who is currently logged into the system
-w                                   # Show which users are logged in and their activity:
-cat, more, head, tail               # show contents of file
-ls -la | grep firefox               # list files and dir
+ssh-copy-id -i key usr@host         # copy SSH key to server. Avoids typing password for each login.
 chmod 751  file_dir_name            # u=7, g=5, o=1, (r=4, w=2, x=1)
 chmod g=rx,o=rwx file_dir_name      # change permissions of file_dir
 chmod -R g=rx,o=rwx dir_name        # change permissions of dir and its contents recursivelly
@@ -33,6 +23,17 @@ find [dir_path] -name [a]           #
 find [dir_path] -size [+100M]       # See files larger than a specified size [+100M] in a dir:
 source [filename]                   # Read and execute the file content in the current shell:
 finger user_name                    # display  info of user
+touch                               #
+mkdir                               #
+cp, cp -r                           #
+mv                                  #
+rm, rm -rf                          #
+pwd                                 #
+whoami                              #
+who                                 # Display who is currently logged into the system
+w                                   # Show which users are logged in and their activity:
+cat, more, head, tail               # show contents of file
+ls -la | grep firefox               # list files and dir
 wget [file_name]                    #
 dmesg                               # Show bootup messages:
 uname -a                            # kernal info
@@ -55,6 +56,14 @@ ps aux | grep tomcat                #
 sftp://user@server_ip               #
 
 https://linuxconfig.org/linux-commands-cheat-sheet
+
+
+-------------------------session x11 or wayland----------------------
+
+loginctl   (note down session_id)
+
+loginctl   show-session  [session_id]    -p    Type
+
 
 -------------------wifi commands-----------------------
 lspci -k

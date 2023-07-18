@@ -1,0 +1,50 @@
+version: "3"
+
+services:       #https://mariadb.com/kb/en/setting-up-a-lamp-stack-with-docker-compose/
+
+  web:
+    image: php:7.2-apache
+    container_name: server
+    restart: 'always'
+    depends_on:
+      - mariadb
+    restart: 'always'
+    ports:
+      - '8080:80'
+    links:
+      - mariadb
+    volumes:
+      - ~/Music/phpProjects/p1/program:/var/www/html
+      - ~/Music/phpProjects/p1/php.ini:/usr/local/etc/php/php.ini
+      - ~/Music/phpProjects/p1/logs:/var/log/apache2 
+  
+  mariadb:
+    image: mariadb:10.7.3-focal
+    container_name: mdb
+    entrypoint: custom-docker-entrypoint.sh
+    command: ["mariadbd", "--user=root"]
+    #user: root
+    networks:
+      default:
+        aliases:
+          - db
+    restart: 'always'
+    volumes: 
+      - ./db_dir:/var/lib/mysql 
+      - ./mariadb/custom-docker-entrypoint.sh:/usr/local/bin/custom-docker-entrypoint.sh
+    environment:
+      TZ: "Asia/Kolkata"
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "cse_db"
+      MYSQL_USER: "cse"
+      MYSQL_PASSWORD: "password"
+
+  adminer:
+    image: adminer
+    container_name: admin
+    depends_on:
+      - mariadb
+    restart: 'always'
+    ports:
+      - '8081:8080'
+

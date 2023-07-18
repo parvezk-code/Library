@@ -1,0 +1,16 @@
+
+==> mount a directory on remote machine to your system.
+        # sshfs
+        # autofs + sshfs
+        # samba
+        # nfs
+        # copy ssh key between client and server to avoid typing password everytime.
+                ssh-copy-id   -i   ~/.ssh/id_rsa.pub   user@host
+        # end
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+

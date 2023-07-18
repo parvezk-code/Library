@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=firefox-Container
+Comment=Back up your data with one click
+Exec=bash -c '/home/newuser/container-apps/firefox/run.sh'
+Icon=/home/newuser/container-apps/firefox/logo.gif
+Terminal=false
+Type=Application
+Categories=Utility;Application;

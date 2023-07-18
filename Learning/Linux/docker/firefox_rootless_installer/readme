@@ -1,0 +1,8 @@
+this script file will perform following tasks 
+
+1). If Rootless docker is not installed then install it.
+2). create directory ~/container-apps/firefox
+3). create files run.sh, firefox.desktop, logo.gif, dockerfile
+4). create docker image of firefox from the docker-file
+5). Add shortcut firefox.desktop to the desktop
+6). Right-click on the .desktop file and choose "Allow launching"

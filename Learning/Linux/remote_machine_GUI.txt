@@ -1,21 +1,67 @@
-remote machine development tools --> putty, docker
+# Wayland is a replacement for the X11.
 
+remote machine development tools --> ssh, putty, docker
+
+    # gui over ssh in wayland. Starting GUI program over SSH in wayland
+    # SSH forwarding with wayland host and x11 client
+    # XWayland : run remote X11 programs on local Wayland session. (sudo apt install xwayland)
     # https://www.geeksforgeeks.org/running-gui-applications-on-docker-in-linux/
     # forward the X11 socket of your local Linux machine to the Docker Container for it to use directly
     # you also need to forward the environment variable called display
-
-------------------------------------Docker--------------------------------------
-
-    # optional step : enable X-server to accept remoete clients
-        xhost +
-
-    # example command for how to run gui applications
-        docker run -it --net=host -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro   -v  $HOME/.Xauthority:$HOME/.Xauthority:ro  [image-name]
-
-    # links
-        https://www.digitalocean.com/community/tutorials/how-to-remotely-access-gui-applications-using-docker-and-caddy-on-ubuntu-18-04
+    # https://www.digitalocean.com/community/tutorials/how-to-remotely-access-gui-applications-using-docker-and-caddy-on-debian-9
+    # copy ssh key between client and server to avoid typing password everytime.
+                ssh-copy-id   -i   ~/.ssh/id_rsa.pub   user@host
 
 
+------------------------------------ssh--------------------------------------
+
+    ssh to host         :   ssh user@host
+
+    export              :   export DISPLAY=:0   (0 or whatever the remote display is numbered is)
+
+    run GUI application :   firefox
+
+    shortcut            :   ssh user@host "DISPLAY=:0 firefox"
+
+    shortcut(-X)        :   ssh -X user@host
+                            ssh -X user@host  firefox
+
+    shortcut(if -X fail):   ssh -Y user@host
+                            ssh -Y user@host  firefox
+
+
+create a script(r_firefox.sh) on remote machine. Add following line on it.
+
+    DISPLAY=:0
+
+    firefox
+
+you can ssh to the remote host and run this script to open firefox.
+
+
+-----------------------------------ssh Wayland Sessions---------------------------------------------
+
+set up all the environment variables used in modern sessions
+    (XDG_RUNTIME_DIR, GTK_MODULES, XDG_DATA_DIRS, XAUTHORITY, SESSION_MANAGER etc.)
+forward the application's console output to the journal, and run it
+
+    ssh tim
+    export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$UID/bus
+    systemd-run --user firefox
+
+
+-----------------------------------ssh Wayland Sessions---------------------------------------------
+
+get the values of the env variables         :echo $DISPLAY $XAUTHORITY
+
+In the ssh session, define those two values : XAUTHORITY=/run/user/1000/gdm/Xauthority DISPLAY=:0  firefox
+
+
+---------------------------------disable wayland and switch to X11 --------------------------------------
+In Wayland to support remote rendering, you need to define a rendering API.
+For thia you will have to put a remote rendering server on top of Wayland.
+
+To disable wayland modify /etc/gdm3/daemon.conf or /etc/gdm3/custom.conf to Permanently Disable Wayland
 
 ------------------------------------Putty--------------------------------------
 
@@ -41,9 +87,19 @@ Login inside the x-terminal
 
 To start a graphical application enter its name on the command line. For example to open firefox type firefox and press enter. This will open firefox on the remote computer and you will see GUI on your machine.
 
+------------------------------------Docker--------------------------------------
+
+    # optional step : enable X-server to accept remoete clients
+        xhost +
+
+    # example command for how to run gui applications
+        docker run -it --net=host -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro   -v  $HOME/.Xauthority:$HOME/.Xauthority:ro  [image-name]
+
+    # links
+        https://www.digitalocean.com/community/tutorials/how-to-remotely-access-gui-applications-using-docker-and-caddy-on-ubuntu-18-04
+
 
 -----------------------------------------------------------------------------------------------------------------
-
 
 
 

@@ -1,0 +1,29 @@
+
+==> sshfs(fuse, ssh, openssh-client)
+
+    # install pkg on remote machine             :   ssh server
+    # install pkg on local machine              :   fuse, openssh-client
+
+    # check of fuse is installed                :   lsmod | grep fuse
+                                                    grep -i fuse /lib/modules/$(uname -r)/modules.builtin
+
+    # check output                              :   modprobe fuse
+                                                    lsmod fuse
+    # create a group fuse if not exists         :
+    # change group of /dev/fuse to fuse group   :
+    # give  permission(root=rw, g=rw)           :   chmod 0660 /dev/fuse
+    # add current user to fuse group            :   usermod -aG fuse newuser
+    # install sshfs on client machine           :   sudo apt install sshfs
+    # create a local directory                  :   mkdir   /home/newuser/zdata
+    # mount remote directory                    :   sshfs   $user@$host:/remote_dir   /home/newuser/zdata
+    # unmount                                   :   fusermount -u  /home/newuser/code
+
+    # copy client ssh key to remote user account using command(sh-copy-id)
+    # create a script that will mount remote directory using sshfs.
+    # create a script that will run above script on login.
+
+    # to automatically mount use autofs
+
+
+
+    # https://www.tjansson.dk/2008/01/autofs-and-sshfs-the-perfect-couple/

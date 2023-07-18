@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Geany-Container
+Comment=Back up your data with one click
+Exec=/home/newuser/container-apps/geany/zz_geany.sh
+Icon=/home/newuser/container-apps/geany/geany.gif
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+
+#  copy this file to the desktop
+#  right click on this file and choose option "allow launching"
+#  copy the icon image to the directory /home/newuser/container-apps/geany/
+#  copy the script to the directory /home/newuser/container-apps/geany/

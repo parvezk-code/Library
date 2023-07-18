@@ -1,11 +1,51 @@
 
 
+==> Networks : bridge, host, none
+
+
+==> api to manage, start, stop docker containers
+        # Docker HTMl API
+        # Expose Docker API socket through TCP : https://docs.docker.com/engine/security/rootless/
+        # HTTP, Python docker api : https://docs.docker.com/engine/api/sdk/examples/
+
+==> Docker HTMl API
+        # curl  --unix-socket /run/user/1000/docker.sock
+                -H  "Content-Type: application/json"
+                -d  { json data needed for container cmd }
+                -X  POST http://localhost/v1.41/containers/create
+
+==> user issue with docker:
+        # root works great inside the container but is annoying to work with on the host system.
+        # your local user works great on your host system, but will quickly run into permission problems inside the container
+
+        # A normal container internal user(non root) having correct permissions works great inside the container but has permission problems on shared volumes of the host system. Local container users can't write there.
+
+        # Solution : replace the id of the container's internal-user with the id of our local host user.
+
+
+
+==> Volumes : https://docs.docker.com/storage/volumes/
+        # A container does not preserve changes to files inside it.
+        # Volumes are the preferred mechanism for persisting data.
+        # Volumes are created at /var/lib/docker/volumes
+
+==> Bind mounts
+        # They mount directory/file of a host machine to container
+
+
+==> Share the files/directories of a container with host OS
+        # Create a container for ssh server which shares its volume with other containers.
+        # This ssh-container will map its port to our host port.
+        # We can utilize the mapped host port to access the container files/directories.
+        # https://docs.docker.com/samples/running_ssh_service/ https://hub.docker.com/r/linuxserver/openssh-server
 
 
 ==> important links
 
-    # https://www.docker.com/blog/experimenting-with-rootless-docker/
+    # Cheat sheet : https://devhints.io/docker-compose  https://devhints.io/dockerfile
+    # Cheat sheet : https://www.docker.com/blog/experimenting-with-rootless-docker/
     # Expose Docker API socket through TCP : https://docs.docker.com/engine/security/rootless/
+    # Free container images : https://docs.linuxserver.io/general/docker-compose
     # https://katacoda.com/courses/docker/rootless
     # User mapping in rootless mode : https://www.docker.com/blog/experimenting-with-rootless-docker/
     # https://itnext.io/docker-running-in-rootless-mode-bdbcfc728b3a
