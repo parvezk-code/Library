@@ -1,9 +1,14 @@
 
 ==> mount a directory on remote machine to your system.
         # sshfs
-        # autofs + sshfs
+        # sshfs + autofs
+        # sshfs + fstab
         # samba
-        # nfs
+        # NFSv4, via /etc/idmap.conf
+        # NFS
+        # Kerberos
+        # gigolo software package
+        # x-systemd and _netdev
         # copy ssh key between client and server to avoid typing password everytime.
                 ssh-copy-id   -i   ~/.ssh/id_rsa.pub   user@host
         # end

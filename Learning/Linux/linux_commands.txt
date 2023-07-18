@@ -10,6 +10,7 @@ sudo apt update
 
 
 ssh-copy-id -i key usr@host         # copy SSH key to server. Avoids typing password for each login.
+mount fs from /etc/fstab            # sudo mount -a
 chmod 751  file_dir_name            # u=7, g=5, o=1, (r=4, w=2, x=1)
 chmod g=rx,o=rwx file_dir_name      # change permissions of file_dir
 chmod -R g=rx,o=rwx dir_name        # change permissions of dir and its contents recursivelly

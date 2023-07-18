@@ -1,0 +1,34 @@
+how to boot diskless clients.
+
+    # Setting up a remote diskless system
+    # Configuring diskless clients
+    # How to run linux diskless
+    # Diskless and dataless clients
+    # https://wiki.debian.org/PXEBootDisklessSystem
+    # https://help.ubuntu.com/community/DisklessUbuntuHowto
+    # https://github.com/topics/pxe-server
+
+
+
+-------------------- PXE Booting ------------------------------------------------------
+
+Server configuration:
+
+    # DHCP server : assign IP addresses to our diskless nodes.
+    # TFTP server : transfer the boot image (a requirement of all PXE option roms).
+    # A form of network storage (NFS or NBD) to export the Arch installation to the diskless node.
+    # TFTP server will be used to transfer the bootloader, kernel, and initramfs to the client.
+    # create a full Linux installation in a subdirectory on the server.
+
+How it works (simplified scheme):
+
+    # The computer bios/uefi sends ordinary dhcp request (DHCPDISCOVER)
+    # The dhcp server sends a response with the next-server option
+    # The computer sends DHCPREQUEST/DHCPINFORM request
+    # The dhcp server sends TFTP server address and the filename to upload
+    # The computer downloads this file from the tftp server. Its size is limited so, often, it's a bootloader like pxeinux
+    # pxelinux reads its own config and downloads Linux kernel using initramfs
+    # Linux kernel downloads squashfs with main rootfs
+    # switch_root to its squashfs
+
+------------------------------------------------------------------------------------------

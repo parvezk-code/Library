@@ -15,15 +15,15 @@
     # add current user to fuse group            :   usermod -aG fuse newuser
     # install sshfs on client machine           :   sudo apt install sshfs
     # create a local directory                  :   mkdir   /home/newuser/zdata
-    # mount remote directory                    :   sshfs   $user@$host:/remote_dir   /home/newuser/zdata
+    # mount remote directory                    :   sshfs $usr@$host:/dir /local_dir -o uid=1000 -o gid=1000 -o allow_other
     # unmount                                   :   fusermount -u  /home/newuser/code
 
     # copy client ssh key to remote user account using command(sh-copy-id)
     # create a script that will mount remote directory using sshfs.
     # create a script that will run above script on login.
 
-    # to automatically mount use autofs
+    # to automatically mount use autofs.
+    # Autofs uses root user. Check that root users  ssh identity keys setup. Check sshfs cmd works with root user.
 
-
-
+    # https://www.fudgemond.org/linux/sshfs.html
     # https://www.tjansson.dk/2008/01/autofs-and-sshfs-the-perfect-couple/

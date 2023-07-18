@@ -22,10 +22,13 @@ master map fuse :   [/home/newuser  map-file        gid=1000,uid=1000,--ghost,--
                                                     remote_gid, remote_uid
 
 map file nfs    :   [/zdata         -fstype=nfs                             host:dir]
-map file fuse   :   [/zdata         -fstype=fuse,rw,nodev,nonempty,         :sshfs\usr@host\:dir]
+map file fuse   :   [/zdata         -fstype=fuse,rw,nodev,nonempty,         :sshfs\#usr@host\:dir]
                                     noatime,allow_other,max_read=65536
 
 
+
+    # Autofs uses root user.
+    # autofs+sshfs : Check that root users  ssh identity keys setup. Check sshfs cmd works with root user.
 
 ==> links
     # https://www.man7.org/linux/man-pages/man5/autofs.5.html

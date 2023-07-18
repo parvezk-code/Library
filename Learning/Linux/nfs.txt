@@ -1,0 +1,48 @@
+
+Nfs:
+    # /etc/exports
+    # need sudo power to access nfs dir on local machine
+
+
+
+# /etc/exports on server:
+    # format                    :   /remote_dir         IP-1(options)    client-name(options)   NW/mask(op)
+    # Example1                  :   /remote_dir         client_ip(rw,sync)
+    # Example2                  :   /home               client_ip(rw,no_all_squash)
+    # all_squash                :   user maping (all users -->  anonymous)
+    # no_all_squash             :   Maps remote user and group IDs to similar IDs on the client
+    # root_squash               :   (root -->  anonymous)   (other -->  other)
+    # no_root_squash            :   (root -->  root)        (other -->  other)
+
+
+# install on server mc          :   apt install nfs-kernel-server
+# restart nfs server            :   sudo systemctl restart nfs-kernel-server
+# auto start service            :   sudo systemctl enable nfs-server
+# create remote dir             :   mkdir /remote_dir -p
+# change owner(nobody:nogroup)  :   sudo chown nobody:nogroup /remote_dir
+# allow nfs traffic in firewall :
+# add share entry to file       :   /etc/exports
+# export shared local_dir       :   sudo exportfs -arv
+
+# install on local mc           :   apt install nfs-common
+# create local dir(sudo         :   sudo    mkdir   /local_dir   -p
+# mount nfs dir                 :   sudo    mount   host_ip:/remote_dir     /local_dir
+                                :   sudo    mount   -t nfs4 host_ip:/remote_dir     /local_dir
+# check mounted dir             :   df -h
+# unmount remote dir            :   sudo umount /local_dir
+
+
+
+# mount nfs dir at boot time
+    host_ip:/remote_dir1    /local_dir1    nfs      auto,nofail,noatime,nolock,intr,tcp,actimeo=1800    0   0
+    host_ip:/remote_dir2    /local_dir2    nfs4     auto,nofail,noatime,nolock,intr,tcp,actimeo=1800    0   0
+
+
+==> links
+    # https://www.dummies.com/article/technology/computers/operating-systems/linux/how-to-share-files-with-nfs-on-linux-systems-255851/
+
+    # https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04
+
+
+
+
