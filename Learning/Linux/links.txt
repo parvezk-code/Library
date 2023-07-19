@@ -1,2 +1,4 @@
 
-Administrators help - https://linuxways.net/category/ubuntu/
+Administrators -
+    # https://linuxways.net/category/ubuntu/
+    # http://perso.citi-lab.fr/sdalu/sysadmin/

@@ -16,6 +16,9 @@
 # Guitar git GUI AppImage        : https://github.com/soramimi/Guitar/releases/
 # packet tracer n/w emulator     :
 
+
+GNOME Boxes         :   access virtual machines
+
 vi                  :   create encripted file
 
 gimp                :   image editor
@@ -41,6 +44,8 @@ disks               : copy complete file system to other usb derive by creating 
 test desk           : recover deleted data from filesystem
 
 PXE Booting         :
+
+Clonezilla          :
 
 Cisco Packet Tracer : network simulator tool
 

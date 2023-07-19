@@ -1,0 +1,22 @@
+
+==> Sections of /etc/dhcp/dhcpd.conf file
+
+    # sample file at /usr/share/doc/dhcp-[version]/dhcpd.conf.sample.
+
+    # subnet(netId, mask) :
+        ->  subnet-declarationone is done for each subnet.
+        ->  range   : range of IP addr to assign dynamically
+        ->  options : domain-name-servers, broadcast-address, domain-name, routers(default gateway)
+
+    # host(name) :
+        ->  host declarations for static IP address
+        ->  hardware ethernet : mac address of that host
+        ->  fixed-address     : static ip address
+
+    # shared-network :
+        ->  for all the subnets that share the same physical network
+        ->  subnet(netId, mask)
+
+    # class declaration for clients
+
+        # https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-disklesssystems

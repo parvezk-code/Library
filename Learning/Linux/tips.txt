@@ -1,0 +1,12 @@
+
+tftp:
+    # /var/lib/tftpboot :   tft root directory
+    #
+
+
+
+
+
+
+
+

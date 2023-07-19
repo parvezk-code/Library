@@ -1,21 +1,192 @@
 how to boot diskless clients.
 
+    # diskless, Ubuntu on a cluster, ubuntu clustering
+    # over view of the process : https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.upgrade.doc/GUID-44535B01-38CF-4E6D-862A-95EF5ACA3F03.html
+    # https://www.xmodulo.com/diskless-boot-linux-machine.html
+    # https://help.ubuntu.com/community/DisklessUbuntuHowto
+    # https://wiki.ubuntu.com/EasyUbuntuClustering/UbuntuKerrighedClusterGuide
+    # https://pages.cs.wisc.edu/~govindan/steps
+    # https://wiki.debian.org/PXEBootDisklessSystem
+    # https://wiki.debian.org/PXEBootInstall
+    # https://github.com/Technohacker/central-diskless-boot
+    # https://xunnanxu.github.io/2020/11/28/PXE-Boot-Diskless-Raspberry-Pi-4-With-Ubuntu-Ubiquiti-and-Synology-2-Config-TFTP-and-NFS-mounts/
+    # https://eelvex.net/post/diskless-cluster-on-debian-installation-log/
+
+
+
+    # https://github.com/topics/pxe-server
+    # http://perso.citi-lab.fr/sdalu/sysadmin/dnsmasq/
+    # https://nodisk.org/
+
+
+    # DRBL : provides a diskless or systemless environment for client machines.
+    # ipxe : https://ipxe.org/
     # Setting up a remote diskless system
     # Configuring diskless clients
     # How to run linux diskless
     # Diskless and dataless clients
-    # https://wiki.debian.org/PXEBootDisklessSystem
-    # https://help.ubuntu.com/community/DisklessUbuntuHowto
-    # https://github.com/topics/pxe-server
+
+----------------------------------------  Steps  -----------------------------------------
+
+==> flow : pxelinux.0 -> pxelinux.cfg/default -> initrd.img -> vmlinuz-kernel-version -->(mount fs on /)
+
+steps for diskless booting:
+    # install/clone linux with softwares in a directory. This will be used by diskless client.
+    # configure NFS to share the directory created in above step containing installed linux(root directory).
+    # configure tftp service to serve files for booting diskless clients.
+        (pxelinux.cfg/default, initrd.img, vmlinuz-kernel-version)
+    # configure the DHCP server to server (pxelinux.0, ip-address, tftp-server-address)
+    # configure the exported file system  (/etc/fstab, client-network interface, initrd.img, file permissions)
+    # ubuntu :  dhcp3-server, tftpd-hpa, syslinux, nfs-kernel-server, initramfs-tools
+    # redhat :  dhcp, tftp-server, syslinux, xinetd, dracut-network
+
+--------------------------------------- important files --------------------------------------
+
+--> files : pxelinux.0, pxelinux.cfg/default, initrd.img, vmlinuz-kernel-version
+
+pxelinux.0
+    # first file to be executed of diskless booting
+    # Syslinux package conatins boot loaders like pxelinux.0 and others.
+    # location : /usr/lib/syslinux/pxelinux.0
+
+vmlinuz-kernel-version
+    # is a bootable Linux kernel image
+    # debian : location /boot/vmlinuz-6.1.0-10-amd64
+
+initrd.img(re-created with some changes)
+    # boot loader uses it to load/mount a RAM disk as root fs. Afterwards, actual fs is mounted as root fs.
+    # Ubuntu :
+        --> It dont have network boot support. Thus you need to modify initrd.img file.
+        --> modify /etc/initramfs-tools/initramfs.conf as follows
+            (BOOT=nfs, MODULES=netboot)
+        --> sudo mkinitramfs -o /path_for_new_initrd/initrd.img
+
+    # debian (https://wiki.debian.org/Initrd)
+        --> usually  /boot/initrd.img-kversion. /initrd.img being a symbolic link
+
+
+pxelinux.cfg/default
+    # shows --> vmlinuz file, initrd.img file, nfsroot dir contining linux file system.
+
+    LABEL linux
+    KERNEL   vmlinuz-kernel-version   #kernel-image-file-name
+    APPEND   root=/dev/nfs    initrd=initrd.img   nfsroot=nfs-server-ip:/client-linux   ip=dhcp   rw
+
+    # these 2 options can also be added to avove line -->   boot=nfs  netboot=nfs
+
+/etc/default/tftpd-hpa
+    # Add the following lines
+        RUN_DAEMON="yes"
+        OPTIONS="-l -s /var/lib/tftpboot/"
+        TFTP_USERNAME="tftp"
+        TFTP_DIRECTORY="/var/lib/tftpboot/"
+        TFTP_ADDRESS="0.0.0.0:69"
+
+/client-linux/etc/fstab (nfs share)
+    # make sure that for the client, the nfs gets mounted at mount point /.
+    # add following lines
+        /dev/nfs    /    nfs    defaults    1   1
+    # remove swap entry from fstab
+    # Comment out the portion that does remount as read-only in /nfsroot/etc/init.d/voyage-util
+
+modify /client-linux/etc/network/interfaces:
+    # so that the network interface for the client is set as manual not dhcp not auto
+            #auto eth0
+            #iface eth0 inet dhcp
+            iface eth0 inet manual
+    # If the above step is not done, the nw-interface will try to get reconfigured after boot and will disconnect NFS.
+
+Modify /etc/rcS.d/S12voyage-sync script
+    # to do ntp datetime update on boot
+        case $1 in
+            'start')
+                    if [ "$VOYAGE_SAVE_DATE_TIME" = "YES" ] ; then
+                            restore_system_time
+                    fi
+                    ntpdate `findserverip`
+
+permissions
+    # sudo chmod -R 777 /var/lib/tftpboot
+    # After creating the directory /client-linux and give 777 permissions for that directory.
+
+packages needed
+    # ubuntu : sudo apt-get install dhcp3-server tftpd-hpa syslinux nfs-kernel-server initramfs-tools
 
 
 
--------------------- PXE Booting ------------------------------------------------------
+------------------------------------  diskless Booting  new  for redhat -------------------------------------------
+
+
+install servers:
+    # install NFS, tftp, DHCP
+    # Configure firewall rules to allow nfs, tftp and dhcp traffic.
+    # make nfs, dhcp, tftp start at boot time.
+        --> systemctl enable --now tftp  (systemctl enable --now tftpd-hpa)
+        --> same for dhcp and nfs(nfs-server.service) service
+
+
+create following directories:
+    # /client-linux                 :   install/clone linux in this directory. This will be used by diskless client.
+    # /client-linux                 :   initramfs-kernel-version.img
+
+    # /var/lib/tftpboot/biosPXE     :   only used for bios based systems
+                                        pxelinux.0, "./pxelinux.cfg/default",
+                                        vmlinuz-kernel-version, initramfs-kernel-version.img,
+                                        ldlinux.c32
+
+
+system configuration:
+    ==> configure nfs to share /client-linux directory
+    ==> Add following lines to file /etc/dhcp/dhcpd.conf
+
+        allow booting;
+        allow bootp;
+
+        class "pxeclients" {
+            match if substring(option vendor-class-identifier, 0, 9) = "PXEClient";
+            next-server tftp-server-ip;
+
+            if option architecture-type = 00:07 {
+                filename "biosPXE/BOOTX64.EFI";     # this file is located inside /var/lib/tftpboot dir
+            } else {
+                filename "uefiPXE/pxelinux.0";      # this file is located inside /var/lib/tftpboot dir
+            }
+        }
+
+    ==>  /var/lib/tftpboot/biosPXE/pxelinux.cfg/default
+
+            LABEL linux
+            KERNEL   vmlinuz-XXXX
+            APPEND   root=/dev/nfs    initrd=initrd.img-XXXX     nfsroot=nfs-server-ip:/client-linux   ip=dhcp   rw
+
+
+    ==>  /etc/default/tftpd-hpa
+            TFTP_USERNAME="tftp"
+            TFTP_DIRECTORY="/srv/tftp"
+            TFTP_ADDRESS="0.0.0.0:69"
+            TFTP_OPTIONS="--secure"
+
+    ==> restart nfs, dhcp, nfs services
+
+-------------------------------------------------------------------------------------------------------
+
+following files are needed for pxe installation (redhat)
+
+    # /var/lib/tftpboot/uefiPXE     :   only used for UEFI based systems
+                                        BOOTX64.EFI, grub.efi, grub.cfg
+
+    # /var/lib/tftpboot/debian-img  :   only used for UEFI based systems
+                                        vmlinuz, initrd.img
+
+------------------------------------ diskless Booting old work -------------------------------------------
+
+for UEFI :
+            #  https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/performing_an_advanced_rhel_8_installation/index#configuring-a-tftp-server-for-uefi-based-clients_preparing-for-a-network-install
 
 Server configuration:
 
     # DHCP server : assign IP addresses to our diskless nodes.
-    # TFTP server : transfer the boot image (a requirement of all PXE option roms).
+    # TFTP server : provides boot(kernel) image and initrd. (a requirement of all PXE option roms).
     # A form of network storage (NFS or NBD) to export the Arch installation to the diskless node.
     # TFTP server will be used to transfer the bootloader, kernel, and initramfs to the client.
     # create a full Linux installation in a subdirectory on the server.
@@ -31,4 +202,81 @@ How it works (simplified scheme):
     # Linux kernel downloads squashfs with main rootfs
     # switch_root to its squashfs
 
+==> install linux:
+    # /client_linux_nfs             :  create this directory and clone/install linux in this directory.
+    # NFS share                     :  share /client_linux_nfs directory through NFS
+    # initramfs-kernel-version.img  :  need to be created  (set 644 permission)
+    # NFS share                     :  copy initramfs-kernel-version.img to /client_linux_nfs
+
+    # restart nfs                   :  systemctl restart nfs-server.service
+    # Configure firewall rules to allow nfs traffic.
+
+
+==> tftp for BIOS based system : ( contents of /var/lib/tftpboot)
+
+    # biosPXE                       :  create this directory.
+    # /var/lib/tftpboot/biosPXE     :  pxelinux.0, ldlinux.c32, pxelinux.cfg, vmlinuz-kernel-version
+                                       initramfs-kernel-version.img, "pxelinux.cfg/default"
+
+    # pxelinux.0, ldlinux.c32       :  copy these files from /usr/share/syslinux directory
+    # pxelinux.cfg                  :  create this directory
+    # vmlinuz-kernel-version        :  copy this file from /client_linux_nfs/boot/vmlinuz-kernel-version
+    # initramfs-kernel-version.img  :  copy this file from /client_linux_nfs
+    # pxelinux.cfg/default          :  file contain configuration
+
+    # Configure firewall rules to allow tftp traffic.
+    # systemctl enable --now tftp
+
+
+==> tftp for UEFI based system : ( contents of /var/lib/tftpboot)
+
+    # uefiPXE, debian-img           :  create these 2 directory.
+    # /var/lib/tftpboot/uefiPXE     :  BOOTX64.EFI, grub.efi, grub.cfg
+    # /var/lib/tftpboot/debian-img  :  vmlinuz, initrd.img
+
+    # BOOTX64.EFI                   :  copy these files from the linux iso or linux installation.
+    # grub.efi                      :  copy these files from the linux iso file.
+    # grub.cfg                      :  create this file and add appropriate entries.
+    # vmlinuz, initrd.img           :  copy this file from appropriate dir.
+
+    # Configure firewall rules to allow tftp traffic.
+    # systemctl enable --now tftp
+
+==> dhcp :
+    # Add following lines to file /etc/dhcp/dhcpd.conf
+
+        allow booting;
+        allow bootp;
+
+        class "pxeclients" {
+            match if substring(option vendor-class-identifier, 0, 9) = "PXEClient";
+            next-server tftp-server-ip;
+
+            if option architecture-type = 00:07 {
+                filename "biosPXE/BOOTX64.EFI";                 # this file is located inside /var/lib/tftpboot dir
+            } else {
+                filename "uefiPXE/pxelinux.0";                  # this file is located inside /var/lib/tftpboot dir
+            }
+        }
+
+    # Configure firewall rules to allow dhcp traffic.
+
 ------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
