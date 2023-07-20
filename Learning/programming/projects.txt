@@ -1,0 +1,152 @@
+
+# gui appllication(appimages) for
+    --> creating/editing/deletion of user account in linux
+    --> edit nfs server config files
+    --> edit autofs server config files
+    --> edit tftp server config files
+    --> edit dhcp server config files
+    --> edit sshfs server config files
+    --> edit samba server config files
+    --> to display filesystem, memory and storage details.
+    --> display process information.
+    --> diplay partition details
+    --> display output of various commands in linux.
+    --> creating linux packages.
+    --> create, edit, display college information to be used by AICTE web portal.
+    # web appllication for above applications
+
+# Linux
+    --> create a csv file to manage config files of various servers in linux.
+    --> implementing pxe boot diskless on various linux destros
+    --> implementing docker on various linux destros
+    --> create docker images for various applications in linux
+    --> implementing virtual machines on various linux systems.
+    --> steps to create appimages
+    --> implment nix os.
+    --> describe and modify booting process of linux
+    --> linux servers :https://docs.linuxserver.io/
+
+
+respberry-pi
+    --> configuring respberry-pi.
+    --> implementing various servres on respberry-pi.
+
+# Python and opencv
+
+# implement various cms systems ex, WordPress, joomla.
+
+# create google websites
+
+
+
+
+-------------------------- old work -----------------------------------------
+
+
+Python projects
+    Creating vlc player
+    Creating online quiz database
+    Creating google forms like app  - example sample templates of google forms
+    Creating calculator
+    Creating desktop applications
+    Creating text editor
+    Chatting application over network
+    GUI to download youtube videos
+    Create web browser
+    Create zoom application
+    Django framework
+    Cms of python
+
+Project topics
+    Store Management system. Adding Items, issuing items to employees.
+    Employee management system. Adding/Transfer/retirement employees.
+    Ticket Booking system. (bus, railway)
+    Airline management portal
+    School, college, Hospital Website.
+    RTO-license. Add/edit/delete/search Licence entry.
+    Passport. Add/edit/delete/search Passport entry.
+    Product Sales(Amazon, flipkart). Add/edit/delete/search Product entry.
+    Water/ irrigation department.
+    Voter ID. Add/edit/delete/search Voter entry.
+    Pan Card. Add/edit/delete/search Pan Card entry.
+    Aadhar Card. Add/edit/delete/search Aadhar Card entry.
+    10th/12th Marksheet management system.
+    Online blood bank management system. Search for blood at near by location.
+    Police accident record management.
+    Student record management system in college.
+    Student record management system in School.
+    Police criminal record management system. Adding/Deleting criminal.
+    Courier management system. Add/update/delete/search/Track shipment
+    Matrimony website.
+    Fruit shop management. (add/remove fruits, add customer/supplier).
+    Implementation of cryptographic algorithm
+    Online banking system ex saving bank account management.
+    Online banking employee management system.
+    Hospital Administration System.
+    Website to view results and print marksheets.
+    Prison management system
+    online delivery tracking system.
+    e-Post Office System
+    online Library Management System
+    Online graphical implementation of various algorithms like encription, scheduling, routing, Image stenography algorithms etc..
+
+    Home Automation System
+    Online shopping system
+    Software bidding portal
+    Telephone billing system
+    Web based Voting Machine
+    online job-portal
+    Employee database management system.
+    Rto vehicle management system
+    Student Attendence management system
+    Online reservation system
+    Invertary management system
+    Student information System
+
+    Online dynamic Exam paper setting and print of question paper. There will be list of questions each of different marks. Dynamic selection of question paper. Each question will be tough, easy, medium.
+
+    Online objective exam paper setting.
+    Online objective exam paper checking.
+    online portal for news update
+    online movies review portal
+    online sale and purchase of old items
+    Train/Bus/airplane tracking system.
+
+    Online train tracking system. This will tell you if a train can be taken to a particular track. To avoid accidents. Adding of station/tracks. Adding/removing trains to tracks.
+
+    Online platform management system. Allocation of platforms to trains.
+
+    online market management system. Shop name, Address, shop type. Adding, Removing, Relocating a shop. Upload photo of shop. Searching of shop.
+
+    Online file server management system. User will be able to view only those files/folders which he has be allowed to view. User will be able to upload to folders which he has the write access. Adding/removing user/folders/files.
+
+    Online Test Taking System. Students are allowed to view results. Teachers are allowed to submit questions, schedule exams and can view student’s results. The principal is allowed to approve exam dates.
+
+    Playing cards game online.
+
+    Prison management system. Adding/removing/shifting prisoner to empty room. List of prisoners of a particular room.
+
+    Recipe Management System. Adding/removing recipes.
+    e-Post Office System
+    online Library Management System
+    Home Automation System
+    Telephone billing system. Adding bill and printing bills. Adding/removing a house.
+    Student Attendence management system.
+    Invertary management system
+    Sliding window protocol GUI
+    File compression
+    Online Pharmacy Management. Adding/removing medicines. Checking stocks.
+
+    Online telephone directory. User name, address(city, location_name) , telephone, profession, college name. search user based on address, profession and college name.
+
+    Multi-Tab Browser
+    Chat Server
+    Sudoku
+    online clock app just like clock app of android phone.
+    Online clinic appointment
+    CMS Content management systems like sports news pages like ESPNcricinfo
+    Online notice board.
+
+
+
+

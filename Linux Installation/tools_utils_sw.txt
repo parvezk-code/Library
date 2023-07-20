@@ -15,6 +15,7 @@
 # Microsoft OneNote   Linux      : https://github.com/patrikx3/onenote/releases
 # Guitar git GUI AppImage        : https://github.com/soramimi/Guitar/releases/
 # packet tracer n/w emulator     :
+# Anytype                        : https://download.anytype.io/
 
 
 GNOME Boxes         :   access virtual machines
@@ -26,6 +27,8 @@ gimp                :   image editor
 disks               :   gnome partition manager
 
 libre-office        :   office utility
+
+Anytype             :   project management, storing docs, notes, managing tasks, collections of books/articles/websites
 
 vlc                 :   mp3-4 palyer
 

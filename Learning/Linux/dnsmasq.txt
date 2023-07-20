@@ -1,0 +1,11 @@
+
+    dnsmasq provides a DNS server, a DHCP server with support for DHCPv6 and PXE, and a TFTP server
+
+        # pxe diskless : https://ruoxi.wang/2020/04/04/a-step-by-step-guide-to-building-a-diskless-linux-cluster/
+        # https://wiki.archlinux.org/title/Dnsmasq
+        # https://wiki.debian.org/dnsmasq
+        # https://web.mst.edu/~vojtat/pegasus/administration/server.htm
+
+
+/etc/dnsmasq.conf :
+

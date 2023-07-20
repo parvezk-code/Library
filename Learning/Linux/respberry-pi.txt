@@ -1,0 +1,4 @@
+
+
+
+ # https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#network-booting

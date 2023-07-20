@@ -2,3 +2,6 @@
 Administrators -
     # https://linuxways.net/category/ubuntu/
     # http://perso.citi-lab.fr/sdalu/sysadmin/
+
+linux servers
+    # https://docs.linuxserver.io/
