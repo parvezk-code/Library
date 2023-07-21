@@ -1,0 +1,30 @@
+
+ipxe :
+    --> https://ipxe.org/docs
+    --> create a ipxe usb and boot from it.
+    --> It replace the existing PXE ROM on your network card.
+    --> It enhanced existing PXE implementation with additional features.
+    --> It allow boot from : http, wifi, internet, fiber channel, iSCSI etc.
+    --> UEFI HTTP Boot client to chainload iPXE from an HTTP server. https://ipxe.org/appnote/uefihttp
+
+Working :
+    --> on sys boot DHCP sends IP-addr and location of ipxe script(http://server-ip/install.ipxe)
+    --> this script loads the kernal and initrd from the server.
+
+----------------------------------------- booting ubuntu live ------------------------------------------------
+contents of ipxe script(boot.ipxe)
+
+    #!ipxe
+
+    set server_ip 192.168.100.1
+    set nfs_path /srv/nfs/ubuntu-live
+    kernel nfs://${server_ip}${nfs_path}/casper/vmlinuz.efi || read void
+    initrd nfs://${server_ip}${nfs_path}/casper/initrd.lz || read void
+    imgargs vmlinuz.efi initrd=initrd.lz root=/dev/nfs boot=casper netboot=nfs nfsroot=${server_ip}:${nfs_path} ip=dhcp splash quiet -- || read void
+    boot || read void
+
+-----------------------------------------            ------------------------------------------------
+
+
+
+

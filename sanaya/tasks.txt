@@ -1,0 +1,15 @@
+
+# create git files/mcq/tick_mark in latex for
+    --> maths
+
+    --> english, to learn english use contents from
+        : computer
+        : physics
+        : essay
+        : stories
+        : description of contents, example house, place, school, teachers, friends, family, toys.
+    --> vocabulary, spelling in english
+
+    --> arabic :  vocabulary, nouns, verbs
+
+# print latex pdf in books from a printing press

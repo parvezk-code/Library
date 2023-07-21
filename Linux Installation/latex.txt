@@ -1,0 +1,23 @@
+
+
+Front Ends(GUI) : LYX(WYSIWYM), Texstudio(texmaker), TeXworks, kile, GNOME LaTeX zim(latex plugin), Papeeria(online)
+
+apt install texlive-bibtex-extra
+
+sudo apt update
+apt install kile
+
+sudo apt update
+sudo apt install lyx
+sudo apt remove lyx, sudo apt autoremove lyx, sudo apt purge lyx
+
+--> http://www.latextemplates.com/
+
+--> https://guides.nyu.edu/LaTeX/templates
+
+--> https://mally.stanford.edu/~sr/computing/latex-example.html
+
+--> https://guides.nyu.edu/LaTeX/sample-document
+
+--> https://www.ee.iitb.ac.in/~trivedi/LatexHelp/latexsample.htm
+

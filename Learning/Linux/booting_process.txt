@@ -1,0 +1,49 @@
+
+ubuntu : commands to boot ubuntu from grub shell
+
+# summary
+    --> set root=(hd0,3)
+    --> linux /boot/vmlinuz-4.2.0-16-generic root=/dev/sdb3
+    --> initrd /boot/initrd.img-4.2.0-16-generic
+    --> boot
+
+Description of above steps is as follows:
+
+# locate your root partitions
+# hd0=/dev/sda, hd1=/dev/sdb
+# partitions are numbered -sda1, sda2, sdb1, sdb2 etc..
+
+ls
+
+# set you root partition, example 3nd partition of 2nd hdd (sdb3)
+set root='(hd1,3)'
+
+# load kernel : [kernel_name]   [kernel_file_name]  [kernel_parameter]
+# press tab button after writing /boot/vmlin and GRUB will automatically complete following line for you.
+# verify the root partition in the following command.
+linux /boot/vmlinuz-XX-generic root=/dev/sdb3
+
+# call initrd (initial ram disk) to help kernel to boot.
+# press tab button after writing /boot/init and GRUB will automatically complete the long name for you.
+initrd /boot/initrd.img-6.2.XXX
+
+# Execute all three commands. In another word, to boot the OS.
+boot
+
+
+----------------------------------------------------------------------------------------------------
+
+run grub from efi shell.
+
+efi boot file
+    --> /boot/efi/EFI/Boot/bootx64.efi
+    --> this is copied from  /boot/efi/EFI/debian/grubx64.efi
+
+# This will temporarily add a linux boot option in UEFI for the next boot
+# command to add efi boot entry for grub.
+    bcfg   boot  add   0   /boot/efi/EFI/debian/grubx64.efi    "GRUB"
+
+
+https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface#Obtaining_UEFI_Shell
+
+

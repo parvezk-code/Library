@@ -1,0 +1,29 @@
+
+ help : https://en.wikibooks.org/wiki/LaTeX
+
+ Different Levels of Heading
+    --> \section{Heading - Level 1}
+    --> \subsection{Heading - Level 2}
+    --> \subsubsection{Heading - Level 3}
+    --> \paragraph{Heading - Level 4}
+    --> \subparagraph{Heading - Level 5}
+
+latex directory structure
+
+bibtex/bib
+bibtex/bst
+fonts/afm
+fonts/enc
+fonts/map
+fonts/opentype
+fonts/pfb
+fonts/source
+fonts/tfm
+fonts/type1
+fonts/vf
+tex/generic
+tex/latex
+tex/lualatex
+tex/luatex
+tex/plain
+tex/xelatex
