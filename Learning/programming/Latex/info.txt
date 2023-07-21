@@ -3,6 +3,18 @@
     # https://en.wikibooks.org/wiki/LaTeX
     # https://typeset.io/resources/learn-latex-beginners-step-by-step-guide/
 
+using external files
+   # import(subimport):  allows you to have seperate directories each with its tex files and images
+   # input :
+   # include
+
+images :
+   # \usepackage{graphicx}
+   # \includegraphics{./images/apple.jpeg}
+   # \graphicspath{{images/}
+   # https://www.overleaf.com/learn/latex/Inserting_Images
+   # \begin{figure}[h]  .........    \end{figure}
+
 management of large file_LaTeX_projects
    # https://www.overleaf.com/learn/latex/Management_in_a_large_project
 
