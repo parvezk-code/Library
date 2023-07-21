@@ -1,4 +1,10 @@
 
+# give sanaya small taske to learn
+    # sending mail
+    # using google drive
+    # using google documents
+    # installing OS
+
 # create git files/mcq/tick_mark in latex for
     --> maths
 
