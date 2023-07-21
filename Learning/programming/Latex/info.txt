@@ -1,5 +1,15 @@
 
- help : https://en.wikibooks.org/wiki/LaTeX
+ help :
+    # https://en.wikibooks.org/wiki/LaTeX
+    # https://typeset.io/resources/learn-latex-beginners-step-by-step-guide/
+
+management of large file_LaTeX_projects
+   # https://www.overleaf.com/learn/latex/Management_in_a_large_project
+
+creating a project with multiple independent latex files
+   --> https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects
+   --> packages : \import{dir}{file}, standalone, subfiles, chapterbib
+   --> \usepackage[subpreambles=true]{standalone}
 
  Different Levels of Heading
     --> \section{Heading - Level 1}
