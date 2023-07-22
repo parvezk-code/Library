@@ -1,13 +1,23 @@
 
+in linux first partition(UEFI) is mounted at /boot/efi
 
-==> when installing linux create a FAT partition of 512MB and copy grubx64.efi file to it.
-==> enter efi set up ang open EFI shell
-==> map  # cmd to list partitions, fs0:, fs1:, fs2: can be the partitopm where we have copied grub file.
-==> type fs2: and press enter.
-==> ls  # check if grub-file is there
-==> execute grub file
+-------------------------------------------------------------------------------------------------
 
-ubuntu : commands to boot ubuntu from grub shell
+
+run grub from efi shell.
+
+efi boot file
+    --> /boot/efi/EFI/Boot/bootx64.efi
+    --> this is copied from  /boot/efi/EFI/debian/grubx64.efi
+
+# This will temporarily add a linux boot option in UEFI for the next boot
+# command to add efi boot entry for grub.
+    bcfg   boot  add   0   /boot/efi/EFI/debian/grubx64.efi    "GRUB"
+
+
+https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface#Obtaining_UEFI_Shell
+
+----------------------------------------------------------------------------------------------------
 
 # summary
     --> ls  # list partions
@@ -39,20 +49,16 @@ initrd /boot/initrd.img-6.2.XXX
 # Execute all three commands. In another word, to boot the OS.
 boot
 
-
 ----------------------------------------------------------------------------------------------------
 
-run grub from efi shell.
+--> to boot from pen-drive without efi partition
+    => there should be separate /boot partition with FAT file-system not ext4.
+    => open uefi shell
+    => run map command to list all partitions(fs0, fs1, fs2 etc..)
+    => locate the boot partition (say fs2)
+    => fs2: (move to /boot partition)
+    => ls   # check if grub-file is there
+    => cd to dir /efi/EFI/debian  (for ubuntu /boot/efi/)
+    => run grubx64.efi
 
-efi boot file
-    --> /boot/efi/EFI/Boot/bootx64.efi
-    --> this is copied from  /boot/efi/EFI/debian/grubx64.efi
-
-# This will temporarily add a linux boot option in UEFI for the next boot
-# command to add efi boot entry for grub.
-    bcfg   boot  add   0   /boot/efi/EFI/debian/grubx64.efi    "GRUB"
-
-
-https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface#Obtaining_UEFI_Shell
-
-
+----------------------------------------------------------------------------------------------------

@@ -1,15 +1,8 @@
 
 
-    # make linux portable : install linux in pen-drive.
-
-    # avoid reinstallation:
-        --> install linux once in pen-drive.
-        --> use gnome disks utility to create image of the pen-drive.
-        --> copy these images into another pen-drive
-
-    # avoid software installation
-        --> use dockers
-        --> use appimage software if possible
+tftp:
+    # /var/lib/tftpboot :   tft root directory
+    #
 
 
 
