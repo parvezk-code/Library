@@ -1,10 +1,19 @@
 
+
+==> when installing linux create a FAT partition of 512MB and copy grubx64.efi file to it.
+==> enter efi set up ang open EFI shell
+==> map  # cmd to list partitions, fs0:, fs1:, fs2: can be the partitopm where we have copied grub file.
+==> type fs2: and press enter.
+==> ls  # check if grub-file is there
+==> execute grub file
+
 ubuntu : commands to boot ubuntu from grub shell
 
 # summary
+    --> ls  # list partions
     --> set root=(hd0,3)
-    --> linux /boot/vmlinuz-4.2.0-16-generic root=/dev/sdb3
-    --> initrd /boot/initrd.img-4.2.0-16-generic
+    --> linux   /boot/vmlinuz-4.2.0-16-generic   root=/dev/sda3
+    --> initrd  /boot/initrd.img-4.2.0-16-generic
     --> boot
 
 Description of above steps is as follows:
