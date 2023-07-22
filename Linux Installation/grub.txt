@@ -1,11 +1,18 @@
 
-# ubuntu install grub
-    --> locate the drive on which to install grub (sda, sdb, sdc etc..)
-    --> let
-            => drive  = sdb
-            => rootfs = sdb2
-            => efi    = sdb1
-    --> sudo mount /dev/sdb2 /mnt
-    --> sudo mount /dev/sdb1 /mnt/boot/efi
-    --> sudo grub-install --target=x86_64-efi --efi-directory=/mnt/boot/efi  --bootloader-id=GRUB  --removable
-    --> sudo update-grub
+# ubuntu install grub on local machine
+
+        --> sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi
+        --> sudo update-grub
+
+# ubuntu install grub on usb-drive
+        --> locate the drive on which to install grub (sda, sdb, sdc etc..)
+        --> let
+                => drive  = sdb
+                => rootfs = sdb2
+                => efi    = sdb1
+
+        --> sudo mount /dev/sdb2 /mnt
+        --> sudo mount /dev/sdb1 /mnt/boot/efi
+
+        --> sudo grub-install --target=x86_64-efi --efi-directory=/mnt/boot/efi  --removable
+        --> sudo update-grub
