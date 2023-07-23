@@ -1,5 +1,7 @@
 
 in linux first partition(UEFI) is mounted at /boot/efi
+efi partition has FAT.
+UEFI can only read FAT partitions.
 
 -------------------------------------------------------------------------------------------------
 
