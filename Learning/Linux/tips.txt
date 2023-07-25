@@ -4,24 +4,24 @@ in linux first partition(UEFI) is mounted at /boot/efi
 
 # avoid reinstallation:
     --> install linux once in pen-drive.
-    --> separate /boot partion(FAT) of 200MB.
+    --> EFI partition of 200MB.
     --> UEFI can only read FAT partition
     --> use gnome disks utility to create image of the pen-drive(partitions).
     --> copy these images into another pen-drive
-    --> check this : copy /boot/efi to the destination partion on pen-drive. Dont copy /boot
 
 # using pen-drive with portable linux
-    => pendrive should have separate /boot partion(FAT) of 200MB.
+    => pendrive should have separate partion(FAT) of 200MB containing boot-loader files.
     => UEFI can only read FAT partition
     => to boot from pen-drive without efi partition
         --> open uefi shell
         --> run map command to list all partitions(fs0, fs1, fs2 etc..)
-        --> locate the /boot partition (say fs2)
+        --> locate the partition containing boot-loader files (say fs2)
         --> fs2: (move to /boot partition)
         --> cd to dir /efi/EFI/debian  (for ubuntu /boot/)
         --> run grubx64.efi
     => boot failure with grub shell
-        --> ls  # list partions
+        --> ls              # list partions
+        --> ls (hd0,3)/     # check if it contains /boot directory
         --> set root=(hd0,3)
         --> linux   /boot/vmlinuz-4.2.0-16-generic   root=/dev/sda3
         --> initrd  /boot/initrd.img-4.2.0-16-generic

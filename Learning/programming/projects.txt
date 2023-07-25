@@ -16,6 +16,8 @@
     # web appllication for above applications
 
 # Linux
+    --> projects in linux system administration. buy a book on sys administration.
+    --> Linux projects on setting up softwares etc...
     --> create a csv file to manage config files of various servers in linux.
     --> implementing pxe boot diskless on various linux destros
     --> implementing docker on various linux destros
@@ -27,9 +29,11 @@
     --> linux servers :https://docs.linuxserver.io/
 
 
-respberry-pi
-    --> configuring respberry-pi.
-    --> implementing various servres on respberry-pi.
+Single board computers(SBCs)
+    --> configuring SBCs ex. respberry-pi.
+    --> implementing various servres on SBCs ex. respberry-pi.
+    --> study of various SBCs.
+    --> respberry-p, bread boards, aurdino uno, PLC, scada
 
 # Python and opencv
 

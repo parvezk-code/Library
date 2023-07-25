@@ -34,12 +34,12 @@ help for diskless clients booting(links).
     # init ram disk
     # root file system(/)
 
-==> DHCP server sends the client its IP-address, boot-file name(pxelinux.0), and ip-address of the TFTP server.
-==> client ask TFTP server for the boot file(pxelinux.0) specified by DHCP server.
-==> diskless client needs  pxelinux.0 file to enable boot from network card.
-==> To start booting client ask for pxelinux.cfg/default file from the TFTP server.
-==> pxelinux.cfg/default configuration file stores the location of the vmlinuz-kernel, initrd.img and root file ststem(/).
-==> client ask TFTP server for vmlinuz-kernel and initrd.img
+==> DHCP server sends the client its ip-addr, TFTP-server-ip and boot-file name(pxelinux.0).
+==> client download boot-file(pxelinux.0) from  TFTP server.
+==> boot-file(pxelinux.0) enable boot from network card.
+==> client download pxelinux.cfg/default file from the TFTP server.
+==> pxelinux.cfg/default locates linux-kernal(vmlinuz), ramdisk(initrd.img) and root-fs(/).
+==> client downloads vmlinuz-kernel and initrd.img from TFTP server.
 ==> once the kernel is loaded it mounts initrd.img as root file system.
 ==> initrd.img runs some programs.
 ==> initrd.img replace its self with the root(/) file system shared by NFS.
@@ -48,7 +48,7 @@ help for diskless clients booting(links).
 Architecture of diskless booting
     --> TFTP server store boot, kernal files    :  pxelinux.0, pxelinux.cfg/default, initrd.img, vmlinuz-kernel-version
     --> NFS  server store root file system      :  /
-    --> DHCP server give client with details    :  ip-address, TFTP-server-IP, name of file for network booting(pxelinux.0)
+    --> DHCP server give client with details    :  ip-address, TFTP-server-IP, file-name(pxelinux.0) for network booting
 
 important files/directories/cmds
     --> /var/lib/tftpboot

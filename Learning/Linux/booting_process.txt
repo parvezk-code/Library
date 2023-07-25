@@ -1,66 +1,54 @@
 
-in linux first partition(UEFI) is mounted at /boot/efi
-efi partition has FAT.
-UEFI can only read FAT partitions.
+--> first partition(efi) is mounted at /boot/efi in Linux
+--> efi partition has FAT because UEFI can only read FAT partitions.
+--> EFI_fs/ubuntu/grub.conf executes /boot/grub/grub.cfg
+--> /boot/grub/grub.cfg executes
+        # linux  kernal_file  root=/dev/sda3
+        # ramdisk  initrd_img_file
 
--------------------------------------------------------------------------------------------------
+--> End
+
+----------------------------------------boot from uefi shell---------------------------------------------------------
+
+# summary: run grub boot-loader from uefi shell.
+    =>  there should be partition(FAT) containing grub boot-loader files.
+
+    =>  run following commands
+        --> list all partitions(fs0, fs1 etc..)     :   map
+
+        --> locate boot-loader partition            :   say fs2
+
+        --> move into the partition                 :   fs2:
+
+        --> check if grub-file is there             :   ls
+
+        --> move into boot-loader dir               :   cd [dir_name]      # /boot/initrd.img-4.2.0-16-generic
+
+        --> Execute grub                            :   grubx64.efi
 
 
-run grub from efi shell.
-
-efi boot file
-    --> /boot/efi/EFI/Boot/bootx64.efi
-    --> this is copied from  /boot/efi/EFI/debian/grubx64.efi
-
-# This will temporarily add a linux boot option in UEFI for the next boot
-# command to add efi boot entry for grub.
-    bcfg   boot  add   0   /boot/efi/EFI/debian/grubx64.efi    "GRUB"
-
+# from efi shell : add a linux boot option in UEFI for the next boot
+    bcfg   boot  add   0   /boot/efi/EFI/debian/grubx64.efi    "Linux Grub"
 
 https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface#Obtaining_UEFI_Shell
 
-----------------------------------------------------------------------------------------------------
+------------------------------------ boot from grub shell -----------------------------------------
 
-# summary
-    --> ls  # list partions
-    --> set root=(hd0,3)
-    --> linux   /boot/vmlinuz-4.2.0-16-generic   root=/dev/sda3
-    --> initrd  /boot/initrd.img-4.2.0-16-generic
-    --> boot
+# run following commands
 
-Description of above steps is as follows:
+    --> list all partitions             :   ls          # (hd0, hd1) (hd0, gpt3) (hd0, gpt2) (hd1, gpt5) (hd1, gpt4)
 
-# locate your root partitions
-# hd0=/dev/sda, hd1=/dev/sdb
-# partitions are numbered -sda1, sda2, sdb1, sdb2 etc..
+    --> locate your root(/) partition   :   ls (hd0, 1)/
+                                            ls (hd0, 2)/
+                                            ls (hd0, 3)/
 
-ls
+    --> set root partition              :   set root=(hd0,3)
 
-# set you root partition, example 3nd partition of 2nd hdd (sdb3)
-set root='(hd1,3)'
+    --> load kernel                     :   linux   /boot/vmlinuz-4.2.0-16-generic   root=/dev/sda3
 
-# load kernel : [kernel_name]   [kernel_file_name]  [kernel_parameter]
-# press tab button after writing /boot/vmlin and GRUB will automatically complete following line for you.
-# verify the root partition in the following command.
-linux /boot/vmlinuz-XX-generic root=/dev/sdb3
+    --> load ramdisk                    :   initrd  /boot/initrd.img-4.2.0-16-generic
 
-# call initrd (initial ram disk) to help kernel to boot.
-# press tab button after writing /boot/init and GRUB will automatically complete the long name for you.
-initrd /boot/initrd.img-6.2.XXX
-
-# Execute all three commands. In another word, to boot the OS.
-boot
+    --> start booting                   :   boot
 
 ----------------------------------------------------------------------------------------------------
 
---> to boot from pen-drive without efi partition
-    => there should be separate /boot partition with FAT file-system not ext4.
-    => open uefi shell
-    => run map command to list all partitions(fs0, fs1, fs2 etc..)
-    => locate the boot partition (say fs2)
-    => fs2: (move to /boot partition)
-    => ls   # check if grub-file is there
-    => cd to dir /efi/EFI/debian  (for ubuntu /boot/efi/)
-    => run grubx64.efi
-
-----------------------------------------------------------------------------------------------------
