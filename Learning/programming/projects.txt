@@ -35,6 +35,10 @@ Single board computers(SBCs)
     --> study of various SBCs.
     --> respberry-p, bread boards, aurdino uno, PLC, scada
 
+cloud computig
+    --> open stack : private cloud administration
+    --> amazon, google, microsoft cloud
+
 # Python and opencv
 
 # implement various cms systems ex, WordPress, joomla.

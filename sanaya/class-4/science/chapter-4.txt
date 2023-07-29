@@ -1,0 +1,64 @@
+ 
+clothes             :   [heat, cold, rain], dust, insect, identify job
+
+
+fibers              :   long, fine thread, [natural, synthetic]
+
+
+season/dress        :   [diffrent cloth, season]
+                        [cotton, summer, cool]
+                        [woolen, winter, warm]
+
+care woolen         :   wrap, cotton cloth
+                        store, neem, naph-tha-lene ball
+
+cotton, synthetic   :   air to pass, keep cool, dried quickly
+kitchen
+
+
+natural, synthetic  :  source, dry, torn, wrinkle, Example
+
+
+take care cloth     :   detergent,
+                        wash & iron
+                        liquid detergent,
+                        dry and clean
+                        store
+
+---------------------------------------  Unit-5  -------------------------------------------------
+
+
+solid does not dissolve         :       sand
+
+matter flows more easily water  :       gas
+
+definate shape and volume       :       solid
+
+gas from soda bottle            :       car-bon-di-oxide
+
+solid                           :       d-shape,    d-volume
+liquid                          :      nd-shape,    d-volume
+gas                             :      nd-shape,    nd-volume
+
+
+molecules                       :       solid-cp,  liqid-lcp, gas-lp
+
+water --> ice                   :       freeze
+
+learn from aditi                :       help others
+
+solution                        :       dissolve, solute, solvent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
