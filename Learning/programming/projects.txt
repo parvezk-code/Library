@@ -13,6 +13,9 @@
     --> display output of various commands in linux.
     --> creating linux packages.
     --> create, edit, display college information to be used by AICTE web portal.
+    --> remainder application
+    --> configuring node express servers on linux OS
+    --> google websites
     # web appllication for above applications
 
 # Linux
@@ -27,6 +30,7 @@
     --> implment nix os.
     --> describe and modify booting process of linux
     --> linux servers :https://docs.linuxserver.io/
+    --> linux automation using awk etc...
 
 
 Single board computers(SBCs)
@@ -38,6 +42,9 @@ Single board computers(SBCs)
 cloud computig
     --> open stack : private cloud administration
     --> amazon, google, microsoft cloud
+
+SCADA and plc software
+
 
 # Python and opencv
 
