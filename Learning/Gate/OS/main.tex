@@ -1,0 +1,111 @@
+% Choices environment
+
+\documentclass{exam}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{
+            a4paper,
+            total={170mm,257mm},
+            left=17mm,
+            top=15mm,
+ }
+
+\newcommand{\tf}[1][{}]{%
+   \fillin[#1][0.25in]%
+}
+
+\begin{document}
+
+\begin{questions}
+
+\question My first question with multiple choices.
+
+\begin{choices}
+   \choice The first choice.
+   \choice The second choice.
+   \choice The third choice.
+   \choice The fourth choice.
+\end{choices}
+
+\question My first question with multiple choices.
+
+  \begin{oneparchoices}
+    \choice The first choice.
+    \choice The second choice.
+    \choice The third choice.
+    \choice The fourth choice.
+  \end{oneparchoices}
+
+
+  \question My first question with multiple choices.
+\begin{checkboxes}
+    \choice The first choice.
+    \choice The second choice.
+    \choice The third choice.
+    \choice The fourth choice.
+\end{checkboxes}
+
+
+\question Another question with multiple choices.
+
+\begin{oneparcheckboxes}
+    \choice The first choice.
+    \choice The second choice.
+    \choice The third choice.
+    \choice The fourth choice.
+\end{oneparcheckboxes}
+
+ \checkboxchar{$\Box$}
+ \checkedchar{$\blacksquare$}
+ \question Which of the following is not a Greek philosopher?
+
+        \begin{oneparcheckboxes}
+            \choice Socrates
+            \choice Plato
+            \choice Pythagoras
+            \CorrectChoice You
+        \end{oneparcheckboxes}
+
+
+\question This question has one correct answer. Mark it.
+
+  \begin{checkboxes}
+    \choice The correct answer is after the second wrong answer.
+    \choice The correct answer is after this answer.
+    \choice This is the correct answer.
+    \CorrectChoice Previous anwers are false.
+   \end{checkboxes}
+   \printanswers
+
+   \question This question has one correct answer. Mark it.
+
+   \begin{checkboxes}
+     \choice The correct answer is after the second wrong answer.
+     \choice The correct answer is after this answer.
+     \choice This is the correct answer.
+     \CorrectChoice Previous anwers are false.
+   \end{checkboxes}
+
+  \question \fillin[Helium] is the second element of the periodic table.
+
+  \question \fillin[Sir Isaac Newton][2in] discovered the first gravitational law.
+  \printanswers
+
+  \question \fillin[Helium] is the second element of the periodic table.
+
+  \question \fillin[Sir Isaac Newton][2in] discovered the first gravitational law.
+
+
+  \question \tf[T] This question is true.
+
+  \question \tf[F] And this question is false.
+  \printanswers
+
+  \question \tf[T] This question is true.
+
+  \question \tf[F] And this question is false.
+
+\end{questions}
+
+\end{document}

@@ -2,6 +2,9 @@
  help :
     # https://en.wikibooks.org/wiki/LaTeX
     # https://typeset.io/resources/learn-latex-beginners-step-by-step-guide/
+    # exam : https://www.overleaf.com/learn/latex/Typesetting_exams_in_LaTeX
+    # exam : https://latex-tutorial.com/multiple-choice-questions-latex/
+    # margines :  https://www.overleaf.com/learn/latex/Page_size_and_margins
 
 using external files
    # import(subimport):  allows you to have seperate directories each with its tex files and images
