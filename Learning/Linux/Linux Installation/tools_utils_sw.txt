@@ -20,7 +20,8 @@
 
 
 
-Latex               :   kile, LYX(WYSIWYM), Texstudio(texmaker), TeXworks, GNOME LaTeX zim(latex plugin), Papeeria(online)
+Latex               :   Texstudio(AppImage, texmaker), kile, LYX(WYSIWYM), TeXworks,
+                        GNOME LaTeX zim(latex plugin), Papeeria(online)
 
 GNOME Boxes         :   access virtual machines
 
