@@ -5,6 +5,22 @@
     # exam : https://www.overleaf.com/learn/latex/Typesetting_exams_in_LaTeX
     # exam : https://latex-tutorial.com/multiple-choice-questions-latex/
     # margines :  https://www.overleaf.com/learn/latex/Page_size_and_margins
+    # \usepackage{amssymb}
+    # \usepackage{geometry}
+    # \usepackage{comment} : \begin{comment}   ....   \end{comment}
+    # coding   : \usepackage{listings},  \begin{lstlisting}  ...coding....   \end{lstlisting}
+
+-------------------------------------------------------
+
+margines
+
+\geometry{
+            a4paper,
+            total={170mm,257mm},
+            left=17mm,
+            top=15mm,
+ }
+-------------------------------------------------------
 
 using external files
    # import(subimport):  allows you to have seperate directories each with its tex files and images
