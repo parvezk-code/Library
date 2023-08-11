@@ -1,6 +1,6 @@
 
 
-Front Ends(GUI) : LYX(WYSIWYM), Texstudio(texmaker), TeXworks, kile, GNOME LaTeX zim(latex plugin), Papeeria(online)
+Front Ends(GUI) : Texstudio(appImage, texmaker), LYX(WYSIWYM), TeXworks, kile, GNOME LaTeX zim(latex plugin), Papeeria(online)
 
 apt install texlive-bibtex-extra
 

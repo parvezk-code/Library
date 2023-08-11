@@ -6,6 +6,7 @@
 # Audacity audio editor AppImage : https://www.audacityteam.org/download/linux/
 # Inkscape                       : https://inkscape.org/release/inkscape-1.2.2/gnulinux/appimage/dl/
 # xournalpp xournal++ AppImage   : https://github.com/xournalpp/xournalpp/releases
+# Latex(Texstudio)               : https://github.com/texstudio-org/texstudio/releases/
 # gmome-text-editor              :
 # App Images                     : https://github.com/probonopd   (zoom, geany, vlc )
 # App Images                     : https://appimage.github.io/apps/
@@ -17,6 +18,9 @@
 # packet tracer n/w emulator     :
 # Anytype                        : https://download.anytype.io/
 
+
+
+Latex               :   kile, LYX(WYSIWYM), Texstudio(texmaker), TeXworks, GNOME LaTeX zim(latex plugin), Papeeria(online)
 
 GNOME Boxes         :   access virtual machines
 
