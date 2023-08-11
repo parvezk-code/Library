@@ -32,7 +32,7 @@
     \choice A hardware component.
   \end{choices}
 
-  \question Example of spooled device. (GATE - 96, 98)
+  \question Example of spooled device. (GATE - 92, 96, 98)
 
   \begin{choices}
     \choice Line printer which print output of number of jobs.
@@ -60,9 +60,72 @@
     \choice Independent on n
   \end{oneparchoices}
 
+  \question  Multi user and multi-processing OS can not be implemented on harrdware that do not have. (GATE-1999)
+
+  \begin{choices}
+    \choice Address Translation
+    \choice DMA
+    \choice 2 modes of CPU
+    \choice Demand Paging
+  \end{choices}
+
+  \question  Context Switching from A to B do not involve. (GATE - 1999)
+
+  \begin{choices}
+    \choice Saving and restoring registers of A and B.
+    \choice Changing address translation tables.
+    \choice Swapping cureent process A to disk.
+    \choice Invalidating TLB.
+  \end{choices}
+
+  \question  Features that are sufficient for multi-programming OS. (GATE-2002)
+
+   \begin{enumerate}
+      \item[a] More than one program loaded in main memory at same time.
+      \item[b] If a program waits for I/O another program is immediately scheduled.
+      \item[c] If program terminates another program is immediately scheduled for execution.
+   \end{enumerate}
+
+  \begin{choices}
+    \choice a
+    \choice a and b
+    \choice a and c
+    \choice a, b and c
+  \end{choices}
+
+\begin{minipage}{\linewidth}
+
+  \question  (u, v) are printed by parent and (x,y) printed by child. (GATE-2005 )
+
+    \begin{lstlisting}
+      if(fork()==0)
+      {
+          a = a + 5;
+          print(a, &a);
+      }
+      else
+      {
+          a = a - 5;
+          print(a, &a);
+      }
+    \end{lstlisting}
+
+  \begin{choices}
+    \choice u=x+10, v=y
+    \choice u=x+10, v!=y
+    \choice u=x-10, v=y
+    \choice u=x-10, v!=y
+  \end{choices}
+
+  \end{minipage}
+
+
+
 \begin{comment}
 
-  \question  (GATE - )
+\begin{minipage}{\linewidth}
+
+  \question  (GATE- )
 
   \begin{choices}
     \choice
@@ -70,6 +133,8 @@
     \choice
     \choice
   \end{choices}
+
+\end{minipage}
 
   %% oneparchoices
 

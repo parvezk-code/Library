@@ -19,14 +19,19 @@
 
 \begin{questions}
 
-\question My first question with multiple choices.
+\begin{minipage}{\linewidth}
+    \question My first question with multiple choices.
 
-\begin{choices}
-   \choice The first choice.
-   \choice The second choice.
-   \choice The third choice.
-   \choice The fourth choice.
-\end{choices}
+    \begin{choices}
+      \choice The first choice.
+      \choice The second choice.
+      \choice The third choice.
+      \choice The fourth choice.
+    \end{choices}
+
+\end{minipage}
+
+\begin{minipage}{\linewidth}
 
 \question My first question with multiple choices.
 
@@ -37,6 +42,9 @@
     \choice The fourth choice.
   \end{oneparchoices}
 
+  \end{minipage}
+
+\begin{minipage}{\linewidth}
 
   \question My first question with multiple choices.
 \begin{checkboxes}
@@ -45,7 +53,9 @@
     \choice The third choice.
     \choice The fourth choice.
 \end{checkboxes}
+\end{minipage}
 
+\begin{minipage}{\linewidth}
 
 \question Another question with multiple choices.
 
@@ -58,6 +68,9 @@
 
  \checkboxchar{$\Box$}
  \checkedchar{$\blacksquare$}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
  \question Which of the following is not a Greek philosopher?
 
         \begin{oneparcheckboxes}
@@ -67,7 +80,9 @@
             \CorrectChoice You
         \end{oneparcheckboxes}
 
+\end{minipage}
 
+\begin{minipage}{\linewidth}
 
 \question This question has one correct answer. Mark it.
 
@@ -79,6 +94,10 @@
    \end{checkboxes}
    \printanswers
 
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+
    \question This question has one correct answer. Mark it.
 
    \begin{checkboxes}
@@ -87,30 +106,44 @@
      \choice This is the correct answer.
      \CorrectChoice Previous anwers are false.
    \end{checkboxes}
+\end{minipage}
+
+
 
  \setcounter{question}{0}
 
+
+\begin{minipage}{\linewidth}
+
   \question \fillin[Helium] is the second element of the periodic table.
 
+\end{minipage}
 
+\begin{minipage}{\linewidth}
 
   \question \fillin[Sir Isaac Newton][2in] discovered the first gravitational law.
   \printanswers
 
+  \end{minipage}
+
+\begin{minipage}{\linewidth}
+
   \question \fillin[Helium] is the second element of the periodic table.
 
+  \end{minipage}
 
-  \question \fillin[Sir Isaac Newton][2in] discovered the first gravitational law.
-
+\begin{minipage}{\linewidth}
 
   \question \tf[T] This question is true.
+
+\end{minipage}
+
+\begin{minipage}{\linewidth}
 
   \question \tf[F] And this question is false.
   \printanswers
+\end{minipage}
 
-  \question \tf[T] This question is true.
-
-  \question \tf[F] And this question is false.
 
 \end{questions}
 
