@@ -133,6 +133,99 @@
 
 % ----------------------------------------------------------------------------
 
+\begin{minipage}{\linewidth}
+
+  \question A solution to the Dining Philosophers Problem which avoids deadlock is: (GATE-1996 )
+
+  \begin{choices}
+    \choice ensure that all philosophers pick up the left fork before the right fork
+    \choice ensure that all philosophers pick up the right fork before the left fork
+    \choice ensure that one particular philosopher picks up the left fork before the right fork, and that all other philosophers pick up the right fork before the left fork
+    \choice None of the above
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question Precidence Graph: (GATE-1996 )
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider Peterson’s algorithm for processes i and j. The program executed by process i is shown below.(GATE-2001)
+
+  \begin{lstlisting}
+      repeat
+          flag [i] = true;
+          turn = j;
+
+          while ( P ) do no-op;
+            CS
+
+          flag [ i ] = false;
+          Perform other non-critical section actions.
+      until false;
+  \end{lstlisting}
+  For the program to guarantee mutual exclusion, the predicate P in the while loop should be.
+  \begin{choices}
+    \choice flag[j] = true and turn = i
+    \choice flag[j] = true and turn = j
+    \choice flag[i] = true and turn = j
+    \choice flag[i] = true and turn = i
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Two processes, P1 and P2, need to access a critical section of code. Consider the following synchronization construct used by the processes:Here, wants1 and wants2 are shared variables, which are initialized to false. Which one of the following statements is TRUE about the above construct? (GATE- 2007)
+
+  \begin{lstlisting}
+      while (true)                            while (true)
+      {                                       {
+          wants1 = true;                          wants2 = true;
+          while (wants2 == true);                 while (wants1 == true);
+          CS                                      CS
+          wants1=false;                           wants2=false;
+      }                                       }
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice  It does not ensure mutual exclusion.
+    \choice  It does not ensure bounded waiting.
+    \choice  It requires that processes enter the critical section in strict alternation.
+    \choice  It does not prevent deadlocks, but ensures mutual exclusion.
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
 % ----------------------------------------------------------------------------
 
 % ----------------------------------------------------------------------------

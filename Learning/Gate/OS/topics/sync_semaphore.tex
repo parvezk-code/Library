@@ -74,15 +74,219 @@
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+  \question  Each Process P(i), i= 1…….9 is coded as follows.
+    \begin{lstlisting}
+        repeat
+            P(mutex)
+            {
+                Critical section
+            }
+            V(mutex)
+        forever
+    \end{lstlisting}
+    The code for P10 is identical except it uses V(mutex) in place of P(mutex). What is the largest number of processes that can be inside the critical section at any moment? (GATE-1997)
+
+  \begin{oneparchoices}
+    \choice 1
+    \choice 2
+    \choice 3
+    \choice None
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
 
 % ----------------------------------------------------------------------------
 
+\begin{minipage}{\linewidth}
+
+  \question  Suppose we want to synchronize two concurrent processes P and Q using binary semaphores S and T. The code for the processes P and Q is shown below. Synchronization statements can be inserted only at points W, X, Y and Z (GATE-2003 )
+
+  \begin{lstlisting}
+    Process P:                        Process Q:
+    while (1)                         while (1)
+    {                                 {
+        W:                                Y:
+        print '0';                        print '1';
+        print '0';                        print '1';
+        X:                                Z:
+    }                                 }
+  \end{lstlisting}
+
+  \begin{parts}
+      \part Which of the following will lead to an output string with 001100110011
+        \begin{choices}
+          \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S and T initially 1
+          \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S initially 1, and T initially 0
+          \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S and T initially 1
+          \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S initially 1, and T initially 0
+        \end{choices}
+
+      \part Which of the following will ensure that the output string never contains a substring of
+            the form \(01^n0\) or \(10^n1\) where n is odd
+        \begin{choices}
+          \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S and T initially 1
+          \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S and T initially 1
+          \choice P(S) at W, V(S) at X, P(S) at Y, V(S) at Z, S initially 1
+          \choice V(S) at W, V(T) at X, P(S) at Y, P(T) at Z, S and T initially 1
+        \end{choices}
+
+  \end{parts}
+
+  \end{minipage}
+
 % ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+  \question  Consider two processes P1 and P2 accessing the shared variables X and Y protected by two binary semaphores SX and SY respectively, both initialized to 1. In order to avoid deadlock, the correct operators at L1, L2, L3 and L4 are respectively (GATE- 2004)
+
+  \begin{lstlisting}
+      While(true)                         While(true)
+      {                                   {
+        L1 : ................                 L3 : ................
+        L2 : ................                 L4 : ................
+        X = X + 1;                            Y = Y + 1;
+        Y = Y - 1;                            X = Y - 1;
+        V(SX);                                V(SY);
+        V(SY);                                V(SX);
+    }                                     }
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice  P(SY), P(SX); P(SX), P(SY)
+    \choice  P(SX), P(SY); P(SY), P(SX)
+    \choice  P(SX), P(SX); P(SY), P(SY)
+    \choice  P(SX), P(SY); P(SX), P(SY)
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
 
 % ----------------------------------------------------------------------------
 
+\begin{minipage}{\linewidth}
+
+  \question  The atomic fetch-and-set x, y instruction unconditionally sets the memory location x to 1 and fetches the old value of x n y without allowing any intervening access to the memory location x. consider the following implementation of P and V functions on a binary semaphore S. Which one of the following is true? (GATE- 2006)
+
+  \begin{lstlisting}
+      void P (binary_semaphore *s)                    void V (binary_semaphore *s)
+      {                                               {
+          unsigned y;                                       S->value = 0;
+          unsigned *x = &(s->value);                  }
+          do
+          {
+              fetch-and-set x, y;
+          }
+          while (y);
+      }
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice  The implementation may not work if context switching is disabled in P
+    \choice  Instead of using fetch-and –set, a pair of normal load/store can be used
+    \choice  The implementation of V is wrong
+    \choice  The code does not implement a binary semaphore
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
 % ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+
+    \question  Barrier is a synchronization construct where a set of processes synchronizes globally i.e. each process in the set arrives at the barrier and waits for all others to arrive and then all processes leave the barrier. Let the number of processes in the set be three and S be a binary semaphore with the usual P and V functions. Consider the following C implementation of a barrier with line numbers shown on left.
+
+    The variables process\_arrived and process\_left are shared among all processes and are initialized to zero.
+    In a concurrent program all the three processes call the barrier function when they need to synchronize globally. (GATE- 2006)
+
+  \begin{lstlisting}
+      void barrier (void)
+      {
+      1:      P(S);
+      2:      process_arrived++;
+      3.      V(S);
+      4:      while (process_arrived !=3);
+      5:      P(S);
+      6:      process_left++;
+      7:      if (process_left==3) {
+      8:	     process_arrived = 0;
+      9:	     process_left = 0;
+      10:     }
+      11:     V(S);
+      }
+
+  \end{lstlisting}
+
+  \begin{parts}
+      \part The above implementation of barrier is incorrect. Which one of the following is true?
+        \begin{choices}
+          \choice The barrier implementation is wrong due to the use of binary semaphore S
+          \choice The barrier implementation may lead to a deadlock if two barrier in
+invocations are used in immediate succession.
+          \choice Lines 6 to 10 need not be inside a critical section
+          \choice The barrier implementation is correct if there are only two processes instead of three.
+        \end{choices}
+
+      \part Which one of the following rectifies the problem in the implementation?
+        \begin{choices}
+          \choice Lines 6 to 10 are simply replaced by process\_arrived–
+          \choice At the beginning of the barrier the first process to enter the barrier waits
+until process\_arrived becomes zero before proceeding to execute P(S).
+          \choice Context switch is disabled at the beginning of the barrier and re-enabled at the end.
+          \choice The variable process\_left is made private instead of shared
+        \end{choices}
+
+  \end{parts}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+  \begin{minipage}{\linewidth}
+  \question  The P and V operations on counting semaphores, where s is a counting semaphore, are defined as follows: (GATE- 2008)
+
+  \begin{lstlisting}
+      P(s) : s =  s - 1;
+          if (s  < 0) then wait;
+
+      V(s) : s = s + 1;
+        if (s <= 0) then wakeup a process waiting on s;
+  \end{lstlisting}
+  Assume that Pb and Vb the wait and signal operations on binary semaphores are provided. Two binary semaphores Xb and Yb are used to implement the semaphore operations P(s) and V(s) as follows:
+   \begin{lstlisting}
+      P(s)                               V(s) :
+
+      Pb(Xb);                            Pb(Xb) ;
+      s = s - 1;                         s = s + 1;
+      if (s < 0)                         if (s <= 0)
+      {                                  {
+          Vb(Xb) ;                         Vb(Yb) ;
+          Pb(Yb) ;
+      }                                  }
+      else                               Vb(Xb) ;
+      {
+          Vb(Xb);
+      }
+  \end{lstlisting}
+  The initial values of Xb and Yb are respectively
+
+  \begin{choices}
+    \choice  0 and 0
+    \choice  0 and 1
+    \choice  1 and 0
+    \choice  1 and 1
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
 
 % ----------------------------------------------------------------------------
 
