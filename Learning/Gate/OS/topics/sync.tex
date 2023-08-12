@@ -1,0 +1,168 @@
+\centerline{\textbf{ \LARGE Temp}}
+
+\setcounter{question}{0}
+
+
+
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A critical section is a program segment (GATE-1996 )
+
+  \begin{choices}
+    \choice which should run in a certain specified amount of time
+    \choice which avoids deadlocks
+    \choice where shared resources are accessed
+    \choice which must be enclosed by a pair of semaphore operations, P and V
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  When the result of a computation depends on the speed of the processes involved, there is said to be
+             (GATE-1998 )
+
+  \begin{oneparchoices}
+    \choice cycle stealing
+    \choice race condition
+    \choice a time lock
+    \choice a deadlock
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider the methods used by processes P1 and P2 for accessing their critical sections whenever needed, as given below. The initial values of shared boolean variables S1 and S2 are randomly assigned. (GATE-2010)
+
+  \begin{lstlisting}
+      Method Used by P1                  Method Used by P2
+      while (S1 == S2) ;                 while (S1 != S2) ;
+      Critica1 Section                   Critica1 Section
+      S1 = S2;                           S2 = not (S1);
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice Mutual exclusion but not progress
+    \choice Progress but not mutual exclusion
+    \choice Neither mutual exclusion nor progress
+    \choice Both mutual exclusion and progress
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  The following two functions P1 and P2 that share a variable B with an initial
+   value of 2 execute concurrently. The number of distinct values that B can possibly
+   take after the execution is \fillin[]. (GATE-2015\_set\_2)
+
+  \begin{lstlisting}
+        P1()                  P2()
+        {                     {
+            C = B - 1;            D = 2 * B;
+            B = 2*C;              B = D - 1;
+        }                     }
+  \end{lstlisting}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Two processes X and Y need to access a critical section. varP and varQ are shared variables and both are initialized to false. Which one of the following statements is true? (GATE-2015\_set\_2 )
+
+  \begin{lstlisting}
+      Process-X                             Process-Y
+      while(true)                           while(true)
+      {                                     {
+          varP = true                           varQ = true
+          while(varQ = true)                    while(varP = true)
+          {                                     {
+              CS                                    CS
+              varP = false                          varQ = false
+          }                                     }
+      }                                     }
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice The proposed solution prevents deadlock but fails to guarantee mutual exclusion
+    \choice The proposed solution guarantees mutual exclusion but fails to prevent deadlock
+    \choice The proposed solution guarantees mutual exclusion and prevents deadlock
+    \choice The proposed solution fails to prevent deadlock and fails to guarantee mutual exclusion
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A critical region is: (GATE-1987 )
+
+  \begin{choices}
+    \choice One which is enclosed by a pair of P and V operations on semaphores.
+    \choice A program segment that has not been proved bug-free.
+    \choice A program segment that often causes unexpected system crashes.
+    \choice A program segment where shared resources are accessed.
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+
+
+\begin{comment}
+
+\begin{minipage}{\linewidth}
+
+  \question  (GATE- )
+
+  \begin{choices}
+    \choice
+    \choice
+    \choice
+    \choice
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+  %% oneparchoices
+
+
+\end{comment}

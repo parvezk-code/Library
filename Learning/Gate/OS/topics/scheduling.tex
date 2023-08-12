@@ -145,12 +145,12 @@
       \item[III] Round robin is bettre than FCFS in response time.
    \end{enumerate}
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice I only
     \choice I, III only
     \choice II, III only
     \choice I, II, III
-  \end{choices}
+  \end{oneparchoices}
 
 
   \end{minipage}
@@ -231,12 +231,12 @@
   \question Jobs[p, q, r, s, t] bursts[4,1,8,1,2]. Completion time of P. Round robin scheduling with time slice of 1.
             Single process system. (GATE - 1993, 96)
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice 4
     \choice 10
     \choice 11
     \choice 12
-  \end{choices}
+  \end{oneparchoices}
 
 
   \end{minipage}
@@ -250,12 +250,13 @@
 
   \question  Choose correct sequence and cpu idle time for non preemptive scheduling.(GATE - 1995)
              \newline job-[1,2,3] Bursts-[9,5,1] Arrival-[0, 0.6, 1]
-  \begin{choices}
-    \choice {3,2,1}, 1
-    \choice {2,1,3}, 0
-    \choice {3,2,1}, 0
-    \choice {1,2,3}, 5
-  \end{choices}
+
+  \begin{oneparchoices}
+    \choice \{3,2,1\}, 1
+    \choice \{2,1,3\}, 0
+    \choice \{3,2,1\}, 0
+    \choice \{1,2,3\}, 5
+  \end{oneparchoices}
 
   \end{minipage}
 
@@ -321,12 +322,12 @@
              schedled when current process goes for IO or completes its burst.
              Calculate percentage of time CPU is idle. (GATE-2006)
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice 0
     \choice 10.6
     \choice 30
     \choice 89.4
-  \end{choices}
+  \end{oneparchoices}
 
   \end{minipage}
 
@@ -340,11 +341,47 @@
   \question Using SRTF, calculate waiting tome for P2.
             Process-[1,2,3,4] Bursts-[20, 25, 10, 15] AT-[0, 15, 30, 45] (GATE-2007)
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice 5
     \choice 15
     \choice 40
     \choice 55
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Process-[0,1,2] Burst-[9,4,9 Arrival-[0,1,2]]. Calculate average waiting time.
+             SJF scheduling is used and scheduling is done only when process arrive or completes. (GATE-2011)
+
+  \begin{oneparchoices}
+    \choice 5
+    \choice 4.33
+    \choice 6.33
+    \choice 7.33
+  \end{oneparchoices}
+
+\end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question Process-[P1, p2, p3] Bursts-[5, 7, 4] AT-[0, 1, 3].
+            Completion order for FCFS and Round Robin with time quanta of 2. (GATE-2012 )
+
+  \begin{choices}
+    \choice FCFS: p1, p2, p3  \qquad   RR2: p1, p2, p3
+    \choice FCFS: p1, p3, p2  \qquad   RR2: p1, p3, p2
+    \choice FCFS: p1, p2, p3  \qquad   RR2: p1, p3, p2
+    \choice FCFS: p1, p3, p2  \qquad   RR2: p1, p2, p3
   \end{choices}
 
   \end{minipage}
@@ -353,9 +390,128 @@
 
 % ----------------------------------------------------------------------------
 
-\begin{comment}
+\begin{minipage}{\linewidth}
+
+  \question  Using Round Robin scheduling with quanta 50ms. Each process executes a loop of 100 iterations.
+             In each iteration process does a CPU computation and then an IO operation.
+             IO of each process can go in parallel. Process C completes its first IO operation at time \fillin[time]. (GATE-2014\_set\_2 )
+      \begin{center}
+      \begin{tabular}{ c c c c }
+          ID & Time\_CPU & Time\_IO  & Arrival\\
+          A & 100ms & 500ms & 0 \\
+          B & 350ms & 500ms & 5 \\
+          C & 200ms & 500ms & 10 \\
+      \end{tabular}
+    \end{center}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+
 
 % ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Using SRTF pre-emptive scheduling. Average waiting time is \fillin[time]. (GATE-2014\_set\_3 )
+      \begin{center}
+      \begin{tabular}{ c c c c }
+          ID & Burst & Arrival\\
+          p1 & 12  & 0 \\
+          p2 & 4  & 2 \\
+          p3 & 6  & 3 \\
+          p4 & 5  & 8 \\
+      \end{tabular}
+    \end{center}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Uniprocessor system executes 3 tasks T1, T2, T3. These 3 tasks arrive priodically every 3, 7, 20 msec respectively.
+            CPU bursts are 1, 2, 4 respectively. All arrive at the begnning of 1st msec. Pre-emptive priority based scheduling
+            is used. Priority is inverse to its priodicity. Highest priority task is executed first.
+            1st instance of T3 complets at \fillin[time]. (GATE-2015\_set\_1 )
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+  \question  Which scheduling algorithm gives lowest average turnaround time? (GATE-2015\_set\_3 )
+      \begin{center}
+      \begin{tabular}{ c c c c }
+          ID & Burst & Arrival\\
+          p1 & 3  & 0 \\
+          p2 & 6  & 1 \\
+          p3 & 4  & 4 \\
+          p4 & 2  & 6 \\
+      \end{tabular}
+    \end{center}
+
+  \begin{choices}
+    \choice FCFS
+    \choice SJF non pre-emptive
+    \choice SRTF
+    \choice Round robin with time quanta 2.
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+
+\begin{minipage}{\linewidth}
+
+  \question Pre-emptive SRTF scheduling algorithm is used. Average turn around time is \fillin[time]. (GATE-2016\_set\_2 )
+      \begin{center}
+      \begin{tabular}{ c c c c }
+          ID & Burst & Arrival\\
+          p1 & 10  & 0 \\
+          p2 & 6  & 3 \\
+          p3 & 1  & 7 \\
+          p4 & 3  & 8 \\
+      \end{tabular}
+    \end{center}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Which of the following scheduling algorithm is non pre-emptive. (GATE-2002)
+
+  \begin{choices}
+    \choice Round Robin
+    \choice FCFS
+    \choice Multi-level queue
+    \choice Multi-level queue with feedback
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+% ----------------------------------------------------------------------------
+% ----------------------------------------------------------------------------
+% ----------------------------------------------------------------------------
+% ----------------------------------------------------------------------------
+
+\begin{comment}
 
 \begin{minipage}{\linewidth}
 
