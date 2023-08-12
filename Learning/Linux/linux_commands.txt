@@ -14,6 +14,7 @@ mount fs from /etc/fstab            # sudo mount -a
 chmod 751  file_dir_name            # u=7, g=5, o=1, (r=4, w=2, x=1)
 chmod g=rx,o=rwx file_dir_name      # change permissions of file_dir
 chmod -R g=rx,o=rwx dir_name        # change permissions of dir and its contents recursivelly
+zip -re target.zip f1 dir1          # create password protected zip file
 chown user:group    dir_file        # change owner
 awk '[pattern] {print $0}' [file]   # Print all lines matching a pattern in a file:
 grep pattern file_name              # Search for a specific pattern
