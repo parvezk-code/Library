@@ -1,4 +1,4 @@
-\centerline{\textbf{ \LARGE Temp}}
+\centerline{\textbf{ \LARGE Synchronization Fundamentals}}
 
 \setcounter{question}{0}
 
@@ -216,7 +216,69 @@
 
 % ----------------------------------------------------------------------------
 
+\begin{minipage}{\linewidth}
+
+  \question  Consider the following proposed solution for the critical section problem.
+  There are n processes \(p_1\), \(p_2\)...\(p_{n-1}\). In the code, function pmax() returns an integer not smaller than any of its arguments.
+  For all i, t[i] is initialized to zero.(GATE- 2016\_set\_1)
+
+  \begin{lstlisting}
+      do{
+              c[i]=1;
+              t[i]= pmax (t[0],....,t[n-1])+1;
+              c[i]=0;
+
+              for every (j != i) in {0,....,n-1}
+              {
+                  while (c[j]);
+                  while (t[j] != 0 && t[j] <=t[i]);
+              }
+              Critical Section;
+              t[i]=0;
+              Remainder Section;
+      }while (true);
+
+  \end{lstlisting}
+  Which of the following is TRUE about the above solution?
+
+  \begin{choices}
+    \choice  At most one process can be in the critical section at any time
+    \choice  The bounded wait condition is satisfied
+    \choice  The progress condition is satisfied
+    \choice  It cannot cause a deadlock
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
 % ----------------------------------------------------------------------------
+
+\setcounter{question}{0}
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider the following two-process synchronization solution. (GATE- 2016\_set\_2)
+
+  \begin{lstlisting}
+      Process 0                             Process 1
+
+      Entry: loop while (turn == 1);        Entry: loop while (turn== 0);
+      (critical section)                    (critical section)
+      Exit: turn = 1;                       Exit turn = 0;
+  \end{lstlisting}
+  The shared variable turn is initialized to zero. Which one of the following is TRUE?
+
+  \begin{choices}
+    \choice  This is a correct two-process synchronization solution.
+    \choice  This solution violates mutual exclusion requirement.
+    \choice  This solution violates progress requirement.
+    \choice  This solution violates bounded wait requirement.
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
 
 % ----------------------------------------------------------------------------
 

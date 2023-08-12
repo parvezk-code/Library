@@ -1,4 +1,4 @@
-\centerline{\textbf{ \LARGE Temp}}
+\centerline{\textbf{ \LARGE Semaphore }}
 
 \setcounter{question}{0}
 
@@ -197,6 +197,7 @@
 \vspace{0.08in}
 
 % ----------------------------------------------------------------------------
+
 \begin{minipage}{\linewidth}
 
 
@@ -249,6 +250,30 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 \vspace{0.08in}
 
 % ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A shared variable x, initialized to zero, is operated on by four concurrent processes W, X, Y, Z as follows.
+            Each of the processes W and X reads x from memory, increments by one, stores it to memory, and then terminates.
+            Each of the processes Y and Z reads x from memory, decrements by two, stores it to memory, and then terminates.
+            Each process before reading x invokes the P operation (i.e., wait) on a counting semaphore S and
+            invokes the V operation (i.e., signal) on the semaphore S after storing x to memory.
+            Semaphore S is initialized to two. What is the maximum possible value of x after all
+            processes complete execution? (GATE- 2013)
+
+  \begin{oneparchoices}
+    \choice  -2
+    \choice  -1
+    \choice  1
+    \choice  2
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
   \begin{minipage}{\linewidth}
   \question  The P and V operations on counting semaphores, where s is a counting semaphore, are defined as follows: (GATE- 2008)
 
@@ -277,16 +302,195 @@ until process\_arrived becomes zero before proceeding to execute P(S).
   \end{lstlisting}
   The initial values of Xb and Yb are respectively
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice  0 and 0
     \choice  0 and 1
     \choice  1 and 0
     \choice  1 and 1
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  The enter\_CS() and leave\_CS() functions to implement critical section of a process are realized using test-and-set instruction as follows: (GATE- 2009)
+
+  \begin{lstlisting}
+      void enter_CS(X)                    void leave_CS(X)
+      {                                   {
+          while test-and-set(X) ;             X = 0;
+      }                                   }
+  \end{lstlisting}
+  In the above solution, X is a memory location associated with the CS and is initialized to 0. Now consider the following statements:
+  \begin{enumerate}
+      \item[I]  The above solution to CS problem is deadlock-free
+      \item[II] The solution is starvation free.
+      \item[III] The processes enter CS in FIFO order.
+      \item[V]   More than one process can enter CS at the same time.
+   \end{enumerate}
+
+  \begin{choices}
+    \choice  I only
+    \choice  I and II
+    \choice  II and III
+    \choice   IV only
   \end{choices}
 
   \end{minipage}
 
 \vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  The following program consists of 3 concurrent processes and 3 binary semaphores.
+             The semaphores are initialized as S0 = 1, S1 = 0, S2 = 0. (GATE- 2010)
+
+  \begin{lstlisting}
+      P0:                           P1:                      p2:
+
+      while (true)                  wait(S1);                wait(S2);
+      {                             release(S0)              release(S0)
+          wait(S0);
+          print(0);
+          release(S1)
+          release(S2)
+      }
+  \end{lstlisting}
+  How many times will process P0 print ‘0’?
+
+  \begin{choices}
+    \choice  At least twice
+    \choice  Exactly twice
+    \choice  Exactly thrice
+    \choice  Exactly once
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Fetch\_And\_Add(X,i) is an atomic Read-Modify-Write instruction that reads the value of memory
+             location X, increments it by the value i, and returns the old value of X.
+             It is used in the pseudocode shown below to implement a busy-wait lock.
+             L is an unsigned integer shared variable initialized to 0.
+             The value of 0 corresponds to lock being available, while any non-zero value corresponds to the lock
+             being not available.(GATE- 2012)
+
+  \begin{lstlisting}
+      AcquireLock(L)                        ReleaseLock(L)
+      {                                     {
+          while (Fetch_And_Add(L,1))            L = 0;
+          {                                 }
+                L = 1;
+          }
+      }
+
+  \end{lstlisting}
+  This implementation
+
+  \begin{choices}
+    \choice  fails as L can overflow
+    \choice  fails as L can take on a non-zero value when the lock is actually available
+    \choice  works correctly but may starve some processes
+    \choice  works correctly without starvation
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider a non-negative counting semaphore S . The operation P(s) decrements , and V(S) increments S.
+             During an execution, 20 P operations and 12 V operations are issued in some order.
+             The largest initial value of S for which at least one P operation will remain blocked is \fillin[]. (Gate-2016\_set\_2)
+  \end{minipage}
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A certain computation generates two arrays a and b such that
+
+  \begin{lstlisting}
+   a[i]  =  f(i)      for 0 <= i < n
+   b[i]  =  g(a[i])   for 0 <= i < n.
+  \end{lstlisting}
+
+             Suppose this computation is decomposed into two concurrent processes X and Y such that X computes
+             the array a and Y computes the array b. The processes employ two binary semaphores R and S,
+             both initialized to zero. The array a is shared by the two processes.
+             The structures of the processes are shown below. (GATE- 2013)
+
+  \begin{lstlisting}
+      Process X:                         Process Y:
+
+      private i;                         private i;
+      for (i=0; i < n; i++)              for (i=0; i < n; i++)
+      {                                  {
+          a[i] = f(i);                       EntryY(R, S);
+          ExitX(R, S);                       b[i]=g(a[i]);
+      }                                  }
+  \end{lstlisting}
+  Which one of the following represents the CORRECT implementations of ExitX and EntryY?
+  \begin{choices}
+    \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        P(R)                          P(S)
+        V(S)                          V(R)
+     }                              }
+  \end{lstlisting}
+
+  \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        V(R)                          P(R)
+        V(S)                          P(S)
+     }                              }
+  \end{lstlisting}
+
+  \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        P(S)                          V(S)
+        V(R)                          P(R)
+     }                              }
+  \end{lstlisting}
+
+  \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        V(R)                          V(S)
+        P(S)                          P(R)
+     }                              }
+  \end{lstlisting}
+
+  \end{choices}
+  Hint : R, S are binary semaphores. No matter how many time V(S) is done max value of R,S will be one.
+  Need Strict alternation.
+  \end{minipage}
+
+\vspace{0.08in}
+
+old gate written questions of 5 mark  are left and not yet included in this library. Till 2002.
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
 
 % ----------------------------------------------------------------------------
 
