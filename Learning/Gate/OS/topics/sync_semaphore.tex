@@ -485,12 +485,44 @@ until process\_arrived becomes zero before proceeding to execute P(S).
   \end{minipage}
 
 \vspace{0.08in}
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider the procedure below for the Producer-Consumer problem which uses semaphores. (GATE-2014\_set\_2)
+  \begin{lstlisting}
+  semaphore n = 0;
+  semaphore s = 1;
+
+  void producer()                       void consumer()
+  {                                     {
+      while(true)                           while(true)
+      {                                     {
+          produce();                            semWait(s);
+          semWait(s);                           semWait(n);
+          addToBuffer();                        removeFromBuffer();
+          semSignal(s);                         semSignal(s);
+          semSignal(n);                          consume();
+      }                                     }
+  }                                     }
+  \end{lstlisting}
+
+    Which one of the following is TRUE?
+
+  \begin{choices}
+    \choice  The producer will be able to add an item to the buffer, but the consumer can never consume it.
+    \choice  The consumer will remove no more than one item from the buffer.
+    \choice  Deadlock occurs if the consumer succeeds in acquiring semaphore s when the buffer is empty.
+    \choice  The starting value for the semaphore must be and not for deadlock-free operation.
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
 
 old gate written questions of 5 mark  are left and not yet included in this library. Till 2002.
-
-% ----------------------------------------------------------------------------
-
-% ----------------------------------------------------------------------------
 
 % ----------------------------------------------------------------------------
 
