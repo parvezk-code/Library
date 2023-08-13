@@ -184,7 +184,6 @@
 
   \end{lstlisting}
 
-
 \end{questyle}
 
 % ----------------------------------------------------------------------------
@@ -197,35 +196,279 @@
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question Match the pairs in the following: (GATE-1991)
+
+  \begin{lstlisting}
+            List-I                        List-II
+      a). Buddy system              p). Run time type specification
+      b). Interpretation            q). Segmentation
+      c). Pointer type              r). Memory allocation
+      d). Virtual memory            s). Garbage collection
+
+  \end{lstlisting}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question  The total size of address space in a virtual memory system is limited by: (GATE-1991)
+
+  \begin{choices}
+    \choice the length of MAR
+    \choice the available secondary storage
+    \choice the available main memory
+    \choice all of the above
+  \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question  A "link editor" is a program that: (GATE-1991)
+
+  \begin{choices}
+    \choice matches the parameters of the macro-definition with locations of the parameters of the macro call
+    \choice matches external names of one program with their location in other programs
+    \choice matches the parameters of subroutine definition with the location of parameters of subroutine call.
+    \choice acts as a link between text editor and the user
+    \choice acts as a link between compiler and the user program
+  \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question  State true/False (GATE-1991)
+
+  \begin{choices}
+    \choice The amount of virtual memory available is limited by the availability of the secondary memory
+    \choice Any implementation of a critical section requires the use of an indivisible machine- instruction ,such as test-and-set.
+    \choice The use of monitors ensure that no dead-locks will be caused .
+    \choice The LRU page-replacement policy may cause thrashing for some type of programs
+    \choice The best fit techniques for memory allocation ensures that memory will never be fragmented.
+  \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question A simple two-pass assembler does the following in the first pass: (GATE-1993)
+
+  \begin{choices}
+    \choice It allocates space for the literals.
+    \choice It computes the total length of the program.
+    \choice It builds the symbol table for the symbols and their values.
+    \choice It generates code for all the load and store register instructions.
+    \choice None of the above.
+  \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question  A part of the system software which under all circumstances must reside in the main memory is: (GATE-1993)
+
+  \begin{choices}
+    \choice text editor
+    \choice assembler
+    \choice linker
+    \choice loader
+    \choice none of the above
+  \end{choices}
+
+\end{questyle}
+
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question Consider the following heap (figure) in which blank regions are not in use and hatched region are in use.
+            The sequence of requests for blocks of sizes 300, 25, 125, 50 can be satisfied if we use. (GATE-1994)
+  \begin{lstlisting}
+        050     150     300     350     600
+      _________________________________________
+      |       |       |       |       |       |
+      | full  |       | full  |       | full  |
+      |       |       |       |       |       |
+      |______ |_______|_______|_______|_______|
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice either first fit or best fit policy (any one)
+    \choice first fit but not best fit policy
+    \choice best fit but not first fit policy
+    \choice None of the above
+  \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
+\begin{questyle}
+
+  \question  The capacity of a memory unit is defined by the number of words multiplied by the number of bits/word. How many separate address and data lines are needed for a memory of \( \large 4K \times 16 \)(GATE-1995)
+
+  \begin{choices}
+    \choice 10 address, 16 data lines
+    \choice 11 address, 8 data lines
+    \choice 12 address, 16 data lines
+    \choice 12 address, 12 data lines
+  \end{choices}
+
+\end{questyle}
+
+
 % ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  In a virtual memory system the address space specified by the address lines of the CPU must be \fillin[]
+            than the physical memory size and \fillin[] than the secondary storage size (GATE-1995)
+
+  \begin{choices}
+    \choice smaller, smaller
+    \choice smaller, larger
+    \choice larger, smaller
+    \choice larger, larger
+  \end{choices}
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  A 1000 Kbyte memory is managed using variable partitions but no compaction. It currently has two
+            partitions of sizes 200 Kbytes and 260 Kbytes respectively. The smallest allocation request in Kbytes
+            that could be denied is for (GATE-1996)
+
+  \begin{oneparchoices}
+    \choice 151
+    \choice 181
+    \choice 231
+    \choice 541
+  \end{oneparchoices}
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  The overlay tree for a program is as shown below. What will be the size of the partition (in physical memory)
+             required to load (and run) this program?  (GATE-1998)
+             \begin{lstlisting}
+                               ___________________Root________________
+                              |                    |                  |
+                          4KB [A]              6KB [B]           8KB [C]
+                          _____|_____              |                  |
+                         |          |              |                  |
+                    6KB [D]    8KB [E]        2KB [F]            4KB [G]
+              \end{lstlisting}
+  \begin{choices}
+    \choice 12 KB
+    \choice 14 KB
+    \choice 10 KB
+    \choice 8 KB
+  \end{choices}
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  Which of the following is/are advantage(s) of virtual memory? (GATE-1999)
+
+  \begin{choices}
+    \choice Faster access to memory on an average.
+    \choice Processes can be given protected address spaces.
+    \choice Linker can assign addresses independent of where the program will be loaded in physical memory.
+    \choice Program larger than the physical memory size can be run.
+  \end{choices}
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  Dynamic linking can cause security concerns because (GATE- 2002)
+
+  \begin{choices}
+    \choice Security is dynamic
+    \choice The path for searching dynamic libraries is not known till runtime
+    \choice Linking is insecure
+    \choice Cryptographic procedures are not available for dynamic linking
+  \end{choices}
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  Which of the following is NOT an advantage of using shared, dynamically linked libraries as opposed to
+              using statistically linked libraries? (GATE-2003)
+
+  \begin{choices}
+    \choice Smaller sizes of executable files
+    \choice Lesser overall page fault rate in the system
+    \choice Faster program startup
+    \choice Existing programs need not be re-linked to take advantage of newer versions of libraries
+  \end{choices}
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  A computer system supports 32-bit virtual addresses as well as 32-bit physical addresses.
+             Since the virtual address space is of the same size as the physical address space, the operating system
+             designers decide to get rid of the virtual memory entirely. Which one of the following is true? (GATE-2006)
+
+  \begin{choices}
+    \choice Efficient implementation of multi-user support is no longer possible
+    \choice The processor cache organization can be made more efficient now
+    \choice Hardware support for memory management is no longer needed
+    \choice CPU scheduling can be made more efficient now
+  \end{choices}
+
+\end{questyle}
+
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  Consider six memory partitions of size 200 KB, 400 KB, 600 KB, 500 KB, 300 KB, and 250 KB,
+            where KB refers to kilobyte. These partitions need to be allotted to four processes of
+            sizes 357 KB, 210 KB, 468 KB and 491 KB in that order. If the best fit algorithm is used,
+            which partitions are NOT allotted to any process? (GATE-2015\_set\_2)
+
+  \begin{choices}
+    \choice 200 KB and 300 KB
+    \choice 200 KB and 250 KB
+    \choice 250 KB and 300 KB
+    \choice 300 KB and 400 KB
+  \end{choices}
+
+\end{questyle}
+
 
 % ----------------------------------------------------------------------------
 

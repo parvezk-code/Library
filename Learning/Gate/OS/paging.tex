@@ -84,20 +84,133 @@
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question  Consider a machine with 64 MB physical memory and a 32-bit virtual address space. If the page size is 4KB, what
+              is the approximate size of the page table?(GATE-2001)
+
+  \begin{choices}
+    \choice 16 MB
+    \choice 8 MB
+    \choice 2 MB
+    \choice 24 MB
+  \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question  A processor uses 2-level page tables for virtual to physical address translation. Page tables for
+             both levels are stored in the main memory. Virtual and physical addresses are both 32 bits wide.
+             The memory is byte addressable. For virtual to physical address translation, the 10 most significant
+             bits of the virtual address are used as index into the first level page table while the next 10 bits
+             are used as index into the second level page table. The 12 least significant bits of the virtual
+             address are used as offset within the page. Assume that the page table entries in both levels of
+             page tables are 4 bytes wide. Further, the processor has a translation look-aside buffer (TLB), with a
+             hit rate of 96\%. The TLB caches recently used virtual page numbers and the corresponding physical
+             page numbers. The processor also has a physically addressed cache with a hit rate of 90\%.
+             Main memory access time is 10 ns, cache access time is 1 ns, and TLB access time is also 1 ns.
+
+             Suppose a process has only the following pages in its virtual address space: two contiguous code
+             pages starting at virtual address 0x00000000, two contiguous data pages starting at virtual
+             address 0×00400000, and a stack page starting at virtual address 0×FFFFF000. The amount of memory
+             required for storing the page tables of this process is: (GATE-2003)
+
+            \begin{choices}
+              \choice 8 KB
+              \choice 12 KB
+              \choice 16 KB
+              \choice 20 KB
+            \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
-% ----------------------------------------------------------------------------
+\begin{questyle}
+
+  \question  A processor uses 36 bit physical addresses and 32 bit virtual addresses, with a page frame size
+             of 4 Kbytes. Each page table entry is of size 4 bytes. A three level page table is used for virtual to
+             physical address translation, where the virtual address is used as follows (GATE-2008)
+            \begin{enumerate}
+                \item[*] Bits 30-31 are used to index into the first level page table
+                \item[*] Bits 21-29 are used to index into the second level page table
+                \item[*] Bits 12-20 are used to index into the third level page table, and
+                \item[*] Bits 0-11 are used as offset within the page
+            \end{enumerate}
+            The number of bits required for addressing the next level page table (or page frame) in the page table entry of the first, second and third level page tables are respectively.
+
+  \begin{choices}
+    \choice 20, 20 and 20
+    \choice 24, 24 and 24
+    \choice 24, 24 and 20
+    \choice 25, 25 and 24
+  \end{choices}
+
+\end{questyle}
 
 % ----------------------------------------------------------------------------
 
+\begin{questyle}
+
+  \question  A multilevel page table is preferred in comparison to a single level page table for translating virtual
+             address to physical address because (GATE-2009)
+
+  \begin{choices}
+    \choice It reduces the memory access time to read or write a memory location.
+    \choice It helps to reduce the size of page table needed to implement the virtual address space of a process
+    \choice It is required by the translation lookaside buffer.
+    \choice It helps to reduce the number of page faults in page replacement algorithms.
+  \end{choices}
+
+\end{questyle}
+
 % ----------------------------------------------------------------------------
 
+\begin{questyle}
+
+  \question  A computer uses 46–bit virtual address, 32–bit physical address, and a three–level paged page table organization.
+             The page table base register stores the base address of the first–level table (T1), which occupies
+             exactly one page. Each entry of T1 stores the base address of a page of the second–level table (T2).
+             Each entry of T2 stores the base address of a page of the third–level table (T3). Each entry of T3
+             stores a page table entry (PTE). The PTE is 32 bits in size. The processor used in the computer has
+             a 1 MB 16 way set associative virtually indexed physically tagged cache. The cache block size
+             is 64 bytes. What is the size of a page in KB in this computer? (GATE-2013)
+
+  \begin{choices}
+    \choice 2
+    \choice 4
+    \choice 8
+    \choice 16
+  \end{choices}
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question   A Computer system implements 8 kilobyte pages and a 32-bit physical address space. Each page table
+              entry contains a valid bit, a dirty bit three permission bits, and the translation. If the maximum size
+              of the page table of a process is 24 megabytes, the length of the virtual address
+              supported by the system is \fillin[] (GATE-2015\_set\_2)
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  Consider a computer system with 40-bit virtual addressing and page size of sixteen kilobytes.
+              If the computer system has a one-level page table per process and each page table entry requires 48 bits,
+              then the size of the per-process page table is\fillin[] megabytes. (GATE-2016\_set\_1)
+
+\end{questyle}
+
+% ----------------------------------------------------------------------------
+Note : old gate written questions of 5 mark  are left and not yet included in this library. Till 2002. \\
+Note : File system and device management questions are left.
 % ----------------------------------------------------------------------------
 
 % ----------------------------------------------------------------------------
