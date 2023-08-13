@@ -8,7 +8,7 @@
 \question A CPU-bound process is.
 
 \begin{oneparchoices}
-   \choice More computation.
+   \CorrectChoice More computation.
    \choice More I/O.
    \choice Both.
    \choice None.
@@ -26,7 +26,7 @@
 
 \begin{oneparchoices}
    \choice More computation.
-   \choice More I/O.
+   \CorrectChoice More I/O.
    \choice Both.
    \choice None.
 \end{oneparchoices}
@@ -41,7 +41,7 @@
 \question Device driver is.
 
   \begin{choices}
-    \choice Software routine which interface with h/w device.
+    \CorrectChoice Software routine which interface with h/w device.
     \choice Part of a device that allows it to physically function (e.g spin a disk).
     \choice Featutre of a h/w device that allow it to interact with OS.
     \choice A hardware component.
@@ -53,13 +53,13 @@
 
 \begin{questyle}
 
-  \question Example of spooled device. (GATE - 92, 96, 98)
+  \question Which of the following is an example of a spooled device? (GATE - 92, 96, 98)
 
   \begin{choices}
-    \choice Line printer which print output of number of jobs.
-    \choice Terminal used to enter input data to a running program.
-    \choice Seconday storage device in virtual memory.
-    \choice A graphical display device.
+    \choice The terminal used to enter the input data for the C program being executed.
+    \choice An output device used to print the output of a number of jobs.
+    \choice The secondary memory device in a virtual storage system.
+    \choice The swapping area on a disk used by the sapper.
   \end{choices}
 
 \end{questyle}
@@ -75,7 +75,7 @@
   \begin{oneparchoices}
     \choice 3
     \choice 4
-    \choice 7
+    \CorrectChoice 7
     \choice 8
   \end{oneparchoices}
 
@@ -93,7 +93,7 @@
     \choice n
     \choice 2n
     \choice 3n
-    \choice Independent on n
+    \CorrectChoice Independent on n
   \end{oneparchoices}
 
 \end{questyle}
@@ -105,7 +105,7 @@
 
 \begin{questyle}
 
-  \question  Multi user and multi-processing OS can not be implemented on harrdware that do not have. (GATE-1999)
+  \question  Multi user and multi-processing OS can not be implemented on harrdware that do not have. (GATE-1999, could be wrong question)
 
   \begin{oneparchoices}
     \choice Address Translation
@@ -122,13 +122,14 @@
 
 \begin{questyle}
 
-  \question  Context Switching from A to B do not involve. (GATE - 1999)
+  \question  Which of the following actions is/are typically not performed by the
+              operating system when switching context from process A to process B? (GATE - 1999)
 
   \begin{choices}
-    \choice Saving and restoring registers of A and B.
+    \choice Saving current register values and restoring saved register values for process B.
     \choice Changing address translation tables.
-    \choice Swapping cureent process A to disk.
-    \choice Invalidating TLB.
+    \CorrectChoice Swapping out the memory image of process A to the disk.
+    \choice Invalidating the translation look-aside buffer.
   \end{choices}
 
 \end{questyle}
@@ -149,7 +150,7 @@
 
   \begin{oneparchoices}
     \choice a
-    \choice a and b
+    \CorrectChoice a and b
     \choice a and c
     \choice a, b and c
   \end{oneparchoices}
@@ -162,7 +163,8 @@
 
 \begin{questyle}
 
-  \question  (u, v) are printed by parent and (x,y) printed by child. (GATE-2005 )
+  \question  Let u, v be the values printed by the parent process, and x, y be the
+            values printed by the child process. Which one of the following is TRUE?
 
     \begin{lstlisting}
       if(fork()==0)
@@ -180,7 +182,7 @@
   \begin{oneparchoices}
     \choice u=x+10, v=y
     \choice u=x+10, v!=y
-    \choice u=x-10, v=y
+    \CorrectChoice u=x-10, v=y
     \choice u=x-10, v!=y
   \end{oneparchoices}
 
@@ -200,7 +202,7 @@
 
   \begin{oneparchoices}
     \choice n
-    \choice \(2^n -1 \)
+    \CorrectChoice \(2^n -1 \)
     \choice \(2^n \)
     \choice \(2^{n+1} -1 \)
   \end{oneparchoices}
@@ -214,6 +216,17 @@
 \begin{questyle}
 
   \question  Given state transition diagram. Which statements are true. (GATE-2009)
+  \begin{lstlisting}
+                          C
+                     ----------->
+            A       |            |        D
+    start ----->  Ready        Running   -----> Terminated
+                  | |<------------| |
+                E |       D         | F
+                  |                 |
+                   <----Blocked<----
+  \end{lstlisting}
+
 
   \begin{enumerate}
       \item[I] Transition D will result in transition A.
@@ -225,7 +238,7 @@
   \begin{oneparchoices}
     \choice 1 \& 2
     \choice 1 \& 3
-    \choice 2 \& 3
+    \CorrectChoice 2 \& 3
     \choice 2 \& 4
   \end{oneparchoices}
 
@@ -240,7 +253,7 @@
   \question  Suppose a processor does not have any stack pointer register. Which of the following statements is true?(GATE-2001)
 
   \begin{choices}
-    \choice It cannot have subroutine call instruction
+    \CorrectChoice It cannot have subroutine call instruction
     \choice It can have subroutine call instruction, but no nested subroutine calls
     \choice Nested subroutine calls are possible, but interrupts are not
     \choice All sequences of subroutine calls and also interrupts are possible
@@ -259,7 +272,7 @@
   \begin{oneparchoices}
     \choice RAM
     \choice ROM
-    \choice Disk
+    \CorrectChoice Disk
     \choice On-chip cache
   \end{oneparchoices}
 
