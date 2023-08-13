@@ -1,6 +1,9 @@
 
-
+# useful website     :  https://www.overleaf.com/learn
+# usepackage         :  amssymb, geometry, comment, listings, graphicx
 # comments           :  \begin{comment}      ...   \end{comment}
+# sections           :  section, subsection, subsubsection, paragraph, subparagraph
+# External tex files :  import(subimport), input, include, import{dir}{file}
 # coding programming :  \begin{lstlisting}   ...   \end{lstlisting}
 # list               :  \begin{enumerate}    ...   \begin{enumerate}
 # Math mode          :  \(  \)
@@ -10,74 +13,24 @@
 # exam question paper:  \documentclass{exam}  \question   \begin{choices} .... \end{choices}    \fillin[]
 # restart numbering  :  \setcounter{question}{0}
 # custom numbering   :  \renewcommand{\thequestion}{A\arabic{question}}
+# custom environment :  create styling. \newenvironment{env_name}{start_tags}{end_tags}
+# Margines           :  \geometry{a4paper, total={170mm,257mm},  left=17mm,  top=15mm,  }
+# line grp           :  \linespread{1.3}
+# images             :  \includegraphics{./images/apple.jpeg}     \graphicspath{{images/}
+                        \begin{figure}[h]  .........    \end{figure}
 
--------------------------------------------------------------------------------------
- help :
-    # https://en.wikibooks.org/wiki/LaTeX
-    # https://typeset.io/resources/learn-latex-beginners-step-by-step-guide/
-    # exam : https://www.overleaf.com/learn/latex/Typesetting_exams_in_LaTeX
-    # exam : https://latex-tutorial.com/multiple-choice-questions-latex/
-    # margines :  https://www.overleaf.com/learn/latex/Page_size_and_margins
-    # \usepackage{amssymb}
-    # \usepackage{geometry}
-    # \usepackage{comment} : \begin{comment}   ....   \end{comment}
-    # coding   : \usepackage{listings},  \begin{lstlisting}  ...coding....   \end{lstlisting}
-
--------------------------------------------------------
-
-margines
-
-\geometry{
-            a4paper,
-            total={170mm,257mm},
-            left=17mm,
-            top=15mm,
- }
--------------------------------------------------------
-
-using external files
-   # import(subimport):  allows you to have seperate directories each with its tex files and images
-   # input :
-   # include
-
-images :
-   # \usepackage{graphicx}
-   # \includegraphics{./images/apple.jpeg}
-   # \graphicspath{{images/}
-   # https://www.overleaf.com/learn/latex/Inserting_Images
-   # \begin{figure}[h]  .........    \end{figure}
-
-management of large file_LaTeX_projects
-   # https://www.overleaf.com/learn/latex/Management_in_a_large_project
 
 creating a project with multiple independent latex files
    --> https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects
    --> packages : \import{dir}{file}, standalone, subfiles, chapterbib
    --> \usepackage[subpreambles=true]{standalone}
 
- Different Levels of Heading
-    --> \section{Heading - Level 1}
-    --> \subsection{Heading - Level 2}
-    --> \subsubsection{Heading - Level 3}
-    --> \paragraph{Heading - Level 4}
-    --> \subparagraph{Heading - Level 5}
+-------------------------------------------------------
 
-latex directory structure
+management of large file_LaTeX_projects
+   # https://www.overleaf.com/learn/latex/Management_in_a_large_project
 
-bibtex/bib
-bibtex/bst
-fonts/afm
-fonts/enc
-fonts/map
-fonts/opentype
-fonts/pfb
-fonts/source
-fonts/tfm
-fonts/type1
-fonts/vf
-tex/generic
-tex/latex
-tex/lualatex
-tex/luatex
-tex/plain
-tex/xelatex
+
+
+
+
