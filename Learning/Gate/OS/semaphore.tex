@@ -1,0 +1,555 @@
+\centerline{\textbf{ \LARGE Semaphore }}
+
+\setcounter{question}{0}
+
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A counting semaphore was initialized to 10. Then 6 P (wait) operations and 4 V (signal) operations were completed on this semaphore. The resulting value of the semaphore is ( GATE-1998 )
+  \\ (GATE-1992 :  7, 20P, 15V, 2-7-12-42)
+  \begin{choices}
+    \choice 0
+    \choice 8
+    \choice 10
+    \choice 12
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+  \question   Let m[0]…m[4] be mutexes (binary semaphores) and P[0] …. P[4] be processes.
+              Suppose each process P[i] executes the following: This could cause. (GATE-2000 ) \\
+              wait (m[i]); \\
+              wait(m[(i+1) mode 4]); \\
+              ..\\
+              ..\\
+              release (m[i]);\\
+              release (m[(i+1)mod 4]);
+
+  \begin{oneparchoices}
+    \choice Thrashing
+    \choice Deadlock
+    \choice Starvation, but not deadlock
+    \choice None of the above
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question Three concurrent processes X, Y, and Z  executes the P, V operation(i.e., wait, signal)
+            on semaphores a, b, c and d. All semaphores are binary semaphores initialized to one.
+            Which one of the following represents a deadlock-free order of invoking the P operations
+            by the processes? (GATE-2013)
+
+  \begin{choices}
+    \choice X: P(a)P(b)P(c) \qquad  Y: P(b)P(c)P(d) \qquad  Z: P(c)P(d)P(a)
+    \choice X: P(b)P(a)P(c) \qquad  Y: P(b)P(c)P(d) \qquad  Z: P(a)P(c)P(d)
+    \choice X: P(b)P(a)P(c) \qquad  Y: P(c)P(b)P(d) \qquad  Z: P(a)P(c)P(d)
+    \choice X: P(a)P(b)P(c) \qquad  Y: P(c)P(b)P(d) \qquad  Z: P(c)P(d)P(a)
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Semaphore operations are atomic because they are implemented within OS \fillin[] (GATE-1990)
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Each Process P(i), i= 1…….9 is coded as follows.
+    \begin{lstlisting}
+        repeat
+            P(mutex)
+            {
+                Critical section
+            }
+            V(mutex)
+        forever
+    \end{lstlisting}
+    The code for P10 is identical except it uses V(mutex) in place of P(mutex). What is the largest number of processes that can be inside the critical section at any moment? (GATE-1997)
+
+  \begin{oneparchoices}
+    \choice 1
+    \choice 2
+    \choice 3
+    \choice None
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Suppose we want to synchronize two concurrent processes P and Q using binary semaphores S and T. The code for the processes P and Q is shown below. Synchronization statements can be inserted only at points W, X, Y and Z (GATE-2003 )
+
+  \begin{lstlisting}
+    Process P:                        Process Q:
+    while (1)                         while (1)
+    {                                 {
+        W:                                Y:
+        print '0';                        print '1';
+        print '0';                        print '1';
+        X:                                Z:
+    }                                 }
+  \end{lstlisting}
+
+  \begin{parts}
+      \part Which of the following will lead to an output string with 001100110011
+        \begin{choices}
+          \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S and T initially 1
+          \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S initially 1, and T initially 0
+          \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S and T initially 1
+          \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S initially 1, and T initially 0
+        \end{choices}
+
+      \part Which of the following will ensure that the output string never contains a substring of
+            the form \(01^n0\) or \(10^n1\) where n is odd
+        \begin{choices}
+          \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S and T initially 1
+          \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S and T initially 1
+          \choice P(S) at W, V(S) at X, P(S) at Y, V(S) at Z, S initially 1
+          \choice V(S) at W, V(T) at X, P(S) at Y, P(T) at Z, S and T initially 1
+        \end{choices}
+
+  \end{parts}
+
+  \end{minipage}
+
+% ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+  \question  Consider two processes P1 and P2 accessing the shared variables X and Y protected by two binary semaphores SX and SY respectively, both initialized to 1. In order to avoid deadlock, the correct operators at L1, L2, L3 and L4 are respectively (GATE- 2004)
+
+  \begin{lstlisting}
+      While(true)                         While(true)
+      {                                   {
+        L1 : ................                 L3 : ................
+        L2 : ................                 L4 : ................
+        X = X + 1;                            Y = Y + 1;
+        Y = Y - 1;                            X = Y - 1;
+        V(SX);                                V(SY);
+        V(SY);                                V(SX);
+    }                                     }
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice  P(SY), P(SX); P(SX), P(SY)
+    \choice  P(SX), P(SY); P(SY), P(SX)
+    \choice  P(SX), P(SX); P(SY), P(SY)
+    \choice  P(SX), P(SY); P(SX), P(SY)
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  The atomic fetch-and-set x, y instruction unconditionally sets the memory location x to 1 and fetches the old value of x n y without allowing any intervening access to the memory location x. consider the following implementation of P and V functions on a binary semaphore S. Which one of the following is true? (GATE- 2006)
+
+  \begin{lstlisting}
+      void P (binary_semaphore *s)                    void V (binary_semaphore *s)
+      {                                               {
+          unsigned y;                                       S->value = 0;
+          unsigned *x = &(s->value);                  }
+          do
+          {
+              fetch-and-set x, y;
+          }
+          while (y);
+      }
+  \end{lstlisting}
+
+  \begin{choices}
+    \choice  The implementation may not work if context switching is disabled in P
+    \choice  Instead of using fetch-and –set, a pair of normal load/store can be used
+    \choice  The implementation of V is wrong
+    \choice  The code does not implement a binary semaphore
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+
+    \question  Barrier is a synchronization construct where a set of processes synchronizes globally i.e. each process in the set arrives at the barrier and waits for all others to arrive and then all processes leave the barrier. Let the number of processes in the set be three and S be a binary semaphore with the usual P and V functions. Consider the following C implementation of a barrier with line numbers shown on left.
+
+    The variables process\_arrived and process\_left are shared among all processes and are initialized to zero.
+    In a concurrent program all the three processes call the barrier function when they need to synchronize globally. (GATE- 2006)
+
+  \begin{lstlisting}
+      void barrier (void)
+      {
+      1:      P(S);
+      2:      process_arrived++;
+      3.      V(S);
+      4:      while (process_arrived !=3);
+      5:      P(S);
+      6:      process_left++;
+      7:      if (process_left==3) {
+      8:	     process_arrived = 0;
+      9:	     process_left = 0;
+      10:     }
+      11:     V(S);
+      }
+
+  \end{lstlisting}
+
+  \begin{parts}
+      \part The above implementation of barrier is incorrect. Which one of the following is true?
+        \begin{choices}
+          \choice The barrier implementation is wrong due to the use of binary semaphore S
+          \choice The barrier implementation may lead to a deadlock if two barrier in
+invocations are used in immediate succession.
+          \choice Lines 6 to 10 need not be inside a critical section
+          \choice The barrier implementation is correct if there are only two processes instead of three.
+        \end{choices}
+
+      \part Which one of the following rectifies the problem in the implementation?
+        \begin{choices}
+          \choice Lines 6 to 10 are simply replaced by process\_arrived–
+          \choice At the beginning of the barrier the first process to enter the barrier waits
+until process\_arrived becomes zero before proceeding to execute P(S).
+          \choice Context switch is disabled at the beginning of the barrier and re-enabled at the end.
+          \choice The variable process\_left is made private instead of shared
+        \end{choices}
+
+  \end{parts}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A shared variable x, initialized to zero, is operated on by four concurrent processes W, X, Y, Z as follows.
+            Each of the processes W and X reads x from memory, increments by one, stores it to memory, and then terminates.
+            Each of the processes Y and Z reads x from memory, decrements by two, stores it to memory, and then terminates.
+            Each process before reading x invokes the P operation (i.e., wait) on a counting semaphore S and
+            invokes the V operation (i.e., signal) on the semaphore S after storing x to memory.
+            Semaphore S is initialized to two. What is the maximum possible value of x after all
+            processes complete execution? (GATE- 2013)
+
+  \begin{oneparchoices}
+    \choice  -2
+    \choice  -1
+    \choice  1
+    \choice  2
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+  \begin{minipage}{\linewidth}
+  \question  The P and V operations on counting semaphores, where s is a counting semaphore, are defined as follows: (GATE- 2008)
+
+  \begin{lstlisting}
+      P(s) : s =  s - 1;
+          if (s  < 0) then wait;
+
+      V(s) : s = s + 1;
+        if (s <= 0) then wakeup a process waiting on s;
+  \end{lstlisting}
+  Assume that Pb and Vb the wait and signal operations on binary semaphores are provided. Two binary semaphores Xb and Yb are used to implement the semaphore operations P(s) and V(s) as follows:
+   \begin{lstlisting}
+      P(s)                               V(s) :
+
+      Pb(Xb);                            Pb(Xb) ;
+      s = s - 1;                         s = s + 1;
+      if (s < 0)                         if (s <= 0)
+      {                                  {
+          Vb(Xb) ;                         Vb(Yb) ;
+          Pb(Yb) ;
+      }                                  }
+      else                               Vb(Xb) ;
+      {
+          Vb(Xb);
+      }
+  \end{lstlisting}
+  The initial values of Xb and Yb are respectively
+
+  \begin{oneparchoices}
+    \choice  0 and 0
+    \choice  0 and 1
+    \choice  1 and 0
+    \choice  1 and 1
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  The enter\_CS() and leave\_CS() functions to implement critical section of a process are realized using test-and-set instruction as follows: (GATE- 2009)
+
+  \begin{lstlisting}
+      void enter_CS(X)                    void leave_CS(X)
+      {                                   {
+          while test-and-set(X) ;             X = 0;
+      }                                   }
+  \end{lstlisting}
+  In the above solution, X is a memory location associated with the CS and is initialized to 0. Now consider the following statements:
+  \begin{enumerate}
+      \item[I]  The above solution to CS problem is deadlock-free
+      \item[II] The solution is starvation free.
+      \item[III] The processes enter CS in FIFO order.
+      \item[V]   More than one process can enter CS at the same time.
+   \end{enumerate}
+
+  \begin{choices}
+    \choice  I only
+    \choice  I and II
+    \choice  II and III
+    \choice   IV only
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  The following program consists of 3 concurrent processes and 3 binary semaphores.
+             The semaphores are initialized as S0 = 1, S1 = 0, S2 = 0. (GATE- 2010)
+
+  \begin{lstlisting}
+      P0:                           P1:                      p2:
+
+      while (true)                  wait(S1);                wait(S2);
+      {                             release(S0)              release(S0)
+          wait(S0);
+          print(0);
+          release(S1)
+          release(S2)
+      }
+  \end{lstlisting}
+  How many times will process P0 print ‘0’?
+
+  \begin{choices}
+    \choice  At least twice
+    \choice  Exactly twice
+    \choice  Exactly thrice
+    \choice  Exactly once
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Fetch\_And\_Add(X,i) is an atomic Read-Modify-Write instruction that reads the value of memory
+             location X, increments it by the value i, and returns the old value of X.
+             It is used in the pseudocode shown below to implement a busy-wait lock.
+             L is an unsigned integer shared variable initialized to 0.
+             The value of 0 corresponds to lock being available, while any non-zero value corresponds to the lock
+             being not available.(GATE- 2012)
+
+  \begin{lstlisting}
+      AcquireLock(L)                        ReleaseLock(L)
+      {                                     {
+          while (Fetch_And_Add(L,1))            L = 0;
+          {                                 }
+                L = 1;
+          }
+      }
+
+  \end{lstlisting}
+  This implementation
+
+  \begin{choices}
+    \choice  fails as L can overflow
+    \choice  fails as L can take on a non-zero value when the lock is actually available
+    \choice  works correctly but may starve some processes
+    \choice  works correctly without starvation
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider a non-negative counting semaphore S . The operation P(s) decrements , and V(S) increments S.
+             During an execution, 20 P operations and 12 V operations are issued in some order.
+             The largest initial value of S for which at least one P operation will remain blocked is \fillin[]. (Gate-2016\_set\_2)
+  \end{minipage}
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A certain computation generates two arrays a and b such that
+
+  \begin{lstlisting}
+   a[i]  =  f(i)      for 0 <= i < n
+   b[i]  =  g(a[i])   for 0 <= i < n.
+  \end{lstlisting}
+
+             Suppose this computation is decomposed into two concurrent processes X and Y such that X computes
+             the array a and Y computes the array b. The processes employ two binary semaphores R and S,
+             both initialized to zero. The array a is shared by the two processes.
+             The structures of the processes are shown below. (GATE- 2013)
+
+  \begin{lstlisting}
+      Process X:                         Process Y:
+
+      private i;                         private i;
+      for (i=0; i < n; i++)              for (i=0; i < n; i++)
+      {                                  {
+          a[i] = f(i);                       EntryY(R, S);
+          ExitX(R, S);                       b[i]=g(a[i]);
+      }                                  }
+  \end{lstlisting}
+  Which one of the following represents the CORRECT implementations of ExitX and EntryY?
+  \begin{choices}
+    \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        P(R)                          P(S)
+        V(S)                          V(R)
+     }                              }
+  \end{lstlisting}
+
+  \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        V(R)                          P(R)
+        V(S)                          P(S)
+     }                              }
+  \end{lstlisting}
+
+  \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        P(S)                          V(S)
+        V(R)                          P(R)
+     }                              }
+  \end{lstlisting}
+
+  \choice
+      \begin{lstlisting}
+     ExitX(R,S){                    EntryY(R,S){
+        V(R)                          V(S)
+        P(S)                          P(R)
+     }                              }
+  \end{lstlisting}
+
+  \end{choices}
+  Hint : R, S are binary semaphores. No matter how many time V(S) is done max value of R,S will be one.
+  Need Strict alternation.
+  \end{minipage}
+
+\vspace{0.08in}
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider the procedure below for the Producer-Consumer problem which uses semaphores. (GATE-2014\_set\_2)
+  \begin{lstlisting}
+  semaphore n = 0;
+  semaphore s = 1;
+
+  void producer()                       void consumer()
+  {                                     {
+      while(true)                           while(true)
+      {                                     {
+          produce();                            semWait(s);
+          semWait(s);                           semWait(n);
+          addToBuffer();                        removeFromBuffer();
+          semSignal(s);                         semSignal(s);
+          semSignal(n);                          consume();
+      }                                     }
+  }                                     }
+  \end{lstlisting}
+
+    Which one of the following is TRUE?
+
+  \begin{choices}
+    \choice  The producer will be able to add an item to the buffer, but the consumer can never consume it.
+    \choice  The consumer will remove no more than one item from the buffer.
+    \choice  Deadlock occurs if the consumer succeeds in acquiring semaphore s when the buffer is empty.
+    \choice  The starting value for the semaphore must be and not for deadlock-free operation.
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+old gate written questions of 5 mark  are left and not yet included in this library. Till 2002.
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+
+
+\begin{comment}
+
+\begin{minipage}{\linewidth}
+
+  \question  (GATE- )
+
+  \begin{choices}
+    \choice
+    \choice
+    \choice
+    \choice
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+  %% oneparchoices
+
+
+\end{comment}

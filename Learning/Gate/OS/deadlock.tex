@@ -1,0 +1,332 @@
+\centerline{\textbf{ \LARGE Deadlock}}
+
+\setcounter{question}{0}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A computer has six tape drives, with n processes competing for them. Each process may need two drives.
+             What is the maximum value of n for the system to be deadlock free?(GATE-1998)
+
+  \begin{oneparchoices}
+    \choice 6
+    \choice 5
+    \choice 4
+    \choice 3
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A system has 6 identical resources and N processes competing for them. Each process can request atmost 2 resources. Which one of the following values of N could lead to a deadlock? (GATE-2015 )
+
+  \begin{oneparchoices}
+    \choice 1
+    \choice 2
+    \choice 3
+    \choice 4
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A computer system has 6 tape drives with n processes competing for them. Each process may need 3 tape drives. The maximum value of n for which the system is guaranteed to be deadlock free is (GATE- 1992)
+
+  \begin{oneparchoices}
+    \choice 1
+    \choice 2
+    \choice 3
+    \choice 4
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+  \question  Consider a system having m resources of the same type. These resources are shared by 3 processes, and  which have peak demands of 3, 4 and 6 respectively.  For what value of deadlock will not occur? (GATE- 1997)
+
+  \begin{oneparchoices}
+    \choice 7
+    \choice 9
+    \choice 10
+    \choice 13
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Which of the following is NOT a valid deadlock prevention scheme? (GATE- 2000)
+
+  \begin{choices}
+    \choice Release all resources before requesting a new resource
+    \choice Number the resources uniquely and never request a lower numbered resource than the last one requested.
+    \choice Never request a resource after releasing any resource
+    \choice Request and all required resources be allocated before execution.
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Suppose n processes, P1, …. Pn share m identical resource units, which can be reserved and released one at a time. The maximum resource requirement of process Pi is Si, where Si \(>\) 0. Which one of the following is a sufficient condition for ensuring that deadlock does not occur? (GATE-2005)
+
+  \begin{choices}
+    \choice {\large \(  \mathbf{ \sum_{n=1}^{n} s_i < (m+n)   }  \) }
+    \choice {\large \(  \mathbf{ \sum_{n=1}^{n} s_i < (m * n) }  \) }
+    \choice {\large \(  \mathbf{ \forall i, s_i < m  }  \) }
+    \choice {\large \(  \mathbf{ \forall i, s_i < n  }  \) }
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider the following snapshot of a system running n processes. Process i is holding \(X_i\) instances of a resource R, \( \mathbf{ 1 <= i <= n } \). currently, all instances of R are occupied. Further, for all i, process i has placed a request for an additional \(Y_i\) instances while holding the \(X_i\) instances it already has. There are exactly two processes p and q such that \( \mathbf{ Y_p = Y_q = 0 } \) . Which one of the following can serve as a necessary condition to guarantee that the system is not approaching a deadlock? (GATE-2006)
+
+  \begin{choices}
+    \choice {\large \( \mathbf { min(x_p, x_q)  <  max_{k!=p,q} \; y_k } \) }
+    \choice {\large \( \mathbf { x_p+x_q >= min_{k!=p,q} \; y_k } \) }
+    \choice {\large \( \mathbf { max(x_p, x_q) > 1 } \) }
+    \choice {\large \( \mathbf { min(x_p, x_q) > 1 } \) }
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Which of the following is NOT true of deadlock prevention and deadlock avoidance schemes? (GATE-2008)
+
+  \begin{choices}
+    \choice  In deadlock prevention, the request for resources is always granted if the resulting state is safe
+    \choice  In deadlock avoidance, the request for resources is always granted if the result state is safe
+    \choice  Deadlock avoidance is less restrictive than deadlock prevention
+    \choice  Deadlock avoidance requires knowledge of resource requirements a priori
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider a system with 4 types of resources R1 (3 units), R2 (2 units), R3 (3 units), R4 (2 units).
+             A non-preemptive resource allocation policy is used. At any given instance, a request is not entertained
+             if it cannot be completely satisfied. Three processes P1, P2, P3 request the sources as follows
+             if executed independently. (GATE-2009)
+
+\begin{lstlisting}
+
+  Process P1:                   Process P2:               Process P3:
+  t=0: requests 2               t=0: requests 2           t=0: requests 1
+  units of R2                   units of R3               unit of R4
+
+  t=1: requests 1               t=2: requests 1          t=2: requests 2
+  unit of R3                    unit of R4               units of R1
+
+  t=3: requests 2               t=4: requests 1          t=5: releases 2
+  units of R1                   unit of R1               units of R1
+
+  t=5: releases 1 unit          t=6: releases 1          t=7: requests 1
+  of R2 and 1 unit of R1.       unit of R3               units of R2
+
+  t=7: releases 1               t=8: Finishes            t=8: requests 1
+  unit of R3                                             units of R3
+
+  t=8: requests 2                                        t=9: Finishes
+  units of R4
+
+  t=10: Finishes
+
+\end{lstlisting}
+
+             Which one of the following statements is TRUE if all three processes run concurrently starting at time t=0?
+  \begin{choices}
+    \choice All processes will finish without any deadlock
+    \choice Only P1 and P2 will be in deadlock.
+    \choice Only P1 and P3 will be in a deadlock.
+    \choice All three processes will be in deadlock
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A system has n resources {\large \( { R_0,…,R_{n-1}  } \) },and k processes {\large \( { P_0,….P_{k-1} } \) } .The implementation of the resource request logic of each process \(P_i\) is as follows:  (GATE-2010)
+
+  R(i+2) is actually \( R_{i+2} \) in following code...
+  \begin{lstlisting}
+      if (i % 2 == 0) {
+          if (i < n) request R(i)
+          if (i+2 < n) request R(i+2)
+      }
+      else {
+          if (i < n) request R(n-i)
+          if (i+2 < n) request R(n-i-2)
+      }
+  \end{lstlisting}
+
+  In which one of the following situations is a deadlock possible?
+
+  \begin{oneparchoices}
+    \choice n=40, k=26
+    \choice n=21, k=12
+    \choice n=20, k=10
+    \choice n=41, k=19
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  Consider the following policies for preventing deadlock in a system with mutually exclusive resources. (GATE-2015\_set\_3)
+
+  \begin{enumerate}
+      \item[I]  Processes should acquire all their resources at the beginning of execution.
+                If any resource is not available, all resources acquired so far are released.
+      \item[II] The resources are numbered uniquely, and processes are allowed to request
+                for resources only in increasing resource numbers.
+      \item[III] The resources are numbered uniquely, and processes are allowed to request
+                  for resources only in decreasing resource numbers.
+      \item[IV]  The resources are numbered uniquely. A process is allowed to request only for a
+                  resource with resource number larger than its currently held resources.
+  \end{enumerate}
+  Which of the above policies can be used for preventing deadlock?
+
+  \begin{choices}
+    \choice Any one of I and III but not II or IV
+    \choice Any one of I, III and IV but not II
+    \choice Any one of II and III but not I or IV
+    \choice Any one of I, II, III and IV
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  A multithreaded program P executes with x number of threads and uses y number of locks for ensuring
+            mutual exclusion while operating on shared memory locations. All locks in the program are
+            non-reentrant, i.e., if a thread holds a lock l, then it cannot re-acquire lock l without
+            releasing it. If a thread is unable to acquire a lock, it blocks until the lock becomes available.
+            The minimum value of x and the minimum value of y together for which execution of P can result
+            in a deadlock are:(GATE-2017\_set\_1)
+
+  \begin{choices}
+    \choice x = 1, y = 2
+    \choice x = 2, y = 1
+    \choice x = 2, y = 2
+    \choice x = 1, y = 1
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+old gate written questions of 5 mark  are left and not yet included in this library. Till 2002.
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+
+
+
+\begin{comment}
+
+\begin{minipage}{\linewidth}
+
+  \question  (GATE- )
+
+  \begin{choices}
+    \choice
+    \choice
+    \choice
+    \choice
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+  %% oneparchoices
+
+
+    \begin{lstlisting}     \end{lstlisting}
+
+  \begin{enumerate}
+      \item[I]
+      \item[II]
+   \end{enumerate}
+
+   \fillin[]
+
+   \(p_{n-1}\)
+
+
+\end{comment}

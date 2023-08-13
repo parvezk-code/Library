@@ -1,0 +1,97 @@
+\centerline{\textbf{ \LARGE Deadlock : Bankers Algorith}}
+
+\setcounter{question}{0}
+
+% ----------------------------------------------------------------------------
+\begin{minipage}{\linewidth}
+
+  \question  A single processor system has three resource types X, Y and Z, which are shared by three processes.
+             There are 5 units of each resource type. Consider the following scenario, where the column alloc denotes the number
+             of units of each resource type allocated to each process, and the column request denotes the number of units of
+             each resource type requested by a process in order to complete execution. Which of these processes will finish LAST?(GATE-2007)
+
+        \begin{lstlisting}
+                alloc           request
+                X Y Z            X Y Z
+            P0  1 2 1            1 0 3
+            P1  2 0 1            0 1 2
+            P2  2 2 1            1 2 0
+        \end{lstlisting}
+
+  \begin{oneparchoices}
+    \choice P0
+    \choice P1
+    \choice P2
+    \choice system is in deadlock
+  \end{oneparchoices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question  An operating system uses the Banker’s algorithm for deadlock avoidance when managing the allocation of
+             three resource types X, Y, and Z to three processes P0, P1, and P2. The table given below presents the
+             current system state. Here, the Allocation matrix shows the current number of resources of each type
+             allocated to each process and the Max matrix shows the maximum number of resources of each type required
+             by each process during its execution. (GATE-2014\_set\_1)
+
+             \begin{lstlisting}
+                alloc           request
+                X Y Z            X Y Z
+            P0  0 0 1            8 4 3
+            P1  3 2 0            6 2 0
+            P2  2 2 1            3 3 3
+            \end{lstlisting}
+
+
+             There are 3 units of type X, 2 units of type Y and 2 units of type Z still available. The system is
+             currently in a safe state. Consider the following independent requests for additional resources in the current state:
+
+             REQ1: P0 requests 0 units of X, 0 units of Y and 2 units of Z \\
+             REQ2: P1 requests 2 units of X, 0 units of Y and 0 units of Z \\
+             Which one of the following is TRUE?
+  \begin{choices}
+    \choice  Only REQ1 can be permitted.
+    \choice  Only REQ2 can be permitted.
+    \choice  Both REQ1 and REQ2 can be permitted.
+    \choice  Neither REQ1 nor REQ2 can be permitted
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+
+\begin{minipage}{\linewidth}
+
+  \question   A system shares 9 tape drives. The current allocation and maximum requirement of tape drives for 3 processes are shown below:(GATE-2017\_set\_2)
+
+  \begin{lstlisting}
+                alloc   Max
+            P1   3      7
+            P2   1      6
+            P3   3      5
+            \end{lstlisting}
+
+  Which of the following best describes the current state of the system?
+  \begin{choices}
+    \choice Safe, Deadlocked
+    \choice Safe, Not Deadlocked
+    \choice Not Safe, Deadlocked
+    \choice Not Safe, Not Deadlocked
+  \end{choices}
+
+  \end{minipage}
+
+\vspace{0.08in}
+
+% ----------------------------------------------------------------------------
+old gate written questions of 5 mark  are left and not yet included in this library. Till 2002.
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
