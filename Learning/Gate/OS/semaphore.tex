@@ -4,7 +4,7 @@
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  A counting semaphore was initialized to 10. Then 6 P (wait) operations and 4 V (signal) operations were completed on this semaphore. The resulting value of the semaphore is ( GATE-1998 )
   \\ (GATE-1992 :  7, 20P, 15V, 2-7-12-42)
@@ -15,12 +15,12 @@
     \choice 12
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question   Let m[0]…m[4] be mutexes (binary semaphores) and P[0] …. P[4] be processes.
               Suppose each process P[i] executes the following: This could cause. (GATE-2000 ) \\
@@ -38,12 +38,12 @@
     \choice None of the above
   \end{oneparchoices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question Three concurrent processes X, Y, and Z  executes the P, V operation(i.e., wait, signal)
             on semaphores a, b, c and d. All semaphores are binary semaphores initialized to one.
@@ -57,23 +57,23 @@
     \choice X: P(a)P(b)P(c) \qquad  Y: P(c)P(b)P(d) \qquad  Z: P(c)P(d)P(a)
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  Semaphore operations are atomic because they are implemented within OS \fillin[] (GATE-1990)
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  Each Process P(i), i= 1…….9 is coded as follows.
     \begin{lstlisting}
@@ -94,13 +94,13 @@
     \choice None
   \end{oneparchoices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  Suppose we want to synchronize two concurrent processes P and Q using binary semaphores S and T. The code for the processes P and Q is shown below. Synchronization statements can be inserted only at points W, X, Y and Z (GATE-2003 )
 
@@ -135,10 +135,10 @@
 
   \end{parts}
 
-  \end{minipage}
+  \end{questyle}
 
 % ----------------------------------------------------------------------------
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  Consider two processes P1 and P2 accessing the shared variables X and Y protected by two binary semaphores SX and SY respectively, both initialized to 1. In order to avoid deadlock, the correct operators at L1, L2, L3 and L4 are respectively (GATE- 2004)
 
@@ -161,13 +161,13 @@
     \choice  P(SX), P(SY); P(SX), P(SY)
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  The atomic fetch-and-set x, y instruction unconditionally sets the memory location x to 1 and fetches the old value of x n y without allowing any intervening access to the memory location x. consider the following implementation of P and V functions on a binary semaphore S. Which one of the following is true? (GATE- 2006)
 
@@ -191,13 +191,13 @@
     \choice  The code does not implement a binary semaphore
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
 
     \question  Barrier is a synchronization construct where a set of processes synchronizes globally i.e. each process in the set arrives at the barrier and waits for all others to arrive and then all processes leave the barrier. Let the number of processes in the set be three and S be a binary semaphore with the usual P and V functions. Consider the following C implementation of a barrier with line numbers shown on left.
@@ -244,13 +244,13 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 
   \end{parts}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  A shared variable x, initialized to zero, is operated on by four concurrent processes W, X, Y, Z as follows.
             Each of the processes W and X reads x from memory, increments by one, stores it to memory, and then terminates.
@@ -267,13 +267,13 @@ until process\_arrived becomes zero before proceeding to execute P(S).
     \choice  2
   \end{oneparchoices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-  \begin{minipage}{\linewidth}
+  \begin{questyle}
   \question  The P and V operations on counting semaphores, where s is a counting semaphore, are defined as follows: (GATE- 2008)
 
   \begin{lstlisting}
@@ -308,13 +308,13 @@ until process\_arrived becomes zero before proceeding to execute P(S).
     \choice  1 and 1
   \end{oneparchoices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  The enter\_CS() and leave\_CS() functions to implement critical section of a process are realized using test-and-set instruction as follows: (GATE- 2009)
 
@@ -339,13 +339,13 @@ until process\_arrived becomes zero before proceeding to execute P(S).
     \choice   IV only
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  The following program consists of 3 concurrent processes and 3 binary semaphores.
              The semaphores are initialized as S0 = 1, S1 = 0, S2 = 0. (GATE- 2010)
@@ -370,13 +370,13 @@ until process\_arrived becomes zero before proceeding to execute P(S).
     \choice  Exactly once
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  Fetch\_And\_Add(X,i) is an atomic Read-Modify-Write instruction that reads the value of memory
              location X, increments it by the value i, and returns the old value of X.
@@ -404,23 +404,23 @@ until process\_arrived becomes zero before proceeding to execute P(S).
     \choice  works correctly without starvation
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  Consider a non-negative counting semaphore S . The operation P(s) decrements , and V(S) increments S.
              During an execution, 20 P operations and 12 V operations are issued in some order.
              The largest initial value of S for which at least one P operation will remain blocked is \fillin[]. (Gate-2016\_set\_2)
-  \end{minipage}
-\vspace{0.08in}
+  \end{questyle}
+
 
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  A certain computation generates two arrays a and b such that
 
@@ -481,12 +481,12 @@ until process\_arrived becomes zero before proceeding to execute P(S).
   \end{choices}
   Hint : R, S are binary semaphores. No matter how many time V(S) is done max value of R,S will be one.
   Need Strict alternation.
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 % ----------------------------------------------------------------------------
 
-\begin{minipage}{\linewidth}
+\begin{questyle}
 
   \question  Consider the procedure below for the Producer-Consumer problem which uses semaphores. (GATE-2014\_set\_2)
   \begin{lstlisting}
@@ -515,9 +515,9 @@ until process\_arrived becomes zero before proceeding to execute P(S).
     \choice  The starting value for the semaphore must be and not for deadlock-free operation.
   \end{choices}
 
-  \end{minipage}
+  \end{questyle}
 
-\vspace{0.08in}
+
 
 % ----------------------------------------------------------------------------
 
@@ -528,27 +528,3 @@ old gate written questions of 5 mark  are left and not yet included in this libr
 % ----------------------------------------------------------------------------
 
 % ----------------------------------------------------------------------------
-
-
-
-\begin{comment}
-
-\begin{minipage}{\linewidth}
-
-  \question  (GATE- )
-
-  \begin{choices}
-    \choice
-    \choice
-    \choice
-    \choice
-  \end{choices}
-
-  \end{minipage}
-
-\vspace{0.08in}
-
-  %% oneparchoices
-
-
-\end{comment}
