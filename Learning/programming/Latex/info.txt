@@ -3,6 +3,7 @@
 # usepackage         :  amssymb, geometry, comment, listings, graphicx
 # comments           :  \begin{comment}      ...   \end{comment}
 # sections           :  section, subsection, subsubsection, paragraph, subparagraph
+# un-breakable block :  samepage, \parbox, \minipage, \needspace
 # External tex files :  import(subimport), input, include, import{dir}{file}
 # coding programming :  \begin{lstlisting}   ...   \end{lstlisting}
 # list               :  \begin{enumerate}    ...   \begin{enumerate}
