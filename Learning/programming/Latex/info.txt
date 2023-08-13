@@ -1,4 +1,17 @@
 
+
+# comments           :  \begin{comment}      ...   \end{comment}
+# coding programming :  \begin{lstlisting}   ...   \end{lstlisting}
+# list               :  \begin{enumerate}    ...   \begin{enumerate}
+# Math mode          :  \(  \)
+# font size          :  {\huge  }   (large Large LARGE)  (huge etc..)
+# symnbols(Math)     :  p_{n-1}       \sum_{n=1}^{n} s_i     \forall i, s_i
+# custom space(tab)  :  \qquad \  \; \:
+# exam question paper:  \documentclass{exam}  \question   \begin{choices} .... \end{choices}    \fillin[]
+# restart numbering  :  \setcounter{question}{0}
+# custom numbering   :  \renewcommand{\thequestion}{A\arabic{question}}
+
+-------------------------------------------------------------------------------------
  help :
     # https://en.wikibooks.org/wiki/LaTeX
     # https://typeset.io/resources/learn-latex-beginners-step-by-step-guide/
