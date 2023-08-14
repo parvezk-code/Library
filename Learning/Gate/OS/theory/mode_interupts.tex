@@ -1,0 +1,74 @@
+
+\centerline{\textbf{ \LARGE Interupts, System calls, CPU Modes}}
+
+
+% ----------------------------------------------------------------------------
+\begin{enumerate}
+  \item Modes and Instruction.
+  \begin{enumerate}
+        \item Dual Mode ensures protection and security from unauthorized users.
+        \item Dual mode - User Mode and Kernel Mode.
+        \item Instructions - privileged and non-privileged.
+        \item Privileged instructions provide low-level system operations.
+        \item Non-privileged instructions provide general purpose computing.
+        \item Interupts cause CPU to change mode from user to kernel mode.
+        \item A non-privileged instruction which do not cause interupt changes kernel mode to user mode.
+  \end{enumerate}
+
+  \item Privileged Instruction.
+  \begin{enumerate}
+        \item Executed only in Kernel Mode.
+        \item Kernal and privileged process(ex. device driver) contains privileged instruction.
+        \item Provides direct access to hardware or other privileged resources(ex. setting up memory mappings)
+        \item Provides unrestricted access to the system resources.
+        \item System calls contains privileged instruction.
+        \item Executing privileged instruction in user mode is illegal. Hardware traps it in the OS.
+        \item Privileged Instruction can modify the contents of the Timer.
+  \end{enumerate}
+
+  \item Non-Privileged Instruction.
+  \begin{enumerate}
+        \item Executed only in User Mode.
+        \item Ensures that user processes do interfere.
+        \item Provides access to user-level resources such as files and memory
+        \item Provides direct access to hardware or other privileged resources(ex. setting up memory mappings)
+        \item Provides unrestricted access to the system resources.
+  \end{enumerate}{enumerate}
+
+  \item Interupts
+  \begin{enumerate}
+        \item Types - Hardware Interupts and Software Interupts.
+        \item Interupt Requests :
+        \item Interupt Service Routine(ISR): Interupts are handle by ISR.
+        \item Interupt Vector(IV) :
+        \item Interupt Vector Table(Interupt Handler Table) : Maps IV to Kernal Code.
+  \end{enumerate}
+
+  \item Interupt flow.
+  \begin{enumerate}
+        \item Types - Hardware Interupts and Software Interupts.
+        \item Interupt Requests :
+        \item Interupt Service Routine(ISR): Interupts are handle by ISR.
+        \item Interupt Vector(IV) :
+        \item Interupt Vector Table(Interupt Handler Table) : Maps IV to Kernal Code.
+  \end{enumerate}
+
+
+\end{enumerate}
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
