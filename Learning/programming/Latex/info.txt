@@ -17,8 +17,8 @@
 # custom environment :  create styling. \newenvironment{env_name}{start_tags}{end_tags}
 # Margines           :  \geometry{a4paper, total={170mm,257mm},  left=17mm,  top=15mm,  }
 # line grp           :  \linespread{1.3}
-# images             :  \includegraphics{./images/apple.jpeg}     \graphicspath{{images/}
-                        \begin{figure}[h]  .........    \end{figure}
+# images             :  \begin{figure}[h]   \includegraphics{./images/apple.jpeg}    \end{figure}
+                        \graphicspath{{images/}
 
 
 creating a project with multiple independent latex files

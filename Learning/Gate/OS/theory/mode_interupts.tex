@@ -3,7 +3,12 @@
 
 
 % ----------------------------------------------------------------------------
-\begin{enumerate}
+
+
+  \begin{enumerate}
+
+  \item CPU executes instructions.
+
   \item Modes and Instruction.
   \begin{enumerate}
         \item Dual Mode ensures protection and security from unauthorized users.
@@ -38,24 +43,31 @@
   \item Interupts
   \begin{enumerate}
         \item Types - Hardware Interupts and Software Interupts.
-        \item Interupt Requests :
-        \item Interupt Service Routine(ISR): Interupts are handle by ISR.
+        \item ISR : Interupt Service Routine(interupt handler)
         \item Interupt Vector(IV) :
-        \item Interupt Vector Table(Interupt Handler Table) : Maps IV to Kernal Code.
+        \item Interupt Vector Table : Maps IV to Kernal Code.
+  \end{enumerate}
+
+  \item Interrupt Vector Table(IVT) and Interrupt Service Routine(ISR or interrupt handler)
+  \begin{enumerate}
+        \item Every interrupt has IS-Routine.
+        \item IVT holds address of IS-Routine for each interupt.
+        \item IS-Routine is part of Kernal. (Check this point)
   \end{enumerate}
 
   \item Interupt flow.
   \begin{enumerate}
-        \item Types - Hardware Interupts and Software Interupts.
-        \item Interupt Requests :
-        \item Interupt Service Routine(ISR): Interupts are handle by ISR.
-        \item Interupt Vector(IV) :
-        \item Interupt Vector Table(Interupt Handler Table) : Maps IV to Kernal Code.
+        \item CPU finishes executing current execution cycle.
+        \item CPU checks for interupt.(and detects one)
+        \item CPU saves program status word onto stack.
+        \item IS-Routine is identified based on IV-Table.
+        \item Controll is transfered to IS-Routine.
+        \item Restore saved registers from the stack.
+        \item Restore ans executes the original process.
   \end{enumerate}
 
 
 \end{enumerate}
-% ----------------------------------------------------------------------------
 
 % ----------------------------------------------------------------------------
 
