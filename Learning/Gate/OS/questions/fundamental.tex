@@ -217,17 +217,12 @@
 
   \question  Given state transition diagram. Which statements are true. (GATE-2009)
   \begin{lstlisting}
-                          C
-                     ----------->
-            A       |            |        D
-    start ----->  Ready        Running   -----> Terminated
-                  | |<------------| |
-                E |       D         | F
-                  |                 |
-                   <----Blocked<----
+            A               B                 D
+    start ----->  Ready <=======> Running   -----> Terminated
+                  |         C       |
+                E |                 | F
+                  |<====Blocked=====|
   \end{lstlisting}
-
-
   \begin{enumerate}
       \item[I] Transition D will result in transition A.
       \item[II] Transition E is possible if some process is in running state.

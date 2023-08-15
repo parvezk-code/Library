@@ -7,26 +7,30 @@
 
   \begin{enumerate}
 
-  \item CPU executes instructions.
-
-  \item Modes and Instruction.
+  \item CPU Instructions - privileged and non-privileged.
+  \begin{figure}[h]
+      \centering   \includegraphics[scale=2.5]{./images/cpu_mode_03.jpeg}
+  \end{figure}
+  \item CPU Dual mode - User Mode and Kernel Mode.
   \begin{enumerate}
+        \item In above figure.
+        \item Interupts/Traps cause CPU to change mode from user(1) to kernel(0) mode.
+        \item System executes privileged instructions.
+        \item A non-privileged instruction which do not cause interupt changes kernel(0) mode to user(1) mode.
         \item Dual Mode ensures protection and security from unauthorized users.
-        \item Dual mode - User Mode and Kernel Mode.
-        \item Instructions - privileged and non-privileged.
-        \item Privileged instructions provide low-level system operations.
-        \item Non-privileged instructions provide general purpose computing.
-        \item Interupts cause CPU to change mode from user to kernel mode.
-        \item A non-privileged instruction which do not cause interupt changes kernel mode to user mode.
   \end{enumerate}
+
 
   \item Privileged Instruction.
   \begin{enumerate}
-        \item Executed only in Kernel Mode.
-        \item Kernal and privileged process(ex. device driver) contains privileged instruction.
-        \item Provides direct access to hardware or other privileged resources(ex. setting up memory mappings)
-        \item Provides unrestricted access to the system resources.
-        \item System calls contains privileged instruction.
+        \item Privileged instructions executed only in Kernel Mode.
+        \item Ex programs : kernel code, schedular, interupt service routine, drivers, code to access hardware.
+        \item Provides unrestricted access to
+         \begin{enumerate}
+            \item the system resources
+            \item hardware
+            \item low-level system operations(ex. setting up memory mappings).
+          \end{enumerate}
         \item Executing privileged instruction in user mode is illegal. Hardware traps it in the OS.
         \item Privileged Instruction can modify the contents of the Timer.
   \end{enumerate}
@@ -34,27 +38,25 @@
   \item Non-Privileged Instruction.
   \begin{enumerate}
         \item Executed only in User Mode.
+        \item Provide general purpose computing.
         \item Ensures that user processes do interfere.
-        \item Provides access to user-level resources such as files and memory
-        \item Provides direct access to hardware or other privileged resources(ex. setting up memory mappings)
-        \item Provides unrestricted access to the system resources.
-  \end{enumerate}{enumerate}
-
-  \item Interupts
-  \begin{enumerate}
-        \item Types - Hardware Interupts and Software Interupts.
-        \item ISR : Interupt Service Routine(interupt handler)
-        \item Interupt Vector(IV) :
-        \item Interupt Vector Table : Maps IV to Kernal Code.
+        \item Provides access to user-level resources such as files and memory.
   \end{enumerate}
 
-  \item Interrupt Vector Table(IVT) and Interrupt Service Routine(ISR or interrupt handler)
+
+  \item Interupts, Interrupt Vector Table and Interrupt Service Routine(interrupt handler)
   \begin{enumerate}
+        \item Types - Hardware Interupts and Software Interupts.
         \item Every interrupt has IS-Routine.
         \item IVT holds address of IS-Routine for each interupt.
         \item IS-Routine is part of Kernal. (Check this point)
   \end{enumerate}
 
+  \begin{figure}[h]
+      \centering   \includegraphics[scale=1.6]{./images/Interupt_01.jpeg}
+  \end{figure}
+
+  \begin{minipage}{\linewidth}
   \item Interupt flow.
   \begin{enumerate}
         \item CPU finishes executing current execution cycle.
@@ -65,6 +67,8 @@
         \item Restore saved registers from the stack.
         \item Restore ans executes the original process.
   \end{enumerate}
+  \end{minipage}
+
 
 
 \end{enumerate}
