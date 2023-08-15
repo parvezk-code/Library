@@ -19,6 +19,8 @@
 # line grp           :  \linespread{1.3}
 # images             :  \begin{figure}[h]   \includegraphics{./images/apple.jpeg}    \end{figure}
                         \graphicspath{{images/}
+                        \includegraphics[width=5cm, height=4cm]{apple.jpeg}
+                        \includegraphics[scale=0.25]{apple.jpeg}
 
 
 creating a project with multiple independent latex files
