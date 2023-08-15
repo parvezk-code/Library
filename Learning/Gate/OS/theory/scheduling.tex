@@ -1,5 +1,5 @@
 
-\centerline{\textbf{ \LARGE Interupts, System calls, CPU Modes}}
+\centerline{\textbf{ \LARGE Scheduling Algorithms}}
 
 
 % ----------------------------------------------------------------------------
@@ -7,26 +7,50 @@
 
 \begin{enumerate}
 
-  \item Sheduling Algorithms
-  \begin{lstlisting}
-    Terminologies       : Burst, Arrival Time(AT), Completion Time(CT)
-    Through-put(speed)  : No of process completed per unit time.
-    Turn around time    : CT - AT
-    Response time       : Time at which process is scheduled for the first time - AT
+  \item Terminologies for Scheduling Algorithms
 
-  \end{lstlisting}
+  \begin{myTableStyle}
+    \begin{tabular}{ |l|l| } \hline
+        Burst                 &     CPU time needed by the process.                             \\ \hline
+        Arrival Time(AT)      &     Time at which the process arrives.                          \\ \hline
+        Completion Time(CT)   &     Time at which the process gets completed                    \\ \hline
+        Through-put(speed)    &     No of process completed per unit time.                      \\ \hline
+        Turn Around time(TAT) &     CT - AT                                                     \\ \hline
+        Response time         &     Time at which process is scheduled for the first time - AT  \\ \hline
+        Wating Time           &     TAT -  Burst                                                \\ \hline
+        Pre-emptive           &     CPu can be take from a process forcefully                   \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
 
-  \begin{enumerate}
-      \item Terminologies: Burst, Arrival Time(AT), Completion Time(CT)
-      \item Through-put(speed): No of process completed per unit time.
-      \item Turn around time: CT - AT
-      \item Response time   : Time at which process is scheduled for the first time - AT
-      \item waiting time
-      \item a
-  \end{enumerate}
+  \item Scheduling
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |l|l| } \hline
+        FCFS                &     Convoy effect(large burst effect)                             \\ \hline
+        SJF                 &     Chooses job with shortest bust.                               \\ \hline
+        SRTF                &     Pre-emptive SJF, starvation, minimum Avg TAT, WT, RT.         \\ \hline
+        Round Robin         &     Requires h/w support for timer, Increase avg TRT and WT       \\ \hline
+        Priority            &     Starvation(live lock), Aging: inc priority with time         \\ \hline
+        Multi-level queue   &     Starvation                                                    \\ \hline
+        Other               &     Highest-response ratio next, Gang scheduling, rate monotonic, Fair share scheduling \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+
+  \item Types of schedulers \\
+  \begin{myTableStyle}
+    \begin{tabular}{ |l|l|l|l|l| } \hline
+        Name      & Long Term Schedular                   & Short Term Schedular  & Mid Term Schedular(swapping)\\ \hline
+        States    & new to ready                          & ready to running      & running to wating/blocked   \\ \hline
+        Frequency & runs less frequent                    & more frequent         & in between both             \\ \hline
+        M-prog    & controlls degree of multi programming & effects less          & reduces degree of m-prog    \\ \hline
+        Storage   & seconday to main memory(mm)           & mm to mm              & main memory to Secondary    \\ \hline
+                  & use dispatcher for context switching  & &                                                   \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+
 
   \begin{minipage}{\linewidth}
-  a
+  .
   \end{minipage}
 
 

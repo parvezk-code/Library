@@ -10,7 +10,7 @@
 
 \begin{oneparchoices}
    \choice SJF
-   \choice Round Robin
+   \CorrectChoice Round Robin
    \choice FCFS
    \choice SRTF
 \end{oneparchoices}
@@ -25,9 +25,17 @@
 
 
 \question State transition diagram represents . (GATE - 96)
+  \begin{lstlisting}
+            A               B                 D
+    start ----->  Ready <=======> Running   -----> Terminated
+                  |         C       |
+                E |                 | F
+                  |<====Blocked=====|
+  \end{lstlisting}
+
 \begin{choices}
    \choice Batch OS
-   \choice OS with preemptive scheduling
+   \CorrectChoice OS with preemptive scheduling
    \choice OS with non-preemptive scheduling
    \choice Uni-programmed OS
 \end{choices}
@@ -47,7 +55,7 @@
 % ----------------------------------------------------------------------------
 
 \begin{oneparchoices}
-   \choice n(s+q)
+   \CorrectChoice n(s+q)
    \choice n(s-q)
    \choice n/(s+q)
    \choice n-(s*q)
@@ -66,7 +74,7 @@
 
   \begin{oneparchoices}
     \choice Round Robin
-    \choice SJF
+    \CorrectChoice SJF
     \choice FCFS
     \choice Priority based
   \end{oneparchoices}
@@ -84,7 +92,7 @@
 
   \begin{choices}
     \choice Round Robin
-    \choice FCFS
+    \CorrectChoice FCFS
     \choice Multi-level queue scheduling
     \choice Multi-level queue scheduling with feedback
   \end{choices}
@@ -98,11 +106,14 @@
 
 \begin{questyle}
 
-  \question No of context switching in SRTF. bursts=[10,20,30] arrival=[0,2,6] (GATE - 2006)
+  \question Consider three CPU-intensive processes, which require 10, 20 and 30 time units and arrive at
+            times 0, 2 and 6, respectively. How many context switches are needed if the operating system
+            implements a shortest remaining time first scheduling algorithm? Do not count the context
+            switches at time zero and at the end. (GATE - 2006)
 
   \begin{oneparchoices}
     \choice 1
-    \choice 2
+    \CorrectChoice 2
     \choice 3
     \choice 4
   \end{oneparchoices}
@@ -116,11 +127,17 @@
 
 \begin{questyle}
 
-  \question Match the following. (GATE - 2007) \newline
-   P). Gang Scheduling  Q). Rate Monotonic  R). Fair share Scheduling \newline
-   1). Guranteed Scheduling 2). Real-time Scheduling 3). Thread Scheduling
+  \question Match the following. (GATE - 2007)
+
+  \begin{lstlisting}
+     P). Gang Scheduling        1). Guranteed Scheduling
+     Q). Rate Monotonic         2). Real-time Scheduling
+     R). Fair share Scheduling  3). Thread Scheduling
+
+  \end{lstlisting}
+
   \begin{choices}
-    \choice P-3, Q-2, R-1
+    \CorrectChoice P-3, Q-2, R-1
     \choice P-1, Q-2, R-3
     \choice P-2, Q-3, R-1
     \choice P-1, Q-3, R-2
@@ -128,8 +145,6 @@
 
 
   \end{questyle}
-
-
 
 % ----------------------------------------------------------------------------
 
@@ -147,25 +162,24 @@
     \choice I only
     \choice I, III only
     \choice II, III only
-    \choice I, II, III
+    \CorrectChoice I, II, III
   \end{oneparchoices}
 
-
   \end{questyle}
-
-
 
 % ----------------------------------------------------------------------------
 
 
 \begin{questyle}
 
-  \question  Given that priority is propotional to waiting time. After every T seconds priority is re-valuated.
-             All process arrive at time zero with zero priority. (GATE - 2013)
+  \question  A scheduling algorithm assigns priority proportional to the waiting time of a process.
+            Every process starts with priority zero (the lowest priority). The scheduler re-evaluates
+            the process priorities every T time units and decides the next process to schedule.
+            Which one of the following is TRUE if the processes have no I/O operations and all arrive at time zero? (GATE - 2013)
 
   \begin{choices}
     \choice This algorithm is equivalant to FCFS.
-    \choice This algorithm is equivalant to round robin.
+    \CorrectChoice This algorithm is equivalant to round robin.
     \choice This algorithm is equivalant to SJF.
     \choice This algorithm is equivalant to SRTF.
   \end{choices}
@@ -180,11 +194,12 @@
 
 \begin{questyle}
 
-  \question  CPU-bound processes arrive at same time with un-equal bust.
-            Which scheduling algorithm will minimize average waiting time. (GATE - 2016\_set\_1)
+  \question  Consider an arbitrary set of CPU-bound processes with unequal CPU burst lengths submitted at
+            the same time to a computer system. Which one of the following process scheduling algorithms would
+            minimize the average waiting time in the ready queue? (GATE - 2016\_set\_1)
 
   \begin{choices}
-    \choice SRTF
+    \CorrectChoice SRTF
     \choice Largest Job First (opposite of SJF).
     \choice Iniform random
     \choice Round robin
@@ -199,7 +214,6 @@
 
 \begin{questyle}
 
-
   \question Highest response ratio next favours \fillin[shorter burst]  jobs, but it also limits the
             waiting time of \fillin[Long burst] jobs. (GATE - 1990)
 
@@ -212,10 +226,21 @@
 
 \begin{questyle}
 
-  \question \fillin[.........] is the average waiting time for SRTF. (GATE - 2017\_set\_1) \newline
-            [P1, P2, P3, P4]
-            Arrival-[0,  3,  5,  6 ]
-            Bursts-[7,  3,  5,  2 ]
+  \question If the pre-emptive shortest remaining time first scheduling algorithm is used to schedule the processes, then
+            the average waiting time across all processes is \fillin[3] milliseconds. (GATE - 2017\_set\_1)
+
+  \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |l|c|c| } \hline
+        Process &   Arrival & Burst    \\ \hline
+        P1      &   0       & 7         \\ \hline
+        P2      &   3       & 3         \\ \hline
+        P3      &   5       & 5         \\ \hline
+        P4      &   6       & 2         \\ \hline
+
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
 
   \end{questyle}
 
@@ -226,31 +251,54 @@
 
 \begin{questyle}
 
-  \question Jobs[p, q, r, s, t] bursts[4,1,8,1,2]. Completion time of P. Round robin scheduling with time slice of 1.
-            Single process system. (GATE - 1993, 96)
+  \question Assume that  the following jobs are to be executed on a single processor system. (GATE - 1993, 96)
+
+    \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |l|c|c| } \hline
+        Job Id &   CPU Burst Time     \\ \hline
+        P      &   4                \\ \hline
+        Q      &   1                \\ \hline
+        R      &   8                \\ \hline
+        S      &   1                \\ \hline
+        T      &   2                \\ \hline
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
+  The jobs are assumed to have arrived at time 0+ and in the order p, q, r, s, t. Calculate the
+  departure time (completion time) for job p if scheduling is round robin with time slice 1.
 
   \begin{oneparchoices}
     \choice 4
     \choice 10
     \choice 11
     \choice 12
+    \choice none
   \end{oneparchoices}
-
-
   \end{questyle}
-
-
 
 % ----------------------------------------------------------------------------
 
 
 \begin{questyle}
 
-  \question  Choose correct sequence and cpu idle time for non preemptive scheduling.(GATE - 1995)
-             \newline job-[1,2,3] Bursts-[9,5,1] Arrival-[0, 0.6, 1]
+  \question  The sequence \fillin[] is an optimal non-preemptive scheduling sequence for the following jobs
+             which leaves the CPU idle for \fillin[] unit(s) of time.(GATE - 1995)
 
+  \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |l|c|c| } \hline
+        Process &   Arrival & Burst    \\ \hline
+        1      &   0.0       & 9         \\ \hline
+        2      &   0.6       & 5         \\ \hline
+        3      &   1.0       & 1         \\ \hline
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
   \begin{oneparchoices}
-    \choice \{3,2,1\}, 1
+    \CorrectChoice \{3,2,1\}, 1
     \choice \{2,1,3\}, 0
     \choice \{3,2,1\}, 0
     \choice \{1,2,3\}, 5
@@ -284,7 +332,7 @@
     \choice FCSC
     \choice SRTF
     \choice priority scheduling with different priorities to both process.
-    \choice Round robin scheduling.
+    \CorrectChoice Round robin scheduling.
   \end{choices}
 
 
@@ -297,10 +345,25 @@
 
 \begin{questyle}
 
-  \question  Jobs-[p1, p2, p3, p4] Bursts-[5,3,3,1] Arrival-[0,1,2,4]. Average turnaroud time for SRTF. (GATE- 2004)
+  \question  Consider the following set of processes, with the arrival times and the CPU-burst times given in milliseconds.
+            What is the average turnaround time for these processes with the preemptive shortest remaining processing
+            time first (SRPT) algorithm ?(GATE- 2004)
+
+  \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |l|c|c| } \hline
+        Process &   Arrival & Burst    \\ \hline
+        1      &   0       & 5         \\ \hline
+        2      &   1       & 3         \\ \hline
+        3      &   2       & 3         \\ \hline
+        4      &   4       & 1         \\ \hline
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
 
   \begin{oneparchoices}
-    \choice 5.5
+    \CorrectChoice 5.5
     \choice 5.75
     \choice 6
     \choice 6.25
@@ -312,53 +375,77 @@
 
 % ----------------------------------------------------------------------------
 
-
 \begin{questyle}
 
-  \question  Bursts-[10,20,30]. Each process does 20\% execution then 70\% IO then 10\% execution.
-             SRTF scheduling is done. IO of all rpocess can go in parallel. New process is
-             schedled when current process goes for IO or completes its burst.
-             Calculate percentage of time CPU is idle. (GATE-2006)
+  \question  Consider three processes, all arriving at time zero, with total execution time of 10, 20 and 30 units,
+            respectively. Each process spends the first 20\% of execution time doing I/O, the next 70\% of time doing
+            computation, and the last 10\% of time doing I/O again. The operating system uses a shortest remaining
+            compute time first scheduling algorithm and schedules a new process either when the running process
+            gets blocked on I/O or when the running process finishes its compute burst. Assume that all I/O operations
+            can be overlapped as much as possible. For what percentage of time does the CPU remain idle? (GATE-2006)
 
   \begin{oneparchoices}
     \choice 0
-    \choice 10.6
+    \CorrectChoice 10.6
     \choice 30
     \choice 89.4
   \end{oneparchoices}
 
   \end{questyle}
 
-
-
-
 % ----------------------------------------------------------------------------
 
 \begin{questyle}
 
-  \question Using SRTF, calculate waiting tome for P2.
-            Process-[1,2,3,4] Bursts-[20, 25, 10, 15] AT-[0, 15, 30, 45] (GATE-2007)
+  \question An operating system uses Shortest Remaining Time first (SRT) process scheduling algorithm.
+            Consider the arrival times and execution times for the following processes.
+            What is the total waiting time for process P2? (GATE-2007)
+
+  \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |l|c|c| } \hline
+        Process &   Arrival & Burst    \\ \hline
+        P1      &   00       & 20         \\ \hline
+        P2      &   15       & 25         \\ \hline
+        P3      &   30       & 10         \\ \hline
+        P4      &   45       & 15         \\ \hline
+
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
 
   \begin{oneparchoices}
     \choice 5
-    \choice 15
+    \CorrectChoice 15
     \choice 40
     \choice 55
   \end{oneparchoices}
 
   \end{questyle}
 
-
-
 % ----------------------------------------------------------------------------
 
 \begin{questyle}
 
-  \question  Process-[0,1,2] Burst-[9,4,9 Arrival-[0,1,2]]. Calculate average waiting time.
-             SJF scheduling is used and scheduling is done only when process arrive or completes. (GATE-2011)
+  \question  Consider the following table of arrival time and burst time for three processes P0, P1 and P2.
+            The pre-emptive shortest job first scheduling algorithm is used. Scheduling is carried out only
+            at arrival or completion of processes. What is the average waiting time for the three processes? (GATE-2011)
+
+  \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |l|c|c| } \hline
+        Process &   Arrival & Burst    \\ \hline
+        P0      &   0       & 9         \\ \hline
+        P1      &   1       & 4         \\ \hline
+        P2      &   2       & 9         \\ \hline
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
 
   \begin{oneparchoices}
-    \choice 5
+    \CorrectChoice 5
     \choice 4.33
     \choice 6.33
     \choice 7.33
@@ -372,13 +459,25 @@
 
 \begin{questyle}
 
-  \question Process-[P1, p2, p3] Bursts-[5, 7, 4] AT-[0, 1, 3].
-            Completion order for FCFS and Round Robin with time quanta of 2. (GATE-2012 )
+  \question Consider the 3 processes, P1, P2 and P3 shown in the table. The completion order of the 3 processes
+            under the policies FCFS and RR2 (round robin scheduling with CPU quantum of 2 time units) are (GATE-2012 )
+
+  \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |l|c|c| } \hline
+        Process &   Arrival & Burst    \\ \hline
+        P1      &   0       & 5         \\ \hline
+        P2      &   1       & 7         \\ \hline
+        P3      &   3       & 4         \\ \hline
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
 
   \begin{choices}
     \choice FCFS: p1, p2, p3  \qquad   RR2: p1, p2, p3
     \choice FCFS: p1, p3, p2  \qquad   RR2: p1, p3, p2
-    \choice FCFS: p1, p2, p3  \qquad   RR2: p1, p3, p2
+    \CorrectChoice FCFS: p1, p2, p3  \qquad   RR2: p1, p3, p2
     \choice FCFS: p1, p3, p2  \qquad   RR2: p1, p2, p3
   \end{choices}
 
@@ -390,21 +489,52 @@
 
 \begin{questyle}
 
-  \question  Using Round Robin scheduling with quanta 50ms. Each process executes a loop of 100 iterations.
-             In each iteration process does a CPU computation and then an IO operation.
-             IO of each process can go in parallel. Process C completes its first IO operation at time \fillin[time]. (GATE-2014\_set\_2 )
-      \begin{center}
-      \begin{tabular}{ c c c c }
-          ID & Time\_CPU & Time\_IO  & Arrival\\
-          A & 100ms & 500ms & 0 \\
-          B & 350ms & 500ms & 5 \\
-          C & 200ms & 500ms & 10 \\
-      \end{tabular}
+  \question Three processes A, B and C each execute a loop of 100 iterations. In each iteration of the
+            loop, a process performs a single computation that requires tc CPU milliseconds and then initiates
+            a single I/O operation that lasts for tio milliseconds. It is assumed that the computer where the
+            processes execute has sufficient number of I/O devices and the OS of the computer assigns
+            different I/O devices to each process. Also, the scheduling overhead of the OS is negligible.
+            The processes A, B, and C are started at times 0, 5 and 10 milliseconds respectively, in a pure
+            time sharing system (round robin scheduling) that uses a time slice of 50 milliseconds. The time
+            in milliseconds at which process C would complete its first I/O operation is \fillin[1000]. (GATE-2014\_set\_2 )
+
+  \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c| } \hline
+          ID & Time\_CPU & Time\_IO  & Arrival \\ \hline
+          A & 100ms & 500ms & 0 \\ \hline
+          B & 350ms & 500ms & 5 \\ \hline
+          C & 200ms & 500ms & 10 \\ \hline
+    \end{tabular}
     \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
 
   \end{questyle}
 
+% ----------------------------------------------------------------------------
 
+\begin{questyle}
+
+  \question  An operating system uses shortest remaining time first scheduling algorithm for pre-emptive
+            scheduling of processes. Consider the following set of processes with their arrival times and
+            CPU burst times (in milliseconds). The average waiting time (in milliseconds) of the
+            processes is \fillin[5.5]. (GATE-2014\_set\_3 )
+
+    \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c| } \hline
+          ID & Arrival &  Burst     \\ \hline
+          P1 & 0 & 12     \\ \hline
+          P2 & 2 & 4     \\ \hline
+          P3 & 3 & 6     \\ \hline
+          P4 & 8 & 5      \\ \hline
+    \end{tabular}
+    \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \end{questyle}
 
 
 
@@ -412,29 +542,14 @@
 
 \begin{questyle}
 
-  \question  Using SRTF pre-emptive scheduling. Average waiting time is \fillin[time]. (GATE-2014\_set\_3 )
-      \begin{center}
-      \begin{tabular}{ c c c c }
-          ID & Burst & Arrival\\
-          p1 & 12  & 0 \\
-          p2 & 4  & 2 \\
-          p3 & 6  & 3 \\
-          p4 & 5  & 8 \\
-      \end{tabular}
-    \end{center}
-
-  \end{questyle}
-
-
-
-% ----------------------------------------------------------------------------
-
-\begin{questyle}
-
-  \question  Uniprocessor system executes 3 tasks T1, T2, T3. These 3 tasks arrive priodically every 3, 7, 20 msec respectively.
-            CPU bursts are 1, 2, 4 respectively. All arrive at the begnning of 1st msec. Pre-emptive priority based scheduling
-            is used. Priority is inverse to its priodicity. Highest priority task is executed first.
-            1st instance of T3 complets at \fillin[time]. (GATE-2015\_set\_1 )
+  \question  Consider a uniprocessor system executing three tasks T1, T2 and T3, each of which is
+            composed of an infinite sequence of jobs (or instances) which arrive periodically at intervals
+            of 3, 7 and 20 milliseconds, respectively. The priority of each task is the inverse of
+            its period and the available tasks are scheduled in order of priority, with the highest
+            priority task scheduled first. Each instance of T1, T2 and T3 requires an execution time
+            of 1, 2 and 4 milliseconds, respectively. Given that all tasks initially arrive at the
+            beginning of the 1st milliseconds and task preemptions are allowed, the first
+            instance of T3 completes its execution at the end of \fillin[12]. (GATE-2015\_set\_1 )
 
   \end{questyle}
 
@@ -443,21 +558,26 @@
 % ----------------------------------------------------------------------------
 \begin{questyle}
 
-  \question  Which scheduling algorithm gives lowest average turnaround time? (GATE-2015\_set\_3 )
-      \begin{center}
-      \begin{tabular}{ c c c c }
-          ID & Burst & Arrival\\
-          p1 & 3  & 0 \\
-          p2 & 6  & 1 \\
-          p3 & 4  & 4 \\
-          p4 & 2  & 6 \\
-      \end{tabular}
+  \question  For the processes listed in the following table, which of the following scheduling schemes
+            will give the lowest average turnaround time? (GATE-2015\_set\_3 )
+
+    \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c| } \hline
+          ID & Arrival &  Burst     \\ \hline
+          P1 & 0 & 3     \\ \hline
+          P2 & 1 & 6     \\ \hline
+          P3 & 4 & 4     \\ \hline
+          P4 & 6 & 2      \\ \hline
+    \end{tabular}
     \end{center}
+  \end{myTableStyle}
+  \vspace{0.08in}
 
   \begin{choices}
     \choice FCFS
     \choice SJF non pre-emptive
-    \choice SRTF
+    \CorrectChoice SRTF
     \choice Round robin with time quanta 2.
   \end{choices}
 
@@ -470,21 +590,21 @@
 
 \begin{questyle}
 
-  \question Pre-emptive SRTF scheduling algorithm is used. Average turn around time is \fillin[time]. (GATE-2016\_set\_2 )
-      \begin{center}
-      \begin{tabular}{ c c c c }
-          ID & Burst & Arrival\\
-          p1 & 10  & 0 \\
-          p2 & 6  & 3 \\
-          p3 & 1  & 7 \\
-          p4 & 3  & 8 \\
-      \end{tabular}
+  \question Pre-emptive SRTF scheduling algorithm is used. Average turn around time is \fillin[8.25]. (GATE-2016\_set\_2 )
+
+    \begin{myTableStyle}
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c| } \hline
+          ID & Arrival &  Burst     \\ \hline
+          P1 & 0 & 10     \\ \hline
+          P2 & 3 & 6     \\ \hline
+          P3 & 7 & 1     \\ \hline
+          P4 & 8 & 3      \\ \hline
+    \end{tabular}
     \end{center}
+  \end{myTableStyle}
 
   \end{questyle}
-
-
-
 
 % ----------------------------------------------------------------------------
 
@@ -494,7 +614,7 @@
 
   \begin{choices}
     \choice Round Robin
-    \choice FCFS
+    \CorrectChoice FCFS
     \choice Multi-level queue
     \choice Multi-level queue with feedback
   \end{choices}
