@@ -15,10 +15,11 @@
         Arrival Time(AT)      &     Time at which the process arrives.                          \\ \hline
         Completion Time(CT)   &     Time at which the process gets completed                    \\ \hline
         Through-put(speed)    &     No of process completed per unit time.                      \\ \hline
-        Turn Around time(TAT) &     CT - AT                                                     \\ \hline
+        Turn Around time(TAT) &     CT - AT   =  Burst + Wating Time                            \\ \hline
         Response time         &     Time at which process is scheduled for the first time - AT  \\ \hline
         Wating Time           &     TAT -  Burst                                                \\ \hline
-        Pre-emptive           &     CPu can be take from a process forcefully                   \\ \hline
+        Response Ratio        &     Burst/WT                                                    \\ \hline
+        Pre-emptive           &     CPU can be take from a process forcefully                   \\ \hline
     \end{tabular}
   \end{myTableStyle}
 
@@ -32,7 +33,10 @@
         Round Robin         &     Requires h/w support for timer, Increase avg TRT and WT       \\ \hline
         Priority            &     Starvation(live lock), Aging: inc priority with time         \\ \hline
         Multi-level queue   &     Starvation                                                    \\ \hline
-        Other               &     Highest-response ratio next, Gang scheduling, rate monotonic, Fair share scheduling \\ \hline
+        Gang scheduling     &     For threads                                                    \\ \hline
+        Rate monotonic      &     Real time scheduling                                          \\ \hline
+        Highest-response ratio next & Chose job with least response ratio                       \\ \hline
+        Fair share Scheduling & Guranteed Scheduling                                            \\ \hline
     \end{tabular}
   \end{myTableStyle}
 
