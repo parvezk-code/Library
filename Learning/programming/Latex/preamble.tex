@@ -5,6 +5,8 @@
 \usepackage{listings}
 \usepackage{import}
 \usepackage{graphicx}
+\usepackage{array}  % for table and column width
+\usepackage{tabularray} % for table and column width
 
 \geometry{
             a4paper,
@@ -27,6 +29,9 @@
     \end{minipage}
     \vspace{0.08in}
     }
+
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}     % custom column : fixed width and centering
 
 % The \begingroup ... \endgroup pair ensures the separation
 % parameters only affect this particular table, and not any

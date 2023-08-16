@@ -3,10 +3,11 @@
 # usepackage         :  amssymb, geometry, comment, listings, graphicx
 # comments           :  \begin{comment}      ...   \end{comment}
 # sections           :  section, subsection, subsubsection, paragraph, subparagraph
-# un-breakable block :  samepage, \parbox, \minipage, \needspace
+# un-breakable block :  no page break, samepage, \parbox, \begin{minipage}{\linewidth} , \needspace
 # External tex files :  import(subimport), input, include, import{dir}{file}
 # coding programming :  \begin{lstlisting}   ...   \end{lstlisting}
 # list               :  \begin{enumerate}    ...   \begin{enumerate}
+# table              :  tabular, (table, tblr), \usepackage{array}, \usepackage{tabularray}
 # Math mode          :  \(  \)
 # font size          :  {\huge  }   (large Large LARGE)  (huge etc..)
 # symnbols(Math)     :  p_{n-1}       \sum_{n=1}^{n} s_i     \forall i, s_i
