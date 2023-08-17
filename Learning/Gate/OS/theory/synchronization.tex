@@ -1,0 +1,80 @@
+
+\centerline{\textbf{ \LARGE Synchronization}}
+
+
+% ----------------------------------------------------------------------------
+
+
+\begin{enumerate}
+
+  \item Critical Section is part of a program where a process manipulates shared variables.
+  \item Correct Solution
+  \begin{enumerate}
+    \item Mutual exclusion : no 2 processes can be in critical sections simultaneously.
+    \item Progress : only competing processes are considered for decision as to who goes next.
+    \item Bounded wait :
+  \end{enumerate}
+
+
+  \item Turn Variable:
+  \begin{enumerate}
+    \item Only for 2 process.
+    \item strict alternation.
+    \ item shared variable - turn
+    \item while( not\_my\_turn ) do-nothing;
+  \end{enumerate}
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{5cm}|m{5cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/turnVariable_01.c}   &     \lstinputlisting[language=Octave]{./code/turnVariable_02.c}   \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      \vspace{0.08in}
+
+  \item Peterson's Solution:
+  \begin{enumerate}
+    \item Only for 2 process.
+    \item No alternation.
+    \item shared variable - turn, flag
+    \item while( not\_my\_turn and other\_wants\_to\_go ) do-nothing;
+  \end{enumerate}
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{6cm}|m{6cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/peterson_01.c}   &   \lstinputlisting[language=Octave]{./code/peterson_02.c}   \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      \vspace{0.08in}
+
+  \begin{minipage}{\linewidth}
+  \item Semaphore
+  \begin{enumerate}
+    \item many process.
+  \end{enumerate}
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{4.5cm}|m{5cm}|m{3.5cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/semaphore_01_wait.c}   &
+            \lstinputlisting[language=Octave]{./code/semaphore_01_signal.c} &
+            \lstinputlisting[language=Octave]{./code/semaphore_01.c} \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      \vspace{0.08in}
+  \end{minipage}
+
+
+
+\end{enumerate}
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
