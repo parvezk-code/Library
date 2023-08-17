@@ -44,11 +44,8 @@
       \end{myTableStyle}
       \vspace{0.08in}
 
-  \begin{minipage}{\linewidth}
-  \item Semaphore
-  \begin{enumerate}
-    \item many process.
-  \end{enumerate}
+ \begin{minipage}{\linewidth}
+  \item Binary Semaphore : work for many process. \\
       \begin{myTableStyle}
         \begin{tabular}{ |m{4.5cm}|m{5cm}|m{3.5cm}| } \hline
             \lstinputlisting[language=Octave]{./code/semaphore_01_wait.c}   &
@@ -57,7 +54,34 @@
         \end{tabular}
       \end{myTableStyle}
       \vspace{0.08in}
+  \begin{enumerate}
+    \item Value of S can be 0 or 1.
+    \item if( s == 1 ) then no   process is in CS
+    \item if( s == 0 ) then one process is in CS
+    \item Drawback :
+    \begin{enumerate}
+      \item Busy waiting, wasting cpu cycles because of the while loop.
+      \item Priority inversion.
+  \end{enumerate}
+  \item Counting semaphore
+  \begin{enumerate}
+    \item Can take values other than 0, 1.
+    \item if( s=5 ) then 5 processes can enter CS.
+  \end{enumerate}
+  \end{enumerate}
   \end{minipage}
+  \vspace{0.08in}
+
+  \item Reader Writer Problem
+  \begin{enumerate}
+    \item Two semaphore are needed
+      \begin{enumerate}
+        \item wrt : for resource access
+        \item mutex: for access to readCount variable.
+      \end{enumerate}
+    \item First reader will wait for the writer to exit. Last reader will signal the writer.
+  \end{enumerate}
+
 
 
 
