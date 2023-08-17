@@ -10,7 +10,7 @@
   \begin{choices}
     \choice which should run in a certain specified amount of time
     \choice which avoids deadlocks
-    \choice where shared resources are accessed
+    \CorrectChoice where shared resources are accessed
     \choice which must be enclosed by a pair of semaphore operations, P and V
   \end{choices}
 
@@ -27,7 +27,7 @@
 
   \begin{oneparchoices}
     \choice cycle stealing
-    \choice race condition
+    \CorrectChoice race condition
     \choice a time lock
     \choice a deadlock
   \end{oneparchoices}
@@ -50,7 +50,7 @@
   \end{lstlisting}
 
   \begin{choices}
-    \choice Mutual exclusion but not progress
+    \CorrectChoice Mutual exclusion but not progress
     \choice Progress but not mutual exclusion
     \choice Neither mutual exclusion nor progress
     \choice Both mutual exclusion and progress
@@ -66,7 +66,7 @@
 
   \question  The following two functions P1 and P2 that share a variable B with an initial
    value of 2 execute concurrently. The number of distinct values that B can possibly
-   take after the execution is \fillin[]. (GATE-2015\_set\_2)
+   take after the execution is \fillin[3]. (GATE-2015\_set\_2)
 
   \begin{lstlisting}
         P1()                  P2()
@@ -78,6 +78,21 @@
 
   \end{questyle}
 
+
+% ----------------------------------------------------------------------------
+
+\begin{questyle}
+
+  \question  A critical region is: (GATE-1987 )
+
+  \begin{choices}
+    \choice One which is enclosed by a pair of P and V operations on semaphores.
+    \choice A program segment that has not been proved bug-free.
+    \choice A program segment that often causes unexpected system crashes.
+    \CorrectChoice A program segment where shared resources are accessed.
+  \end{choices}
+
+  \end{questyle}
 
 
 % ----------------------------------------------------------------------------
@@ -91,7 +106,7 @@
       while(true)                           while(true)
       {                                     {
           varP = true                           varQ = true
-          while(varQ = true)                    while(varP = true)
+          while(varQ == true)                   while(varP == true)
           {                                     {
               CS                                    CS
               varP = false                          varQ = false
@@ -100,32 +115,13 @@
   \end{lstlisting}
 
   \begin{choices}
-    \choice The proposed solution prevents deadlock but fails to guarantee mutual exclusion
+    \CorrectChoice The proposed solution prevents deadlock but fails to guarantee mutual exclusion
     \choice The proposed solution guarantees mutual exclusion but fails to prevent deadlock
     \choice The proposed solution guarantees mutual exclusion and prevents deadlock
     \choice The proposed solution fails to prevent deadlock and fails to guarantee mutual exclusion
   \end{choices}
 
   \end{questyle}
-
-
-
-% ----------------------------------------------------------------------------
-
-\begin{questyle}
-
-  \question  A critical region is: (GATE-1987 )
-
-  \begin{choices}
-    \choice One which is enclosed by a pair of P and V operations on semaphores.
-    \choice A program segment that has not been proved bug-free.
-    \choice A program segment that often causes unexpected system crashes.
-    \choice A program segment where shared resources are accessed.
-  \end{choices}
-
-  \end{questyle}
-
-
 
 % ----------------------------------------------------------------------------
 
@@ -136,7 +132,7 @@
   \begin{choices}
     \choice ensure that all philosophers pick up the left fork before the right fork
     \choice ensure that all philosophers pick up the right fork before the left fork
-    \choice ensure that one particular philosopher picks up the left fork before the right fork, and that all other philosophers pick up the right fork before the left fork
+    \CorrectChoice ensure that one particular philosopher picks up the left fork before the right fork, and that all other philosophers pick up the right fork before the left fork
     \choice None of the above
   \end{choices}
 
@@ -174,7 +170,7 @@
   For the program to guarantee mutual exclusion, the predicate P in the while loop should be.
   \begin{choices}
     \choice flag[j] = true and turn = i
-    \choice flag[j] = true and turn = j
+    \CorrectChoice flag[j] = true and turn = j
     \choice flag[i] = true and turn = j
     \choice flag[i] = true and turn = i
   \end{choices}
@@ -203,7 +199,7 @@
     \choice  It does not ensure mutual exclusion.
     \choice  It does not ensure bounded waiting.
     \choice  It requires that processes enter the critical section in strict alternation.
-    \choice  It does not prevent deadlocks, but ensures mutual exclusion.
+    \CorrectChoice  It does not prevent deadlocks, but ensures mutual exclusion.
   \end{choices}
 
   \end{questyle}
@@ -238,7 +234,7 @@
   Which of the following is TRUE about the above solution?
 
   \begin{choices}
-    \choice  At most one process can be in the critical section at any time
+    \CorrectChoice  At most one process can be in the critical section at any time
     \choice  The bounded wait condition is satisfied
     \choice  The progress condition is satisfied
     \choice  It cannot cause a deadlock
@@ -266,7 +262,7 @@
   \begin{choices}
     \choice  This is a correct two-process synchronization solution.
     \choice  This solution violates mutual exclusion requirement.
-    \choice  This solution violates progress requirement.
+    \CorrectChoice  This solution violates progress requirement.
     \choice  This solution violates bounded wait requirement.
   \end{choices}
 

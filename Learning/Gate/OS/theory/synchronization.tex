@@ -11,10 +11,12 @@
   \item Correct Solution
   \begin{enumerate}
     \item Mutual exclusion : no 2 processes can be in critical sections simultaneously.
-    \item Progress : only competing processes are considered for decision as to who goes next.
-    \item Bounded wait :
+    \item Progress : only competing processes(not in CS or Remainder) are considered for decision as to who goes next.
+          If CS is free then process in remainder section should not be making decision or blocking those who want to enter CS.
+    \item Bounded wait(no starvation) : there is bound on number of times a process is bypassed by another process after
+          it has indicated its desire to enter the critical section
+    \item If there is deadlock then there is no progress.
   \end{enumerate}
-
 
   \item Turn Variable:
   \begin{enumerate}
@@ -74,13 +76,56 @@
 
   \item Reader Writer Problem
   \begin{enumerate}
+    \item Multiple reads can be performed parallelly.
     \item Two semaphore are needed
       \begin{enumerate}
         \item wrt : for resource access
         \item mutex: for access to readCount variable.
       \end{enumerate}
-    \item First reader will wait for the writer to exit. Last reader will signal the writer.
+      \item First reader will wait for the writer to exit. Last reader will signal the writer. \\
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{4cm}|m{4cm}|m{6cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/reader_writer_01.c}   &
+            \lstinputlisting[language=Octave]{./code/reader_writer_03.c}   &
+            \lstinputlisting[language=Octave]{./code/reader_writer_02.c} \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      \vspace{0.08in}
   \end{enumerate}
+
+ \begin{minipage}{\linewidth}
+  \item Bounded Buffer : Producer and Consumer
+    \begin{enumerate}
+      \item order of P() operation is very important. Otherwise dead-lock can happen.
+    \end{enumerate}
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{4.5cm}|m{5cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/bounded_buffer_01.c}   &
+            \lstinputlisting[language=Octave]{./code/bounded_buffer_02.c}  \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      \vspace{0.08in}
+  \end{minipage}
+  \vspace{0.08in}
+
+ \begin{minipage}{\linewidth}
+  \item Hardware approach for synchronization
+    \begin{enumerate}
+      \item Test\_And\_Set :
+      \item Swap :
+      \item Lock\_And\_Unlock :
+    \end{enumerate}
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{6cm}|m{5cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/test_and_set_01.c}   &
+            \lstinputlisting[language=Octave]{./code/test_and_set_02.c}  \\ \hline
+            \lstinputlisting[language=Octave]{./code/swap_01.c}   &
+            \lstinputlisting[language=Octave]{./code/swap_02.c}  \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      \vspace{0.08in}
+  \end{minipage}
+  \vspace{0.08in}
 
 
 
