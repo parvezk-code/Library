@@ -8,7 +8,8 @@ sudo apt clean
 sudo apt autoclean
 sudo apt update
 
-
+pdf2ps paper.pdf                    # Extract text from pdf.
+ps2ascii paper.ps > paper.txt       # Extract text from pdf.
 ssh-copy-id -i key usr@host         # copy SSH key to server. Avoids typing password for each login.
 mount fs from /etc/fstab            # sudo mount -a
 chmod 751  file_dir_name            # u=7, g=5, o=1, (r=4, w=2, x=1)

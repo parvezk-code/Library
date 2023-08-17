@@ -17,6 +17,7 @@
 # Guitar git GUI AppImage        : https://github.com/soramimi/Guitar/releases/
 # packet tracer n/w emulator     :
 # Anytype                        : https://download.anytype.io/
+# Pandoc                         : a universal document converte
 
 
 

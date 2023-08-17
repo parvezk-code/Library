@@ -50,6 +50,14 @@
         \item Every interrupt has IS-Routine.
         \item IVT holds address of IS-Routine for each interupt.
         \item IS-Routine is part of Kernal. (Check this point)
+  \end{enumerate}{enumerate}
+
+
+  \item Software Interupts
+  \begin{enumerate}
+        \item Traps and Exceptions.
+        \item Software Interrupts serve as a signal for the OS to carry out a certain function or respond to an error condition.
+        \item When a process executes an “Interrupt instruction” a software interrupt is generated.
   \end{enumerate}
 
   \begin{figure}[h]
@@ -67,7 +75,13 @@
         \item Restore saved registers from the stack.
         \item Restore ans executes the original process.
   \end{enumerate}
-  \end{minipage}
+  \end{minipage} \vspace{0.08in}
+
+  \item CPU has 2 special registers that hold location of.
+  \begin{enumerate}
+        \item PCB
+        \item IVT : interupt vector table.
+  \end{enumerate}
 
 
 
