@@ -1,7 +1,6 @@
 \centerline{\textbf{ \LARGE Semaphore }}
 
 
-
 % ----------------------------------------------------------------------------
 
 \begin{questyle}
@@ -10,13 +9,12 @@
   \\ (GATE-1992 :  7, 20P, 15V, 2-7-12-42)
   \begin{choices}
     \choice 0
-    \choice 8
+    \correctchoice 8
     \choice 10
     \choice 12
   \end{choices}
 
   \end{questyle}
-
 
 
 % ----------------------------------------------------------------------------
@@ -33,7 +31,7 @@
 
   \begin{oneparchoices}
     \choice Thrashing
-    \choice Deadlock
+    \correctchoice Deadlock
     \choice Starvation, but not deadlock
     \choice None of the above
   \end{oneparchoices}
@@ -51,10 +49,10 @@
             by the processes? (GATE-2013)
 
   \begin{choices}
-    \choice X: P(a)P(b)P(c) \qquad  Y: P(b)P(c)P(d) \qquad  Z: P(c)P(d)P(a)
-    \choice X: P(b)P(a)P(c) \qquad  Y: P(b)P(c)P(d) \qquad  Z: P(a)P(c)P(d)
-    \choice X: P(b)P(a)P(c) \qquad  Y: P(c)P(b)P(d) \qquad  Z: P(a)P(c)P(d)
-    \choice X: P(a)P(b)P(c) \qquad  Y: P(c)P(b)P(d) \qquad  Z: P(c)P(d)P(a)
+    \choice         X: P(a)P(b)P(c) \qquad  Y: P(b)P(c)P(d) \qquad  Z: P(c)P(d)P(a)
+    \correctchoice  X: P(b)P(a)P(c) \qquad  Y: P(b)P(c)P(d) \qquad  Z: P(a)P(c)P(d)
+    \choice         X: P(b)P(a)P(c) \qquad  Y: P(c)P(b)P(d) \qquad  Z: P(a)P(c)P(d)
+    \choice         X: P(a)P(b)P(c) \qquad  Y: P(c)P(b)P(d) \qquad  Z: P(c)P(d)P(a)
   \end{choices}
 
   \end{questyle}
@@ -75,7 +73,10 @@
 
 \begin{questyle}
 
-  \question  Each Process P(i), i= 1…….9 is coded as follows.
+  \question  Each Process P(i), i= 1…….9 is coded as follows. The code for P10 is identical except it
+            uses V(mutex) in place of P(mutex). What is the largest number of processes that can be inside
+            the critical section at any moment? (GATE-1997)
+
     \begin{lstlisting}
         repeat
             P(mutex)
@@ -85,18 +86,15 @@
             V(mutex)
         forever
     \end{lstlisting}
-    The code for P10 is identical except it uses V(mutex) in place of P(mutex). What is the largest number of processes that can be inside the critical section at any moment? (GATE-1997)
 
   \begin{oneparchoices}
     \choice 1
     \choice 2
     \choice 3
-    \choice None
+    \correctchoice None of above. (10)
   \end{oneparchoices}
 
   \end{questyle}
-
-
 
 % ----------------------------------------------------------------------------
 
@@ -119,7 +117,7 @@
       \part Which of the following will lead to an output string with 001100110011
         \begin{choices}
           \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S and T initially 1
-          \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S initially 1, and T initially 0
+          \correctchoice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S initially 1, and T initially 0
           \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S and T initially 1
           \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S initially 1, and T initially 0
         \end{choices}
@@ -129,7 +127,7 @@
         \begin{choices}
           \choice P(S) at W, V(S) at X, P(T) at Y, V(T) at Z, S and T initially 1
           \choice P(S) at W, V(T) at X, P(T) at Y, V(S) at Z, S and T initially 1
-          \choice P(S) at W, V(S) at X, P(S) at Y, V(S) at Z, S initially 1
+          \correctchoice P(S) at W, V(S) at X, P(S) at Y, V(S) at Z, S initially 1
           \choice V(S) at W, V(T) at X, P(S) at Y, P(T) at Z, S and T initially 1
         \end{choices}
 
@@ -158,7 +156,7 @@
     \choice  P(SY), P(SX); P(SX), P(SY)
     \choice  P(SX), P(SY); P(SY), P(SX)
     \choice  P(SX), P(SX); P(SY), P(SY)
-    \choice  P(SX), P(SY); P(SX), P(SY)
+    \correctchoice  P(SX), P(SY); P(SX), P(SY)
   \end{choices}
 
   \end{questyle}
@@ -185,7 +183,7 @@
   \end{lstlisting}
 
   \begin{choices}
-    \choice  The implementation may not work if context switching is disabled in P
+    \correctchoice  The implementation may not work if context switching is disabled in P
     \choice  Instead of using fetch-and –set, a pair of normal load/store can be used
     \choice  The implementation of V is wrong
     \choice  The code does not implement a binary semaphore
@@ -199,11 +197,10 @@
 
 \begin{questyle}
 
-
     \question  Barrier is a synchronization construct where a set of processes synchronizes globally i.e. each process in the set arrives at the barrier and waits for all others to arrive and then all processes leave the barrier. Let the number of processes in the set be three and S be a binary semaphore with the usual P and V functions. Consider the following C implementation of a barrier with line numbers shown on left.
 
     The variables process\_arrived and process\_left are shared among all processes and are initialized to zero.
-    In a concurrent program all the three processes call the barrier function when they need to synchronize globally. (GATE- 2006)
+    In a concurrent program all the three processes call the barrier function when they need to synchronize globally. (GATE- 2006\_78\_79)
 
   \begin{lstlisting}
       void barrier (void)
@@ -220,14 +217,13 @@
       10:     }
       11:     V(S);
       }
-
   \end{lstlisting}
 
   \begin{parts}
       \part The above implementation of barrier is incorrect. Which one of the following is true?
         \begin{choices}
           \choice The barrier implementation is wrong due to the use of binary semaphore S
-          \choice The barrier implementation may lead to a deadlock if two barrier in
+          \correctchoice The barrier implementation may lead to a deadlock if two barrier in
 invocations are used in immediate succession.
           \choice Lines 6 to 10 need not be inside a critical section
           \choice The barrier implementation is correct if there are only two processes instead of three.
@@ -236,7 +232,7 @@ invocations are used in immediate succession.
       \part Which one of the following rectifies the problem in the implementation?
         \begin{choices}
           \choice Lines 6 to 10 are simply replaced by process\_arrived–
-          \choice At the beginning of the barrier the first process to enter the barrier waits
+          \correctchoice At the beginning of the barrier the first process to enter the barrier waits
 until process\_arrived becomes zero before proceeding to execute P(S).
           \choice Context switch is disabled at the beginning of the barrier and re-enabled at the end.
           \choice The variable process\_left is made private instead of shared
@@ -245,8 +241,6 @@ until process\_arrived becomes zero before proceeding to execute P(S).
   \end{parts}
 
   \end{questyle}
-
-
 
 % ----------------------------------------------------------------------------
 
@@ -258,13 +252,13 @@ until process\_arrived becomes zero before proceeding to execute P(S).
             Each process before reading x invokes the P operation (i.e., wait) on a counting semaphore S and
             invokes the V operation (i.e., signal) on the semaphore S after storing x to memory.
             Semaphore S is initialized to two. What is the maximum possible value of x after all
-            processes complete execution? (GATE- 2013)
+            processes complete execution? (GATE- 2013\_65)
 
   \begin{oneparchoices}
     \choice  -2
     \choice  -1
     \choice  1
-    \choice  2
+    \correctchoice  2
   \end{oneparchoices}
 
   \end{questyle}
@@ -274,7 +268,8 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 % ----------------------------------------------------------------------------
 
   \begin{questyle}
-  \question  The P and V operations on counting semaphores, where s is a counting semaphore, are defined as follows: (GATE- 2008)
+  \question  The P and V operations on counting semaphores, where s is a counting
+             semaphore, are defined as follows: (GATE- 2008\_63)
 
   \begin{lstlisting}
       P(s) : s =  s - 1;
@@ -302,10 +297,10 @@ until process\_arrived becomes zero before proceeding to execute P(S).
   The initial values of Xb and Yb are respectively
 
   \begin{oneparchoices}
-    \choice  0 and 0
-    \choice  0 and 1
-    \choice  1 and 0
-    \choice  1 and 1
+    \choice           0 and 0
+    \choice           0 and 1
+    \correctchoice    1 and 0
+    \choice           1 and 1
   \end{oneparchoices}
 
   \end{questyle}
@@ -316,7 +311,8 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 
 \begin{questyle}
 
-  \question  The enter\_CS() and leave\_CS() functions to implement critical section of a process are realized using test-and-set instruction as follows: (GATE- 2009)
+  \question  The enter\_CS() and leave\_CS() functions to implement critical section of a process are realized
+              using test-and-set instruction as follows: (GATE- 2009\_33)
 
   \begin{lstlisting}
       void enter_CS(X)                    void leave_CS(X)
@@ -333,7 +329,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
    \end{enumerate}
 
   \begin{choices}
-    \choice  I only
+    \correctchoice  I only
     \choice  I and II
     \choice  II and III
     \choice   IV only
@@ -348,7 +344,8 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 \begin{questyle}
 
   \question  The following program consists of 3 concurrent processes and 3 binary semaphores.
-             The semaphores are initialized as S0 = 1, S1 = 0, S2 = 0. (GATE- 2010)
+             The semaphores are initialized as S0 = 1, S1 = 0, S2 = 0.
+             How many times will process P0 print ‘0’? (GATE- 2010\_45)
 
   \begin{lstlisting}
       P0:                           P1:                      p2:
@@ -361,10 +358,8 @@ until process\_arrived becomes zero before proceeding to execute P(S).
           release(S2)
       }
   \end{lstlisting}
-  How many times will process P0 print ‘0’?
-
   \begin{choices}
-    \choice  At least twice
+    \correctchoice  At least twice
     \choice  Exactly twice
     \choice  Exactly thrice
     \choice  Exactly once
@@ -383,7 +378,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
              It is used in the pseudocode shown below to implement a busy-wait lock.
              L is an unsigned integer shared variable initialized to 0.
              The value of 0 corresponds to lock being available, while any non-zero value corresponds to the lock
-             being not available.(GATE- 2012)
+             being not available.(GATE- 2012\_30)
 
   \begin{lstlisting}
       AcquireLock(L)                        ReleaseLock(L)
@@ -399,7 +394,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 
   \begin{choices}
     \choice  fails as L can overflow
-    \choice  fails as L can take on a non-zero value when the lock is actually available
+    \correctchoice  fails as L can take on a non-zero value when the lock is actually available
     \choice  works correctly but may starve some processes
     \choice  works correctly without starvation
   \end{choices}
@@ -414,7 +409,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 
   \question  Consider a non-negative counting semaphore S . The operation P(s) decrements , and V(S) increments S.
              During an execution, 20 P operations and 12 V operations are issued in some order.
-             The largest initial value of S for which at least one P operation will remain blocked is \fillin[]. (Gate-2016\_set\_2)
+             The largest initial value of S for which at least one P operation will remain blocked is \fillin[7]. (Gate-2016\_set\_2\_59)
   \end{questyle}
 
 
@@ -462,7 +457,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
      }                              }
   \end{lstlisting}
 
-  \choice
+  \correctchoice
       \begin{lstlisting}
      ExitX(R,S){                    EntryY(R,S){
         P(S)                          V(S)
@@ -480,7 +475,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 
   \end{choices}
   Hint : R, S are binary semaphores. No matter how many time V(S) is done max value of R,S will be one.
-  Need Strict alternation.
+  Need Strict alternation. For(n=1) there exists a case where option D can not perform correctly.
   \end{questyle}
 
 
@@ -488,7 +483,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
 
 \begin{questyle}
 
-  \question  Consider the procedure below for the Producer-Consumer problem which uses semaphores. (GATE-2014\_set\_2)
+  \question  Consider the procedure below for the Producer-Consumer problem which uses semaphores. (GATE-2014\_set\_2\_41)
   \begin{lstlisting}
   semaphore n = 0;
   semaphore s = 1;
@@ -511,7 +506,7 @@ until process\_arrived becomes zero before proceeding to execute P(S).
   \begin{choices}
     \choice  The producer will be able to add an item to the buffer, but the consumer can never consume it.
     \choice  The consumer will remove no more than one item from the buffer.
-    \choice  Deadlock occurs if the consumer succeeds in acquiring semaphore s when the buffer is empty.
+    \correctchoice  Deadlock occurs if the consumer succeeds in acquiring semaphore s when the buffer is empty.
     \choice  The starting value for the semaphore must be and not for deadlock-free operation.
   \end{choices}
 

@@ -9,6 +9,8 @@
 \usepackage{tabularray} % for table and column width
 \usepackage{tabularx}
 % \usepackage{minted}     % for code in programming  -shell-escape
+\usepackage{hyperref}
+
 
 \usepackage{xcolor}
 %New colors defined below
@@ -36,8 +38,16 @@
   showtabs=false,
   tabsize=2
 }
-
 \lstset{style=mystyle}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
 
 \geometry{
             a4paper,

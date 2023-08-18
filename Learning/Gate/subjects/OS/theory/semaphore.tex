@@ -1,0 +1,118 @@
+
+\centerline{\textbf{ \LARGE Semaphore}}
+
+
+% ----------------------------------------------------------------------------
+
+\begin{enumerate}
+
+  \item Binary Semaphore : work for many process. \\
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{4.5cm}|m{5cm}|m{3.5cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/semaphore_01_wait.c}   &
+            \lstinputlisting[language=Octave]{./code/semaphore_01_signal.c} &
+            \lstinputlisting[language=Octave]{./code/semaphore_01.c} \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+  \begin{enumerate}
+    \item Value of S can be 0 or 1. At s=1 if multiple V operations are performend then value os S will remain 1, since it is binary.
+    \item if( s == 1 ) then no   process is in CS
+    \item if( s == 0 ) then one process is in CS
+    \item Drawback :
+    \begin{enumerate}
+      \item Busy waiting, wasting cpu cycles because of the while loop.
+      \item Priority inversion.
+  \end{enumerate}
+  \item Counting semaphore
+  \begin{enumerate}
+    \item Can take values other than 0, 1.
+    \item if( s=5 ) then 5 processes can enter CS.
+  \end{enumerate}
+  \end{enumerate}
+
+  \item Reader Writer Problem
+  \begin{enumerate}
+    \item Multiple reads can be performed parallelly.
+    \item Two semaphore are needed.
+      \begin{enumerate}
+        \item wrt : for resource access
+        \item mutex: for access to readCount variable.
+      \end{enumerate}
+      \item First reader will wait for the writer to exit. Last reader will signal the writer. \\
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{4cm}|m{4cm}|m{6cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/reader_writer_01.c}   &
+            \lstinputlisting[language=Octave]{./code/reader_writer_03.c}   &
+            \lstinputlisting[language=Octave]{./code/reader_writer_02.c} \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+  \end{enumerate}
+
+ \begin{minipage}{\linewidth}
+  \item Bounded Buffer : Producer and Consumer
+    \begin{enumerate}
+      \item order of P() operation is very important. Otherwise dead-lock can happen.
+    \end{enumerate}
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{4.5cm}|m{5cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/bounded_buffer_01.c}   &
+            \lstinputlisting[language=Octave]{./code/bounded_buffer_02.c}  \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      \vspace{0.08in}
+  \end{minipage}
+  \vspace{0.08in}
+
+ \begin{minipage}{\linewidth}
+  \item Hardware approach for synchronization
+    \begin{enumerate}
+      \item Test\_And\_Set :
+      \item Swap :
+      \item Lock\_And\_Unlock :
+    \end{enumerate}
+      \begin{myTableStyle}
+        \begin{tabular}{ |m{6cm}|m{5cm}| } \hline
+            \lstinputlisting[language=Octave]{./code/test_and_set_01.c}   &
+            \lstinputlisting[language=Octave]{./code/test_and_set_02.c}  \\ \hline
+            \lstinputlisting[language=Octave]{./code/swap_01.c}   &
+            \lstinputlisting[language=Octave]{./code/swap_02.c}  \\ \hline
+        \end{tabular}
+      \end{myTableStyle}
+      % \vspace{0.08in}
+  \end{minipage}
+
+  \item Important observations in synchronization
+    \begin{enumerate}
+      \item Solution should be free from deadlock.
+      \item For binary semaphore, make sure that no V operation is performed if its value is 1.
+      \item For binary semaphore, two V operations with no P operation between, should not occur on same semaphore variable.
+    \end{enumerate}
+
+  \begin{minipage}{\linewidth}
+  \item Alternation (C1: producer  C2: consumer)
+    \begin{enumerate}
+      \item Produce and give turn to waiting consumer to consume.
+      \item Consume and give turn to producer to produce.
+      \item Case 3: Consumer gives turn to producer and waits for its signal. Producer after producing one item waits for
+                    consumer signal. Producer signals consumer to go for consumption. Producer goes to produce one item.
+    \end{enumerate}
+    \lstinputlisting[language=Octave]{./code/semaphore_02_alternation.c}
+  \end{minipage}
+
+\end{enumerate}
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
