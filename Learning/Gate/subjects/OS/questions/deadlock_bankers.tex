@@ -19,7 +19,7 @@
   \begin{oneparchoices}
     \choice P0
     \choice P1
-    \choice P2
+    \correctchoice P2
     \choice system is in deadlock
   \end{oneparchoices}
 
@@ -34,10 +34,10 @@
              three resource types X, Y, and Z to three processes P0, P1, and P2. The table given below presents the
              current system state. Here, the Allocation matrix shows the current number of resources of each type
              allocated to each process and the Max matrix shows the maximum number of resources of each type required
-             by each process during its execution. (GATE-2014\_set\_1)
+             by each process during its execution. (GATE-2014\_set\_1\_65)
 
              \begin{lstlisting}
-                alloc           request
+                alloc             Max
                 X Y Z            X Y Z
             P0  0 0 1            8 4 3
             P1  3 2 0            6 2 0
@@ -53,7 +53,7 @@
              Which one of the following is TRUE?
   \begin{choices}
     \choice  Only REQ1 can be permitted.
-    \choice  Only REQ2 can be permitted.
+    \correctchoice  Only REQ2 can be permitted.
     \choice  Both REQ1 and REQ2 can be permitted.
     \choice  Neither REQ1 nor REQ2 can be permitted
   \end{choices}
@@ -78,7 +78,7 @@
   Which of the following best describes the current state of the system?
   \begin{choices}
     \choice Safe, Deadlocked
-    \choice Safe, Not Deadlocked
+    \correctchoice Safe, Not Deadlocked
     \choice Not Safe, Deadlocked
     \choice Not Safe, Not Deadlocked
   \end{choices}
