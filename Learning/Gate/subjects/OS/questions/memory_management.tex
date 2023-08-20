@@ -1,8 +1,6 @@
 \centerline{\textbf{ \LARGE Memory Management Basics}}
 
 
-
-
 % ----------------------------------------------------------------------------
 
 \begin{questyle}
@@ -13,23 +11,8 @@
     \choice Interrupts
     \choice DMA
     \choice Polling
-    \choice Cache Memory
+    \correctchoice Cache Memory
   \end{oneparchoices}
-\end{questyle}
-
-% ----------------------------------------------------------------------------
-
-\begin{questyle}
-
-  \question  In a paged segmented scheme of memory management, the segment table itself must have
-             a page table because (GATE-1995)
-
-  \begin{choices}
-    \choice The segment table is often too large to fit in one page
-    \choice Each segment is spread over a number of pages
-    \choice Segment tables point to page tables and not to the physical locations of the segment
-    \choice The processor’s description base register points to a page table
-  \end{choices}
 \end{questyle}
 
 % ----------------------------------------------------------------------------
@@ -54,7 +37,7 @@
 
   \begin{choices}
     \choice will always be to the page used in the previous page reference
-    \choice is likely to be to one of the pages used in the last few page references
+    \correctchoice is likely to be to one of the pages used in the last few page references
     \choice will always be to one of the pages existing in memory
     \choice will always lead to a page fault
   \end{choices}
@@ -69,7 +52,7 @@
   \begin{choices}
     \choice reduces page I/O
     \choice decreases the degree of multiprogramming
-    \choice implies excessive page I/O
+    \correctchoice implies excessive page I/O
     \choice improve the system performance
   \end{choices}
 \end{questyle}
@@ -83,7 +66,7 @@
   \begin{oneparchoices}
     \choice Assembler
     \choice Linker
-    \choice Loader
+    \correctchoice Loader
     \choice Compiler
   \end{oneparchoices}
 
@@ -100,7 +83,7 @@
     \choice Virtual memory implements the translation of a program‘s address space into physical memory address space
     \choice Virtual memory allows each program to exceed the size of the primary memory
     \choice Virtual memory increases the degree of multiprogramming
-    \choice Virtual memory reduces the context switching overhead
+    \correctchoice Virtual memory reduces the context switching overhead
   \end{choices}
 
 \end{questyle}
@@ -114,7 +97,7 @@
   \begin{oneparchoices}
     \choice Assembly
     \choice Parsing
-    \choice Relocation
+    \correctchoice Relocation
     \choice Symbol resolution
   \end{oneparchoices}
 
@@ -129,7 +112,7 @@
   \begin{oneparchoices}
     \choice Edit-time
     \choice Compile-time
-    \choice Link-time
+    \correctchoice Link-time
     \choice Load-time
   \end{oneparchoices}
 
@@ -143,7 +126,7 @@
 
   \begin{choices}
     \choice Saving temporary html pages
-    \choice Saving process data
+    \correctchoice Saving process data
     \choice Storing the super-block
     \choice Storing device drivers
   \end{choices}
@@ -155,7 +138,6 @@
 \begin{questyle}
 
   \question Match the pairs in the following: (GATE-1989)
-
   \begin{lstlisting}
             List-I                        List-II
       a). Virtual memory          p). Temporal Locality
@@ -163,9 +145,8 @@
       c). Look-ahead buffer       r). Address Translation
       d). Look-aside buffer       s). Mutual Exclusion
 
+      (a, b, c, d) (r, s, q, p) [Look ahead buffer is used for spatial locality of cache ]
   \end{lstlisting}
-
-
 \end{questyle}
 
 % ----------------------------------------------------------------------------
@@ -181,8 +162,8 @@
       c). Working Set               r). Principle of locality
       d). Deadlock                  s). Circular Wait
 
+      (a, b, c, d) (q, p, r, s)
   \end{lstlisting}
-
 \end{questyle}
 
 % ----------------------------------------------------------------------------
@@ -205,6 +186,8 @@
       b). Interpretation            q). Segmentation
       c). Pointer type              r). Memory allocation
       d). Virtual memory            s). Garbage collection
+
+      (a, b, c, d) - (r, p, s, q)
 
   \end{lstlisting}
 
@@ -233,7 +216,7 @@
 
   \begin{choices}
     \choice matches the parameters of the macro-definition with locations of the parameters of the macro call
-    \choice matches external names of one program with their location in other programs
+    \correctchoice matches external names of one program with their location in other programs
     \choice matches the parameters of subroutine definition with the location of parameters of subroutine call.
     \choice acts as a link between text editor and the user
     \choice acts as a link between compiler and the user program
@@ -283,7 +266,7 @@
     \choice text editor
     \choice assembler
     \choice linker
-    \choice loader
+    \correctchoice loader
     \choice none of the above
   \end{choices}
 
@@ -307,24 +290,9 @@
 
   \begin{choices}
     \choice either first fit or best fit policy (any one)
-    \choice first fit but not best fit policy
+    \correctchoice first fit but not best fit policy
     \choice best fit but not first fit policy
     \choice None of the above
-  \end{choices}
-
-\end{questyle}
-
-% ----------------------------------------------------------------------------
-
-\begin{questyle}
-
-  \question  The capacity of a memory unit is defined by the number of words multiplied by the number of bits/word. How many separate address and data lines are needed for a memory of \( \large 4K \times 16 \)(GATE-1995)
-
-  \begin{choices}
-    \choice 10 address, 16 data lines
-    \choice 11 address, 8 data lines
-    \choice 12 address, 16 data lines
-    \choice 12 address, 12 data lines
   \end{choices}
 
 \end{questyle}
@@ -340,7 +308,7 @@
   \begin{choices}
     \choice smaller, smaller
     \choice smaller, larger
-    \choice larger, smaller
+    \correctchoice larger, smaller
     \choice larger, larger
   \end{choices}
 
@@ -409,7 +377,7 @@
 
   \begin{choices}
     \choice Security is dynamic
-    \choice The path for searching dynamic libraries is not known till runtime
+    \correctchoice The path for searching dynamic libraries is not known till runtime
     \choice Linking is insecure
     \choice Cryptographic procedures are not available for dynamic linking
   \end{choices}
@@ -426,7 +394,7 @@
   \begin{choices}
     \choice Smaller sizes of executable files
     \choice Lesser overall page fault rate in the system
-    \choice Faster program startup
+    \correctchoice Faster program startup
     \choice Existing programs need not be re-linked to take advantage of newer versions of libraries
   \end{choices}
 
@@ -443,7 +411,7 @@
   \begin{choices}
     \choice Efficient implementation of multi-user support is no longer possible
     \choice The processor cache organization can be made more efficient now
-    \choice Hardware support for memory management is no longer needed
+    \correctchoice Hardware support for memory management is no longer needed
     \choice CPU scheduling can be made more efficient now
   \end{choices}
 
@@ -460,7 +428,7 @@
             which partitions are NOT allotted to any process? (GATE-2015\_set\_2)
 
   \begin{choices}
-    \choice 200 KB and 300 KB
+    \correctchoice 200 KB and 300 KB
     \choice 200 KB and 250 KB
     \choice 250 KB and 300 KB
     \choice 300 KB and 400 KB
