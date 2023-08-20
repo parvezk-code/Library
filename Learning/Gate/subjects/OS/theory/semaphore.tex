@@ -15,7 +15,8 @@
         \end{tabular}
       \end{myTableStyle}
   \begin{enumerate}
-    \item Value of S can be 0 or 1. At s=1 if multiple V operations are performend then value os S will remain 1, since it is binary.
+    \item Value of S can be 0 or 1.
+    \item At s=1 if multiple V operations are performend then value os S will remain 1, since it is binary.
     \item if( s == 1 ) then no   process is in CS
     \item if( s == 0 ) then one process is in CS
     \item Drawback :
@@ -29,6 +30,9 @@
     \item if( s=5 ) then 5 processes can enter CS.
   \end{enumerate}
   \end{enumerate}
+
+  \item There is no mechanism of a waiting queue and after the exit of one thread, any thread can proceed in CS.
+        This could lead to to starvation.
 
   \item Reader Writer Problem
   \begin{enumerate}

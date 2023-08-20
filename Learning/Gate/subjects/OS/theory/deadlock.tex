@@ -1,0 +1,63 @@
+\centerline{\textbf{ \LARGE Deadlock}}
+
+% ----------------------------------------------------------------------------
+
+
+\begin{enumerate}
+
+  \item Dead-lock conditions (http://www.cs.yale.edu/homes/aspnes/pinewiki/Deadlock.html)\\
+     \begin{myTableStyle}
+      \begin{tabular}{ |m{3cm}|m{12cm}| } \hline
+          Mutual Exclusion    &      The resources involved must be in non-shareable mode    \\ \hline
+          No preemption       &      resource can not be taken forcefully    \\ \hline
+          Hold and wait       &         \\ \hline
+          Circular wait       &      p1 \textrightarrow  p2 \textrightarrow p3 .... \textrightarrow  pn \textrightarrow  p1 \\ \hline
+      \end{tabular}
+    \end{myTableStyle}
+  \vspace{0.08in}
+
+  \item Preventing deadlock : violate one of the 4 conditions.\\
+      \begin{myTableStyle}
+      \begin{tabular}{ |m{3cm}|m{12cm}| } \hline
+          No mutual exclusion    &      most writable data structures, CPU, CD burners, keyboard can't be shared    \\ \hline
+          No hold-and-wait       &      give all the needed resources to the process. Need resource prediction.
+                                        Brings starvation, low device utilization    \\ \hline
+          Allow preemption       &         \\ \hline
+          No circular-wait       &      allow request only for  resources of higher ID. Need resource prediction \\ \hline
+      \end{tabular}
+    \end{myTableStyle}
+  \vspace{0.08in}
+
+  \item Preventing deadlock techniques :
+  \begin{enumerate}
+    \item The resources are numbered uniquely, and processes are allowed to request for resources only in increasing order.
+    \item The resources are numbered uniquely, and processes are allowed to request for resources only in decreasing order.
+    \item In deadlock avoidance, the request for resources is always granted if the result state is safe.
+    \item Deadlock avoidance is less restrictive than deadlock prevention.
+    \item Deadlock avoidance requires knowledge of resource requirements a priori.
+  \end{enumerate}
+
+  \item A system has n processes sharing m identical resources. Maximum resource requirment of process(\(P_i\)) is  \(S_i\) .
+        Condition for no deadlock is. \\
+        {\large \(   \sum_{n=1}^{n} s_i < (m+n)   \) }
+
+  \item Resource allocation graph(RAG) : If resources have single instance then a cycle in RAG is necessary
+        and sufficient for deadlock.
+
+\end{enumerate}
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------

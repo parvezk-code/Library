@@ -18,6 +18,7 @@
           it has indicated its desire to enter the critical section
     \item If there is deadlock then there is no progress.
   \end{enumerate}
+  \item Race Around Condition :
 
   \item Turn Variable:
   \begin{enumerate}
@@ -47,6 +48,12 @@
       \end{myTableStyle}
       \vspace{0.08in}
 
+      \item Reentrant (Recursive) locks: Reentrant (Recursive) locks allow a thread to reacquire the lock.
+          That means same process can claim the lock multiple times without blocking on itself. This prevents the
+          thread from deadlocking itself. This is main advantage of reentrant locks over non-reentrant locks.
+      \item Non-reentrant (Non- recursive) locks : not allow a thread to reacquire the lock. That means same
+          process can not claim the lock multiple times without releasing it. So, if a thread/process is unable
+          to acquire a lock, it blocks until the lock becomes available. This situation is deadlocked.
 \end{enumerate}
 
 % ----------------------------------------------------------------------------
