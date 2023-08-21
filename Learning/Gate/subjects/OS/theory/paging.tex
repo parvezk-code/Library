@@ -53,36 +53,23 @@
     \item Page sharing : multiple processes share the same  frame. Each PT will have an PTE for that frame.
     \vspace{0.08in}
 
-    \item Two-Level Paging Example
-    \begin{enumerate}
-      \item  A logical address (on 32 -bit machine with 1 K page size) is divided into:
-      \begin{enumerate}
-          \item a page number consisting of 22 bits
-          \item a page offset consisting of 10 bits
-      \end{enumerate}
-
-      \item Since the page table is paged, the page number is further divided into:
-      \begin{enumerate}
-          \item a 12 -bit page number
-          \item a 10 -bit page offset
-      \end{enumerate}
-
-      \item Thus, a logical address is as follows: \\
-      \begin{figure}[h]
-          \centering   \includegraphics[scale=2.5]{./images/paging_02.jpeg}
-      \end{figure}
-      \item where pi is an index into the outer page table, and p 2 is the displacement within the page of the outer page table.
-      \item Known as forward-mapped page table.
-
-    \end{enumerate}
-
-
       \begin{figure}[h]
           \centering   \includegraphics[scale=0.4]{./images/paging_03.jpeg}
       \end{figure}
 
     \begin{minipage}{\linewidth}
-    \item multi level page tables \\
+    \item Example of multi level page table.  \\
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |m{4cm}|m{1cm}|m{5cm}| } \hline
+        Page Size               &   \(2^{12}\) B  & offset bits = 12        \\ \hline
+        Page Table Entry Size   &   \(2^{2}\)  B  &                         \\ \hline
+        No of PTE in one page   &   \(2^{10}\) B  & offset bits for every level = 10        \\ \hline
+        Physical Address Space  &   \(2^{44}\) B  & 32 + 12                 \\ \hline
+        Logical Address Space   &   \(2^{32}\) B  & 10 + 10 + 12            \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
 
     \begin{myTableStyle}
       \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
@@ -94,14 +81,33 @@
     \end{myTableStyle}
     \vspace{0.08in}
 
+    \end{minipage}
+
+
+    \begin{minipage}{\linewidth}
+    \item Example of multi level page table.  \\
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |m{4cm}|m{1cm}|m{5cm}| } \hline
+        Page Size               &   \(2^{20}\) B  & offset bits = 20        \\ \hline
+        Page Table Entry Size   &   \(2^{2}\)  B  &                         \\ \hline
+        No of PTE in one page   &   \(2^{18}\) B  & offset bits for every level = 18        \\ \hline
+        Physical Address Space  &                 &                          \\ \hline
+        Logical Address Space   &   \(2^{64}\) B  & 8 + 18 + 18 + 20            \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
     \begin{myTableStyle}
       \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
-                  &  size           & Addr bits     & total pages     &  page indexing(bits)  \\ \hline
-          Process &  \(2^{32}\) B   &  32           &  \(2^{20}\)     &  20                   \\ \hline
-          L-2     &  \(2^{22}\) B   &  22           &  \(2^{10}\)     &  10                   \\ \hline
-          L-2     &  \(2^{12}\) B   &  12           &  1              &  NA                   \\ \hline
+                  &  size           & total pages   & PTE         &  PT-size        \\ \hline
+          Process &  \(2^{64}\) B   &  \(2^{44}\)   &  \(2^2\) B  &  \(2^{46}\) B   \\ \hline
+          L-3     &  \(2^{46}\) B   &  \(2^{26}\)   &  \(2^2\) B  &  \(2^{28}\) B   \\ \hline
+          L-2     &  \(2^{28}\) B   &  \(2^{8}\)    &  \(2^2\) B  &  \(2^{10}\) B   \\ \hline
+          L-1     &  \(2^{10}\) B   &  1            &  NA         &  NA             \\ \hline
       \end{tabular}
     \end{myTableStyle}
+    \vspace{0.08in}
 
     \end{minipage}
 
