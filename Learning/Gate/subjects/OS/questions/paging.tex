@@ -23,7 +23,7 @@
   \question Dirty bit for a page in a page table. (GATE-1997)
 
   \begin{choices}
-    \choice helps avoid unnecessary writes on a paging device
+    \correctchoice helps avoid unnecessary writes on a paging device
     \choice helps maintain LRU information
     \choice allows only read on a page
     \choice none of the above
@@ -41,7 +41,7 @@
   \begin{choices}
     \choice the large amount of internal fragmentation
     \choice the large amount of external fragmentation
-    \choice the large memory overhead in maintaining page tables
+    \correctchoice the large memory overhead in maintaining page tables
     \choice  the large computation overhead in the translation process
   \end{choices}
 
@@ -55,7 +55,7 @@
             environment is determined by(GATE-2004)
 
   \begin{choices}
-    \choice the instruction set architecture
+    \correctchoice the instruction set architecture
     \choice page size
     \choice number of processes in memory
     \choice physical memory size
@@ -71,7 +71,7 @@
 
   \begin{choices}
     \choice Virtual page number
-    \choice Page frame number
+    \correctchoice Page frame number
     \choice Both virtual page number and page frame number
     \choice Access right information
   \end{choices}
@@ -82,7 +82,7 @@
 
 \begin{questyle}
 
-  \question  Consider a system with byte-addressable memory, 32 bit logical addresses, 4 kilobyte page size and page table entries of 4 bytes each. The size of the page table in the system in megabytes is \fillin[] (GATE-2015\_set\_1)
+  \question  Consider a system with byte-addressable memory, 32 bit logical addresses, 4 kilobyte page size and page table entries of 4 bytes each. The size of the page table in the system is \fillin[4 MB] (GATE-2015\_set\_1)
 
 \end{questyle}
 
@@ -104,7 +104,7 @@
   \begin{choices}
     \choice 16 MB
     \choice 8 MB
-    \choice 2 MB
+    \correctchoice 2 MB
     \choice 24 MB
   \end{choices}
 
@@ -120,11 +120,7 @@
              bits of the virtual address are used as index into the first level page table while the next 10 bits
              are used as index into the second level page table. The 12 least significant bits of the virtual
              address are used as offset within the page. Assume that the page table entries in both levels of
-             page tables are 4 bytes wide. Further, the processor has a translation look-aside buffer (TLB), with a
-             hit rate of 96\%. The TLB caches recently used virtual page numbers and the corresponding physical
-             page numbers. The processor also has a physically addressed cache with a hit rate of 90\%.
-             Main memory access time is 10 ns, cache access time is 1 ns, and TLB access time is also 1 ns.
-
+             page tables are 4 bytes wide.
              Suppose a process has only the following pages in its virtual address space: two contiguous code
              pages starting at virtual address 0x00000000, two contiguous data pages starting at virtual
              address 0×00400000, and a stack page starting at virtual address 0×FFFFF000. The amount of memory
@@ -133,7 +129,7 @@
             \begin{choices}
               \choice 8 KB
               \choice 12 KB
-              \choice 16 KB
+              \correctchoice 16 KB
               \choice 20 KB
             \end{choices}
 
@@ -158,7 +154,7 @@
     \choice 20, 20 and 20
     \choice 24, 24 and 24
     \choice 24, 24 and 20
-    \choice 25, 25 and 24
+    \correctchoice 25, 25 and 24
   \end{choices}
 
 \end{questyle}
@@ -172,7 +168,7 @@
 
   \begin{choices}
     \choice It reduces the memory access time to read or write a memory location.
-    \choice It helps to reduce the size of page table needed to implement the virtual address space of a process
+    \correctchoice It helps to reduce the size of page table needed to implement the virtual address space of a process
     \choice It is required by the translation lookaside buffer.
     \choice It helps to reduce the number of page faults in page replacement algorithms.
   \end{choices}
@@ -194,7 +190,7 @@
   \begin{choices}
     \choice 2
     \choice 4
-    \choice 8
+    \correctchoice 8
     \choice 16
   \end{choices}
 
@@ -207,7 +203,7 @@
   \question   A Computer system implements 8 kilobyte pages and a 32-bit physical address space. Each page table
               entry contains a valid bit, a dirty bit three permission bits, and the translation. If the maximum size
               of the page table of a process is 24 megabytes, the length of the virtual address
-              supported by the system is \fillin[] (GATE-2015\_set\_2)
+              supported by the system is \fillin[36] (GATE-2015\_set\_2)
 \end{questyle}
 
 % ----------------------------------------------------------------------------
@@ -216,7 +212,7 @@
 
   \question  Consider a computer system with 40-bit virtual addressing and page size of sixteen kilobytes.
               If the computer system has a one-level page table per process and each page table entry requires 48 bits,
-              then the size of the per-process page table is\fillin[] megabytes. (GATE-2016\_set\_1)
+              then the size of the per-process page table is\fillin[384] megabytes. (GATE-2016\_set\_1)
 
 \end{questyle}
 

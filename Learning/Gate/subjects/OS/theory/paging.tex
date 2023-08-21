@@ -21,10 +21,8 @@
         offset(k-bits)  &     index of the word in a page/frame  \\ \hline
         Logical address &     page no(p)  +  offset(d)                                    \\ \hline
         Physical address&     frame no(f) +  offset(d)                                    \\ \hline
-        Page Table Size &     n x size of one entry                                       \\
-                        &     n = No of entries in page table = total pages                \\ \hline
-        Page Table Size &     n x size of one entry                                       \\
-                        &     n = No of entries in page table = total pages                \\ \hline
+        Page Table Size &     \(2^p\) x size of one entry                                       \\
+                        &     \(2^p\) = No of entries in page table = total pages                \\ \hline
         Translation \mbox{Lookaside} Buffer(TLB) & Acts as cache for page table                    \\ \hline
     \end{tabular}
   \end{myTableStyle}
