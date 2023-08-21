@@ -24,6 +24,7 @@
         Page Table Size &     \(2^p\) x size of one entry                                       \\
                         &     \(2^p\) = No of entries in page table = total pages                \\ \hline
         Translation \mbox{Lookaside} Buffer(TLB) & Acts as cache for page table                    \\ \hline
+        Page Table Base \mbox{ Register} &                                                        \\ \hline
     \end{tabular}
   \end{myTableStyle}
   \vspace{0.08in}
@@ -37,6 +38,7 @@
         Page no &  Frame no & Valid bit & Dirty bit & Protection bit  \\ \hline
     \end{tabular}
   \end{myTableStyle}
+  \vspace{0.08in}
 
 
   \item TLB : https://www.geeksforgeeks.org/translation-lookaside-buffer-tlb-in-paging/
@@ -46,28 +48,63 @@
       \item TLB entry replacement policies : FIFO, LRU or MFU etc
       \item TLB first checks. If the page is not in memory a page fault is issued then the TLB is updated to include the new page entry.
     \end{enumerate}
+    \vspace{0.08in}
 
     \item Page sharing : multiple processes share the same  frame. Each PT will have an PTE for that frame.
+    \vspace{0.08in}
 
-  \item Two-Level Paging Example
-  \begin{enumerate}
-    \item  A logical address (on 32 -bit machine with 1 K page size) is divided into:
+    \item Two-Level Paging Example
     \begin{enumerate}
-      \item a page number consisting of 22 bits
-      \item a page offset consisting of 10 bits
+      \item  A logical address (on 32 -bit machine with 1 K page size) is divided into:
+      \begin{enumerate}
+          \item a page number consisting of 22 bits
+          \item a page offset consisting of 10 bits
+      \end{enumerate}
+
+      \item Since the page table is paged, the page number is further divided into:
+      \begin{enumerate}
+          \item a 12 -bit page number
+          \item a 10 -bit page offset
+      \end{enumerate}
+
+      \item Thus, a logical address is as follows: \\
+      \begin{figure}[h]
+          \centering   \includegraphics[scale=2.5]{./images/paging_02.jpeg}
+      \end{figure}
+      \item where pi is an index into the outer page table, and p 2 is the displacement within the page of the outer page table.
+      \item Known as forward-mapped page table.
+
     \end{enumerate}
-    \item Since the page table is paged, the page number is further divided into:
-    \begin{enumerate}
-        \item a 12 -bit page number
-        \item a 10 -bit page offset
-    \end{enumerate}
-  \item Thus, a logical address is as follows:
-    \begin{figure}[h]
-        \centering   \includegraphics[scale=2.5]{./images/paging_02.jpeg}
-    \end{figure}
-  \item where pi is an index into the outer page table, and p 2 is the displacement within the page of the outer page table.
-  \item Known as forward-mapped page table.
-  \end{enumerate}
+
+
+      \begin{figure}[h]
+          \centering   \includegraphics[scale=0.4]{./images/paging_03.jpeg}
+      \end{figure}
+
+    \begin{minipage}{\linewidth}
+    \item multi level page tables \\
+
+    \begin{myTableStyle}
+      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
+                  &  size           & total pages   & PTE         &  PT-size        \\ \hline
+          Process &  \(2^{32}\) B   &  \(2^{20}\)   &  \(2^2\) B  &  \(2^{22}\) B   \\ \hline
+          L-2     &  \(2^{22}\) B   &  \(2^{10}\)   &  \(2^2\) B  &  \(2^{12}\) B   \\ \hline
+          L-1     &  \(2^{12}\) B   &  1            &  NA         &  NA             \\ \hline
+      \end{tabular}
+    \end{myTableStyle}
+    \vspace{0.08in}
+
+    \begin{myTableStyle}
+      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
+                  &  size           & Addr bits     & total pages     &  page indexing(bits)  \\ \hline
+          Process &  \(2^{32}\) B   &  32           &  \(2^{20}\)     &  20                   \\ \hline
+          L-2     &  \(2^{22}\) B   &  22           &  \(2^{10}\)     &  10                   \\ \hline
+          L-2     &  \(2^{12}\) B   &  12           &  1              &  NA                   \\ \hline
+      \end{tabular}
+    \end{myTableStyle}
+
+    \end{minipage}
+
 
 \end{enumerate}
 
