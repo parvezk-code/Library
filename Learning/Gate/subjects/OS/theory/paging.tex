@@ -53,9 +53,96 @@
     \item Page sharing : multiple processes share the same  frame. Each PT will have an PTE for that frame.
     \vspace{0.08in}
 
+    \item Single level page table \\
+
+    \begin{myTableStyle}
+    \begin{tabular}{ |m{1.5cm}|m{1cm}| } \hline
+        Page no  &  offset  \\ \hline
+        n-a   &   a         \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |m{4cm}|m{2cm}|m{5cm}| } \hline
+        Page Size               &   \(2^a\)         & offset bits = a        \\ \hline
+        Page Table Entry Size   &   \(2^e\)         &                         \\ \hline
+        Physical Address Space  &   \(2^{f+a}\)     & f + a                 \\ \hline
+        Logical Address Space   &   \(2^n\)         & (n-a) + a                 \\ \hline
+        No of pages             &   \(2^{n-a}\)     &                         \\ \hline
+        Page Table size         &   \(2^{n-a+e}\)   & need 1 page             \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \item Two level page table \\
+
+    \begin{myTableStyle}
+    \begin{tabular}{ |m{2.5cm}|m{2.5cm}|m{1cm}| } \hline
+        offset-1 & offset-2  &  offset  \\ \hline
+        n-a-b   &   b  &  a         \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |m{4cm}|m{2cm}|m{5cm}| } \hline
+        Page Size               &   \(2^a\)         & offset bits = a         \\ \hline
+        Page Table Entry Size   &   \(2^e\)         &                         \\ \hline
+        Physical Address Space  &   \(2^{f+a}\)     & f + a                   \\ \hline
+        Logical Address Space   &   \(2^n\)         & n                       \\ \hline
+        PTE in one page         &   \(2^{a-e}\)     & equals \(2^b\) (b=a-e)  \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |m{4cm}|m{3cm}|m{3cm}|m{3cm}| } \hline
+                            &   Process             &   Page Table(L1)          &   Page Table(L2)        \\ \hline
+        No of pages         &   \(2^{n-a}\)         &   \(2^{n-2a+e}\)          &   \(2^{n-3a+2e}\)       \\ \hline
+        Page Table size     &   \(2^{n-a+e}\) (L1)  &   \(2^{n-2a+2e}\) (L2)    &   NA                    \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \begin{minipage}{\linewidth}
+  \item Three level page table \\
+
+    \begin{myTableStyle}
+    \begin{tabular}{ |m{2.5cm}|m{2.5cm}|m{2.5cm}|m{1cm}| } \hline
+        offset-1 & offset-2 & offset-3  &  offset  \\ \hline
+        n-a-b-c   &  c   &   b  &  a         \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |m{4cm}|m{2cm}|m{5cm}| } \hline
+        Page Size               &   \(2^a\)         & offset bits = a         \\ \hline
+        Page Table Entry Size   &   \(2^e\)         &                         \\ \hline
+        Physical Address Space  &   \(2^{f+a}\)     & f + a                   \\ \hline
+        Logical Address Space   &   \(2^n\)         & n                       \\ \hline
+        PTE in one page         &   \(2^{a-e}\)     & equals \(2^b\) (b=c=a-e)\\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+
+  \begin{myTableStyle}
+    \begin{tabular}{ |m{2.5cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}| } \hline
+                            &   Process             &   Page Table(L1)          &   Page Table(L2)      &   Page Table(L3)        \\ \hline
+        No of pages         &   \(2^{n-a}\)         &   \(2^{n-2a+e}\)          &   \(2^{n-3a+2e}\)     &   \(2^{n-4a+3e}\)       \\ \hline
+        Page Table size     &   \(2^{n-a+e}\) (L1)  &   \(2^{n-2a+2e}\) (L2)    &   \(2^{n-3a+3e}\)(L3) &   NA                    \\ \hline
+    \end{tabular}
+  \end{myTableStyle}
+  \vspace{0.08in}
+  \end{minipage}
+
+
       \begin{figure}[h]
           \centering   \includegraphics[scale=0.4]{./images/paging_03.jpeg}
       \end{figure}
+
+      \item https://www.cs.utexas.edu/~lorenzo/corsi/cs372/06F/hw/3sol.html \\
 
     \begin{minipage}{\linewidth}
     \item Example of multi level page table.  \\
@@ -72,11 +159,11 @@
   \vspace{0.08in}
 
     \begin{myTableStyle}
-      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
-                  &  size           & total pages   & PTE         &  PT-size        \\ \hline
-          Process &  \(2^{32}\) B   &  \(2^{20}\)   &  \(2^2\) B  &  \(2^{22}\) B   \\ \hline
-          L-2     &  \(2^{22}\) B   &  \(2^{10}\)   &  \(2^2\) B  &  \(2^{12}\) B   \\ \hline
-          L-1     &  \(2^{12}\) B   &  1            &  NA         &  NA             \\ \hline
+      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
+          Process Size \(2^{32}\) B & size in pages & PTE         &  PT-size        &  PT-size              \\ \hline
+          Process                   &  \(2^{20}\)   &  \(2^2\) B  &  \(2^{22}\) B   &  \(2^{10}\) page    \\ \hline
+          L-2 PT                    &  \(2^{10}\)   &  \(2^2\) B  &  \(2^{12}\) B   &  1 page             \\ \hline
+          L-1 PT                    &  1            &  NA         &  NA             &  1 page               \\ \hline
       \end{tabular}
     \end{myTableStyle}
     \vspace{0.08in}
@@ -99,17 +186,44 @@
   \vspace{0.08in}
 
     \begin{myTableStyle}
-      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
-                  &  size           & total pages   & PTE         &  PT-size        \\ \hline
-          Process &  \(2^{64}\) B   &  \(2^{44}\)   &  \(2^2\) B  &  \(2^{46}\) B   \\ \hline
-          L-3     &  \(2^{46}\) B   &  \(2^{26}\)   &  \(2^2\) B  &  \(2^{28}\) B   \\ \hline
-          L-2     &  \(2^{28}\) B   &  \(2^{8}\)    &  \(2^2\) B  &  \(2^{10}\) B   \\ \hline
-          L-1     &  \(2^{10}\) B   &  1            &  NA         &  NA             \\ \hline
+      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
+          Process Size \(2^{64}\) B & size in pages & PTE         &  PT-size        &  PT-size              \\ \hline
+          Process                   &  \(2^{44}\)   &  \(2^2\) B  &  \(2^{46}\) B   &  \(2^{26}\) pages     \\ \hline
+          L-3 PT                    &  \(2^{26}\)   &  \(2^2\) B  &  \(2^{28}\) B   &  \(2^{8}\)  pages     \\ \hline
+          L-2 PT                    &  \(2^{8}\)    &  \(2^2\) B  &  \(2^{10}\) B   &   1 page               \\ \hline
+          L-1 PT                    &  1            &  NA         &  NA             &   1 page              \\ \hline
+      \end{tabular}
+    \end{myTableStyle}
+    \vspace{0.08in}
+    \end{minipage}
+
+
+    \item Example of level-3 page table.\\
+    \begin{myTableStyle}
+      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
+                  10-bit &  8-bit & 6-bit & 8-bit \\ \hline
       \end{tabular}
     \end{myTableStyle}
     \vspace{0.08in}
 
-    \end{minipage}
+
+    \begin{myTableStyle}
+      \begin{tabular}{ |m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}| } \hline
+          Process Size \(2^{18}\) B  & offset bits & Maximum PTEs/Bytes in single page & total PTEs/Bytes  & total pages\\ \hline
+          Process   &   8   &  \(2^8\) B      &   \(2^{18}\) B&   \(2^{10}\)    \\ \hline
+          Level-3   &   6   &  \(2^6\)        &   \(2^{10}\)  &   \(2^{4}\)     \\ \hline
+          Level-2   &   8   &  \(2^8\)        &   \(2^{4}\)   &   1             \\ \hline
+          Level-1   &   10  &  \(2^{10}\)     &   1           &   1             \\ \hline
+      \end{tabular}
+    \end{myTableStyle}
+
+    PTE size =  2B \\
+    total size needed to store page table = (\(2^{10}\) x 2)  + (\(2^{8}\) x 2)  + (\(2^{10}\) x 2)
+    \vspace{0.08in}
+
+
+
+
 
 
 \end{enumerate}
