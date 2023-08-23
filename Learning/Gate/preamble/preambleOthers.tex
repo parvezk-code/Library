@@ -1,0 +1,20 @@
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+\newenvironment{hl}[1][blue]
+    {
+    \color{#1}
+    \underline
+    }
+    {
+    \color{black}
+    }
