@@ -1,0 +1,68 @@
+\centerline{\textbf{ \LARGE Memory Access Time Numericals}}
+
+
+% ----------------------------------------------------------------------------
+
+
+\begin{enumerate}
+
+    \item Paging with no TLB and no cache
+
+        \begin{myTableStyle}
+            \begin{tabular}{ |m{8cm}|m{4cm}| } \hline
+                main memory access time             &     \(t_m\)     \\ \hline
+                Average access time                 &     2\(t_m\)    \\ \hline
+            \end{tabular}
+        \end{myTableStyle}
+        \vspace{0.08in}
+
+    \item Paging with TLB and no cache
+    \begin{enumerate}  \item \(T_{bm} = \) Time to serve a TLB miss. (\(Check\) \(this^*\)) \end{enumerate}
+
+        \begin{myTableStyle}
+            \begin{tabular}{ |m{6cm}|m{4cm}|m{4cm}| } \hline
+                                                      &   single-level & multi-level(n)    \\ \hline
+                Main memory access time               &   \(t_m\)&                   \\ \hline
+                TLB access time                       &   \(t_b\)&                   \\ \hline
+                TLB hit ratio                         &   \(H_b\)&                   \\ \hline
+                Access time when TLB hit (\(T_{bh}\)) &   \(t_b + t_m\)&             \\ \hline
+                Access time when TLB miss (\(T_{bm}\))&   \(t_b + 2t_m\)& \(t_b + (n+1)t_m\)            \\ \hline
+
+                \makecell[l]{ Avg access time(T) \\
+                \(H_b(T_{bh}) + (1-H_b)T_{bm}\) }  &  \(t_b + t_m + (1-H_b)t_m\)&  \(t_b + t_m + n(1-H_b)t_m\) \\ \hline
+            \end{tabular}
+        \end{myTableStyle}
+        \vspace{0.08in}
+
+        \item Paging + TLB + cache. TLB is also cached : replace \(t_m\)  with \(E\) in above formulas
+        \item Paging + TLB + cache. TLB is not cached : derive formula for this.
+
+    \item Main memory with cache
+
+        \begin{myTableStyle}
+            \begin{tabular}{ |m{6cm}|m{4cm}| } \hline
+                Main memory access time             &   \(t_m\)                  \\ \hline
+                Cache access time                     &   \(t_c\)                   \\ \hline
+                Cache hit ratio                       &   \(H_c\)                   \\ \hline
+                Access time when Cache hit (\(T_{ch}\)) &   \(t_c\)             \\ \hline
+                Access time when Cache miss (\(T_{cm}\))&   \(t_c + t_m\)            \\ \hline
+
+                \makecell[l]{ Avg access time(E) \\
+                \(H_c(T_{ch}) + (1-H_c)T_{cm}\) }  &  \(t_c + (1-H_c)t_m\) \\ \hline
+            \end{tabular}
+        \end{myTableStyle}
+        \vspace{0.08in}
+
+    \item Page Fault. ( GATE-CS-2000 Question 45 )
+
+        \begin{myTableStyle}
+            \begin{tabular}{ |m{6cm}|m{4cm}| } \hline
+                Memory access time                    &   \(t_m\)                  \\ \hline
+                Time to service a page fault          &   \(t_f\)                   \\ \hline
+                Hit ratio                             &   \(H\)                   \\ \hline
+                Average memory access time(E)         &   \(H(t_c) + (1-H)t_f\)    \\ \hline
+            \end{tabular}
+        \end{myTableStyle}
+        \vspace{0.08in}
+
+\end{enumerate}

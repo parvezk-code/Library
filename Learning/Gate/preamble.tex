@@ -10,6 +10,7 @@
 \usepackage{tabularx}
 % \usepackage{minted}     % for code in programming  -shell-escape
 \usepackage{hyperref}
+\usepackage{makecell}     % table cell with multi line   makecell[l]{ ... }
 
 
 \usepackage{xcolor}
@@ -87,12 +88,11 @@
     \endgroup
     }
 
-\newenvironment{myTableCodeStyle}
+\newenvironment{hl}[1][blue]
     {
-    \begingroup
-    \setlength{\tabcolsep}{10pt} % Default value: 6pt
-    \renewcommand{\arraystretch}{0.5} % Default value: 1
+    \color{#1}
+    \underline
     }
     {
-    \endgroup
+    \color{black}
     }
