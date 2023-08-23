@@ -10,3 +10,6 @@
     \color{black}   # end_tag 01
     \endgroup       # end_tag 02
 }
+
+# syntax
+# \newenvironment{env_name}{start_tags}{end_tags}
