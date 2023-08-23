@@ -1,0 +1,20 @@
+\usepackage{array}  % for table and column width
+\usepackage{tabularray} % for table and column width
+\usepackage{tabularx}
+% \usepackage{minted}     % for code in programming  -shell-escape
+\usepackage{makecell}     % table cell with multi line   makecell[l]{ ... }
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}     % custom column : fixed width and centering
+
+% The \begingroup ... \endgroup pair ensures the separation
+% parameters only affect this particular table, and not any
+% sebsequent ones in the document.
+\newenvironment{myTableStyle}
+    {
+    \begingroup
+    \setlength{\tabcolsep}{10pt} % Default value: 6pt
+    \renewcommand{\arraystretch}{1.5} % Default value: 1
+    }
+    {
+    \endgroup
+    }
