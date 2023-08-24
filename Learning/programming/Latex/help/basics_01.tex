@@ -43,6 +43,10 @@
 
           \begin{myTableStyle} \begin{tabular}{ |m{4cm}|m{10cm}| } \hline
                Math Mode    &  \textbackslash ( Equation \textbackslash ) \\ \hline
+               Math symbols &  P\_\{2\} \(P_{2}\)  \quad
+                               \( \forall i, s_i \)  \textbackslash forall i, s\_i  \qquad
+                               \( \sum_{n=1}^{10} s_i \)   \textbackslash sum\_\{n=1\}\textasciicircum\{10\} s\_i        \\ \hline
+
                Spaces  & \textbackslash qquad  \qquad \textbackslash \qquad \textbackslash ; \qquad \textbackslash : \\ \hline
 
                Restart numbering &  \textbackslash setcounter\{question\}\{0\} \\ \hline
@@ -54,10 +58,12 @@
                line spacing & \textbackslash linespread\{1.3\} \\ \hline
           \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
+     \begin{minipage}{\linewidth}
      \item mcq exam, question and options
 
           \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
                \lstinputlisting[language=Octave]{./code/exam_questions_01.c} \\ \hline
           \end{tabular} \end{myTableStyle} \vspace{0.08in}
+     \end{minipage}
 
 \end{enumerate}
