@@ -1,18 +1,15 @@
-int MyX(int *E, unsigned int size)
+typedef struct node
 {
-	int Y = 0;
-	int Z;
-	int i, j, k;
-	for(i = 0; i < size; i++)
-		Y = Y + E[i];
-	for(i = 0; i < size; i++)
-		for(j = i; j < size; j++)
-		{
-			Z = 0;
-			for(k = i; k <= j; k++)
-				Z = Z + E[k];
-			if (Z > Y)
-				Y = Z;
-		}
-	return Y;
+    int data;
+    node* next ;
+} node;
+
+void join(node* m, node* n)
+{
+    node* p = n;
+    while (p->next != NULL)
+    {
+        p = p->next;
+    }
+    p->next = m;
 }
