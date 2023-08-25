@@ -1,5 +1,5 @@
 
-\centerline{\textbf{ \LARGE Array Level-3}}
+\centerline{\textbf{ \LARGE Queue Level-3}}
 
 \begin{questyle}
   \question  An implementation of a queue Q, using two stacks S1 and S2, is given below:  (GATE-2006)
@@ -18,24 +18,16 @@
 
 
 \begin{questyle}
-  \question  The following function computes the value of C(m,n) correctly for all legal values m and n (m\(>=\)1,n\(>=\)0 and m\(>\)n)
-            In the below function, which of the following is the correct expression for E? (GATE-zzz)
+  \question  Suppose you are given an implementation of a queue of integers. The operations that can be performed on the queue are:
+            isEmpty(Q), delete(Q), insert(Q, i)  (GATE-2007)
 
-    \begin{lstlisting}
-        int func(int m, int n)
-        {
-            if(E) return 1;
-            else
-            {
-                return(func(m -1, n) + func(m - 1, n - 1));
-            }
-        }
-    \end{lstlisting}
+            \lstinputlisting[language=Octave]{./queue_code/queue_02.c}
 
   \begin{choices}
-    \CorrectChoice  (n = = 0) OR  (m = = 1)
-    \choice         (n = = 0) AND (m = = 1)
-    \choice         (n = = 0) OR  (m = = n)
-    \choice         (n = = 0) AND (m = = n)
+    \choice         Leaves the queue Q unchanged
+    \CorrectChoice  Reverses the order of the elements in the queue Q
+    \choice         Deletes front element  and inserts it at the rear keeping the other elements in the same order.
+    \choice         Empties the queue Q
   \end{choices}
 \end{questyle}
+
