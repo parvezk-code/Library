@@ -22,3 +22,29 @@
     \choice         (n = = 0) AND (m = = n)
   \end{choices}
 \end{questyle}
+
+
+\begin{questyle}
+  \question  Consider the following recursive JAVA function. If get(6) function is being called in
+            main() then how many times will the get() function be invoked before returning
+            to the main()?   (GATE-2015\_set\_3)
+
+        \begin{lstlisting}
+        static void get (int n)
+        {
+            if (n < 1)
+                return;
+            get(n - 1);
+            get(n - 3);
+            System.out.print(n);
+        }
+        \end{lstlisting}
+
+  \begin{choices}
+    \choice         15
+    \CorrectChoice  25
+    \choice         35
+    \choice         45
+
+  \end{choices}
+\end{questyle}
