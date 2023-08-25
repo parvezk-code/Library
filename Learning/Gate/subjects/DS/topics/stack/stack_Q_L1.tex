@@ -1,0 +1,80 @@
+\centerline{\textbf{ \LARGE Array Level-1}}
+
+\begin{questyle}
+  \question In a compact one dimensional array representation for lower triangular matrix (all elements above diagonal are zero) of
+            size n x n, non zero elements of each row are stored one after another, starting from first row, the index of (i,j)th
+            element in this new representation is  (GATE-1994) \\
+            Hint : 2D Array index start from 1. 1D Array index start from 0. Assume the values i=2, j=2 and solve the question.
+  \begin{choices}
+    \choice         i+j
+    \choice         i+j-1
+    \CorrectChoice  (j-1) + i(i-1)/2
+    \choice         i + j(j-1)/2
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  An n x n array v is defined as follows. The sum of the elements of the array v is.  (GATE-2000)
+    \begin{lstlisting}
+        v[i,j] = i-j    for all i,j
+    \end{lstlisting}
+  \begin{choices}
+    \CorrectChoice  0
+    \choice         n-1
+    \choice         \(n^2\) – 3n + 2
+    \choice         None of these
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Suppose you are given an array s[1..n] and a procedure reverse (s, i, j) which reverses the order of
+             elements in a between positions i and j (both inclusive). What does the following sequence do, where 1 <= k <= n:  (GATE-2000)\\
+             reverse(s, 1, k); \\
+             reverse(s, k+1, n); \\
+             reverse(s, 1, n);
+  \begin{choices}
+    \CorrectChoice  Rotates s left by k positions
+    \choice         Leaves s unchanged
+    \choice         Reverses all elements of s
+    \choice         none
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  First element of P[m][n] array is stored at location B. Starting row index is \( R_0 \) and column index is \( C_0 \).
+            Address of P[i][j] if row-major order is used is. (GATE- 1998)\\
+            \begin{myTableStyle}
+                \begin{tabular}{ |m{4cm}|m{8cm}| } \hline
+                    Total element count(C)  &     n(i - \( R_0 \)) + (j - \( C_0 \) + 1)         \\ \hline
+                    Address of P[i][j]      &     B + (C - 1)    \\ \hline
+                \end{tabular}
+            \end{myTableStyle}
+            \vspace{0.08in}
+
+\end{questyle}
+
+
+\begin{questyle}
+  \question  First element of P[m][n] array is stored at location B. Starting row index is \( R_0 \) and column index is \( C_0 \).
+            Address of P[i][j] if column-major order is used is. \\
+            \begin{myTableStyle}
+                \begin{tabular}{ |m{4cm}|m{8cm}| } \hline
+                    Total element count(C)  &     m(j - \( C_0 \)) + (i - \( R_0 \) + 1)         \\ \hline
+                    Address of P[i][j]      &     B + (C - 1)    \\ \hline
+                \end{tabular}
+            \end{myTableStyle}
+            \vspace{0.08in}
+\end{questyle}
+
+\begin{questyle}
+  \question  Two matrices M1 and M2 are to be stored in arrays A and B respectively. Each array can be stored
+             either in row-major or column-major order in contiguous memory locations. The time complexity of an algorithm
+             to compute M1 × M2 will be  (GATE-2004)
+
+  \begin{choices}
+    \choice         best if A is in row-major, and B is in column- major order
+    \choice         best if both are in row-major order
+    \choice         best if both are in column-major order
+    \CorrectChoice  independent of the storage scheme
+  \end{choices}
+\end{questyle}
