@@ -1,0 +1,24 @@
+
+
+\begin{questyle}
+  \question  The following function computes the value of C(m,n) correctly for all legal values m and n (m\(>=\)1,n\(>=\)0 and m\(>\)n)
+            In the below function, which of the following is the correct expression for E? (GATE-2006)
+
+    \begin{lstlisting}
+        int func(int m, int n)
+        {
+            if(E) return 1;
+            else
+            {
+                return(func(m -1, n) + func(m - 1, n - 1));
+            }
+        }
+    \end{lstlisting}
+
+  \begin{choices}
+    \CorrectChoice  (n = = 0) OR  (m = = 1)
+    \choice         (n = = 0) AND (m = = 1)
+    \choice         (n = = 0) OR  (m = = n)
+    \choice         (n = = 0) AND (m = = n)
+  \end{choices}
+\end{questyle}
