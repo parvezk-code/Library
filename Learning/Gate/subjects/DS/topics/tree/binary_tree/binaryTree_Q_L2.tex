@@ -1,0 +1,75 @@
+
+\centerline{\textbf{ \LARGE Binary Tree, BST Level-2}}
+
+\begin{questyle}
+  \question  The numbers 1, 2, ... n are inserted in a binary search tree in some order. In the resulting
+             tree, the right subtree of the root contains p nodes. The first number to be inserted in
+             the tree must be  (GATE-2005)
+
+  \begin{oneparchoices}
+    \choice         p
+    \choice         p + 1
+    \CorrectChoice  n – p
+    \choice         n – p + 1
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Suppose that we have numbers between 1 and 100 in a binary search tree and want to
+            search for the number 55. Which of the following sequences CANNOT be the sequence
+            of nodes examined?  (GATE-2006)
+
+  \begin{choices}
+    \choice         {10, 75, 64, 43, 60, 57, 55}
+    \choice         {90, 12, 68, 34, 62, 45, 55}
+    \CorrectChoice  {9, 85, 47, 68, 43, 57, 55}
+    \choice         {79, 14, 72, 56, 16, 53, 55}
+  \end{choices}
+  Hint : No smaller than 55 should be in increasing order. No greater than 55 should be in decreasing order
+\end{questyle}
+
+\begin{questyle}
+  \question  When searching for the key value 60 in a binary search tree, nodes containing
+            the key values 10, 20, 40, 50, 70 80, 90 are traversed, not necessarily in the order given.
+            How many different orders are possible in which these key values can occur on the
+            search path from the root to the node containing the value 60?  (GATE-2007)
+
+  \begin{oneparchoices}
+    \CorrectChoice  35
+    \choice         64
+    \choice         128
+    \choice         5040
+  \end{oneparchoices}
+
+  Hint: 4 no smaller than 60 and 3 no greater than 60. \( \Mycomb[\mid 7 \mid]{\mid 4 \mid} \) or \( \Mycomb[\mid 7 \mid]{\mid 3 \mid} \)
+\end{questyle}
+
+\begin{questyle}
+  \question  A Binary Search Tree (BST) stores values in the range 37 to 573. Consider the following
+             sequence of keys. Suppose the BST has been unsuccessfully searched for key 273. Which all
+             of the above sequences list nodes in the order in which we could have encountered them
+             in the search? (GATE-2008)
+    \begin{enumerate}
+    \item[I] 81, 537, 102, 439, 285, 376, 305
+    \item[II] 52, 97, 121, 195, 242, 381, 472
+    \item[III] 142, 248, 520, 386, 345, 270, 307
+    \item[IV] 550, 149, 507, 395, 463, 402, 270
+    \end{enumerate}
+  \begin{choices}
+    \choice         II and III only
+    \choice         I and III only
+    \choice         III and IV only
+    \CorrectChoice  III only
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  The number of ways in which the numbers 1, 2, 3, 4, 5, 6, 7 can be inserted in an
+             empty binary search tree, such that the resulting tree has height 6, is \fillin[ 64 (\(2^6\))] (GATE-2016\_Set\_2).\\
+             Note: The height of a tree with a single node is 0.
+\end{questyle}
+
+        Hint : n nodes and hight (n-1) forms a chain. Threre are no branches in the tree.
+        Every node has one child except for the last one. There are 6 internal node and one leaf node.
+        At every internal(non leaf) node we have 2 options either to choose right child or left child.
