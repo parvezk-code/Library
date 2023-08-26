@@ -3,12 +3,28 @@
 \begin{questyle}
   \question  Consider the following C function in which size is the number of elements in the array E.
             The value returned by the function MyX is the (GATE-2014\_set\_1)
-            \lstinputlisting[language=Octave]{./array_code/array_01.c}
+            \lstinputlisting[language=C, firstline=1, lastline=18]{./array_code/array_01.c}
 
   \begin{choices}
     \CorrectChoice  maximum possible sum of elements in any sub-array of array E.
     \choice         maximum element in any sub-array of array E.
     \choice         sum of the maximum elements in all possible sub-arrays of array E
     \choice         the sum of all the elements in the array E.
+  \end{choices}
+\end{questyle}
+
+
+
+\begin{questyle}
+  \question  Consider the C function given below. Assume that the array listA contains n (> 0) elements,
+            sorted in ascending order.  Which one of the following statements about the
+            function ProcessArray is CORRECT?(GATE-2014\_set\_3)
+            \lstinputlisting[language=C, firstline=28, lastline=46]{./array_code/array_01.c}
+
+  \begin{choices}
+    \choice         It will run into an infinite loop when x is not in listA.
+    \CorrectChoice  It is an implementation of binary search.
+    \choice         It will always find the maximum element in listA.
+    \choice         It will return -1 even when x is present in listA.
   \end{choices}
 \end{questyle}

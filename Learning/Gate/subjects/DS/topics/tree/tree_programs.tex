@@ -1,1 +1,68 @@
- 
+
+\centerline{\textbf{ \LARGE Tree Programs}}
+
+\begin{questyle}
+  \question  The value returned by the function DoSomething when a pointer to the root of a non-empty
+             tree is passed as argument is  (GATE-2004)
+    \lstinputlisting[language=C, firstline=4, lastline=22]{tree_programs_code.c}
+
+  \begin{choices}
+    \choice         The number of leaf nodes in the tree
+    \choice         The number of nodes in the tree
+    \choice         The number of internal nodes in the tree
+    \CorrectChoice  The height of the tree
+  \end{choices}
+  Hint : Hight(node) = 1 + max( hight of left child, hight of right child).  Always check what if returned by leaf nodes, internal nodes.
+\end{questyle}
+
+\begin{questyle}
+  \question  The value returned by GetValue() when a pointer to the root of a binary tree is passed as its argument is.  (GATE-2007)
+    \lstinputlisting[language=C, firstline=30, lastline=48]{tree_programs_code.c}
+
+  \begin{choices}
+    \choice         the number of nodes in the tree
+    \choice         the number of internal nodes in the tree
+    \CorrectChoice  the number of leaf nodes in the tree
+    \choice         the height of the tree
+  \end{choices}
+  Hint : LeafCount(node) = LeafCount(left tree) + LeafCount(right tree). Always check what if returned by leaf nodes, internal nodes.
+\end{questyle}
+
+\begin{questyle}
+  \question  The height of a tree is defined as the number of edges on the longest path in the tree. The function
+              shown in the pseudocode below is invoked as height (root) to compute the height of a binary tree
+              rooted at the tree pointer root.   (GATE-2012)
+            \lstinputlisting[language=C, firstline=57, lastline=73]{tree_programs_code.c}
+  \begin{choices}
+    \CorrectChoice  B1 : (1 + height(n \(\rightarrow\) right)), \qquad B2 : (1 + max(h1,h2))
+    \choice         B1 : (height(n \(\rightarrow\) right)), \qquad B2 : (1 + max(h1,h2))
+    \choice         B1 : height(n \(\rightarrow\) right), \qquad B2 : max(h1,h2)
+    \choice         B1 : (1 + height(n \(\rightarrow\) right)), \qquad B2 : max(h1,h2)
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Consider the pseudocode given below. The function DoSomething() takes as argument a pointer
+             to the root of an arbitrary tree represented by the leftMostChild-rightSibling representation. When
+             the pointer to the root of a tree is passed as the argument to DoSomething, the value returned by
+             the function (GATE-2014\_set\_3)
+              \lstinputlisting[language=C, firstline=57, lastline=73]{tree_programs_code.c}
+  \begin{choices}
+    \choice         number of internal nodes in the tree.
+    \choice         height of the tree.
+    \choice         number of nodes without a right sibling in the tree.
+    \CorrectChoice  number of leaf nodes in the tree.
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \CorrectChoice
+  \end{choices}
+\end{questyle}

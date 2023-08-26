@@ -38,6 +38,17 @@
             The maximum possible number of iterations of the while loop in the algorithm is \fillin[256]   (GATE-2016\_set\_1)
 
           \lstinputlisting[language=Octave]{./queue_code/queue_03.c}
-
+  Hint:
+  \begin{enumerate}
+    \item Loop terminates when Queue is empty.
+    \item Once smallest element of queue goes into Stack, it never comes out.
+    \item When queue is sorted in increasing order. Queue is copied to Stack and while-loop come to end.
+    \item Worst case: queue is sorted in decreasing order.
+    \item T(n) = 2(n-1) + 1 = 2n - 1
+    \item After T(n) iteration, smallest element of Queue is pushed on to the Stack. Elements in Queue reduces by 1.
+    \item Stack stores smallest element one over the other. Eventually Q is empty.
+    \item This is a sorting algorithm.
+  \end{enumerate}
 
 \end{questyle}
+
