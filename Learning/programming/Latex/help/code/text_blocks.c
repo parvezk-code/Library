@@ -1,10 +1,14 @@
 \usepackage{listings}
 
+\lstinputlisting[language=C, firstline=37, lastline=45]{ab.c}
+\lstinputlisting[language=Java]{hello.java}
+
+
 \begin{lstlisting}
     # coding goes here
 \end{lstlisting}
 
-# \lstinputlisting[language=Octave]{hello.java}
+
 
 \lstset{style=mystyle}
 
@@ -28,7 +32,6 @@
 }
 
 \usepackage{xcolor}
-
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}

@@ -24,12 +24,31 @@
           \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
 
-     \begin{minipage}{\linewidth}
+     %\begin{minipage}{\linewidth}
      \item Code listing(programming)Basics \\
-          \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
-               \lstinputlisting[language=Octave]{./code/coding_01.c} \\ \hline
-          \end{tabular} \end{myTableStyle}
-     \end{minipage}
+     \begin{enumerate}
+          \item Type code \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    % \lstinputlisting[language=Octave]{./code/coding_01.c} \\ \hline
+                    \lstinputlisting[language=Octave, firstline=7, lastline=9]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+
+          \item syntax \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    \lstinputlisting[language=Octave, firstline=1, lastline=4]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+
+          \item Custom styling \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    \lstinputlisting[language=Octave, firstline=13, lastline=32]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+
+          \item Custom Colors \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    \lstinputlisting[language=Octave, firstline=34, lastline=38]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+     \end{enumerate}
+     %\end{minipage}
 
      \begin{minipage}{\linewidth}
      \item image :
