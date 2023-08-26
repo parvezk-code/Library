@@ -15,6 +15,7 @@
     --> create, edit, display college information to be used by AICTE web portal.
     --> remainder application
     --> configuring node express servers on linux OS
+    --> create git server
     --> google websites
     # web appllication for above applications
 
