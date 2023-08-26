@@ -1,0 +1,12 @@
+\usepackage{tikz}
+
+
+\newenvironment{myTree}
+    {
+    \begingroup
+    \begin{tikzpicture}[level distance=1.5cm, level 1/.style={sibling distance=3cm}, level 2/.style={sibling distance=1.5cm}]
+    }
+    {
+    \end{tikzpicture}
+    \endgroup
+    }
