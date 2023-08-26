@@ -5,6 +5,32 @@
   \question  In the balanced binary tree in the below figure, how many nodes will become unbalanced when a
              node is inserted as a child of the node “g”?  (GATE-1996)
 
+        \begin{myTree}
+        \node [circle,draw] [blue] (node_a){a}
+            child
+            {
+                node [circle,draw] (node_b) {b}
+                child
+                {
+                    node [circle,draw] (node_c) {c}
+                    child { node [circle,draw] (node_g) {g} }
+                }
+                child
+                {
+                    node [circle,draw] (node_d) {d}
+                }
+            }
+            child
+            {
+                node [circle,draw] (node_e){e}
+                child
+                {
+                    node [circle,draw] (node_f) {f}
+                }
+            };
+        \end{myTree}
+
+
   \begin{choices}
     \choice         1
     \CorrectChoice  3
@@ -14,25 +40,24 @@
 \end{questyle}
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
+  \question  Which of the following is TRUE?  (GATE-2008)
 
   \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
+    \CorrectChoice  The cost of searching an AVL tree is \(\Theta\)(log n) but that of a binary search tree is O(n)
+    \choice         The cost of searching an AVL tree is \(\Theta\)(log n) but that of a complete binary tree is \(\Theta\)(n log n)
+    \choice         The cost of searching a binary search tree is O(log n ) but that of an AVL tree is \(\Theta\)(n)
+    \choice         The cost of searching an AVL tree is \(\Theta\)(n log n) but that of a binary search tree is O(n)
   \end{choices}
 \end{questyle}
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
+  \question  What is the maximum height of any AVL-tree with 7 nodes? Assume that the height of a tree
+             with a single node is 0.  (GATE-2009)
 
   \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
+    \choice         2
+    \CorrectChoice  3
+    \choice         4
+    \choice         5
   \end{choices}
 \end{questyle}
