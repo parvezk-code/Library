@@ -1,0 +1,224 @@
+
+
+\centerline{\textbf{ \LARGE Traversal of BST}}
+
+\begin{questyle}
+  \question  Give a BST of unique keys. Order of Keys in inorder traversal is.
+  \begin{choices}
+    \choice         always decresing.
+    \CorrectChoice  always increasing.
+    \choice         Can be increasing or decreasing.
+    \choice         can not be increasing.
+  \end{choices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Give a BST of unique keys. Preorder traversal sequence(s) of BST is of the form
+            \begin{hl} {root(L)(R)}\end{hl}. Where L and R are sequence of keys. Choose the correct option.
+    \begin{enumerate}
+        \item[I] Keys in L should be greater than root
+        \item[II] Keys in L should be smaller than root
+        \item[III] Keys in R should be smaller than root
+        \item[IV] Keys in R should be greater than root
+    \end{enumerate}
+
+  \begin{choices}
+    \choice         I and III
+    \choice         I and IV
+    \CorrectChoice  II and IV \qquad This is true for post order traversal also. \begin{hl} {(L)(R)root}\end{hl}
+    \choice         II and III
+  \end{choices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Which of the following is/are correct inorder traversal sequence(s) of binary search tree(s)?
+            (GATE-2015\_set\_1)
+    \begin{enumerate}
+        \item[I] 3, 5, 7, 8, 15, 19, 25
+        \item[II] 5, 8, 9, 12, 10, 15, 25
+        \item[III] 2, 7, 10, 8, 14, 16, 20
+        \item[IV] 4, 6, 7, 9, 18, 20, 25
+    \end{enumerate}
+
+  \begin{choices}
+    \CorrectChoice  I and IV only
+    \choice         II and III only
+    \choice         II and IV only
+    \choice         II only
+  \end{choices}
+  Hint : Inorder of a BST must be in increasing order. Inorder of a Binary Tree may not be in increasing order.
+\end{questyle}
+
+
+\begin{questyle}
+  \question  A binary search tree contains the values 1, 2, 3, 4, 5, 6, 7, 8. The tree is traversed
+            in pre-order and the values are printed out. Which of the following sequences is a valid output?  (GATE-1997)
+  \begin{choices}
+    \choice         53124786
+    \choice         53126487
+    \choice         53241678
+    \CorrectChoice  53124768  \qquad { root(L)(R) \qquad L \(<\) root \(<\)R }
+  \end{choices}
+
+  \begin{enumerate}
+        \item[a] Hint: recursively apply - root(L)(R) and check if condition (L\(<\)root\(<\)R) is satisfied.
+        \item[b] 53124768 : 5(L=3124)(R=768)
+        \item[c] 3124 : 3(L=12)(R=4)
+        \item[d] 768 : 7(L=6)(R=8)
+        \item[e] 12 : 1(L=null)(R=2)
+  \end{enumerate}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Postorder traversal of a given binary search tree T produces the sequence
+             10, 9, 23, 22, 27, 25, 15, 50, 95, 60, 40, 29. Which one of the following sequences
+             of keys can be the result of an inorder traversal of the tree T? (GATE-2005)
+  \begin{choices}
+    \CorrectChoice  9, 10, 15, 22, 23, 25, 27, 29, 40, 50, 60, 95
+    \choice         9, 10, 15, 22, 40, 50, 60, 95, 23, 25, 27, 29
+    \choice         29, 15, 9, 10, 25, 22, 23, 27, 40, 60, 50, 95
+    \choice         95, 50, 60, 40, 27, 23, 22, 25, 10, 9, 15, 29
+  \end{choices}
+  Hint : Inorder traversal always produce sequence in increasing order.
+\end{questyle}
+
+\begin{questyle}
+  \question  A binary search tree contains the numbers 1, 2, 3, 4, 5, 6, 7, 8. When the tree is
+            traversed in pre-order and the values in each node printed out, the sequence of values
+            obtained is 5, 3, 1, 2, 4, 6, 8, 7. If the tree is traversed in post-order, the sequence
+            obtained would be  (GATE-2005)
+
+  \begin{choices}
+    \choice         8, 7, 6, 5, 4, 3, 2, 1
+    \choice         1, 2, 3, 4, 8, 7, 6, 5
+    \choice         2, 1, 4, 3, 6, 7, 8, 5
+    \CorrectChoice  2, 1, 4, 3, 7, 8, 6, 5
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  A Binary Search Tree (BST) stores values in the range 37 to 573. Consider the following
+             sequence of keys. Which of the following statements is TRUE? (GATE-2008)
+    \begin{enumerate}
+    \item[I] 81, 537, 102, 439, 285, 376, 305
+    \item[II] 52, 97, 121, 195, 242, 381, 472
+    \item[III] 142, 248, 520, 386, 345, 270, 307
+    \item[IV] 550, 149, 507, 395, 463, 402, 270
+    \end{enumerate}
+
+  \begin{choices}
+    \choice         I, II and IV are inorder sequences of three different BSTs
+    \choice         I is a preorder sequence of some BST with 439 as the root
+    \CorrectChoice  II is an inorder sequence of some BST where 121 is the root and 52 is a leaf
+    \choice         IV is a postorder sequence of some BST with 149 as the root
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  You are given the postorder traversal, P, of a binary search tree on the n elements
+             1, 2, ... n. You have to determine the unique binary search tree that has P as its postorder
+             traversal. What is the time complexity of the most efficient algorithm for doing this?  (GATE-2008)
+
+  \begin{choices}
+    \choice         O(Log n)
+    \CorrectChoice  O(n) \qquad Hint: Re-create BST in O(n). Then perform postorder in O(n) time.
+    \choice         O(n Logn)
+    \choice         none of the above, as the tree cannot be uniquely determined.
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  The preorder traversal sequence of a binary search tree is 30, 20, 10, 15, 25, 23, 39, 35, 42.
+            Which one of the following is the postorder traversal sequence of the same tree?  (GATE-2013)
+
+  \begin{choices}
+    \choice         10, 20, 15, 23, 25, 35, 42, 39, 30
+    \choice         15, 10, 25, 23, 20, 42, 35, 39, 30
+    \choice         15, 20, 10, 23, 25, 42, 35, 39, 30
+    \CorrectChoice  15, 10, 23, 25, 20, 35, 42, 39, 30
+  \end{choices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  The pre-order traversal of a binary search tree is given by
+             12, 8, 6, 2, 7, 9, 10, 16, 15, 19, 17, 20. Then the post-order traversal of this tree is:  (GATE-2017\_Set\_2)
+
+  \begin{choices}
+    \choice         2, 6, 7, 8, 9, 10, 12, 15, 16, 17, 19, 20
+    \CorrectChoice  2, 7, 6, 10, 9, 8, 15, 17, 20, 19, 16, 12
+    \choice         7, 2, 6, 8, 9, 10, 20, 17, 19, 15, 16, 12
+    \choice         7, 6, 2, 10, 9, 8, 15, 16, 17, 20, 19, 12
+  \end{choices}
+\end{questyle}
+
+
+
+\begin{comment}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \CorrectChoice
+  \end{choices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \CorrectChoice
+  \end{choices}
+\end{questyle}
+
+
+\end{comment}
