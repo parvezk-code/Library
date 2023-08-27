@@ -1,94 +1,173 @@
 
 \centerline{\textbf{ \LARGE Tree Traversal Level-2}}
 
+\begin{questyle}
+  \question  Level order traversal of a rooted tree can be done by starting from the root and performing  (GATE-2004)
+
+  \begin{choices}
+    \choice         preorder traversal
+    \choice         inorder traversal
+    \choice         depth first search
+    \CorrectChoice  breadth first search
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Consider the following rooted tree with the vertex P labeled as root.The order
+            in which the nodes are visited during in-order traversal is  (GATE-2014\_Set\_3)
+
+\begin{myTree}
+  \node [circle,draw] [red] (node_p){P}
+    child
+    {
+        node [circle,draw] (node_q) {Q}
+        child
+        {
+            node [circle,draw] (node_s) {S}
+        }
+    }
+    child
+    {
+        node [circle,draw] (node_r){R}
+        child
+        {
+            node [circle,draw] (node_t) {T}
+        }
+        child
+        {
+            node [circle,draw] (node_u) {U}
+            child
+            {
+              node [circle,draw] (node_w) {W}
+            }
+        }
+        child
+        {
+            node [circle,draw] (node_v) {V}
+        }
+    };
+\end{myTree}
+
+  \begin{oneparchoices}
+    \CorrectChoice  SQPTRWUV
+    \choice         SQPTURWV
+    \choice         SQPTWUVR
+    \choice         SQPTRUWV
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Let LASTPOST, LASTIN and LASTPRE denote the last vertex visited in a postorder,
+            inorder and preorder traversal, respectively, of a complete binary tree. Which of
+            the following is always true?  (GATE-2000) \vspace{0.18in}
+
+\begin{myTableStyle}
+    \begin{tabular}{ |m{5.5cm}|m{4cm}|m{4cm}| } \hline \vspace{0.18in}
+
+    \begin{choices}
+      \choice         LASTIN = LASTPOST
+      \choice         LASTIN = LASTPRE
+      \choice         LASTPRE = LASTPOST
+      \CorrectChoice  None of the above
+    \end{choices}
+    &
+          \begin{myTree}
+              \node [circle,draw] [red] (node_p){50}
+              child{
+                      node [circle,draw] [blue] (node_q){30}
+              }
+              child{
+                      node [circle,draw] [black] (node_r){null}
+              };
+         \end{myTree} &
+          \begin{myTree}
+              \node [circle,draw] [red] (node_p){50}
+              child{
+                      node [circle,draw] [black] (node_r){null}
+              }
+              child{
+                      node [circle,draw] [blue] (node_q){30}
+              };
+         \end{myTree} \\ \hline
+
+    \end{tabular}
+\end{myTableStyle}
+\vspace{0.08in}
+
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Which one of the following binary trees has its inorder and preorder traversals as
+             BCAD  and ABCD, respectively?  (GATE-2004)
+
+             \begin{myTree}
+              \node [circle,draw] [red] (node_a){A}
+              child{
+                      node [circle,draw] [blue] (node_b){B}
+                      child{ node [circle,draw] [black] (node_x){NULL} }
+                      child{ node [circle,draw] [black] (node_c){C} }
+              }
+              child{
+                      node [circle,draw] [black] (node_d){D}
+              };
+         \end{myTree}
+
+  \begin{oneparchoices}
+    \choice         A
+    \choice         B
+    \choice         C
+    \CorrectChoice  D
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Consider the label sequences obtained by the following pairs of traversals on a
+             labeled binary tree. Which of these pairs identify a tree uniquely  (GATE-2004)
+
+  \begin{choices}
+    \choice         preorder and postorder
+    \CorrectChoice  inorder and postorder
+    \CorrectChoice  preorder and inorder
+    \choice         level order and postorder
+  \end{choices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  The inorder and preorder traversal of a binary tree are d b e a f c g and
+             a b d e c f g, respectively. The postorder traversal of the binary tree is:  (GATE-2007)
+
+  \begin{choices}
+    \CorrectChoice  d e b f g c a
+    \choice         e d b g f c a
+    \choice         e d b f g c a
+    \choice         d e f g b c a
+  \end{choices}
+
+  Hint: for inorder assume - d-1 b-2 e-3 a-4 f-5 c-6 g-7, so preorder is 4 2 1 3 6 5 7
+\end{questyle}
+
+
+\begin{questyle}
+  \question  The following three are known to be the preorder, inorder and postorder sequences
+             of a binary tree. But it is not known which is which.  (GATE-2008) \\
+             I) MBCAFHPYK \qquad II) KAMCBYPFH \qquad III) MABCKYFPH
+
+  \begin{choices}
+    \choice         I and II are preorder and inorder sequences, respectively
+    \choice         I and III are preorder and postorder sequences, respectively
+    \choice         II is the inorder sequence, but nothing more can be said about the other two sequences
+    \CorrectChoice  II and III are the preorder and inorder sequences, respectively.
+  \end{choices}
+   Hint : preorder(first key) =  postorder(last key) = root
+\end{questyle}
+
 
 \begin{comment}
 
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
 
 \begin{questyle}
   \question  zzz  (GATE-zzz)
