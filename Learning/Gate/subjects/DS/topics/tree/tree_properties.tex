@@ -1,9 +1,280 @@
 
 \centerline{\textbf{ \LARGE Tree Properties}}
 
- Hight(node) = 1 + max( hight of left tree, hight of right tree)
+\leftline{\textbf{ \Large Tree Count }}
 
- LeafCount(node) = LeafCount(left tree) + LeafCount(right tree)
+\question  Left-Child Right Sibling Representation of a tree.
 
- Left-Child Right Sibling Representation of a tree
+\begin{questyle}
+  \question  The maximum number of binary trees that can be formed with three unlabeled nodes is:  (GATE-2007)
+
+  \begin{oneparchoices}
+    \choice         1
+    \CorrectChoice  5
+    \choice         4
+    \choice         3  \qquad Hint : count = \Large{ \(  \frac {\Mycomb[2n]{n}}{n+1} \) }
+  \end{oneparchoices}
+
+\end{questyle}
+
+\begin{questyle}
+  \question  How many distinct binary search trees can be created out of 4 distinct keys  (GATE-2005)
+
+  \begin{oneparchoices}
+    \choice         5
+    \CorrectChoice  14
+    \choice         24
+    \choice         42
+  \end{oneparchoices}
+\end{questyle}
+
+\begin{questyle}
+  \question  How many distinct BSTs can be constructed with 3 distinct keys?  (GATE-2008)
+
+  \begin{oneparchoices}
+    \choice         4
+    \CorrectChoice  5
+    \choice         6
+    \choice         9
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  An array X of n distinct integers is interpreted as a complete binary tree. The index
+             of the first element of the array is 0. The index of the parent of element X[i], i!=0 is?  (GATE-2006)
+
+  \begin{oneparchoices}
+    \choice         \( \left \lfloor \dfrac i 2 \right \rfloor \)
+    \choice         \( \left \lceil \dfrac{i-1}{2} \right \rceil \)
+    \choice         \( \left \lceil \dfrac i 2 \right \rceil \)
+    \CorrectChoice  \( \left \lceil \dfrac i 2 \right \rceil - 1 \)
+  \end{oneparchoices}
+    \vspace{0.08in}
+    \\Hint : (0, i, 2i+1, 2i+2)      (1, i, 2i, 2i+1)
+\end{questyle}
+
+
+
+\leftline{\textbf{ \Large Hight}}
+
+  \question Hight(node) = 1 + max( hight of left tree, hight of right tree) \\
+
+\begin{questyle}
+  \question  The height of a binary tree is the maximum number of edges in any root to leaf path.
+              The maximum number of nodes in a binary tree of height h is:  (GATE-2007)
+
+  \begin{oneparchoices}
+    \choice         \( 2^h - 1 \)
+    \choice         \( 2^{h-1} - 1 \)
+    \CorrectChoice  \( 2^{h+1} - 1 \)
+    \choice         \( 2^{h+1}\)
+  \end{oneparchoices}
+  hint : Assume value for h=0, 1, 2 and match the option
+\end{questyle}
+
+
+\begin{questyle}
+  \question  An array X of n distinct integers is interpreted as a complete binary tree. The
+            index of the first element of the array is 0. If the root node is at level 0, the level of
+            element X[i], i!=0, is  (GATE-2006)
+
+  \begin{oneparchoices}
+    \choice         \( \left \lfloor log_2i \right \rfloor \)
+    \choice         \( \left \lceil log_2{(i+1)} \right \rceil \)
+    \CorrectChoice  \( \left \lfloor log_2{(i+1)} \right \rfloor \)
+    \choice         \( \left \lceil log_2{i} \right \rceil \)
+  \end{oneparchoices}
+\end{questyle}
+
+
+\leftline{\textbf{ \Large Nodes Count }}
+
+\question LeafCount(node) = LeafCount(left tree) + LeafCount(right tree)
+
+\question Hight of root = 0.
+
+\question Maximum and minimum nodes in Binary Tree for height(h) = (\(2^{h+1} -1\)) and (h+1)
+
+\begin{questyle}
+  \question  If the number of leaves in a tree is not a power of 2 then the tree is not a binary tree.  (GATE-1997)
+\end{questyle}
+
+  \begin{questyle}
+
+  \question  A binary tree T has n leaf nodes. The number of nodes of degree 2 in T is  (GATE-1995)
+
+  \begin{oneparchoices}
+    \choice         \(log_2n\)
+    \CorrectChoice  n-1
+    \choice         n
+    \choice         \(2^n\)
+  \end{oneparchoices}
+
+  \vspace{0.08in}
+  \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{4cm}|m{2cm}| } \hline
+          Binary Tree & \( N= n_0 + n_1 + n_2 \)  &  \( E(N-1) =  n_1 + 2.n_2 \) &  \( n_0 =  n_2 + 1 \)  \\ \hline
+  \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Which of the following statement is false?  (GATE-1998)
+
+  \begin{choices}
+    \choice         A tree with n nodes has (n-1) edges.
+    \CorrectChoice  A labeled rooted binary tree can be uniquely constructed with postorder and preorder traversal.
+    \CorrectChoice  A complete binary tree with n internal nodes has (n+1) leaves.
+    \choice         The maximum number of nodes in a binary tree of height h is (\(2^{h+1} -1\)). Root is at height 0.
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  For complete binary tree, which of the following statement is false? (GATE-1998)
+
+  \begin{choices}
+    \choice         If total nodes is n, then height of the tree is \fillin[].
+    \choice         All the levels except the last level are completely full.
+    \choice         There can be atmost 1 internal node with one child, ie atmost one node can have one child.
+    \choice         All the levels of the tree are filled completely except the lowest level.
+    \CorrectChoice  A complete binary tree with n internal nodes has (n+1) leaves.
+    \choice         If height of tree is h, then leaves can exist at height h or (h-1).
+    \choice         For k leaves(\(n_0\)), number of nodes in tree is either 2k or 2k-1.
+  \end{choices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  A scheme for storing binary trees in an array X is as follows. Indexing of X
+            starts at 1 instead of 0. the root is stored at X[1]. For a node stored at X[i], the
+            left child, if any, is stored in X[2i] and the right child, if any, in X[2i+1]. To
+            be able to store any binary tree on n vertices the minimum size of X should be.  (GATE-2006)
+
+  \begin{oneparchoices}
+    \choice         \(log_2n\)
+    \choice         n
+    \choice         2n + 1
+    \CorrectChoice  \(2^n + 1\)
+  \end{oneparchoices}
+
+  Hint: Assume a tree with 1, 2, 3 nodes and check which option is correct.
+
+    \begin{myTree}
+      \node [rectangle,draw] [red] (node_root){\(2^0\)}
+        child
+        {
+            node [circle,draw] (node_l1) {null}
+        }
+        child
+        {
+            node [rectangle,draw] (node_d){ \(2^1 + 2^0\) }
+            child
+            {
+                node [circle,draw] (node_l2) {null}
+            }
+            child
+            {
+                node [rectangle,draw] (node_d){ \(2^2 + 2^1 + 2^0\) }
+            }
+        };
+    \end{myTree}
+
+\end{questyle}
+
+\begin{questyle}
+  \question  In a binary tree, the number of internal nodes of degree 1 is 5, and the number of
+             internal nodes of degree 2 is 10. The number of leaf nodes in the binary tree is  (GATE-2006)
+
+  \begin{oneparchoices}
+    \choice         10
+    \CorrectChoice  11
+    \choice         12
+    \choice         15
+  \end{oneparchoices}
+   \\ Hint :  \( n_0 =  n_2 + 1 \)
+  \end{questyle}
+
+\begin{questyle}
+  \question  The height of a tree is the length of the longest root-to-leaf path in it. The
+             maximum and minimum number of nodes in a binary tree of height 5 are  (GATE-2015\_Set\_1)
+
+  \begin{oneparchoices}
+    \CorrectChoice  63 and 6
+    \choice         64 and 5
+    \choice         32 and 6
+    \choice         31 and 5
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  A binary tree T has 20 leaves. The number of nodes in T having two children is \fillin[19]. (GATE-2015\_set\_2)
+            (GATE-2015\_set\_3) \\ Hint :  \( n_0 =  n_2 + 1 \)
+\end{questyle}
+
+\begin{questyle}
+  \question  Let T be a binary search tree with 15 nodes. The minimum and maximum possible heights of T are
+             (GATE-2017\_set\_1)(GATE-2015\_Set\_1)
+
+  \begin{oneparchoices}
+    \choice         4 and 15
+    \CorrectChoice  3 and 14
+    \choice         4 and 14
+    \choice         3 and 15
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  A complete n-ary tree is one in which every node has 0 or n sons. If x is the
+             number of internal nodes of a complete n-ary tree, the number of leaves in it is given by.  (GATE-1998, 2005)
+
+  \begin{oneparchoices}
+    \CorrectChoice  x(n-1)+1
+    \choice         xn-1
+    \choice         xn+1
+    \choice         x(n+1)
+  \end{oneparchoices}
+\end{questyle}
+
+\begin{questyle}
+  \question  A complete n-ary tree is a tree in which each node has n children or no children.
+            Let I be the number of internal nodes and L be the number of leaves in a complete
+            n-ary tree. If L = 41, and I = 10, what is the value of n? (GATE-2007)
+
+  \begin{oneparchoices}
+    \choice         3
+    \choice         4
+    \CorrectChoice  5
+    \choice         6
+  \end{oneparchoices}
+\end{questyle}
+
+
+
+\begin{questyle}
+  \question  The number of leaf nodes in a rooted tree of n nodes, with each node having 0 or 3 children is:  (GATE-2002)
+
+  \begin{oneparchoices}
+    \choice         n/2
+    \choice         (n – 1)/3
+    \choice         (n – 1)/2
+    \CorrectChoice  (2n + 1)/3
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  In a binary tree, for every node the difference between the number of nodes in the left and right subtrees is at most 2. If the height of the tree is h > 0, then the minimum number of nodes in the tree is:  (GATE-2005)
+
+  \begin{oneparchoices}
+    \choice         \(2^{h-1} \)
+    \CorrectChoice  \(2^{h-1} + 1 \)
+    \choice         \(2^{h-1} \)
+    \choice         \(2^{h} \)
+  \end{oneparchoices} \\
+  hint : Assume value for h=0, 1, 2 and match the option. T(h) = 1 + T(h-1) + \{T(h-1) - 2\} = 2T(h-1) - 1
+\end{questyle}
+
 

@@ -48,3 +48,66 @@
 
   \end{choices}
 \end{questyle}
+
+
+\begin{questyle}
+  \question  Consider the following New-order strategy for traversing a binary tree:  (GATE-2016\_set\_2)\\
+            Visit the root; \\
+            Visit the right subtree using New-order \\
+            Visit the left subtree using New-order \\
+            The New-order traversal of the expression tree corresponding to the reverse polish
+            expression \\  \(  3 \; 4 \;  * \;  5 \;  – \;  2 \;  \wedge \;  6 \;  7 \;  * \;  1 \;  + \;  - \) is given by:
+
+  \begin{choices}
+    \choice         \(  + -  1 \ 6 \ 7 * 2 \wedge 5 \ - \ 3 \ 4 \ * \)
+    \choice         \( - +  1 *  6 \ 7 \wedge 2 - 5 * 3 \ 4  \)
+    \CorrectChoice  \( - +  1 * 7 \ 6  \wedge 2 \ - \ 5 \ * \ 4 \ 3  \)
+    \choice         \( 1 \ 7 \ 6 *  + \ 2 \ 5  \ 4 \ 3 \ * \ - \wedge -  \)
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Consider the expression tree shown. Each leaf represents a numerical value, which can
+             either be 0 or 1. Over all possible choices of the values at the leaves, the maximum
+             possible value of the expression represented by the tree is  \fillin[6] (GATE-2014\_set\_2)
+
+  \begin{myTreeLThree}
+    \node [circle,draw] [red] (node_aa){+}
+    child
+    {
+        node [circle,draw] (node_bw) {-}
+        child
+        {
+            node [circle,draw] (node_er) {+}
+            child{ node [circle,draw] (node_jj) {0/1} }
+            child{ node [circle,draw] (node_kk) {0/1} }
+        }
+        child
+        {
+            node [circle,draw] (node_fy) {-}
+            child{ node [circle,draw] (node_pp) {0/1} }
+            child{ node [circle,draw] (node_ee) {0/1} }
+        }
+    }
+    child
+    {
+        node [circle,draw] (node_dy){+}
+        child
+        {
+            node [circle,draw] (node_gs) {-}
+            child{ node [circle,draw] (node_ww) {0/1} }
+            child{ node [circle,draw] (node_ss) {0/1} }
+        }
+        child
+        {
+            node [circle,draw] (node_hj) {+}
+            child{ node [circle,draw] (node_zz) {0/1} }
+            child{ node [circle,draw] (node_ff) {0/1} }
+        }
+    };
+  \end{myTreeLThree}
+
+
+\end{questyle}
+
+

@@ -7,16 +7,10 @@
     \item zzz
 \end{enumerate}
 
-\begin{myTableStyle}
-    \begin{tabular}{ |m{8cm}|m{8cm}| } \hline
-        User thread             &     Kernel Thread         \\ \hline
-        Implemented by user     &     Implemented by OS.    \\ \hline
-    \end{tabular}
-\end{myTableStyle}
-\vspace{0.08in}
 
-\fillin[]
-
+\begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{4cm}|m{2cm}| } \hline
+    Binary Tree & \( N= n_0 + n_1 + n_2 \)  &  \( E(N-1) =  n_1 + 2.n_2 \) &  \( n_0 =  n_2 + 1 \)  \\ \hline
+\end{tabular} \end{myTableStyle} \vspace{0.08in}
 
 
                 TLB access time                     &   \(t_b\)         \\ \hline
@@ -33,7 +27,7 @@
 \lstinputlisting[language=Octave]{BitXorMatrix.m}
 
 \begin{myTree}
-  \node [circle,draw] [red] (node_a){root}
+  \node [squarednode,draw] [red] (node_a){root}
     child
     {
         node [circle,draw] (node_b) {b}
@@ -65,6 +59,8 @@
 
 
 oneparchoices
+
+\fillin[]
 
 \begin{comment}
 

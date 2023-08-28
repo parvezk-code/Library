@@ -12,3 +12,16 @@
     \end{center}
     \endgroup
 }
+
+
+\newenvironment{myTreeLThree}
+{
+    \begingroup
+    \begin{center}
+    \begin{tikzpicture}[level distance=1.5cm, level 1/.style={sibling distance=6cm}, level 2/.style={sibling distance=3cm}, level 3/.style={sibling distance=1.5cm}]
+}
+{
+    \end{tikzpicture}
+    \end{center}
+    \endgroup
+}
