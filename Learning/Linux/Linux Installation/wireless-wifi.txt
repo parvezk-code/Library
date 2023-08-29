@@ -1,0 +1,32 @@
+
+---------------------------------- firmware-iwlwifi -----------------------------------------
+
+iwlwifi                     :   intel wireless link wifi package
+Check error logs            :   sudo dmesg | grep wifi
+                            :   sudo dmesg | grep iwlwifi
+check firmware              :   apt search firmware-iwlwifi
+install                     :   apt install firmware-iwlwifi
+check                       :   /usr/sbin/modprobe  iwlwifi
+
+https://www.cyberciti.biz/faq/intel-wifi-on-debian-linux-when-you-get-firmware-failed-to-load-iwlwifi-8265-36-error/
+
+[   10.938250] iwlwifi 0000:01:00.0: enabling device (0000 -> 0002)
+[   11.117884] iwlwifi 0000:01:00.0: loaded firmware version 36.ca7b901d.0 8000C-36.ucode op_mode iwlmvm
+[   12.023522] iwlwifi 0000:01:00.0: Detected Intel(R) Dual Band Wireless AC 8260, REV=0x201
+[   12.101217] iwlwifi 0000:01:00.0: base HW address: e4:a4:71:17:1b:64, OTP minor version: 0x0
+[   12.813722] iwlwifi 0000:01:00.0 wlp1s0: renamed from wlan0
+
+-------------------------------------- wifi commands ------------------------------------------
+lspci -k
+lspci -vv -s 02:00.0
+lspci
+sudo service NetworkManager restart
+nmcli device status
+nmcli dev show wlp2s0
+nmcli device wifi
+nmcli radio
+nmcli radio wifi on
+
+Edits the /etc/passwd, /etc/shadow, /etc/group, and /etc/gshadow files for the newly created accounts.
+
+------------------------------------------------------------------------------------------------

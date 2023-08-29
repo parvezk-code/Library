@@ -68,16 +68,3 @@ loginctl   (note down session_id)
 loginctl   show-session  [session_id]    -p    Type
 
 
--------------------wifi commands-----------------------
-lspci -k
-lspci -vv -s 02:00.0
-lspci
-sudo service NetworkManager restart
-nmcli device status
-nmcli dev show wlp2s0
-nmcli device wifi
-nmcli radio
-nmcli radio wifi on
-
-Edits the /etc/passwd, /etc/shadow, /etc/group, and /etc/gshadow files for the newly created accounts.
-
