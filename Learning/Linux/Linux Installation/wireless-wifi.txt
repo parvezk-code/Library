@@ -1,12 +1,11 @@
 
----------------------------------- firmware-iwlwifi -----------------------------------------
-
-iwlwifi                     :   intel wireless link wifi package
+---------------------------------- firmware-iwlwifi TCS laptop -----------------------------------------
 Check error logs            :   sudo dmesg | grep wifi
                             :   sudo dmesg | grep iwlwifi
 check firmware              :   apt search firmware-iwlwifi
 install                     :   apt install firmware-iwlwifi
 check                       :   /usr/sbin/modprobe  iwlwifi
+iwlwifi                     :   intel wireless link wifi package
 
 https://www.cyberciti.biz/faq/intel-wifi-on-debian-linux-when-you-get-firmware-failed-to-load-iwlwifi-8265-36-error/
 
@@ -17,9 +16,13 @@ https://www.cyberciti.biz/faq/intel-wifi-on-debian-linux-when-you-get-firmware-f
 [   12.813722] iwlwifi 0000:01:00.0 wlp1s0: renamed from wlan0
 
 -------------------------------------- wifi commands ------------------------------------------
+
 lspci -k
+lspci -k | grep -E 'Wireless|wireless'
 lspci -vv -s 02:00.0
 lspci
+
+
 sudo service NetworkManager restart
 nmcli device status
 nmcli dev show wlp2s0
