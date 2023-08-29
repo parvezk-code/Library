@@ -1,7 +1,22 @@
 
+list wifi packages          :   apt list wpasupplicant libiw30 wireless-tools wireless-regdb iw
+list firmware packages      :   apt list firmware-iwlwifi  firmware-realtek  firmware-atheros  firmware-linux-freelist wifi list network manager pkg    :   apt list plasma-nm network-manager-gnome
+
+wireless firmware package   :   Intel(firmware-iwlwifi), Realtek(firmware-realtek), Qualcomm Atheros(firmware-atheros)
+other important packages    :   wpasupplicant, iw, libiw30, wireless-tools, wireless-regdb, firmware-linux-free
+
+GUI frontend                :   NetworkManager, ConnMan, systemd-networkd, and Wicd
+NetworkManager packages     :   kde(plasma-nm), gnome(network-manager-gnome)
+network backends            :   wpa_supplicant, IWD
+
+https://wiki.debian.org/WiFi/HowToUse
+https://wiki.debian.org/NetworkManager
+https://wiki.debian.org/WiFi
+
 ---------------------------------- firmware-iwlwifi TCS laptop -----------------------------------------
-Check error logs            :   sudo dmesg | grep wifi
-                            :   sudo dmesg | grep iwlwifi
+
+
+Check error logs            :   sudo dmesg | grep -E 'wifi|iwlwifi'
 check firmware              :   apt search firmware-iwlwifi
 install                     :   apt install firmware-iwlwifi
 check                       :   /usr/sbin/modprobe  iwlwifi
@@ -15,20 +30,32 @@ https://www.cyberciti.biz/faq/intel-wifi-on-debian-linux-when-you-get-firmware-f
 [   12.101217] iwlwifi 0000:01:00.0: base HW address: e4:a4:71:17:1b:64, OTP minor version: 0x0
 [   12.813722] iwlwifi 0000:01:00.0 wlp1s0: renamed from wlan0
 
+-------------------------------------------- NetworkManager -----------------------------------------------------
+
+pakage name     :   kde(plasma-nm), gnome(network-manager-gnome)
+
+apt-get install network-manager
+
+sudo service NetworkManager restart
+
+systemctl status NetworkManager.service
+
+systemctl start NetworkManager.service
+
+systemctl enable NetworkManager.service
+
+nmcli device status
+nmcli dev show wlp2s0
+nmcli device wifi
+nmcli radio
+nmcli radio wifi on
+
 -------------------------------------- wifi commands ------------------------------------------
 
 lspci -k
 lspci -k | grep -E 'Wireless|wireless'
 lspci -vv -s 02:00.0
 lspci
-
-
-sudo service NetworkManager restart
-nmcli device status
-nmcli dev show wlp2s0
-nmcli device wifi
-nmcli radio
-nmcli radio wifi on
 
 Edits the /etc/passwd, /etc/shadow, /etc/group, and /etc/gshadow files for the newly created accounts.
 
