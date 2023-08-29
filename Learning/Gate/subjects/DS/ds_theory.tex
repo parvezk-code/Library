@@ -1,9 +1,148 @@
 
-\centerline{\textbf{ \LARGE DS}}
+\centerline{\textbf{ \LARGE Array, Stack and Queue}}
 
 \begin{enumerate}
+    \item If not given, then assume Hight(root) = 0
 
-    \item Array
-    \item zz
+    \item First element of array P is stored at location B. Starting row index is \(R_0\) and column index is \(C_0\).\\
+    \begin{myTableStyle} \begin{tabular}{ |m{4cm}|m{4cm}|m{4cm}| } \hline
+        m-Rows, n-Cols          & row-major order                        & column-major order \\ \hline
+        Item Indexing           & P[row][col]                            & P[row][col]   \\ \hline
+        Total element count(C)  & n(i - \( R_0 \)) + (j - \( C_0 \))     & m(j - \( C_0 \)) + (i - \( R_0 \))  \\ \hline
+        Address of P[i][j]      & B + C                                  & B + C   \\ \hline
+    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    \item Stack can be used to reverse a list of items.
+
+    \item Implement Queue using 2 stacks
+    \begin{enumerate}
+        \item S1, S2 : two stacks are used.
+        \item top(S1) : is rear end of the Queue.
+        \item top(S2) : is front end of the Queue.
+        \item deQueue(Q) : pop(S2)
+        \item enQueue(Q,i) : push(S,i)
+        \item if S2=empty :  S2 \( \leftarrow \) S1
+    \end{enumerate}
+
+    \item infix, post-fix, pre-fix algorithms.
 
 \end{enumerate}
+
+\centerline{\textbf{ \LARGE Trees}}
+\begin{enumerate}
+    \item Recursive calculations.
+    \begin{enumerate}
+        \item Hight(node) = 1  +  max(\; Hight(left), \; Hight(right) \;)
+        \item LeafCount(node) = LeafCount(left tree) + LeafCount(right tree)
+        \item count(node) = 1 + count(left) + count(right)
+        \item  In programs always check what if returned by leaf nodes, nodes of degree 1, 2.
+    \end{enumerate}
+    \item Searching in BST. ( L . . . . . . . p . . . . . . . G )
+    \begin{enumerate}
+        \item Keys less than p will appear in increasing order in search sequence.
+        \item Keys greater than p will appear in decreasing order in search sequence.
+        \item Total search sequence(T) possible \( \Mycomb[\mid T \mid]{\mid S \mid} = \Mycomb[\mid T \mid]{\mid G \mid} \)
+    \end{enumerate}
+    \item Counting Trees
+    \begin{enumerate}
+        \item Given n unique keys, Total BST possibel { \Large (\(T_{bst}\)) =  \( \frac{1}{n+1} \Mycomb[2n]{n} \) }
+        \item Given n unique keys, Total BT possibel  { \Large \(T_{bt}\) = (n!).\(T_{bst}\) }
+        \item Given a BT having n nodes and n unique keys, Total BST = 1
+        \item Given a BT having n nodes and n unique keys, Total BT \; = n!
+        \item GIven n un labeled nodes. Total of BT{ \Large (\(T_{bst}\)) =  \( \frac{1}{n+1} \Mycomb[2n]{n} \) } (check this)
+    \end{enumerate}
+    \begin{minipage}{\linewidth}
+    \item Given a BST with n-nodes and hight(n-1). Hight(root) = 0
+    \begin{enumerate}
+        \item  Binary tree forms a chain, that is there are no branches.
+        \item Only maximum or the minimum key can be the root node.
+        \item Number of such binary trees are { \Large \( 2^{(n-1)}\) }
+        \item Every internal(non leaf) node has exactly one child.
+        \item The number of ways in which the numbers 1, 2, 3, 4, 5, 6, 7 can be inserted in an
+             empty binary search tree, such that the resulting tree has height 6, is 64 (\(2^6\))
+    \end{enumerate}
+    \end{minipage}
+    \item Storing Binary Tree in array. \\
+    \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{2cm}|m{2.5cm}|m{3cm}|m{3cm}| } \hline
+     Root    & Left Child(i)   & RIght Child(i)   &  Parent(i), i!=0  &  Level(i), i!=0  \\ \hline
+     Root(0) & 2i+1   & 2i+2
+             & \( \left \lceil  i/2 \right \rceil - 1 \)
+             & \( \left \lfloor log_2{(i+1)} \right \rfloor \) \\ \hline
+
+     Root(1) & 2i  & 2i + 1  &   &  \\ \hline
+    \end{tabular} \end{myTableStyle}
+
+    \item AVL Tree, Heap
+
+    \item Tree Traversal : pre-order, in-order, post-order
+    \begin{enumerate}
+        \item pre-order \;: \begin{hl}{Root}\end{hl}(L) (R)
+        \item pre-order \;: (L)\begin{hl}{Root}\end{hl} (R)
+        \item post-order : (L) (R)\begin{hl}{Root}\end{hl}
+        \item lastKey(post-order) = firstKey(pre-order)
+        \item To identify a BT we need  (in-order + pre-order) or (in-order + post-order) traversal.
+        \item To identify a BST we need (pre-order) or (post-order) traversal.
+    \end{enumerate}
+
+    \item BST Traversal :
+    \begin{enumerate}
+        \item For unique key BST :  L \textless Root \textless R
+        \item In-order traversal of BST is always in increasing order. (Not for BT)
+        \item Validity of pre-order \begin{hl}{Root}\end{hl}(L) (R) sequence: Every node should satisfy L \textless Root
+        \item Validity of post-order (L)(R)\begin{hl}{Root}\end{hl} sequence: Every node should satisfy L \textless Root
+        \item Validity of in-order sequence:  increasing order
+    \end{enumerate}
+
+    \item Left-Child Right Sibling Representation of a tree.
+
+    \item Node count
+    \begin{enumerate}
+        \item Given height-h, Max/Min Nodes = \( 2^{h+1} - 1\), \( h + 1\)
+        \item For n-nodes, Max/Min height = n-1, \(\lceil log_2{(n+1)} - 1 \rceil \)
+        \item To find max/min nodes in a BT first find the height of that Tree.
+        \item \(n_0\) = leaf node, \(n_1\) = node with one child, \(n_2\) = node with two child
+
+  \vspace{0.08in}
+  \begin{myTableStyle} \begin{tabular}{ |m{3cm}|m{3cm}|m{4cm}|m{3cm}| } \hline
+          Binary Tree & \( N= n_0 + n_1 + n_2 \)  &  \( E(N-1) =  n_1 + 2.n_2 \) &  \( n_0 =  n_2 + 1 \)  \\ \hline
+          Strict k-arry Tree & \( N= n_0 + n_k \)  &  \( E(N-1) = K.n_k \) &  \( n_0 =  n_k(k-1) + 1 \)  \\ \hline
+  \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \end{enumerate}
+
+    \begin{minipage}{\linewidth}
+    \item In complete binary tree.
+    \begin{enumerate}
+        \item         If total nodes is n, then height of the tree is \fillin[].
+        \item         All the levels except the last level are completely full.
+        \item         There can be atmost 1 internal node with one child, ie atmost one node can have one child.
+        \item         All the levels of the tree are filled completely except the lowest level.
+        \item         If height of tree is h, then leaves can exist at height h or (h-1).
+        \item         For k leaves(\(n_0\)), number of nodes in tree is either 2k or 2k-1.
+    \end{enumerate}
+    \end{minipage}
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

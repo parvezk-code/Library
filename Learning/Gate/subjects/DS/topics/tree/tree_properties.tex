@@ -155,10 +155,11 @@
     \choice         \(log_2n\)
     \choice         n
     \choice         2n + 1
-    \CorrectChoice  \(2^n + 1\)
+    \CorrectChoice  \(2^n - 1\)
   \end{oneparchoices}
 
-  Hint: Assume a tree with 1, 2, 3 nodes and check which option is correct.
+  Hint: Assume a tree with 1, 2, 3 nodes and check which option is correct.\\
+  Hint: When n-nodes form chain, then height=n-1
 
     \begin{myTreeLThree}
       \node [rectangle,draw] [red] (node_root){\(2^0\)}
@@ -266,7 +267,7 @@
 
 
 \begin{questyle}
-  \question  In a binary tree, for every node the difference between the number of nodes in the left and right subtrees is at most 2. If the height of the tree is h > 0, then the minimum number of nodes in the tree is:  (GATE-2005)
+  \question  In a binary tree, for every node the difference between the number of nodes in the left and right subtrees is at most 2. If the height of the tree is h \( \textgreater \) 0, then the minimum number of nodes in the tree is:  (GATE-2005)
 
   \begin{oneparchoices}
     \choice         \(2^{h-1} \)
