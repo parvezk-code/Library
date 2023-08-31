@@ -109,6 +109,9 @@
                                                          & \makecell[l]{ \( -(2^{(n-1)} -1) \) to \\ \( +(2^{(n-1)} -1) \) }
                                                          & \makecell[l]{ \( -(2^{(n-1)}) \) to \\ \( +(2^{(n-1)} -1) \) }   \\ \hline
         Zero                & Represented twice          & Represented twice    & Represented Once   \\ \hline
+        Addition/Subtraction, check this&  2 circuit     & one circuit          &   one circuit      \\ \hline
+        Carry               & NA                         & handling needed      &   Ignore Carry         \\ \hline
+        Overflow            &                            &                      &   MSB-in XOR MSB-out ==1        \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
     \end{enumerate}
 
@@ -129,24 +132,46 @@
         \item Division by 2 is equivalent to right shift.
     \end{enumerate}
 
-    \item Representing real number. www.geeksforgeeks.org/fixed-point-representation/ \\
-    \begin{myTableStyle} \begin{tabular}{ |m{3cm}|m{10cm}| } \hline
-        Fixed Point(8, 3) &  8-bit number and 3 bits for fraction. \\ \hline
-        Floating Point &  \\ \hline
-    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \item Representing real number www.geeksforgeeks.org/fixed-point-representation/
+    \begin{enumerate}
+        \item Fixed Point.
+        \item Floating Point.
+    \end{enumerate}
 
     \begin{minipage}{\linewidth}
     \item Fixed Point Representation.
     \begin{enumerate}
-        \item Same hardware for integer arithmetic.
-        \item Loss in range and precision
+        \item Fixed Point(8, 3) : 8-bit number and 3 bits for fraction.
+        \item Same hardware arithmetic operations for integer and real numbers.
+        \item Loss in range because only (n-1) bit can store number.
+        \item Loss in precision.
     \end{enumerate}
 
-    \begin{myTableStyle} \begin{tabular}{ |m{3cm}|m{3cm}|m{3cm}|m{3cm}| } \hline
-        Size = 1+ (n-1)     & Signed Magnitude           & 1's Complement       & 2's complement        \\ \hline
-        Zero                & Represented twice          & Represented twice    & Represented Once      \\ \hline
-        Range               & Loss                       & Loss                 & No Loss               \\ \hline
+    \item Floating Point
+    \begin{enumerate}
+        \item Do not reserve bits for the integer or fractional parts.
+        \item Normalized Form and De-normalized form.
+        \item IEEE special values \( \pm 0\), \( \pm \infty \), NAN
+        \item IEEE Single Precision : (1, 8, 23)
+        \item IEEE Double Precision : (1, 11, 52)
+        \item Example \\
+        \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{3cm}|m{2.5cm}| } \hline
+            Number & Binary Form  &  Normalize &  Representation  \\ \hline
+            53.5   & 110101.1     &  1.101011 * \(2^5\) &  e=101, m=(101011)  \\ \hline
+        \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \end{enumerate}
+
+    \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{6cm}|m{6cm}| } \hline
+                            &   Fixed Point(8,3)            & Floating Point            \\ \hline
+        Un-signed           &   Integer + Fraction          & [Sign+Exp+Mant]    \\ \hline
+        Signed              &   Sign + Integer + Fraction   & [Sign+Exp+Mant]    \\ \hline
+        Performance         &   High                        & \\ \hline
+        Range of Values     &   limited                     & \\ \hline
+        Accuracy            &   inaccurate for no larger than n-bit  &  \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
     \end{minipage}
+
+    \item To be done later :  Booths algorithm, look ahead adder,
 
 \end{enumerate}
