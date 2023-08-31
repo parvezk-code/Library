@@ -91,12 +91,12 @@
         (B-1)'s Complement  & FFFF - \( (hex)_{16}\)   & 7777 - \( (oct)_{8}\)  & 1111 - \( (bin)_{2}\)   \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
-        \item B's Complement : 1 + (B-1)'s Complement
+        \item B's Complement : 1 + (B-1)'s Complement. \\
     \end{enumerate}
     \end{minipage}
 
 
-    \item Representaion of negative numbers.
+    \item Representaion of signed numbers. (Signed, 1's, 2's)
     \begin{enumerate}
         \item For n digits maximum unsigned number is \( (2^n -1) \)
         \item For signed numbers extra bit used.
@@ -112,7 +112,7 @@
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
     \end{enumerate}
 
-    \item 1's Complement Subtraction(P - Q)\\
+    \item Subtraction(P - Q)\\
     \begin{myTableStyle} \begin{tabular}{ |m{3cm}|m{3cm}|m{3cm}| }  \hline
         P - Q       &   1's Complement      &  2's complement       \\ \hline
         Complement  &   Q1 = Q(1's comp)    &  Q2 = Q(2's comp)     \\ \hline
@@ -122,5 +122,31 @@
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
     \item condition for overflow.
+
+    \item Shifting in Multiplication and Division.
+    \begin{enumerate}
+        \item Multiplication by 2 is equivalent to left shift.
+        \item Division by 2 is equivalent to right shift.
+    \end{enumerate}
+
+    \item Representing real number. www.geeksforgeeks.org/fixed-point-representation/ \\
+    \begin{myTableStyle} \begin{tabular}{ |m{3cm}|m{10cm}| } \hline
+        Fixed Point(8, 3) &  8-bit number and 3 bits for fraction. \\ \hline
+        Floating Point &  \\ \hline
+    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    \begin{minipage}{\linewidth}
+    \item Fixed Point Representation.
+    \begin{enumerate}
+        \item Same hardware for integer arithmetic.
+        \item Loss in range and precision
+    \end{enumerate}
+
+    \begin{myTableStyle} \begin{tabular}{ |m{3cm}|m{3cm}|m{3cm}|m{3cm}| } \hline
+        Size = 1+ (n-1)     & Signed Magnitude           & 1's Complement       & 2's complement        \\ \hline
+        Zero                & Represented twice          & Represented twice    & Represented Once      \\ \hline
+        Range               & Loss                       & Loss                 & No Loss               \\ \hline
+    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \end{minipage}
 
 \end{enumerate}
