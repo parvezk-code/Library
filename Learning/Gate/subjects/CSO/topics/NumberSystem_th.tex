@@ -145,6 +145,7 @@
         \item Same hardware arithmetic operations for integer and real numbers.
         \item Loss in range because only (n-1) bit can store number.
         \item Loss in precision.
+        \item Un-signed( n+f, f ) range is 0 to (\( 2^{n}\) -- \( 2^{-f}\))
     \end{enumerate}
 
     \item Floating Point
@@ -152,12 +153,14 @@
         \item Do not reserve bits for the integer or fractional parts.
         \item Normalized Form and De-normalized form.
         \item IEEE special values \( \pm 0\), \( \pm \infty \), NAN
-        \item IEEE Single Precision : (1, 8, 23)
-        \item IEEE Double Precision : (1, 11, 52)
+        \item IEEE Single Precision : (1, 8, 23) bias = \(2^7 - 1\) = 127
+        \item IEEE Double Precision : (1, 11, 52) bias = \(2^{10} - 1\) = 1023
         \item Example \\
-        \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{3cm}|m{2.5cm}| } \hline
-            Number & Binary Form  &  Normalize &  Representation  \\ \hline
-            53.5   & 110101.1     &  1.101011 * \(2^5\) &  e=101, m=(101011)  \\ \hline
+        \begin{myTableStyle} \begin{tabular}{ |m{1cm}|m{3cm}|m{3cm}|m{1cm}|l| } \hline
+            Number & Binary Form  &  Normalize              &  Exp    & Mant  \\ \hline
+            53.5   & 110101.1     &  1.101011 * \(2^5\)     &  bias+5 & 101011  \\ \hline
+            0.5    & 0.1          &  1.0000's * \(2^{-1}\)  &  bias-1 & 0's  \\ \hline
+            0.227  & 0.0011101101 &  1.1101101 * \(2^{-3}\) &  bias-3 & 1101101 \\ \hline
         \end{tabular} \end{myTableStyle} \vspace{0.08in}
     \end{enumerate}
 
@@ -172,6 +175,7 @@
 
     \end{minipage}
 
-    \item To be done later :  Booths algorithm, look ahead adder,
+    \item The gap between two succesive numbers is small towards the minimum value and maximu towards the maximum value.
+    \item To be done later :  Booths algorithm, look ahead adder, full half adders
 
 \end{enumerate}
