@@ -48,11 +48,7 @@
         \item Binary to Grey : Copy MSB. XOR adjescent pair.
     \end{enumerate}
 
-    \begin{center} \begin{tikzpicture}[
-        roundnode/.style={rectangle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
-        squarednode/.style={rectangle, draw=red!60, fill=red!5, very thick, minimum size=7mm},
-        ]
-        %Nodes
+    \begin{center} \begin{tikzpicture}
         \node[squarednode]      (MSBB)                     {1};
         \node[squarednode]      (B2)       [right=of MSBB] {0};
         \node[squarednode]      (B3)       [right=of B2]   {0};
@@ -124,5 +120,7 @@
         Carry Yes   &   Result = R + C      &  Result = R           \\ \hline
         Carry No    &   Result = R1         &  Result = R2          \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    \item condition for overflow.
 
 \end{enumerate}
