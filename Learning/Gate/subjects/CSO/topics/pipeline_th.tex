@@ -89,9 +89,14 @@
     \item Data Hazards : RAW, WAR, WAW.
     \begin{enumerate}
         \item instruction is dependent on the results of a previous instruction.
+        \item Bernstein condition.
         \item Solution: Re-order instruction by compiler.
         \item Solution: Introduce bubble or NOP instruction.
         \item Solution: Data forwarding sends data directly to the desired pipeline unit.
+        \begin{enumerate}
+            \item dependent instruction access registe's new value from the pipeline interface register directly.
+            \item Operand Forwarding can avoid stalls only if the dependent instructions are ALU type instructions
+        \end{enumerate}
     \end{enumerate}
 
     \item Control Hazards
