@@ -1,3 +1,5 @@
+# Ignore
+
 *.aux
 *.dvi
 *.bbl
@@ -8,3 +10,8 @@
 *temp_delete*
 main.out
 temp.tex
+
+
+# Allow
+# !static/css/bootstrap-styled.css
+!subjects/CSO/topics/*.pdf
