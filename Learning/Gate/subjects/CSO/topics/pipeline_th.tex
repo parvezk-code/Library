@@ -94,8 +94,13 @@
         \item Solution: Introduce bubble or NOP instruction.
         \item Solution: Data forwarding sends data directly to the desired pipeline unit.
         \begin{enumerate}
+            \item courses.cs.washington.edu/courses/cse378/07au/lectures/L12-Forwarding.pdf
+            \item bypass the writeback and register read stages.
+            \item for arithmetic instructions pass the ALU output without going through the register file.
             \item dependent instruction access registe's new value from the pipeline interface register directly.
-            \item Operand Forwarding can avoid stalls only if the dependent instructions are ALU type instructions
+            \item Operand Forwarding can avoid stalls only if the dependent instructions are ALU type instructions.
+            \item Check this : Operand forwarding do not work for Load and store instrctions.
+            \item To-do : Determine number of stalls needed with and without operand forwarding.
         \end{enumerate}
     \end{enumerate}
 
