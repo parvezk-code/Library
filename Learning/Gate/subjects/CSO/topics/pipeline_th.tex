@@ -59,7 +59,7 @@
                             \\ (2) PC \(\leftarrow\) Z(Branch), \quad MDR is Loaded
                             \\ (3)  IR \(\leftarrow\) MDR }  \\ \hline
 
-        ID & Read operands from registers and Memory
+        ID & Read operands from registers and Memory. Generate control signals.
            & \makecell[l]{ (1) MAR \(\leftarrow\) IR[opr addr] \quad Read Signal
                           \\ (2) {\large \( \boldsymbol R_y\)} \(\leftarrow\) R1 \quad MDR is Loaded
                           \\ (3) Generate Control Signals } \\ \hline
@@ -67,12 +67,11 @@
         Exe & Performs ALU Oprn. Micro-operation sequence depends on opcode. Branch target is calculated
             & Z \(\leftarrow\) MDR + {\large \( \boldsymbol R_y\)}  \\ \hline
 
-        MA & Load and Store instructions & \makecell[l]{ (1) LOAD : Z \(\leftarrow\) [Mem]
+        MA & Load and Store instructions. Read or write the data memory. & \makecell[l]{ (1) LOAD : Z \(\leftarrow\) [Mem]
                                            \\ (2) STORE: [Mem] \(\leftarrow\) Z } \\ \hline
 
-        WB & Write result in Register &  {\large \( \boldsymbol R_i\)}\(\leftarrow\) Z \\ \hline
+        WB & Write result in destination Register &  {\large \( \boldsymbol R_i\)}\(\leftarrow\) Z \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
-
 
     \begin{minipage}{\linewidth}
     \item Structural Hazards.
@@ -80,7 +79,7 @@
         \item Hardware resource conflicts among the instructions in the pipelin.
         \item Memory, a GPR Register, or an ALU
         \item Fetch cycle and Execution cycle both may need ALU at the same time. Fetching involves calculating Effective Address.
-        \item more than one instruction in the pipe requires access to the very same resource in the same clock cycle.
+        \item multiple instruction in the pipe requires access to the very same resource in the same clock cycle.
         \item Solution: Introduce bubble
         \item Solution: Separate memory for Instruction and Data.
         \item Solution: Use of register files. Allows access to one write register, and one read register.
@@ -98,7 +97,7 @@
             \item bypass the writeback and register read stages.
             \item for arithmetic instructions pass the ALU output without going through the register file.
             \item dependent instruction access registe's new value from the pipeline interface register directly.
-            \item Operand Forwarding can avoid stalls only if the dependent instructions are ALU type instructions.
+            \item Operand Forwarding avoid stalls only if the dependent instructions are ALU type instructions.
             \item Check this : Operand forwarding do not work for Load and store instrctions.
             \item To-do : Determine number of stalls needed with and without operand forwarding.
         \end{enumerate}
@@ -119,5 +118,11 @@
     \end{minipage}
 
     \item  Control unit in a pipelined design
+
+
+    \item Pipeline datapath \\
+        \begin{figure}[h]
+            \centering   \includegraphics[scale=0.5]{./images/pipeline_datapath.jpeg}
+        \end{figure}
 
 \end{enumerate}
