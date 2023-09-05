@@ -43,6 +43,11 @@ git 	push   -u      origin master
 git     pull    origin  master
 
 
+---------------------------------------- gitignore file-------------------------------------------------
+# Ignore
+*.aux
+*temp_delete*
+temp.tex
 
-
-
+# Allow
+!subjects/CSO/topics/*.pdf
