@@ -51,6 +51,8 @@
 
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
+    \item  Control unit in a pipelined design.
+
     \item Instruction Cycle.\\
     \begin{myTableStyle} \begin{tabular}{ |l|m{6cm}|m{8cm}| } \hline
         IF & \makecell[l]{ 3 Steps and 4(6) micro-operation }
@@ -59,12 +61,12 @@
                             \\ (2) PC \(\leftarrow\) Z(Branch), \quad MDR is Loaded
                             \\ (3)  IR \(\leftarrow\) MDR }  \\ \hline
 
-        ID & Read operands from registers and Memory. Generate control signals.
+        ID & Read operands from registers and Memory. Generate control signals.  Branch target is calculated
            & \makecell[l]{ (1) MAR \(\leftarrow\) IR[opr addr] \quad Read Signal
                           \\ (2) {\large \( \boldsymbol R_y\)} \(\leftarrow\) R1 \quad MDR is Loaded
-                          \\ (3) Generate Control Signals } \\ \hline
+                          \\ (3) Generate Control Signals} \\ \hline
 
-        Exe & Performs ALU Oprn. Micro-operation sequence depends on opcode. Branch target is calculated
+        Exe & Performs ALU Oprn. Micro-operation sequence depends on opcode.
             & Z \(\leftarrow\) MDR + {\large \( \boldsymbol R_y\)}  \\ \hline
 
         MA & Load and Store instructions. Read or write the data memory. & \makecell[l]{ (1) LOAD : Z \(\leftarrow\) [Mem]
@@ -73,7 +75,34 @@
         WB & Write result in destination Register &  {\large \( \boldsymbol R_i\)}\(\leftarrow\) Z \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
-    \begin{minipage}{\linewidth}
+    \newpage
+
+    \item IF Step
+    \begin{enumerate}
+        \item Put instruction in IR based on PC.
+        \item Update PC to point to next instruction or branch.
+    \end{enumerate}
+
+    \item ID Step
+    \begin{enumerate}
+        \item For R-type instruction, read the operands(A, B) from the registers.
+        \item For branch instruction, compute branch address(ALU\_Out)
+    \end{enumerate}
+
+    \item Execute Step
+    \begin{enumerate}
+        \item For R-type instruction, perform ALU operation. ALU\_Out = A {\large \(\oplus\)} B
+        \item For branch instruction, (A==B)? \; PC=ALU\_Out
+        \item For L-type instruction, compute memory reference(address, ALU\_Out).
+    \end{enumerate}
+
+    \item MA Step
+    \begin{enumerate}
+        \item For R-type instruction, set destination register(R = ALU\_Out). Check this.
+        \item For L-type instruction, perform read/write operation on data memory.
+        \item[WB-] For L-type instruction, set destination register(R = MDR)
+    \end{enumerate}
+
     \item Structural Hazards.
     \begin{enumerate}
         \item Hardware resource conflicts among the instructions in the pipelin.
@@ -83,24 +112,6 @@
         \item Solution: Introduce bubble
         \item Solution: Separate memory for Instruction and Data.
         \item Solution: Use of register files. Allows access to one write register, and one read register.
-    \end{enumerate}
-
-    \item Data Hazards : RAW, WAR, WAW.
-    \begin{enumerate}
-        \item instruction is dependent on the results of a previous instruction.
-        \item Bernstein condition.
-        \item Solution: Re-order instruction by compiler.
-        \item Solution: Introduce bubble or NOP instruction.
-        \item Solution: Data forwarding sends data directly to the desired pipeline unit.
-        \begin{enumerate}
-            \item courses.cs.washington.edu/courses/cse378/07au/lectures/L12-Forwarding.pdf
-            \item bypass the writeback and register read stages.
-            \item for arithmetic instructions pass the ALU output without going through the register file.
-            \item dependent instruction access registe's new value from the pipeline interface register directly.
-            \item Operand Forwarding avoid stalls only if the dependent instructions are ALU type instructions.
-            \item Check this : Operand forwarding do not work for Load and store instrctions.
-            \item To-do : Determine number of stalls needed with and without operand forwarding.
-        \end{enumerate}
     \end{enumerate}
 
     \item Control Hazards
@@ -115,10 +126,47 @@
         \item If the target address is present after the kth stage, then there will be (k – 1) stalls.
         \item Total number of stalls = Branch frequency * Branch Penalty
     \end{enumerate}
+
+    \begin{minipage}{\linewidth}
+    \item Data Hazards : RAW, WAR, WAW.
+    \begin{enumerate}
+        \item instruction is dependent on the results of a previous instruction.
+        \item Bernstein condition.
+        \item Solution: Re-order instruction by compiler.
+        \item Solution: Introduce bubble or NOP instruction.
+        \item Solution: Data forwarding sends data directly to the desired pipeline unit.
+    \end{enumerate}
+
+    \newpage
+
+    \item Operand Forwarding for arithmetic instructions.
+    \begin{enumerate}
+        \item courses.cs.washington.edu/courses/cse378/07au/lectures/L12-Forwarding.pdf
+        \item bypass the writeback and register read stages.
+        \item for arithmetic instructions pass the ALU output without going through the register file.
+        \item If there is a hazard, the operands will come directly from EX/MA or MA/WB pipeline registers.
+        \item dependent instruction access registe's new value from the pipeline interface register directly.
+        \item Operand Forwarding avoid stalls only if the dependent instructions are ALU type instructions.
+        \item Without forwarding in 5 stage pipeline, we’d have to stall for two cycles.
+        \item Hazards from R-type instructions can be avoided with forwarding.
+    \end{enumerate}
+
+    \begin{center}
+    \begin{myTableStyle} \begin{tabular}{ c }
+               \includegraphics[scale=0.7]{./images/oprand_forwarding.jpeg}  \\
+    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \end{center}
     \end{minipage}
 
-    \item  Control unit in a pipelined design
+    \newpage
 
+    \item Operand forwarding for load instrctions.
+    \begin{enumerate}
+        \item Loads can result in a "true" hazard, which must stall the pipeline.
+        \item Load, store, branch and immediate instructions are I-type instructions.
+        \item When all 3 operands are registers then instructions are R-type instructions.
+        \item To-do : Determine number of stalls needed with and without operand forwarding.
+    \end{enumerate}
 
     \item Pipeline datapath \\
         \begin{figure}[h]
