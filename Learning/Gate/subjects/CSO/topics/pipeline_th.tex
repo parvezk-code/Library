@@ -14,15 +14,44 @@
         \item This will load MDR with the contents of memory.
     \end{enumerate}
 
+    \newpage
+
     \item Formulas\\
     \begin{myTableStyle} \begin{tabular}{ |m{5cm}|m{3cm}|m{5cm}| } \hline
         Stages                      &  k                & \\ \hline
         instructions                &  n                & \\ \hline
         Cycle Time                  &  \(T_c\)          &  Max(StageDelay) + Buffer Delay\\ \hline
+        Total Time(Non-Pipeline)    &  \(T_{np}\)       &  \\ \hline
         Total Cycles(Pipeline)      &  k + (n-1)        & \(Time = P_c * T_c\) \\ \hline
         Total Cycles(Non-Pipeline)  &  n*k              & \(Time = (NP)_c * T_c\) \\ \hline
         Speed-up                    &  n*k/(k + (n-1))  & = k, n \(\gg\) k. \\ \hline
+        Speed-up                    &   \( \boldsymbol { T_{np}\)/\(T_c } \)  & = k, n \(\gg\) k. \\ \hline
+        Total Cycles(Pipeline, bubbles)&  k + (n-1) + b  & b = total bubbles \\ \hline
+        Total Cycles(Pipeline, ex cycles)&  k + (n-1) + c  & c = extra cycles \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    \item Consider following instructions in a 5 stage pipeline. Number of cycles taken to execute without
+           operator forwarding. Total stages(K)=5, Total instruction(n)=5   \\
+           \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{2cm}|m{2cm}|m{3cm}| } \hline
+              Instruction &         & Type      & Bubbles(b)& Cycles Taken  \\ \hline
+              I1 &  R3 = R4 + R2    & R type    & 0         &   5(5+0) \\ \hline
+              I2 &  R1 = M[addr]    & I type    & 0         &   1(1+0) \\ \hline
+              I3 &  R1 = R2 + R3    & R type    & 2         &   3(1+2) \\ \hline
+              I4 &  R4 = R1 + R3    & R type    & 2         &   3(1+2) \\ \hline
+              I5 &  M[addr] = R4    & I type    & 2         &   3(1+2) \\ \hline
+              Total Cycles &  k + (n-1) + b     & k=5, n=5  & b=6 &   15(5 + 4 + 6)\\ \hline
+           \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    \item Consider following instructions in a 5 stage pipeline. Total stages(K)=5, Total instruction(n)=3
+          Mutiplication takes 2, division takes 3 and addition takes 1 cycles in execution stage\\
+           \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{2cm}|m{3cm}|m{3cm}| } \hline
+              Instruction &         & Type      & Extra Cycles(c)   & Cycles Taken  \\ \hline
+              I1 &  R1 = R2 + R3    & R type    & 0                 &   5(5+0) \\ \hline
+              I2 &  R4 = R5 * R6    & R type    & 1                 &   2(1+1) \\ \hline
+              I3 &  R7 = R8 / R9    & R type    & 2                 &   3(1+2) \\ \hline
+              Total Cycles &  k + (n-1) + c     & k=5, n=3  & c=3   &   10(5 + 2 + 3)\\ \hline
+           \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
 
     \newpage
     \item Micro-operations
@@ -93,14 +122,14 @@
     \begin{enumerate}
         \item For R-type instruction, perform ALU operation. ALU\_Out = A {\large \(\oplus\)} B
         \item For branch instruction, (A==B)? \; PC=ALU\_Out
-        \item For L-type instruction, compute memory reference(address, ALU\_Out).
+        \item For I-type instruction, compute memory reference(address, ALU\_Out).
     \end{enumerate}
 
     \item MA Step
     \begin{enumerate}
         \item For R-type instruction, set destination register(R = ALU\_Out). Check this.
-        \item For L-type instruction, perform read/write operation on data memory.
-        \item[WB-] For L-type instruction, set destination register(R = MDR)
+        \item For I-type instruction, perform read/write operation on data memory.
+        \item[WB-] For I-type instruction, set destination register(R = MDR)
     \end{enumerate}
 
     \item Structural Hazards.
@@ -139,7 +168,7 @@
 
     \newpage
 
-    \item Operand Forwarding for arithmetic instructions.
+    \item Operand Forwarding(bipassing) for arithmetic instructions.
     \begin{enumerate}
         \item courses.cs.washington.edu/courses/cse378/07au/lectures/L12-Forwarding.pdf
         \item bypass the writeback and register read stages.
@@ -160,13 +189,42 @@
 
     \newpage
 
-    \item Operand forwarding for load instrctions.
+    \item Operand forwarding(bipassing) for load instrctions.
     \begin{enumerate}
+        \item When Load instruction is followed by instruction which uses load value as operand, then
+              with operand forwarding pipeline gets stalled by 1 cycle.
         \item Loads can result in a "true" hazard, which must stall the pipeline.
         \item Load, store, branch and immediate instructions are I-type instructions.
         \item When all 3 operands are registers then instructions are R-type instructions.
         \item To-do : Determine number of stalls needed with and without operand forwarding.
     \end{enumerate}
+
+    \item Register renaming, Branch Delay slot
+
+    \item Consider a 4 stage pipeline processor.   The number of cycles needed by the four
+             instructions I1, I2, I3, I4 in stages S1, S2, S3, S4 is shown below. What is the number of cycles needed to execute the loop - for(i=1 to 2) {I1; I2; I3; I4;}?
+
+             \begin{myTableStyle} \begin{tabular}{ |m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}| } \hline
+                   & S1 & S2 & S3 & S4 \\ \hline
+                I1 & 2  & 1  & 1  & 1  \\ \hline
+                I2 & 1  & 3  & 2  & 2  \\ \hline
+                I3 & 2  & 1  & 1  & 3  \\ \hline
+                I4 & 1  & 2  & 2  & 2  \\ \hline
+              \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    Hint : \quad S[ i ] [ j ] = max( top, left ) + stage\_time \\
+
+   \begin{myTableStyle} \begin{tabular}{ |m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}| } \hline
+                   & S1 & S2 & S3  & S4 \\ \hline
+                I1 & 2  & 3  & 4   & 5  \\ \hline
+                I2 & 3  & 6  & 8   & 10  \\ \hline
+                I3 & 5  & 7  & 9   & 13  \\ \hline
+                I4 & 6  & 9  & 11  & 15  \\ \hline
+                I1 & 8  & 10 & 12  & 16  \\ \hline
+                I2 & 9  & 13 & 15  & 18  \\ \hline
+                I3 & 11 & 14 & 16  & 21  \\ \hline
+                I4 & 12 & 16 & 18  & 23  \\ \hline
+              \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
     \item Pipeline datapath \\
         \begin{figure}[h]

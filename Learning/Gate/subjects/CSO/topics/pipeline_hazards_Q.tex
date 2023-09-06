@@ -45,55 +45,79 @@
 \end{questyle}
 
 
+\begin{questyle}
+  \question  In an instruction execution pipeline, the earliest that the data TLB (Translation Lookaside Buffer)
+            can be accessed is  (GATE-2008)
+
+  \begin{choices}
+    \choice         before effective address calculation has started
+    \choice         during effective address calculation
+    \CorrectChoice  after effective address calculation has completed
+    \choice         after data cache lookup has completed
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Which of the following are NOT true in a pipelined processor?  (GATE-2008)
+
+  \begin{enumerate}
+      \item Bypassing can handle all RAW hazards.
+      \item Register renaming can eliminate all register carried WAR hazards.
+      \item Control hazard penalties can be eliminated by dynamic branch prediction.
+  \end{enumerate}
+
+  \begin{oneparchoices}
+    \choice         I and II only
+    \CorrectChoice  I and III only
+    \choice         II and III only
+    \choice         I, II and III
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  The use of multiple register windows with overlap causes a reduction in the number of memory
+             accesses for  (GATE-2008)
+
+  \begin{enumerate}
+      \item Function locals and parameters
+      \item Register saves and restores
+      \item Instruction fetches
+  \end{enumerate}
+
+  \begin{oneparchoices}
+    \CorrectChoice  I only
+    \choice         II only
+    \choice         III only
+    \choice         I, II and III
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Delayed branching can help in the handling of control hazards. The following code is
+             to run on a pipelined processor with one branch delay slot. Which of the instructions
+             I1, I2, I3 or I4 can legitimately occupy the delay slot without any other program modification?(GATE-2008)
+
+             \begin{enumerate}
+                \item[I1-] ADD R2 \(\leftarrow\) R7+R8
+                \item[I2-] SUB R4 \(\leftarrow\) R5-R6
+                \item[I3-] ADD R1 \(\leftarrow\) R2+R3
+                \item[I5-] STORE Memory [R4] \(\leftarrow\) [R1] \\
+                 BRANCH to Label if R1== 0
+            \end{enumerate}
+
+  \begin{oneparchoices}
+    \choice         I1
+    \choice         I2
+    \choice         I3
+    \CorrectChoice  I4
+  \end{oneparchoices}
+\end{questyle}
+
+
 \begin{comment}
 
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
 
 \begin{questyle}
   \question  zzz  (GATE-zzz)
