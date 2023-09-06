@@ -61,7 +61,7 @@
              in the first stage of the pipeline. A conditional branch instruction computes the target
              address and evaluates the condition in the third stage of the pipeline. The processor stops
              fetching new instructions following a conditional branch until the branch outcome is known.
-             A program executes 109 instructions out of which 20% are conditional branches. If each
+             A program executes \(10^9\) instructions out of which 20\% are conditional branches. If each
              instruction takes one cycle to complete on average, the total execution time of the program is  (GATE-2006)
   \begin{oneparchoices} \\
     \choice         1.0 seconds
@@ -69,8 +69,9 @@
     \CorrectChoice  1.4 seconds
     \choice         1.6 seconds
   \end{oneparchoices}\\
-  Hint : Average cycles needed(\(T_c\)) = 0.8(1) + 0.2(3), 2 bubbles implies branch instruction will take 3 cycles.
-  Hint : Total time = \(T_c\) * \(10^9\) / \(10^9\) = 1.4 * \(10^9\) / \(10^9\) = 1.4
+  Hint : Stages(k) = 5 \quad Instrctions(n) = \(10^9\) \quad Bubles(b) = (20\%\(10^9\))*2 = 0.4x\(10^9\) \\
+  Hint : Total time = \quad (k + (n-1) + b) x \(10^{-9} \thickapprox \) (n+b)x\(10^{-9} \) = 1.4 \\
+  Hint : Total time = (Cycles per instruction).n.\(10^{-9}\) = (1 + 0.2x2).\(10^9\).\(10^{-9}\) = 1.4
 \end{questyle}
 
 \begin{questyle}
@@ -163,89 +164,114 @@
   Hint : TC = \; k + (n-1) + extra\_cycles = \; 5 + (4-1) + (2+5) = \; 15
 \end{questyle}
 
+\begin{questyle}
+  \question  Consider an instruction pipeline with four stages (S1, S2, S3 and S4) each with
+             combinational circuit only. The pipeline registers are required between each stage and
+             at the end of the last stage. Delays for the stages and for the pipeline registers
+             are as given in the figure.What is the approximate speed up of the pipeline in steady
+             state under ideal conditions when compared to the corresponding non-pipeline implementation?  (GATE-2011)
+
+          \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{2cm}|m{1.8cm}| } \hline
+              Stage & Stage delay & Register delay  \\ \hline
+              S1    & 5ns         & 1ns  \\ \hline
+              S2    & 6ns         & 1ns  \\ \hline
+              S3    & 11ns        & 1ns  \\ \hline
+              S4    & 8ns         & 1ns  \\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+  \begin{oneparchoices}
+    \choice         4.0
+    \CorrectChoice  2.5
+    \choice         1.1
+    \choice         3.0
+  \end{oneparchoices} \\
+  Hint : Time for non-pipeline \( T_{np} \) = \; 5 + 6 + 11 + 8 = \; 30 \\
+  Hint : Max stage delay \(T_C\) = \; 11 + 1 = \; 12 \qquad Speed up = 30/12
+\end{questyle}
+
+\begin{questyle}
+  \question  Consider an instruction pipeline with five stages without any branch prediction:
+   Fetch Instruction (FI), Decode Instruction (DI), Fetch Operand (FO), Execute Instruction (EI) and
+   Write Operand (WO). The stage delays for FI, DI, FO, EI and WO are 5 ns, 7 ns, 10 ns, 8 ns and 6 ns,
+   respectively. There are intermediate storage buffers after each stage and the delay of each
+   buffer is 1 ns. A program consisting of 12 instructions I1 to I12 is executed in this pipelined
+   processor. Instruction I4 is the only branch instruction and its branch target is I9.
+   If the branch is taken during the execution of this program, the time (in ns) needed
+   to complete the program is  (GATE-2013)
+
+  \begin{oneparchoices}
+    \choice         132
+    \CorrectChoice  165
+    \choice         176
+    \choice         328
+  \end{oneparchoices} \\
+  Hint: Total instructions(n) = 8 (I1-I4, I9-I12) \quad Total Stages = 5 \quad Bubbles = 3 \quad cycle\_time = 11(10+1)\\
+  Hint: Total cycles = k + (n-1) + b = \quad 5 + (8-1) + 3 = 15 \quad Time = 15 * 11
+
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Consider a 6-stage instruction pipeline, where all stages are perfectly balanced.
+            Assume that there is no cycle-time overhead of pipelining. When an application is executing
+            on this 6-stage pipeline, the speedup achieved with respect to non-pipelined execution if 25\% of
+            the instructions incur 2 pipeline stall cycles is \fillin[4]. (GATE-2014\_set\_1). \\
+            Hint : Time(Non-pipeline)= 6 \quad Time(Pipeline) = 1 + 0.25(2) \quad Speed-up = 6/1.5
+\end{questyle}
+
+
+\begin{questyle}
+  \question  An instruction pipeline has five stages, namely, instruction fetch (IF), instruction
+             decode and register fetch (ID/RF), instruction execution (EX), memory access (MEM), and
+             register writeback (WB) with stage latencies 1 ns, 2.2 ns, 2 ns, 1 ns, and 0.75 ns,
+             respectively (ns stands for nanoseconds). To gain in terms of frequency, the designers
+             have decided to split the ID/RF stage into three stages (ID, RF1, RF2) each of
+             latency 2.2/3 ns. Also, the EX stage is split into two stages (EX1, EX2) each of
+             latency 1 ns. The new design has a total of eight pipeline stages. A program has 20\%
+             branch instructions which execute in the EX stage and produce the next instruction
+             pointer at the end of the EX stage in the old design and at the end of the EX2
+             stage in the new design. The IF stage stalls after fetching a branch instruction
+             until the next instruction pointer is computed. All instructions other than the
+             branch instruction have an average CPI of one in both the designs. The execution
+             times of this program on the old and the new design are P and Q nanoseconds, respectively.
+             The value of P/Q is \fillin[1.54]  (GATE-2014\_set\_3) \\
+             Hint : Average cycles per instruction = (1 + BPI) \quad BPI = bubbles per instruction \\
+             Hint : P(\(T_{old}\)) = (1 + 0.2x2)2.2 = 3.08  \quad Q(\(T_{new}\)) = (1 + 0.2x5)1 = 2
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Consider a non-pipelined processor with a clock rate of 2.5 gigahertz and average
+             cycles per instruction of four. The same processor is upgraded to a pipelined processor
+             with five stages; but due to the internal pipeline delay, the clock speed is reduced to
+             2 gigahertz. Assume that there are no stalls in the pipeline. The speed up achieved in
+             this pipelined processor is \fillin[3.2]. (GATE-2015\_Set\_1) \\
+             Hint : Non-pipeline = (4/2.5) \quad Pipeline = 1/2 \quad S = (4 x 2)/(2 x 2.5)
+\end{questyle}
+
+\begin{questyle}
+  \question  Consider the sequence of machine instructions given below. In the above
+             sequence, R0 to R8 are general purpose registers. In the instructions shown, the
+             first register stores the result of the operation performed on the second and the
+             third registers. This sequence of instructions is to be executed in a pipelined
+             instruction processor with the following 4 stages: (1) Instruction Fetch and
+             Decode (IF), (2) Operand Fetch (OF), (3) Perform Operation (PO) and (4) Write
+             back the Result (WB). The IF, OF and WB stages take 1 clock cycle each for any
+             instruction. The PO stage takes 1 clock cycle for ADD or SUB instruction, 3 clock cycles
+             for MUL instruction and 5 clock cycles for DIV instruction. The pipelined processor
+             uses operand forwarding from the PO stage to the OF stage. The number of clock cycles
+             taken for the execution of the above sequence of instructions is \fillin[13] (GATE-2015\_set\_2) \\
+             Hint : Total cycles = k + (n-1) + c \quad stages(k)=4, n=4,  extra cycles(c) = 2(mul) + 4(div) = 6
+
+             \begin{enumerate}
+                \item MUL R5, R0, R1
+                \item DIV R6, R2, R3
+                \item ADD R7, R5, R6
+                \item SUB R8, R7, R4
+            \end{enumerate}
+\end{questyle}
 
 \begin{comment}
-
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
 
 \begin{questyle}
   \question  zzz  (GATE-zzz)

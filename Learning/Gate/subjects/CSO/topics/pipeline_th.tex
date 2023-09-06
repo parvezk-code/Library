@@ -17,7 +17,7 @@
     \newpage
 
     \item Formulas\\
-    \begin{myTableStyle} \begin{tabular}{ |m{5cm}|m{3cm}|m{5cm}| } \hline
+    \begin{myTableStyle} \begin{tabular}{ |m{6cm}|m{3cm}|m{5cm}| } \hline
         Stages                      &  k                & \\ \hline
         instructions                &  n                & \\ \hline
         Cycle Time                  &  \(T_c\)          &  Max(StageDelay) + Buffer Delay\\ \hline
@@ -25,9 +25,10 @@
         Total Cycles(Pipeline)      &  k + (n-1)        & \(Time = P_c * T_c\) \\ \hline
         Total Cycles(Non-Pipeline)  &  n*k              & \(Time = (NP)_c * T_c\) \\ \hline
         Speed-up                    &  n*k/(k + (n-1))  & = k, n \(\gg\) k. \\ \hline
-        Speed-up                    &   \( \boldsymbol { T_{np}\)/\(T_c } \)  & = k, n \(\gg\) k. \\ \hline
+        Speed-up                    &   \( \boldsymbol { T_{np}\)/\(T_c } \)  &  \\ \hline
         Total Cycles(Pipeline, bubbles)&  k + (n-1) + b  & b = total bubbles \\ \hline
-        Total Cycles(Pipeline, ex cycles)&  k + (n-1) + c  & c = extra cycles \\ \hline
+        Total Cycles(Pipeline, extra cycles)&  k + (n-1) + c  & c = extra cycles \\ \hline
+        Average instrction execution time &  1 cycle + BPI & BPI=bubbles\_per\_instruction  \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
     \item Consider following instructions in a 5 stage pipeline. Number of cycles taken to execute without
@@ -52,6 +53,32 @@
               Total Cycles &  k + (n-1) + c     & k=5, n=3  & c=3   &   10(5 + 2 + 3)\\ \hline
            \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
+    \newpage
+
+    \item Consider a 4 stage pipeline processor.   The number of cycles needed by the four
+             instructions I1, I2, I3, I4 in stages S1, S2, S3, S4 is shown below. What is the number of cycles needed to execute the loop - for(i=1 to 2) {I1; I2; I3; I4;}?
+
+             \begin{myTableStyle} \begin{tabular}{ |m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}| } \hline
+                   & S1 & S2 & S3 & S4 \\ \hline
+                I1 & 2  & 1  & 1  & 1  \\ \hline
+                I2 & 1  & 3  & 2  & 2  \\ \hline
+                I3 & 2  & 1  & 1  & 3  \\ \hline
+                I4 & 1  & 2  & 2  & 2  \\ \hline
+              \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    Hint : \quad S[ i ] [ j ] = max( top, left ) + stage\_time \\
+
+   \begin{myTableStyle} \begin{tabular}{ |m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}| } \hline
+                   & S1 & S2 & S3  & S4 \\ \hline
+                I1 & 2  & 3  & 4   & 5  \\ \hline
+                I2 & 3  & 6  & 8   & 10  \\ \hline
+                I3 & 5  & 7  & 9   & 13  \\ \hline
+                I4 & 6  & 9  & 11  & 15  \\ \hline
+                I1 & 8  & 10 & 12  & 16  \\ \hline
+                I2 & 9  & 13 & 15  & 18  \\ \hline
+                I3 & 11 & 14 & 16  & 21  \\ \hline
+                I4 & 12 & 16 & 18  & 23  \\ \hline
+              \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
     \newpage
     \item Micro-operations
@@ -199,32 +226,8 @@
         \item To-do : Determine number of stalls needed with and without operand forwarding.
     \end{enumerate}
 
-    \item Register renaming, Branch Delay slot
-
-    \item Consider a 4 stage pipeline processor.   The number of cycles needed by the four
-             instructions I1, I2, I3, I4 in stages S1, S2, S3, S4 is shown below. What is the number of cycles needed to execute the loop - for(i=1 to 2) {I1; I2; I3; I4;}?
-
-             \begin{myTableStyle} \begin{tabular}{ |m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}| } \hline
-                   & S1 & S2 & S3 & S4 \\ \hline
-                I1 & 2  & 1  & 1  & 1  \\ \hline
-                I2 & 1  & 3  & 2  & 2  \\ \hline
-                I3 & 2  & 1  & 1  & 3  \\ \hline
-                I4 & 1  & 2  & 2  & 2  \\ \hline
-              \end{tabular} \end{myTableStyle} \vspace{0.08in}
-
-    Hint : \quad S[ i ] [ j ] = max( top, left ) + stage\_time \\
-
-   \begin{myTableStyle} \begin{tabular}{ |m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}| } \hline
-                   & S1 & S2 & S3  & S4 \\ \hline
-                I1 & 2  & 3  & 4   & 5  \\ \hline
-                I2 & 3  & 6  & 8   & 10  \\ \hline
-                I3 & 5  & 7  & 9   & 13  \\ \hline
-                I4 & 6  & 9  & 11  & 15  \\ \hline
-                I1 & 8  & 10 & 12  & 16  \\ \hline
-                I2 & 9  & 13 & 15  & 18  \\ \hline
-                I3 & 11 & 14 & 16  & 21  \\ \hline
-                I4 & 12 & 16 & 18  & 23  \\ \hline
-              \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \item Register renaming, Branch Delay slot, reservation table and minimum average latency,
+          anti dependency between instructions
 
     \item Pipeline datapath \\
         \begin{figure}[h]
