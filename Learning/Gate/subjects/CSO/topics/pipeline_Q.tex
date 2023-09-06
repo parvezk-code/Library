@@ -271,75 +271,56 @@
             \end{enumerate}
 \end{questyle}
 
+\begin{questyle}
+  \question  The stage delays in a 4-stage pipeline are 800, 500, 400 and 300 picoseconds. The
+             first stage (with delay 800 picoseconds) is replaced with a functionally equivalent
+             design involving two stages with respective delays 600 and 350 picoseconds. The
+             throughput increase of the pipeline is  \fillin[33.33 \%] (GATE-2016\_1) \\
+             Hint : throughput = 1/cycle\_time \qquad ans= (1/600 - 1/800)/(1/800) = 1/3
+
+\end{questyle}
+
+\begin{questyle}
+  \question  Suppose the functions F and G can be computed in 5 and 3 nanoseconds by functional
+             units \( \boldsymbol {U_F } \) and \(\boldsymbol {U_G}\), respectively. Given two
+             instances of \(\boldsymbol {U_F}\) and two instances of \(\boldsymbol {U_G} \), it is
+             required to implement the computation F(G(Xi)) for 1 \textless= i \textless= 10. ignoring all other
+             delays, the minimum time required to complete this computation is \fillin[28] nanoseconds   (GATE-2016\_Set\_2)\\
+             Hint: 3 + (5x5). U(3) will finish before F(5). After 3 seconds F will give output every 5 seconds.
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Consider a 3 GHz (gigahertz) processor with a three-stage pipeline and stage latencies
+             \( \boldsymbol {T_1} \), \( \boldsymbol {T_2} \), and \( \boldsymbol {T_3} \) such that
+             \( \boldsymbol {T_1} \) = 3\( \boldsymbol {T_2}\)/4 = 2\( \boldsymbol {T_3} \). If the
+             longest pipeline stage is split into two pipeline stages of equal latency, the new frequency
+             is \fillin[4] GHz, ignoring delays in the pipeline registers (GATE-2016\_Set\_2)\\
+
+             Hint : {\Large\(\frac{T_1}{6}\)} ={\Large\(\frac{T_2}{8}\)} = {\Large\(\frac{T_3}{3}\)}
+             \qquad Frequency \(\propto\) {\Large\(\frac{1}{latency}\)}
+             \qquad {\Large\(\frac{F2}{F1}\)} = {\Large\(\frac{L_1}{L_2}\)}
+             \qquad {\Large\(\frac{F_2}{3}\)} = {\Large\(\frac{8}{6}\)}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Instruction execution in a processor is divided into 5 stages. Instruction Fetch(IF),
+             Instruction Decode (ID), Operand Fetch(OF), Execute(EX), and Write Back(WB), These stages
+             take 5, 4, 20, 10 and 3 nanoseconds (ns) respectively. A pipelined implementation of the processor
+             requires buffering between each pair of consecutive stages with a delay of 2 ns. Two pipelined
+             implementations of the processor are contemplated. The speedup (correct to two decimals places)
+             achieved by EP over NP in executing 20 independent instructions with no hazards
+             is \fillin[1.508 \(\thickapprox\) 1.50] (GATE-2017\_Set\_1)
+             \begin{enumerate}
+                  \item a naïve pipeline implementation (NP) with 5 stages and
+                  \item an efficient pipeline (EP) where the OF stage id divided into stages
+                        OF1 and OF2 with execution times of 12 ns and 8 ns respectively.
+              \end{enumerate}
+              Hint : T = ( k + (n-1) )\(T\)  \quad (k1, t1, n1)=(5, 22, 20) \qquad (k2, t2, n2)=(6, 14, 20)
+\end{questyle}
+
 \begin{comment}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \CorrectChoice
-  \end{choices}
-\end{questyle}
 
 \begin{questyle}
   \question  zzz  (GATE-zzz)

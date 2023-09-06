@@ -136,15 +136,35 @@
 
 
 \begin{questyle}
-  \question  Consider the following reservation table for a pipeline having three
-             stages S1, S2 and S3. The minimum average latency (MAL) is \fillin[1]  (GATE-2015\_set\_3)
-
+  \question  Consider the following code sequence having five instructions I1 to I5. Each of these
+             instructions has the format OP Ri, Rj, Rk.  Where operation OP is performed on contents
+             of registers Rj and Rk and the result is stored in register Ri.(GATE-2015\_Set\_3)
+              \begin{enumerate}
+                \item[I1:] ADD R1, R2, R3
+                \item[I2:] MUL R7, R1, R3
+                \item[I3:] SUB R4, R1, R5
+                \item[I4:] ADD R3, R2, R4
+                \item[I5:] MUL R7, R8, R9
+              \end{enumerate}
+              Consider the following three statements:
+              \begin{enumerate}
+                  \item[S1:] There is an anti-dependence between instructions I2 and I5.
+                  \item[S2:] There is an anti-dependence between instructions I2 and I4.
+                  \item[S3:] Within an instruction pipeline an anti-dependence always creates one or more stalls.
+              \end{enumerate}
+  \begin{choices}
+    \choice         Only S1 is true
+    \CorrectChoice  Only S2 is true
+    \choice         Only S1 and S2 are true
+    \choice         Only S2 and S3 are true
+  \end{choices}
 \end{questyle}
 
-\begin{comment}
 
-\end{comment}
-
+\begin{questyle}
+  \question  Consider the following reservation table for a pipeline having three
+             stages S1, S2 and S3. The minimum average latency (MAL) is \fillin[1]  (GATE-2015\_set\_3)
+\end{questyle}
 
 
 

@@ -184,7 +184,7 @@
     \end{enumerate}
 
     \begin{minipage}{\linewidth}
-    \item Data Hazards : RAW, WAR, WAW.
+    \item Data Hazards : RAW, WAR(anti dependency), WAW.
     \begin{enumerate}
         \item instruction is dependent on the results of a previous instruction.
         \item Bernstein condition.
@@ -227,7 +227,7 @@
     \end{enumerate}
 
     \item Register renaming, Branch Delay slot, reservation table and minimum average latency,
-          anti dependency between instructions
+          anti dependency(WAR) between instructions
 
     \item Pipeline datapath \\
         \begin{figure}[h]
