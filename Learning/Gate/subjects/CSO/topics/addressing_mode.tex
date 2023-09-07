@@ -45,6 +45,25 @@
   \end{oneparchoices}
 \end{questyle}
 
+\begin{questyle}
+  \question  Match the following  (GATE-2001)
+
+  \begin{multiColList}[2]
+    \item[X:] Indirect addressing
+    \item[Y:] Indexed Addressing
+    \item[Z:] Base Register Addressing
+    \item[1:] Array implementation
+    \item[2:] Writing re-locatable code
+    \item[3:] Passing array as parameter
+  \end{multiColList}
+
+  \begin{oneparchoices}
+    \CorrectChoice  (X, III) (Y, I) (Z, II)
+    \choice         (X, II) (Y, III) (Z, I)
+    \choice         (X, III) (Y, II) (Z, I)
+    \choice         (X, I) (Y, III) (Z, II)
+  \end{oneparchoices}
+\end{questyle}
 
 \begin{questyle}
   \question  In the absolute addressing mode  (GATE-2002)
@@ -60,14 +79,7 @@
 \begin{questyle}
   \question  Consider the C struct defines below. The base address of student is available in
              register R1. The field student.grade can be accessed efficiently using  (GATE-2017\_Set\_1)
-             \begin{lstlisting}[style=mystyle]
-                struct data
-                {
-                    int marks [100] ;
-                    char grade;
-                    int cnumber;
-                } student;
-             \end{lstlisting}
+             \lstinputlisting[language=C, firstline=3, lastline=8]{cso_programs.c}
 
   \begin{choices}
     \choice         Post-increment addressing mode. (R1)+
