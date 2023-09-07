@@ -1,3 +1,322 @@
 
-\centerline{\textbf{ \LARGE }}
+\centerline{\textbf{ \LARGE Addressing Modes}}
 
+
+\begin{questyle}
+  \question  Which of the following addressing modes permits relocation without any
+             change whatsoever in the code?  (GATE-1998)
+
+  \begin{choices}
+    \choice         Indirect addressing
+    \choice         Indexed addressing
+    \choice         Base register addressing \qquad Hint: May need code change
+    \CorrectChoice  PC relative addressing
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Which of the following addressing modes are suitable for program relocation at run time ?  (GATE-2004)
+
+  \begin{choices}
+    \choice         Absolute addressing, Indirect addressing
+    \choice         Absolute addressing, Based addressing
+    \CorrectChoice  Based addressing, Relative addressing
+    \choice         Absolute, Based and Indirect addressing
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Match the following  (GATE-2000)
+
+  \begin{multiColList}[2]
+    \item[X:] Indirect addressing
+    \item[Y:] Immediate addressing
+    \item[Z:] Auto decrement addressing
+    \item[1:] Loops
+    \item[2:] Pointers
+    \item[3:] Constants
+  \end{multiColList}
+
+  \begin{oneparchoices}
+    \choice         X-3, Y-2, Z-1
+    \choice         X-I, Y-3, Z-2
+    \CorrectChoice  X-2, Y-3, Z-1
+    \choice         X-3, Y-l, Z-2
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  In the absolute addressing mode  (GATE-2002)
+
+  \begin{choices}
+    \choice         the operand is inside the instruction
+    \CorrectChoice  the address of the operand is inside the instruction
+    \choice         the register containing address of the operand is specified inside the instruction
+    \choice         the location of the operand is implicit
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  Consider the C struct defines below. The base address of student is available in
+             register R1. The field student.grade can be accessed efficiently using  (GATE-2017\_Set\_1)
+             \begin{lstlisting}[style=mystyle]
+                struct data
+                {
+                    int marks [100] ;
+                    char grade;
+                    int cnumber;
+                } student;
+             \end{lstlisting}
+
+  \begin{choices}
+    \choice         Post-increment addressing mode. (R1)+
+    \choice         Pre-decrement addressing mode, -(R1)
+    \choice         Register direct addressing mode, R1
+    \CorrectChoice  Index addressing mode, X(R1), where X is an offset represented in 2’s complement 16-bit representation.
+  \end{choices}
+\end{questyle}
+
+\begin{comment}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\begin{questyle}
+  \question  zzz  (GATE-zzz)
+
+  \begin{choices}
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+    \choice         zzz
+\CorrectChoice
+  \end{choices}
+\end{questyle}
+
+\end{comment}

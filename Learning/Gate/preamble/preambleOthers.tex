@@ -1,5 +1,6 @@
 \usepackage{hyperref}
 \usepackage{mathtools}
+\usepackage{multicol}
 
 \newcommand\Myperm[2][^n]{\prescript{#1\mkern-2.5mu}{}P_{#2}}
 
@@ -16,6 +17,7 @@
     }
 
 
+% \begin{hl}[red]
 \newenvironment{hl}[1][blue]
     {
     \color{#1}
@@ -24,10 +26,26 @@
     {
     \color{black}
     }
+
+
+% \begin{multiColList}[2]
+\newenvironment{multiColList}[1][2]
+{
+    \begin{multicols}{#1}
+    \begin{enumerate}
+}
+{
+    \end{enumerate}
+    \end{multicols}
+}
+
+
 \begin{comment}
 
 bold math sysmbol     :   \( \boldsymbol R_y\)  \(  \mathbf{    } \)
 arrow                 :   \(\leftarrow\)
 Math symbols          :   \textless,   \textgreater,  XOR \(\oplus\), >> \(\gg\),  =~ \thickapprox\
                           \sum_{n=1}^{n} s_i     \forall i, s_i
+
+lstlisting            :     \begin{multicols}{2}        \end{multicols}
 \end{comment}

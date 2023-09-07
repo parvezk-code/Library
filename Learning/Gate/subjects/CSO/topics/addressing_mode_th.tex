@@ -1,0 +1,41 @@
+
+\centerline{\textbf{ \LARGE Addressing Modes}}
+
+\begin{enumerate}
+    \item Addressing mode: operand’s effective address \\
+     \begin{myTableStyle} \begin{tabular}{ |m{3.2cm}|m{2cm}|m{5cm}| } \hline
+      Immediate operand & LOAD val    & AC \(\leftarrow\) val   \\ \hline
+      Direct Address    & LOAD loc1   & AC \(\leftarrow\) M[ loc1 ]  \\ \hline
+      Indirect Address  & LOAD loc2   & AC \(\leftarrow\) M[ M[ loc2 ] ]   \\ \hline
+      Relative Address  & LOAD loc    & AC \(\leftarrow\) M[ PC + loc ]  \\ \hline
+      Register          & Load R1     & AC \(\leftarrow\) R1  \\ \hline
+      Register Indirect & Load (R1)   & AC \(\leftarrow\) M[ R1 ]  \\ \hline
+      Auto Increment    & Load (R1)+  & AC \(\leftarrow\) M[R1],  R1++  \\ \hline
+      Index addressing  & Load loc    & AC \(\leftarrow\) M[loc + Ind\_Reg]\\ \hline
+      Base Index addr   &             & AC \(\leftarrow\) M[base\_Reg + Ind\_Reg]\\ \hline
+      Implied & & \\ \hline
+      \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    \item Applications of addressing modes\\
+     \begin{myTableStyle} \begin{tabular}{ |m{5.5cm}|m{10.5cm}| } \hline
+      Immediate & Constants, Initialize registers to a constant value  \\ \hline
+      Direct and Register Addressing &  To access static data and implement variables \\ \hline
+      Indirect Addr and Register Indirect & pointers implementations, pass array as params \\ \hline
+      Index Addressing & Use in array implementation \\ \hline
+      Base Register  & relocation of program in memory even at run time, handling recursion \\ \hline
+      Auto-increment Addressing & Traversing an array, Implementation of stack(push,pop), loops \\ \hline
+      Relative & relocation of program in memory even at run time, branching(change normal sequence of instruction) \\ \hline
+      \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+
+    \item Relocation at run time.
+    \begin{enumerate}
+      \item Moving a block of code from one location to another at run time.
+      \item Base addressing and relative addressing allow relocation.
+      \item Absolute addressing mode and indirect addressing modes is used for one instruction at one
+            time, not for whole block So both are not suitable for program relocation at run time.
+      \item PC relative allow relocation without any code change
+    \end{enumerate}
+    \item zzz
+    \item zzz
+\end{enumerate}
