@@ -57,7 +57,7 @@
   \begin{enumerate}
         \item Traps and Exceptions.
         \item Software Interrupts serve as a signal for the OS to carry out a certain function or respond to an error condition.
-        \item When a process executes an “Interrupt instruction” a software interrupt is generated.
+        \item When a process executes an "Interrupt instruction" a software interrupt is generated.
   \end{enumerate}
 
   \begin{figure}[h]
@@ -81,6 +81,23 @@
   \begin{enumerate}
         \item PCB
         \item IVT : interupt vector table.
+  \end{enumerate}
+
+  \item Exceptions : an abrupt transfer of control to the operating system
+  \begin{enumerate}
+      \item 3 main categories :  Interrupt, Trap, Fault.
+      \item Interrupt: it is mainly caused due to I/O device.
+      \item Trap: It is caused by the program making a syscall.
+      \item Fault: It is accidentally caused by the program that is under execution such as( a divide by zero,
+            or null pointer exception etc).
+      \item RFE (Return From Exception) is a privileged trap instruction that is executed when exception occurs,
+            so an exception is not allowed to execute.
+      \item  The operating system explicitly makes a transition from kernel mode to user mode, generally at
+             the end of an interrupt handle pr kernel call by using a privileged instruction
+             RFE( Return From Exception) instruction.
+      \item \text{https://www.cs.rochester.edu/courses/252/spring2014/notes/08\_exceptions}
+      \item GATE CS 2008 | Question 34
+      \item \text{https://www.geeksforgeeks.org/gate-gate-cs-2008-question-34/}
   \end{enumerate}
 
 

@@ -72,31 +72,76 @@
 \end{questyle}
 
 
+\begin{questyle}
+  \question  In a simplified computer the instructions are. Assume that all operands are
+             initially in memory. The final value of the computation should be in memory.
+             What is the minimum number of MOV instructions in the code generated for
+             this basic block?  (GATE-2007)
+    \begin{myTableStyle} \begin{tabular}{ |m{9cm}|m{6cm}| } \hline
+        Available Instruction    &  Basic Block to implement  \\ \hline
+        \lstinputlisting[language={[x86masm]Assembler}, firstline=62, lastline=65]{cso_programs.c} &
+        \lstinputlisting[language={[x86masm]Assembler}, firstline=71, lastline=74]{cso_programs.c} \\ \hline
+    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+  \begin{oneparchoices}
+    \choice         2
+    \CorrectChoice  3
+    \choice         5
+    \choice         6
+  \end{oneparchoices}
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Consider the following program segment. Here R1, R2 and R3 are the general purpose
+            registers. Assume that the content of memory location 3000 is 10 and the content of
+            the register R3 is 2000. The content of each of the memory locations from 2000 to 2010
+            is 100. The program is loaded from the memory location 1000. All the numbers are
+            in decimal. (GATE-2007)
+
+    \begin{myTableStyle} \begin{tabular}{ |m{9.5cm}|m{5cm}| } \hline
+        Assembly Program given in question &  Equivalent C program  \\ \hline
+        \lstinputlisting[language={[x86masm]Assembler}, firstline=80, lastline=92]{cso_programs.c} &
+        \lstinputlisting[language=C, firstline=98, lastline=105]{cso_programs.c} \\ \hline
+    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+  \begin{parts}
+  \part Assume that the memory is word addressable. The number of memory references for accessing
+        the data in executing the program completely is.
+
+  \begin{oneparchoices}
+    \choice         10
+    \choice         11
+    \choice         20
+    \CorrectChoice  21  \qquad  Hint: Once before loop. 2 times in every iteration.
+  \end{oneparchoices}
+
+  \part Consider the data given in above question. Assume that the memory is word addressable.
+        After the execution of this program, the content of memory location 2010 is.
+
+  \begin{oneparchoices}
+    \CorrectChoice  100
+    \choice         101
+    \choice         102
+    \choice         110
+  \end{oneparchoices}
+
+  \part Consider the data given in above questions. Assume that the memory is byte addressable
+       and the word size is 32 bits. If an interrupt occurs during the execution of the
+       instruction "INC R3", what return address will be pushed on to the stack?
+
+  \begin{oneparchoices}
+    \choice         1005
+    \choice         1020
+    \CorrectChoice  1024
+    \choice         1040
+  \end{oneparchoices}
+
+  \end{parts}
+
+\end{questyle}
+
 \begin{comment}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
 
 \begin{questyle}
   \question  zzz  (GATE-zzz)
