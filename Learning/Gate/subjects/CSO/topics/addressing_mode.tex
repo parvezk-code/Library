@@ -79,7 +79,7 @@
 \begin{questyle}
   \question  Consider the C struct defines below. The base address of student is available in
              register R1. The field student.grade can be accessed efficiently using  (GATE-2017\_Set\_1)
-             \lstinputlisting[language=C, firstline=3, lastline=8]{cso_programs.c}
+             \lstinputlisting[language=C, firstline=4, lastline=9]{cso_programs.c}
 
   \begin{choices}
     \choice         Post-increment addressing mode. (R1)+
@@ -89,19 +89,50 @@
   \end{choices}
 \end{questyle}
 
-\begin{comment}
+\begin{questyle}
+  \question  Match each of the high level language statements given on the left hand side with
+            the most natural addressing mode from those listed on the right hand side.  (GATE-2005)
+
+  \begin{multiColList}[2]
+    \item[1:] A[1] = B[J];
+    \item[2:] while [*A++];
+    \item[3:] int temp = *x;
+    \item[A:] Indirect addressing
+    \item[B:] Indexed addressing
+    \item[C:] Autoincrement
+  \end{multiColList}
+
+  \begin{oneparchoices}
+    \choice         (1, c), (2, b), (3, a)
+    \choice         (1, a), (2, c), (3, b)
+    \CorrectChoice  (1, b), (2, c), (3, a)
+    \choice         (1, a), (2, b), (3, c)
+  \end{oneparchoices}
+\end{questyle}
+
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
+  \question  Consider a three word machine instruction. \\  ADD A[R0], @ B \\  The first operand
+  (destination) “A [R0]” uses indexed addressing mode with R0 as the index register. The second
+  operand (source) “@ B” uses indirect addressing mode. A and B are memory addresses residing at
+  the second and the third words, respectively. The first word of the instruction specifies the
+  opcode, the index register designation and the source and destination addressing modes. During
+  execution of ADD instruction, the two operands are added and stored in the destination (first operand).
+  The number of memory cycles needed during the execution cycle of the instruction is (GATE-2005)
 
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \begin{oneparchoices}
+    \choice         3
+    \CorrectChoice  4
+    \choice         5
+    \choice         6
+  \end{oneparchoices}
+  \\ Hint : Fetch Operand1(Indexed Addr) need 1 memory cycle. \\ Hint : Fetch Operand2(Indrect Addr) need 2 memory cycles. \\
+            Hint : Memory Result(Indexed Addr) need 1 memory cycle.
 \end{questyle}
+
+
+\begin{comment}
+
 
 \begin{questyle}
   \question  zzz  (GATE-zzz)

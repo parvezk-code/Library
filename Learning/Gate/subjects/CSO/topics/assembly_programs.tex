@@ -2,32 +2,77 @@
 \centerline{\textbf{ \LARGE Assembly Language Programs}}
 
 
+\begin{questyle}
+  \question  Consider the following assembly language program for a hypothetical processor.
+             A, B, and C are 8 bit registers. The meanings of various instructions are shown
+             as comments.  (GATE-2003)
+    \begin{myTableStyle} \begin{tabular}{ |m{9cm}|m{6cm}| } \hline
+        Assembly Program given in question &  Equivalent C program  \\ \hline
+        \lstinputlisting[language={[x86masm]Assembler}, firstline=16, lastline=27]{cso_programs.c} &
+        \lstinputlisting[language=C, firstline=33, lastline=43]{cso_programs.c} \\ \hline
+    \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+  \begin{parts}
+  \part The value of register B after program execution is.
+  \begin{choices}
+    \choice         the number of 0 bits in A0
+    \CorrectChoice  the number of 1 bits in A0
+    \choice         A0
+    \choice         8
+  \end{choices}
+
+  \part Which of the following instructions when inserted at location X will ensure that the value of register A after program execution is the same as its initial value ?
+  \begin{choices}
+    \CorrectChoice  RRC A, \#
+    \choice         NOP ; no operation
+    \choice         LRC A, \# 1 ; left rotate A through carry flag by one bit
+    \choice         ADD A, \# 1
+  \end{choices}
+
+  \end{parts}
+
+\end{questyle}
+
+
+\begin{questyle}
+  \question  Consider the following program segment for a hypothetical CPU having three
+             user registers R1, R2 and R3.  (GATE-2004)
+        \lstinputlisting[language={[x86masm]Assembler}, firstline=50, lastline=55]{cso_programs.c}
+
+  \begin{parts}
+  \part Consider that the memory is byte addressable with size 32 bits, and the program has
+        been loaded starting from memory location 1000 (decimal). If an interrupt occurs
+        while the CPU has been halted after executing the HALT instruction, the return
+        address (in decimal) saved in the stack will be.
+  \begin{oneparchoices}
+    \choice         1007
+    \choice         1020
+    \choice         1024
+    \CorrectChoice  1028
+  \end{oneparchoices} \\
+  Hint : PC is saved in the stack when interupt occurs.\\
+  Hint : Address of HALT instruction(5) = B + Size\_of(I1+I2+I3+I4) = 1000 + (6x4) = 1024 \\
+  Hint : Address of next instruction after HALT = 1024 + (1x4) = 1028
+
+  \part Let the clock cycles required for various operations be as follows: Register to/ from
+        memory transfer: 3 clock cycles ADD with both operands in register : 1 clock cycle Instruction
+        fetch and decode : 2 clock cycles per word The total number of clock cycles required to
+        execute the program is.
+
+  \begin{oneparchoices}
+    \choice         29
+    \CorrectChoice  24
+    \choice         23
+    \choice         20
+  \end{oneparchoices} \\
+  Hint : (IF+ID+Ex+MA) = I1(2+2+0+3) \; I2(1+1+0+3) \; I3(1+1+1+0) \; I4(2+2+0+3) \; (1+1+0+0)
+
+  \end{parts}
+
+\end{questyle}
+
+
 \begin{comment}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
 
 \begin{questyle}
   \question  zzz  (GATE-zzz)
