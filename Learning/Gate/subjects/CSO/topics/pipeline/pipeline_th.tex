@@ -178,6 +178,9 @@
         \item Solution: Introduce bubble(Stalling).
         \item Solution: Prediction.
         \item Solution: Dynamic Branch Prediction : Branch Table Buffer
+        \item Solution: Delayed branching, a suitable instruction is placed below the conditional
+              branch instruction which will be executed irrespective of whether branch is taken or
+              not and won’t affect the program behavior.
         \item Branch penalty = total no of stalls.
         \item If the target address is present after the kth stage, then there will be (k – 1) stalls.
         \item Total number of stalls = Branch frequency * Branch Penalty
