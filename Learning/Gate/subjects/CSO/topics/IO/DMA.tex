@@ -1,3 +1,30 @@
 
-\centerline{\textbf{ \LARGE }}
+\centerline{\textbf{ \LARGE DMA }}
 
+\begin{questyle}
+  \question  On a non-pipelined sequential processor, a program segment, which is a part of the
+             interrupt service routine, is given to transfer 500 bytes from an I/O device to memory.  (GATE-2011)
+              \begin{lstlisting}
+                    Initialize the address register
+                    Initialize the count to 500
+              LOOP: Load a byte from device
+                    Store in memory at address given by address register
+                    Increment the address register
+                    Decrement the count
+                    If count != 0 go to LOOP
+              \end{lstlisting}
+              Assume that each statement in this program is equivalent to machine instruction which
+              takes one clock cycle to execute if it is a non-load/store instruction. The load-store
+              instructions take two clock cycles to execute. The designer of the system also has an
+              alternate approach of using DMA controller to implement the same transfer. The DMA
+              controller requires 20 clock cycles for initialization and other overheads. Each DMA
+              transfer cycle takes two clock cycles to transfer one byte of data from the device to
+              the memory. What is the approximate speedup when the DMA controller based design is
+              used in place of the interrupt driven program based input-output?
+  \begin{choices}
+    \CorrectChoice  3.4
+    \choice         4.4
+    \choice         5.1
+    \choice         6.7
+  \end{choices}
+\end{questyle}

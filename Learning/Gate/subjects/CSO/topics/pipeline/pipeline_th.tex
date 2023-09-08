@@ -14,9 +14,8 @@
         \item This will load MDR with the contents of memory.
     \end{enumerate}
 
-    \newpage
-
-    \item Formulas\\
+    \begin{minipage}{\linewidth}
+    \item Formulas
     \begin{myTableStyle} \begin{tabular}{ |m{6cm}|m{3cm}|m{5cm}| } \hline
         Stages                      &  k                & \\ \hline
         instructions                &  n                & \\ \hline
@@ -31,8 +30,11 @@
         Average instrction execution time &  1 cycle + BPI & BPI=bubbles\_per\_instruction  \\ \hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
+    \item Time = T \quad No of Instructions = I \quad Cycles per instruction = CPI \quad Cycle Time = CT = 1/F
+             \\ T = I x CPI x CT  \qquad  T = {\Large \( \frac{I * CPI}{F}  \) }
+
     \item Consider following instructions in a 5 stage pipeline. Number of cycles taken to execute without
-           operator forwarding. Total stages(K)=5, Total instruction(n)=5   \\
+           operator forwarding. Total stages(K)=5, Total instruction(n)=5
            \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{2cm}|m{2cm}|m{3cm}| } \hline
               Instruction &         & Type      & Bubbles(b)& Cycles Taken  \\ \hline
               I1 &  R3 = R4 + R2    & R type    & 0         &   5(5+0) \\ \hline
@@ -42,9 +44,11 @@
               I5 &  M[addr] = R4    & I type    & 2         &   3(1+2) \\ \hline
               Total Cycles &  k + (n-1) + b     & k=5, n=5  & b=6 &   15(5 + 4 + 6)\\ \hline
            \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \end{minipage}
 
+    \begin{minipage}{\linewidth}
     \item Consider following instructions in a 5 stage pipeline. Total stages(K)=5, Total instruction(n)=3
-          Mutiplication takes 2, division takes 3 and addition takes 1 cycles in execution stage\\
+          Mutiplication takes 2, division takes 3 and addition takes 1 cycles in execution stage
            \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{2cm}|m{3cm}|m{3cm}| } \hline
               Instruction &         & Type      & Extra Cycles(c)   & Cycles Taken  \\ \hline
               I1 &  R1 = R2 + R3    & R type    & 0                 &   5(5+0) \\ \hline
@@ -53,7 +57,6 @@
               Total Cycles &  k + (n-1) + c     & k=5, n=3  & c=3   &   10(5 + 2 + 3)\\ \hline
            \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
-    \newpage
 
     \item Consider a 4 stage pipeline processor.   The number of cycles needed by the four
              instructions I1, I2, I3, I4 in stages S1, S2, S3, S4 is shown below. What is the number of cycles needed to execute the loop - for(i=1 to 2) {I1; I2; I3; I4;}?
@@ -80,7 +83,9 @@
                 I4 & 12 & 16 & 18  & 23  \\ \hline
               \end{tabular} \end{myTableStyle} \vspace{0.08in}
 
-    \newpage
+    \end{minipage}
+
+    \begin{minipage}{\linewidth}
     \item Micro-operations
     \begin{enumerate}
         \item operations performed on data stored in registers are called Micro-operations.
@@ -89,6 +94,7 @@
         \item Common type of micro-operation : inter-register transfer, Arithmetic operations, Logic operations
               shift operation.
     \end{enumerate}
+    \end{minipage}
 
     \item Important Registers : PC, MAR, MDR(MBR), AC, Named Registers(\(R_i\)), Pipeline Local Registers
     \item Add R1 [Mem] : R1 = R1 + [Mem] \\

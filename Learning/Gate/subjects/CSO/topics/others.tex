@@ -89,275 +89,67 @@
 \begin{questyle}
   \question  A processor has 40 distinct instructions and 24 general purpose registers.
              A 32-bit instruction word has an opcode, two register operands and an immediate operand.
-             The number of bits available for the immediate operand field is \fillin[16] (GATE-2016\_Set\_2) \\
-             Hint : \qquad 5-bits to index 24 register \qquad 6-bis to index 40 opcode \\
-             HInt : \qquad Instruction(32 bit) = opcode(6) + R1(5) + R2(5) + Immediate Operand(x)
-\end{questyle}
-
-\begin{comment}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+             The number of bits available for the immediate operand field is \fillin[16] (GATE-2016\_Set\_2)
+             \\ Hint : \qquad 5-bits to index 24 register \qquad 6-bis to index 40 opcode
+             \\ HInt : \qquad Instruction(32 bit) = opcode(6) + R1(5) + R2(5) + Immediate Operand(x)
 \end{questyle}
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \question  A machine has a 32-bit architecture, with 1-word long instructions. It has 64 registers,
+             each of which is 32 bits long. It needs to support 45 instructions, which have an immediate
+             operand in addition to two register operands. Assuming that the immediate operand is an
+             unsigned integer, the maximum value of the immediate operand is
+             \fillin[16383 \( \boldsymbol {(2^{14} -1)} \)] (GATE-2014\_Set\_1)
+             \\ Hint : \qquad 6-bits to index 64 register \qquad 6-bis to index 45 opcode(instructions)
+             \\ HInt : \qquad Instruction(32 bit) = opcode(6) + R1(6) + R2(6) + Immediate Operand(x)
 \end{questyle}
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \question  Consider a processor with 64 registers and an instruction set of size twelve. Each
+             instruction has five distinct fields, namely, opcode, two source register identifiers,
+             one destination register identifier, and a twelve-bit immediate value. Each instruction
+             must be stored in memory in a byte-aligned fashion. If a program has 100 instructions,
+             the amount of memory (in bytes) consumed by the program text is \fillin[500] (GATE-2016\_Set\_2)
+             \\ Hint : \quad 6-bits to index 64 register \qquad 4-bis to index 12 opcode(instructions)
+             \\ Hint : \quad Instruction(34 bit) = opcode(4) + R1(6) + R2(6) + R3(6) + Immediate Operand(12)
+             \\ Hint : \quad Total size need to store one instruction in byte-aligned fashion = 40(\(\thickapprox\)34) = 5 bytes.
+             \\ Hint : \quad Size to store 100 instructions = 5 x 100 = 500 Bytes
 \end{questyle}
+
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \question  Consider two processors P1 and P2 executing the same instruction set. Assume that under
+             identical conditions, for the same input, a program running on P2 takes 25\% less time but
+             incurs 20\% more CPI (clock cycles per instruction) as compared to the program
+             running on P1. If the clock frequency of P1 is 1GHz, then the clock frequency of
+             P2 (in GHz) is \fillin[1.6]  (GATE-2014\_Set\_1)
+             \\ Time = T \quad No of Instructions = I \quad Cycles per instruction = CPI \quad Cycle Time = CT = 1/F
+             \\ T = I x CPI x CT  \qquad  T = { \Large \( \frac{I * CPI}{F}  \) }
 \end{questyle}
+
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
+  \question  Consider a processor with byte-addressable memory. Assume that all registers,
+             including Program Counter (PC) and Program Status Word (PSW), are of size 2 bytes. A
+             stack in the main memory is implemented from memory location (0100)16 and it grows
+             upward. The stack pointer (SP) points to the top element of the stack. The current
+             value of SP is (016E)16. The CALL instruction is of two words, the first word is
+             the op-code and the second word is the starting address of the subroutine
+             (one word = 2 bytes). The CALL instruction is implemented as follows: (GATE-2015\_Set\_2)
+             \\ \(\rightarrow\) Store the current value of PC in the stack.
+             \\ \(\rightarrow\) Store the value of PSW register in the stack.
+             \\ \(\rightarrow\) Load the starting address of the subroutine in PC. \\
+             The content of PC just before the fetch of a CALL instruction is (5FA0)16. After
+             execution of the CALL instruction, the value of the stack pointer is
 
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \begin{oneparchoices}
+    \choice         016A
+    \choice         016C
+    \choice         0170
+    \CorrectChoice  0172
+  \end{oneparchoices}
+  \\ Hint : Call instruction will push contents of PC(2 Bytes) and PSW(2 Bytes) to the stack.
+  \\ Hint : Memory is byte addressable. This will increase stack top by 4.
+
 \end{questyle}
 
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\end{comment}
