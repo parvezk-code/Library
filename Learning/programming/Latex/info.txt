@@ -4,7 +4,7 @@
 # comments           :  \begin{comment}      ...   \end{comment}
 # sections           :  section, subsection, subsubsection, paragraph, subparagraph
 # un-breakable block :  no page break, samepage, \parbox, \begin{minipage}{\linewidth} , \needspace
-# External tex files :  import(subimport), import{dir}{file}, input, include
+# External tex files :  \usepackage{subfiles}, import(subimport), import{dir}{file}, input, include
 # coding programming :  \begin{lstlisting}   ...   \end{lstlisting}
 # list               :  \begin{enumerate}    ...   \begin{enumerate}
 # table              :  tabular, (table, tblr), \usepackage{array}, \usepackage{tabularray}

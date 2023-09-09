@@ -66,34 +66,25 @@
   \end{oneparchoices}
 \end{questyle}
 
-\begin{comment}
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
+  \question  The microinstructions stored in the control memory of a processor have a width of 26 bits.
+             Each microinstruction is divided into three fields: a micro-operation field of 13 bits, a
+             next address field (X), and a MUX select field (Y). There are 8 status bits in the inputs
+             of the MUX.  How many bits are there in the X and Y fields, and what is the size of the
+             control memory in number of words? (GATE-2004)(SP – 1)
 
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+             \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
+                  \begin{center} \includegraphics[scale=0.4]{./images/control_memory.jpeg} \end{center}\\ \hline
+            \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+  \begin{oneparchoices}
+    \CorrectChoice  10, 3, 1024
+    \choice         8, 5, 256
+    \choice         5, 8, 2048
+    \choice         10, 3, 512
+  \end{oneparchoices}
+  \\Hint: \quad X + Y + 13 = 26
+  \\Hint: \quad Y = 3  \qquad 3 select bits are needed to select 8 i/p lines of MUX
+  \\Hint: \quad X = 10 \qquad Size of Control memory = \( \mathbf { 2^{10} } \) Words
 \end{questyle}
-
-\begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
-\end{questyle}
-
-\end{comment}
-
-
-
-

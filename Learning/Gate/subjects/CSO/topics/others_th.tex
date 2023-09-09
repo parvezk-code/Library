@@ -18,6 +18,18 @@
              \\ (b) 6-bis to index 40 opcode
              \\ (c) Instruction(32 bit) = opcode(6) + R1(5) + R2(5) + Immediate Operand(16)
 
+    \item Each instruction is 4 byte long. Location and content of PC.
+
+             \begin{myTableStyle} \begin{tabular}{ |m{2cm}|m{3cm}|m{2cm}|m{1cm}| } \hline
+                Instr. No. & Instruction  & location & PC\\ \hline
+                1 & add R2, R3, R4 & 0 - 3 & 4\\ \hline
+                2 & sub R5, R6, R7 & 4 - 7 & 8\\ \hline
+                3 & cmp R1, R9, R10 & 8 - 11 & 12\\ \hline
+                4 & beq R1, Offset & 12 - 15 & 16\\ \hline
+                next & & 16 - 19 & \\ \hline
+             \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+
     \item Microprocessor - 8085.
     \begin{enumerate}
         \item \( \overline{INTA} \)  is interupt acknowledgement signal. Whenever the microprocessor
@@ -39,7 +51,42 @@
 
     \end{enumerate}
 
-    \item CISC Vs RISC
+    \begin{minipage}{\linewidth}
+    \item Data Paths.
+          \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
+             \begin{center} \includegraphics[scale=0.2]{./images/data_path_02.jpeg} \end{center}\\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \begin{enumerate}
+      \item ALU has internal buses, registers, MAR, MDR, PC, IR.
+      \item MAR and MDR should be filled before doing any memory operation.
+      \item Operations performed in each cycle
+      \begin{enumerate}
+            \item \; MAR \(\leftarrow\) [GPR or PC]
+            \item \; MDR \(\leftarrow\) [GPR or  Memory]
+            \item \; [S,T] \(\leftarrow\) GPR
+            \item \; ALU operation
+            \item \; Memory Read/Write : Needs to fill MAR and MDR before memory operation.
+      \end{enumerate}
+      \item If bus size is 8-bits and Registers are of 16-bits, then data transfer between registers
+            will take two cycles. Each cycle will transfer 8-bits.
+    \end{enumerate}
+      \begin{myTableStyle} \begin{tabular}{ |m{2.5cm}|m{2.5cm}|m{2.1cm}|m{2cm}| } \hline
+         Instruction & Cycle-1 & Cycle-2 & Cycle-3  \\ \hline
+         R0=R0+R1 & S\(\leftarrow\)R0 & T\(\leftarrow\)R1
+                                      & \makecell[l]{ALU ADD \\ R0\(\leftarrow ALU_{out}\)} \\ \hline
+
+         R0=M[Addr] & MAR\(\leftarrow\)Addr & \makecell[l]{ Mem Read \\ MDR\(\leftarrow\)Mem }
+                                             & R0\(\leftarrow\)MDR \\ \hline
+
+
+         M[Addr]=R0 & MAR\(\leftarrow\)Addr & MDR\(\leftarrow\)R0
+                                                & Mem Write \\ \hline
+
+         \makecell[l]{R0=PC+1 \\ PC=M[PC]} & [S,MAR]\(\leftarrow\)PC
+                                           & \makecell[l]{ALU(S+1)\\ R0\(\leftarrow ALU_{out}\)\\ MDR\(\leftarrow\)Mem }
+                                           & PC\(\leftarrow\)MDR \\ \hline
+      \end{tabular} \end{myTableStyle} \vspace{0.08in}
+    \end{minipage}
 
     \item Control Unit design :
     \begin{enumerate}
@@ -70,12 +117,6 @@
           \end{tabular} \end{myTableStyle} \vspace{0.08in}
     \end{enumerate}
 
-    \item Data Paths.
-    \begin{enumerate}
-      \item ALU and Control Unit
-          \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
-             \begin{center} \includegraphics[scale=0.7]{./images/data_paths_02.jpeg} \end{center}\\ \hline
-          \end{tabular} \end{myTableStyle} \vspace{0.08in}
-    \end{enumerate}
+    \item CISC Vs RISC
 
 \end{enumerate}

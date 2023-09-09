@@ -2,7 +2,7 @@
 \usepackage{tabularray}   % for table and column width
 \usepackage{tabularx}
 % \usepackage{minted}     % for code in programming  -shell-escape
-\usepackage{makecell}     % table cell with multi line   makecell[l]{ ... }
+\usepackage{makecell}     % table cell with multi line   \makecell[l]{ ... }
 \usepackage{adjustbox}    % \adjustbox{valign=t}{ .. Value ..}   t, b, m
 
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}     % custom column : fixed width and centering
@@ -24,11 +24,18 @@
 
 \begin{comment}
 
-multiple row cell     :   \multirow{3}{Multiple row} & cell2 & cell3 \\
-multi column cell     :   \multicolumn{4}{|c|}{Country List} \\
+table cell with multi line  :   \makecell[l]{ ... }
 
-align images in cell  :  \begin{center}  Image   \end{center}
+multiple row cell           :   \multirow{3}{Multiple row} & cell2 & cell3 \\
 
-align tikz drawing    :   baseline=0 to fit picture in table cell.
+multi column cell           :   \multicolumn{4}{|c|}{Country List} \\
+
+align images in cell        :  \begin{center}  Image   \end{center}
+
+align tikz drawing          :   baseline=0 to fit picture in table cell.
+
+packages advanced tables    :   tabularx, booktabs, longtable
+
+package for lists           :   enumitems
 
 \end{comment}
