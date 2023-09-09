@@ -1,0 +1,36 @@
+
+\centerline{\textbf{ \LARGE Other CSO Topics}}
+
+\begin{enumerate}
+    \item Microprocessor - 8085.
+    \begin{enumerate}
+        \item \( \overline{INTA} \)  is interupt acknowledgement signal. Whenever the microprocessor
+              receives interrupt signal. It has to be acknowledged. This acknowledgement is done by
+              \( \overline{INTA} \).  Processor saves the address of next instruction into the STACK
+              and an interrupt service subroutine begins. CALL instruction saves procedure linking
+              information on the stack and branches to the procedure (called procedure) specified
+              with the destination (target) operand.
+
+        \item INTR is an interrupt request signal it's full form is Interrupt Request.
+
+        \item READY signal indicates that the device is ready to send or receive data.
+              If READY is low, then the CPU has to wait for READY to go high.
+
+        \item HOLD signal indicates that another master is requesting the use of the address and data buses.
+
+        \item HLDA (HOLD Acknowledge) - It indicates that the CPU has received the HOLD request and it will
+              relinquish the bus in the next clock cycle. HLDA is set to low after the HOLD signal is removed.
+
+    \end{enumerate}
+
+    \item CISC Vs RISC
+
+    \item Mirco-programming :
+    \begin{enumerate}
+      \item Types : Hard wired, horizontal, vertical.
+      \item Hard wired control involves only hardware and it is the fastest.
+      \item In horizontal microprogramming control signals are not encoded.
+      \item In vertical microprogramming signals are encoded to save memory. So, it is slower because
+            decoding of signals is not required.
+    \end{enumerate}
+\end{enumerate}
