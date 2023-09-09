@@ -8,6 +8,7 @@ sudo apt clean
 sudo apt autoclean
 sudo apt update
 
+sudo !!                             # run last command with sudo
 pdf2ps paper.pdf                    # Extract text from pdf.
 ps2ascii paper.ps > paper.txt       # Extract text from pdf.
 ssh-copy-id -i key usr@host         # copy SSH key to server. Avoids typing password for each login.
@@ -44,9 +45,11 @@ hostname -i                         # ip-address
 cat /proc/cpuinfo                   # CPU information:
 free -h                             # memory usage
 df -h                               # info about free and used space on mounted systems
-lshw                                # list hw config
+lshw  [-html, -short]               # list hw config
 lspci -tv                           # show pci devices
 lsusb -tv                           # show usb devices
+lscpu                               # show cpu info
+lsblk                               # show storage device info
 dmidecode                           # Show hardware information from the BIOS
 ssh -p port user@host               # Connect to host using a particular port
 scp [file] [usr@host:dir]           # copy a file to remote machine
