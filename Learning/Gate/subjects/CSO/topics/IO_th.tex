@@ -47,8 +47,25 @@
 
 \end{tikzpicture}
 
+    \item Memory mapped I/O and Isolated I/O \begin{verbatim} https://www.geeksforgeeks.org/memory-mapped-i-o-and-isolated-i-o/\end{verbatim}
 
-    \item zzz
-    \item zzz
-    \item zzz
+    \item DMA has a data count register and data buffer. When the buffer is full DMA will request CPU
+          to get controll of buses.
+
+    \item In DMA (cycle stealing) data production by IO and data transfer to memory goes in parallel.
+          IO device dont wait for data transfer to complete.
+        \begin{myTableStyle} \begin{tabular}{ |m{4cm}|m{4cm}|m{3cm}| } \hline
+            Time in programmed IO                       & \(\text{T}_{\text{1}}\)  &     \\ \hline
+            Data production time   & \(\text{T}_{\text{produce}}\) (1 word)  &   by IO   \\ \hline
+            Data transfer time     & \(\text{T}_{\text{transfer}}\) (1 word)  & to memory    \\ \hline
+            Interupt overhead                           & \(\text{T}_{\text{int}}\)  &     \\ \hline
+                                                        & Total Time & CPU Busy/Bocked \\ \hline
+            Programmed IO                               & \(\text{T}_{\text{1}}\) & \(\text{T}_{\text{1}}\) \\ \hline
+
+            Interupt Modes  & \(\text{T}_{\text{produce}}\) + \(\text{T}_{\text{transfer}}\) + \(\text{T}_{\text{int}}\)
+                            & \(\text{T}_{\text{transfer}}\) + \(\text{T}_{\text{int}}\) \\ \hline
+
+            DMA Cycle Stealing & \(\text{T}_{\text{produce}}\) & \(\text{T}_{\text{transfer}}\) \\ \hline
+        \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
 \end{enumerate}

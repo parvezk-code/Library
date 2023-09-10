@@ -2,46 +2,6 @@
 \centerline{\textbf{ \LARGE IO }}
 
 \begin{questyle}
-  \question  Start and stop bits do not contain any "information" but are used in serial communication for  (GATE-1992)
-
-  \begin{choices}
-    \choice         Error detection
-    \choice         Error correction
-    \CorrectChoice  Synchronization
-    \choice         Slowing down the communications.
-  \end{choices}
-\end{questyle}
-
-\begin{questyle}
-  \question  On a non-pipelined sequential processor, a program segment, which is a part of the
-             interrupt service routine, is given to transfer 500 bytes from an I/O device to memory.  (GATE-2011)
-              \begin{lstlisting}
-                    Initialize the address register
-                    Initialize the count to 500
-              LOOP: Load a byte from device
-                    Store in memory at address given by address register
-                    Increment the address register
-                    Decrement the count
-                    If count != 0 go to LOOP
-              \end{lstlisting}
-              Assume that each statement in this program is equivalent to machine instruction which
-              takes one clock cycle to execute if it is a non-load/store instruction. The load-store
-              instructions take two clock cycles to execute. The designer of the system also has an
-              alternate approach of using DMA controller to implement the same transfer. The DMA
-              controller requires 20 clock cycles for initialization and other overheads. Each DMA
-              transfer cycle takes two clock cycles to transfer one byte of data from the device to
-              the memory. What is the approximate speedup when the DMA controller based design is
-              used in place of the interrupt driven program based input-output?
-  \begin{choices}
-    \CorrectChoice  3.4
-    \choice         4.4
-    \choice         5.1
-    \choice         6.7
-  \end{choices}
-\end{questyle}
-
-
-\begin{questyle}
   \question  For the daisy chain scheme of connecting I/O devices, which of the following statement is true?  (GATE-1996)
 
   \begin{choices}
@@ -72,70 +32,96 @@
   \end{oneparchoices}
 \end{questyle}
 
-\begin{questyle}
-  \question  In serial data transmission, every byte of data is padded with a '0' in the beginning and
-             one or two '1' s at the end of byte because  (GATE-2002)
-
-  \begin{choices}
-    \CorrectChoice  Receiver is to be synchronized for byte reception
-    \choice         Receiver recovers lost ‘0’ and ‘1’s from these padded bits
-    \choice         Padded bits are useful in parity computation
-    \choice         None of these
-  \end{choices}
-\end{questyle}
-
-\begin{comment}
-
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
+  \question  Normally user programs are prevented from handling I/O directly by I/O instructions in them.
+  For CPUs having explicit I/O instructions, such I/O protection is ensured by having the I/O instructions
+  privileged. In a CPU with memory mapped I/O, there is no explicit I/O instruction. Which one of the
+  following is true for a CPU with memory mapped I/O?  (GATE-2005)
 
   \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
+    \CorrectChoice  I/O protection is ensured by operating system routine (s)
+    \choice         I/O protection is ensured by a hardware trap
+    \choice         I/O protection is ensured during system configuration
+    \choice         I/O protection is not possible
   \end{choices}
 \end{questyle}
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \question  On a non-pipelined sequential processor, a program segment, which is a part of the
+             interrupt service routine, is given to transfer 500 bytes from an I/O device to memory.  (GATE-2011)
+              \begin{lstlisting}
+                    Initialize the address register
+                    Initialize the count to 500
+              LOOP: Load a byte from device
+                    Store in memory at address given by address register
+                    Increment the address register
+                    Decrement the count
+                    If count != 0 go to LOOP
+              \end{lstlisting}
+              Assume that each statement in this program is equivalent to machine instruction which
+              takes one clock cycle to execute if it is a non-load/store instruction. The load-store
+              instructions take two clock cycles to execute. The designer of the system also has an
+              alternate approach of using DMA controller to implement the same transfer. The DMA
+              controller requires 20 clock cycles for initialization and other overheads. Each DMA
+              transfer cycle takes two clock cycles to transfer one byte of data from the device to
+              the memory. What is the approximate speedup when the DMA controller based design is
+              used in place of the interrupt driven program based input-output?
+  \begin{oneparchoices}
+    \CorrectChoice  3.4
+    \choice         4.4
+    \choice         5.1
+    \choice         6.7
+  \end{oneparchoices}
 \end{questyle}
+
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
-
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \question  A device with data transfer rate 10 KB/sec is connected to a CPU. Data is
+  transferred byte-wise. Let the interrupt overhead be 4 microsec. The byte transfer time
+  between the device interface register and CPU or memory is negligible. What is the
+  minimum performance gain of operating the device under interrupt mode over operating
+  it under program controlled mode?  (GATE-2005)
+  \begin{oneparchoices}
+    \choice         15
+    \choice         25
+    \choice         35
+    \CorrectChoice  45
+  \end{oneparchoices}
 \end{questyle}
+
 
 \begin{questyle}
-  \question  zzz  (GATE-zzz)
+  \question  Consider a disk drive with the specifications- 16 surfaces, 512 tracks/surface,
+  512 sectors/track, 1 KB/sector, rotation speed 3000 rpm. The disk is operated in cycle
+  stealing mode whereby whenever one byte word is ready it is sent to memory; similarly,
+  for writing, the disk interface reads a 4 byte word from the memory in each DMA cycle.
+  Memory cycle time is 40 nsec. The maximum percentage of time that the CPU gets blocked
+  during DMA operation is: (GATE-2005)
 
-  \begin{choices}
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-    \choice         zzz
-\CorrectChoice
-  \end{choices}
+  \begin{oneparchoices}
+    \choice         10
+    \CorrectChoice  25
+    \choice         40
+    \choice         50
+  \end{oneparchoices}
+\end{questyle}
+  \\ Disk reads one full track(512*1 KB) in one rotation(60/3000 sec)
+  \\ Time taken to produce 4 bytes by Disk = 153 ns \(\thickapprox\) 4 cycles
+  \\ Time to transfer 4 bytes to memory    = 1 cycle
+  \\ For DMA cycle stealing, data production and transfer goes in parallel. Ans = 1/4 = 25\%
+
+
+\begin{questyle}
+  \question  The size of the data count register of a DMA controller is 16 bits. The processor needs
+  to transfer a file of 29,154 kilobytes from disk to main memory. The memory is byte addressable.
+  The minimum number of times the DMA controller needs to get the control of the system bus
+  from the processor to transfer the file from the disk to main memory is \fillin[456] (GATE-2016\_Set\_1)
+  \\ Hint: DMA buffer size = \( \text{2}^\text{16} \) = 64 KB
+  \\ Hint: File Size = 29154 KB \qquad No of time DMA need buses = 29154/64 = 456
 \end{questyle}
 
-\end{comment}
+
 
 
 
