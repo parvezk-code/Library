@@ -5,3 +5,6 @@
 *.log
 *.pdf
 *.gz
+
+# Allow
+!help/tikzpgfmanual.pdf

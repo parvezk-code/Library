@@ -74,36 +74,26 @@ Array/Matrix                :   https://tikz.dev/tikz-matrices
 draw in table               :   baseline=0 to fit picture in table cell.
 package for vectorgraphics  :   PGF, PGFPlots
 
-\end{comment}
 
+positioning         :   https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/
 
+\begin{tikzpicture}[ baseline=0, node distance=1.5cm]
 
-\begin{comment}
+path                :   --  -|  |-
+cordinate           :   ++(x, y)    ++(2,0)     ++(-2, 0)
+Node                :   \node (lable) at (y,x)  [ params ] {text}
+Node params         :   xshift=-1cm, yshift=0.2cm, below left=2cm, of=node, draw=blue!60
+draw(line,arrow)    :   (node/cordinate)    path    (node/cordinate)
+
+\draw [flowchart-arrow]  node1 path1 (node/cordinate) path2 (node/cordinate) path3 (node/cordinate)
+
 
 arrow from bottom to up taking left turn : draw [flowchart-arrow] (bottomNode.west) -- +(-2,0) |- (topNode.west);
+\draw (0,0) -- ++(1,0) -- ++(0,1) -- ++(-1,0) -- cycle;
 
-    \begin{center} \begin{tikzpicture}[ baseline=0, node distance=1.5cm]
-        \node (start) [flowchart-start] {P - Q};
-        \node (S1) [flowchart-process, below of=start] { Q1 = 1's complement of Q };
-        \node (S2) [flowchart-process, below of=S1] { R = P + Q1 };
-        \node (S3) [flowchart-decision, below of=S2, yshift=-0.5cm] { Carry? };xx
-        \node (S4) [flowchart-start, below left=2cm of S3] { Result = R + carry};
-        \node (S5) [flowchart-start, below right=2cm of S3] {Result = R1};
-
-        \draw [flowchart-arrow] (start) -- (S1); \draw [flowchart-arrow] (S1) -- (S2); \draw [flowchart-arrow] (S2) -- (S3);
-        \draw [flowchart-arrow] (S3.west) -| node[right of= S3, xshift=-1cm, yshift=0.2cm] {Yes} (S4.north);
-        \draw [flowchart-arrow] (S3.east) -| node[right of= S3, xshift=-3cm, yshift=0.2cm] {No} (S5.north);
-
-    \end{tikzpicture} \end{center}
-
-
-    \begin{center} \begin{tikzpicture}[ baseline=0]
-    \matrix [draw=white,column sep=0cm]
-    {
-        \node[draw=black!60] {8}; & \node[draw=black!60]{1}; & \node[draw=black!60] {6}; \\
-        \node[draw=blue!60] {8}; & \node[draw=blue!60]{1}; & \node[draw=blue!60] {6}; \\
-    };
-    \end{tikzpicture} \end{center}
-
+\node (N1) [flowchart-start] {NodeText};
+\node (N2) [flowchart-process, below of=N1] { NodeText };
+\node (N2) [flowchart-process, below left=2cm of=N1] { NodeText };
+intermediate node   :   node [right of= S3, xshift=-1cm, yshift=0.2cm] { NodeText }
 
 \end{comment}

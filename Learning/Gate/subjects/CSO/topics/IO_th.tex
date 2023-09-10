@@ -3,21 +3,36 @@
 
 \begin{tikzpicture}[node distance=2cm]
 
-    \node (ProStart) [flowchart-start] {Start};
+    \node (ProStart)  [flowchart-start] {Start};
     \node (ProIOReady) [flowchart-process, below of=ProStart] {Busy Wait for IO Ready \\ CPU to IO};
     \node (ProWordReady) [flowchart-process, below of=ProIOReady] {Busy Wait for IO Word \\ CPU to IO};
     \node (ProREAD) [flowchart-process, below of=ProWordReady] {Read Word};
     \node (ProWrite) [flowchart-process, below of=ProREAD] {Write Word to Memory};
     \node (ProDone) [flowchart-decision, below of=ProWrite] {Finish};
     \node (ProStop) [flowchart-start, below of=ProDone] {Stop};
-
     \draw [flowchart-arrow] (ProStart) -- (ProIOReady);
     \draw [flowchart-arrow] (ProIOReady) -- (ProWordReady);
     \draw [flowchart-arrow] (ProWordReady) -- (ProREAD);
     \draw [flowchart-arrow] (ProREAD) -- (ProWrite);
     \draw [flowchart-arrow] (ProWrite) -- (ProDone);
-    \draw [flowchart-arrow] (ProDone.west) -- +(-2,0) |- (ProStart.west);
+    \draw [flowchart-arrow] (ProDone.west) -- +(-1,0) |- (ProStart.west);
     \draw [flowchart-arrow] (ProDone) -- (ProStop);
+
+
+    \node (IntStart) at (6,0)  [flowchart-start] {Start};
+    \node (IntIOReady) [flowchart-process, below of=IntStart] {Busy Wait for IO Ready \\ CPU to IO};
+    \node (IntWordReady) [flowchart-process, below of=IntIOReady] {Busy Wait for IO Word \\ CPU to IO};
+    \node (IntREAD) [flowchart-process, below of=IntWordReady] {Read Word};
+    \node (IntWrite) [flowchart-process, below of=IntREAD] {Write Word to Memory};
+    \node (IntDone) [flowchart-decision, below of=IntWrite] {Finish};
+    \node (IntStop) [flowchart-start, below of=IntDone] {Stop};
+    \draw [flowchart-arrow] (IntStart) -- (IntIOReady);
+    \draw [flowchart-arrow] (IntIOReady) -- (IntWordReady);
+    \draw [flowchart-arrow] (IntWordReady) -- (IntREAD);
+    \draw [flowchart-arrow] (IntREAD) -- (IntWrite);
+    \draw [flowchart-arrow] (IntWrite) -- (IntDone);
+    \draw [flowchart-arrow] (IntDone.west) -- +(-1,0) |- (IntStart.west);
+    \draw [flowchart-arrow] (IntDone) -- (IntStop);
 
 
 \end{tikzpicture}
