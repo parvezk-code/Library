@@ -1,9 +1,12 @@
 
 \centerline{\textbf{ \LARGE IO }}
 
+\begin{enumerate}
+    \item Modes of IO : Programmed, Interupt, DMA
+
 \begin{tikzpicture}[node distance=2cm]
 
-    \node (ProStart)  [flowchart-start] {Start};
+    \node (ProStart)  [flowchart-start] {Start Programmed};
     \node (ProIOReady) [flowchart-process, below of=ProStart] {Busy Wait for IO Ready \\ CPU to IO};
     \node (ProWordReady) [flowchart-process, below of=ProIOReady] {Busy Wait for IO Word \\ CPU to IO};
     \node (ProREAD) [flowchart-process, below of=ProWordReady] {Read Word};
@@ -19,20 +22,33 @@
     \draw [flowchart-arrow] (ProDone) -- (ProStop);
 
 
-    \node (IntStart) at (6,0)  [flowchart-start] {Start};
-    \node (IntIOReady) [flowchart-process, below of=IntStart] {Busy Wait for IO Ready \\ CPU to IO};
+    \node (IntStart) at (5,0)  [flowchart-start] {Start Interupt};
+    \node (IntIOReady) [flowchart-process, below of=IntStart] {Send Read command \\ CPU to IO};
     \node (IntWordReady) [flowchart-process, below of=IntIOReady] {Busy Wait for IO Word \\ CPU to IO};
     \node (IntREAD) [flowchart-process, below of=IntWordReady] {Read Word};
     \node (IntWrite) [flowchart-process, below of=IntREAD] {Write Word to Memory};
     \node (IntDone) [flowchart-decision, below of=IntWrite] {Finish};
     \node (IntStop) [flowchart-start, below of=IntDone] {Stop};
     \draw [flowchart-arrow] (IntStart) -- (IntIOReady);
-    \draw [flowchart-arrow] (IntIOReady) -- (IntWordReady);
+    \draw [flowchart-arrow] (IntIOReady.south) -- ++(0,-0.5) -- ++(3,0) node[midway,above] {Do something};
+    \draw [flowchart-arrow] (IntWordReady)  ++(4,0) --  (IntWordReady) node[midway,above] {Interupt} node[midway,below] {IO Ready};
     \draw [flowchart-arrow] (IntWordReady) -- (IntREAD);
     \draw [flowchart-arrow] (IntREAD) -- (IntWrite);
     \draw [flowchart-arrow] (IntWrite) -- (IntDone);
     \draw [flowchart-arrow] (IntDone.west) -- +(-1,0) |- (IntStart.west);
     \draw [flowchart-arrow] (IntDone) -- (IntStop);
 
+    \node (DMAStart) at (11.5,0)  [flowchart-start] {Start DMA};
+    \node (DMAReady) [flowchart-process, below of=DMAStart] {Send Read Block Cmd \\ CPU to DMA};
+    \node (DMAFinish) [flowchart-process, below of=DMAReady] {Read DMA Status\\ CPU to DMA};
+    \draw [flowchart-arrow] (DMAStart) -- (DMAReady);
+    \draw [flowchart-arrow] (DMAReady.south) -- ++(0,-0.5) -- ++(3,0) node[midway,above] {Do something};
+    \draw [flowchart-arrow] (DMAFinish)  ++(4,0) --  (DMAFinish) node[midway,above] {Interupt} node[midway,below] {DMA Done};
 
 \end{tikzpicture}
+
+
+    \item zzz
+    \item zzz
+    \item zzz
+\end{enumerate}
