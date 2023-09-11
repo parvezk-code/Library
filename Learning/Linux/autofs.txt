@@ -1,9 +1,9 @@
 
 Autofs two files:
-    # master map    :   [/a1    map-file    options ]    (/etc/auto.master)
-    # map file      :   [/c2    options     host:dir]    (/etc/auto.xxxx)
+    # master map    :   [/baseDir     map-file    options ]    (/etc/auto.master)
+    # map file      :   [c2          options     host:dir]    (/etc/auto.xxxx)
 
-    # map created   :   (/a1/c2)  <--- (host:dir)
+    # map created   :   (/baseDir/c2)  <--- (host:dir)
     # dynamic dir   :   dir d2 will be dynamically created.
 
 
@@ -11,6 +11,7 @@ Autofs two files:
 
 # install on local mc       :   sudo apt install austofs
 # start service             :   sudo /etc/init.d/autofs start
+# check status              :   sudo systemctl status austofs
 # auto start service        :   sudo systemctl enable autofs.service
 # no passwd ssh(fuse)       :   copy ssh key using command(sh-copy-id)
 
@@ -21,8 +22,10 @@ types of mapping            :   Direct and Indirect Mapping
 master map fuse :   [/home/newuser  map-file        gid=1000,uid=1000,--ghost,--timeout=30 ]
                                                     remote_gid, remote_uid
 
-map file nfs    :   [/zdata         -fstype=nfs                             host:dir]
-map file fuse   :   [/zdata         -fstype=fuse,rw,nodev,nonempty,         :sshfs\#usr@host\:dir]
+map file nfs    :   [zdata         -fstype=nfs                             host:dir]
+map file nfs    :   [zdata         -fstype=nfs4                            host:dir]
+map file nfs    :   [zdata         -fstype=nfs4,rw                         host:dir]
+map file fuse   :   [zdata         -fstype=fuse,rw,nodev,nonempty,         :sshfs\#usr@host\:dir]
                                     noatime,allow_other,max_read=65536
 
 
