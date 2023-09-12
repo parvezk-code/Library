@@ -1,0 +1,44 @@
+
+Nfs:
+    #   /etc/samba/smb.conf
+    #
+
+# install on server mc          :   sudo apt install samba
+# check status                  :   sudo systemctl status smbd
+# stop nfs server               :   sudo systemctl stop smbd
+# Backupconfig file             :   sudo co /etc/samba/smb.conf    /etc/samba/smb.conf.bkp
+
+# Create group                  :   sudo groupadd --system smbgroup
+# Create user                   :   sudo useradd --system --no-create-home --group smbgroup -s /bin/false smbuser
+# create dir to share           :   sudo mkdir -p /share/public_files
+# Change ownership              :   sudo    chown  -R   smbuser:smbgroup      /share
+# Change permissions            :   sudo    chmod  -R   g+w                   /share
+
+# edit /etc/samba/smb.conf file :
+# edit /etc/samba/shares.conf   :
+
+
+
+
+# /etc/samba/smb.conf
+                            [global]
+                            server string = File Server
+                            workgroup = LLTV
+                            security = user
+                                map to guest = Bad User
+                            name resolve order = bcast host
+                            include = /etc/samba/shares.conf
+
+# /etc/samba/shares.conf
+                            [Public Files]
+                            path = /share/public_files
+                            force user = smbuser
+                            force group = smbgroup
+                            create mask = 0664
+                            force create mode = 0664
+                            directory mask = 0775
+                            force directory mode = 0775
+                            public = yes
+                            writable = yes
+
+
