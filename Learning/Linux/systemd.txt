@@ -1,0 +1,21 @@
+
+# Systemd useful directories    :   /etc/systemd/system, /run/systemd/system, /lib/systemd/system, usr/lib/systemd/system
+# Systemd manages units         :   services, timers, mount, automounts, umount, socket, target
+# Status Command                :   sudo systemctl status   [service_name]
+# Start Command                 :   sudo systemctl start    [service_name]
+# Stop Command                  :   sudo systemctl stop     [service_name]
+# Restart Command               :   sudo systemctl restart  [service_name]
+# Enable Command                :   sudo systemctl enable   [service_name]
+# Edit Command                  :   sudo systemctl edit     [service_name]
+
+
+# list services                 :   sudo systemctl list-unti-files --type=service
+# perform reload                :   sudo systemctl daemon-reload
+
+
+
+# Links
+    -- https://www.youtube.com/watch?v=Kzpm-rGAXos
+    -- https://www.youtube.com/watch?v=5JVBpXiYMKo
+    -- https://www.youtube.com/watch?v=n6BuUgkZ5T0
+
