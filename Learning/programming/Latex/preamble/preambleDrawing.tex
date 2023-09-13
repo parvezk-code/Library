@@ -1,9 +1,5 @@
-% https://tikz.dev/tikz-arrows
-% https://tikz.net/contents/chapter-03-drawing-positioning-and-aligning-nodes/
-
 \usepackage{tikz}
-\usetikzlibrary{positioning, tikzmark, calc, shapes.geometric, arrows}
-% \usetikzlibrary{positioning,tikzmark,calc,arrows,shapes,backgrounds,fit}
+\usetikzlibrary{positioning, tikzmark, calc, shapes.geometric, arrows}  % shapes,backgrounds,fit
 
 \newenvironment{myTree}
 {
@@ -55,39 +51,49 @@
 
 }
 
+\tikzstyle{flowchart-arrow} = [thick,->,>=stealth]
+
 \tikzstyle{roundnode} = [rectangle, draw=green!60, fill=green!5, very thick, minimum size=7mm]
 
 \tikzstyle{squarednode} = [rectangle, draw=red!60, fill=red!5, very thick, minimum size=7mm]
-
-\tikzstyle{flowchart-arrow} = [thick,->,>=stealth]
 
 \tikzstyle{flowchart-start} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
 
 \tikzstyle{flowchart-io} = [trapezium, trapezium stretches=true, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
 
-\tikzstyle{flowchart-process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=6cm, draw=black, fill=orange!30]
+\tikzstyle{flowchart-process} = [rectangle, minimum width=2cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=orange!30]
 
 \tikzstyle{flowchart-decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
 
 
-
-
-
-
 \begin{comment}
 
-    \begin{center} \begin{tikzpicture}[node distance=1.5cm]
-        \node (start) [flowchart-start] {P - Q};
-        \node (S1) [flowchart-process, below of=start] { Q1 = 1's complement of Q };
-        \node (S2) [flowchart-process, below of=S1] { R = P + Q1 };
-        \node (S3) [flowchart-decision, below of=S2, yshift=-0.5cm] { Carry? };xx
-        \node (S4) [flowchart-start, below left=2cm of S3] { Result = R + carry};
-        \node (S5) [flowchart-start, below right=2cm of S3] {Result = R1};
+Arrows                      :   https://tikz.dev/tikz-arrows
+Node alignment              :   https://tikz.net/contents/chapter-03-drawing-positioning-and-aligning-nodes/
+Array/Matrix                :   https://tikz.dev/tikz-matrices
+draw in table               :   baseline=0 to fit picture in table cell.
+package for vectorgraphics  :   PGF, PGFPlots
 
-        \draw [flowchart-arrow] (start) -- (S1); \draw [flowchart-arrow] (S1) -- (S2); \draw [flowchart-arrow] (S2) -- (S3);
-        \draw [flowchart-arrow] (S3.west) -| node[right of= S3, xshift=-1cm, yshift=0.2cm] {Yes} (S4.north);
-        \draw [flowchart-arrow] (S3.east) -| node[right of= S3, xshift=-3cm, yshift=0.2cm] {No} (S5.north);
 
-    \end{tikzpicture} \end{center}
+positioning         :   https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/
+
+\begin{tikzpicture}[ baseline=0, node distance=1.5cm]
+
+path                :   --  -|  |-
+cordinate           :   ++(x, y)    ++(2,0)     ++(-2, 0)
+Node                :   \node (lable) at (y,x)  [ params ] {text}
+Node params         :   xshift=-1cm, yshift=0.2cm, below left=2cm, of=node, draw=blue!60
+draw(line,arrow)    :   (node/cordinate)    path    (node/cordinate)
+
+\draw [flowchart-arrow]  node1 path1 (node/cordinate) path2 (node/cordinate) path3 (node/cordinate)
+
+
+arrow from bottom to up taking left turn : draw [flowchart-arrow] (bottomNode.west) -- +(-2,0) |- (topNode.west);
+\draw (0,0) -- ++(1,0) -- ++(0,1) -- ++(-1,0) -- cycle;
+
+\node (N1) [flowchart-start] {NodeText};
+\node (N2) [flowchart-process, below of=N1] { NodeText };
+\node (N2) [flowchart-process, below left=2cm of=N1] { NodeText };
+intermediate node   :   node [right of= S3, xshift=-1cm, yshift=0.2cm] { NodeText }
 
 \end{comment}
