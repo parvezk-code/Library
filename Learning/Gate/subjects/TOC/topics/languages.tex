@@ -4,22 +4,28 @@
 \begin{enumerate}
     \item Languages(L)= \{s: string\} \(\sum\) = \{a,b\}
 
-    \begin{myTableStyle} \begin{tabular}{ |m{8cm}|m{2cm}| } \hline
-        s has eqaul a's and b's &  CFL \\ \hline
-        s = \( \mathbf { \text{a}^n \text{b}^n } \) & CFL  \\ \hline
-        s has more a's than b's &  CFL \\ \hline
-        s = \( \mathbf { \text{a}^n \text{b}^m } \) \quad n,m \textgreater 0 &  Regular \\ \hline
-        numbers(1, 2, 4 . . . \(2^n\) ) written in binary &  Regular \\ \hline
-        numbers(1, 2, 4 . . . \(2^n\) ) written in unary &   \\ \hline
-        \( \mathbf{\text{a}^\text{n}\text{b}\text{a}^\text{n}} \) & CFL\\ \hline
-         \(   \left | \text{s}  \right | \) = c(constant)  &  Regular  \\ \hline
-        \( \mathbf{\text{0}^\text{m}\text{1}^\text{n}\text{0}^\text{m+n}} \) & CFL\\ \hline
-        L = \{\( \mathbf{a}^\text{n} | \text{n is prime} \)\} & \\ \hline
-        s has 3k+1 b's & regular \\\hline
-        L = \{ ww \(|\) \text{w is any string}\}  & \\\hline
+    \begin{myTableStyle} \begin{tabular}{ |m{8cm}|m{1cm}|m{5cm}| } \hline
+        s has eqaul a's and b's &  CFL & \\ \hline
+        s = \( \mathbf { \text{a}^n \text{b}^n } \) & CFL &  \quad S \(\rightarrow\) aSb\(| \lambda \) \\ \hline
+        s = \( \mathbf { \text{a}^n \text{b}^{2m} } \) & regular &   \\ \hline
+        s has more a's than b's &  CFL & \\ \hline
+        s = \( \mathbf { \text{a}^n \text{b}^m } \) \quad n,m \textgreater 0 &  Regular & \\ \hline
+        numbers(1, 2, 4 . . . \(2^n\) ) written in binary &  Regular & \\ \hline
+        numbers(1, 2, 4 . . . \(2^n\) ) written in unary &   & \\ \hline
+        \( \mathbf{\text{a}^\text{n}\text{b}\text{a}^\text{n}} \) & CFL & \\ \hline
+         \(   \left | \text{s}  \right | \) = c(constant)  &  Regular &  \\ \hline
+        \( \mathbf{\text{0}^\text{m}\text{1}^\text{n}\text{0}^\text{m+n}} \) & CFL & \\ \hline
+        L = \{\( \mathbf{a}^\text{n} | \text{n is prime} \)\} & &  \\ \hline
+        s has 3k+1 b's & regular & \\\hline
+        L = \{ x \(| \text{ x is dividible by 3}\)\} & regular & \\\hline
+        L = \{ ww \(|\) \text{w is any string}\}  & &  \\\hline
+        L = \{ W\(\text{W}^\text{R}|\) \text{w is any string}\}  & &  \\\hline
+        L = \{ Ws\(\text{W}^\text{R}|\) \text{w is any string}\}  & regular & first letter = last  \\\hline
+        L = \{ \(\text{I}^\text{2}|\) \text{I is any integer}\}  & &  \\\hline
+        \( \mathbf { \text{(ab)}^\text{n} } \)  & Regular & \quad S \(\rightarrow\) abS\(| \lambda \) \\\hline
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
     \item Regular Languages can not perform counting.
-    \item zzz
+    \item Complement of a language. In DFA final state become non final state and non final state become final.
     \item zzz
 \end{enumerate}
 

@@ -14,6 +14,10 @@
 
 
 
+
+# enable a service/timer        :   to auto start after booting.
+# when time is up               :   it activates a service with same name.
+
 # Links
     -- https://www.youtube.com/watch?v=Kzpm-rGAXos
     -- https://www.youtube.com/watch?v=5JVBpXiYMKo

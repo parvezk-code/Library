@@ -6,14 +6,34 @@
 
     \begin{myTableStyle} \begin{tabular}{ |m{4cm}|m{1cm}|m{10cm}| } \hline
         & \(\sum\) & \\ \hline
-        All strings  &\{0\} &    \( \mathbf {0^*} \)  \quad \( \mathbf {(00)^*(\lambda+0)} \)  \\ \hline
-        All strings  &\{0,1\} &    \( \mathbf {\text{(0+1)}^*} \)   \quad S \(\rightarrow\) aS\(|\)bS\(| \lambda \) \\ \hline
-         \(   \left | \text{s}  \right | \)  is even & \{0\} &  \( \mathbf {(00)^*} \) \quad S \(\rightarrow\) 0S0\(|\)00 \\ \hline
+        All strings  &\{0\}
+                     & \( \mathbf {0^*} \)  \quad \( \mathbf {(00)^*(\lambda+0)} \)  \\ \hline
+
+        All strings &\{0,1\}
+                    & \( \mathbf {\text{(0+1)}^*} \)   \quad S \(\rightarrow\) aS\(|\)bS\(| \lambda \) \\ \hline
+
+         \(\left |\text{s}\right | \)  is even & \{0\}
+                        &  \( \mathbf {(00)^*} \) \quad S \(\rightarrow\) 0S0\(|\)00 \\ \hline
+
         \(   \left | \text{s}  \right | \)  is odd & \{0\} &  \( \mathbf {0(00)^*} \) \\ \hline
-        altlest two 0's & \{0, 1\} &  \( \mathbf { \text{(a+b)}^* \text{0} \text{(a+b)}^* \text{0} \text{(a+b)}^*} \) \\ \hline
-          Similar Languages  &\{0,1\} & \( \mathbf {(01 + 1)^*} \) \quad \( \mathbf {((01)^*1^*)^*} \) \\ \hline
-          Similar Languages  &\{0,1\} & \( \mathbf {(a + b^*)^*} \) \quad \( \mathbf {((a+b)^*} \) \\ \hline
+
+        altlest two 0's & \{0, 1\}
+                & \( \mathbf { \text{(a+b)}^* \text{0} \text{(a+b)}^* \text{0} \text{(a+b)}^*} \) \\ \hline
+
+        s ends with bb or ba & \{a, b\}
+                             & \( \mathbf { \text{(a+b)}^* \text{b} \text{(a+b)} } \)  \\\hline
+
+        not containing 100 & \{1,0\}
+                                      & \( \mathbf { \text{0}^*\text{(10+1)}^* } \) \\\hline
+
+        Similar Languages  &\{0,1\}
+                           & \( \mathbf {(01 + 1)^*} \) \quad \( \mathbf {((01)^*1^*)^*} \) \\ \hline
+
+        Similar Languages  &\{0,1\}
+                           & \( \mathbf {(a + b^*)^*} \) \quad \( \mathbf {((a+b)^*} \) \\ \hline
+
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
     \item \( \mathbf { \text{(a+b)}^* } \) = \( \mathbf { \text{(b+a)}^* } \)
         = \( \mathbf { (\text{a}^* + \text{b}^*)^*} \) = \( \mathbf { (\text{a}^* + \text{b})^*} \)  = \( \mathbf { (\text{a} + \text{b}^*)^*} \)
     \item \( \mathbf { \text{(a+b)}^* } \) = \( \mathbf { (\text{a}^*\text{b}^*)^*} \) = \( \mathbf { \text{a}^* (\text{b}\text{a}^*)^* } \)
@@ -21,6 +41,19 @@
     \item Regular Languages can not perform counting.
     \item NFA(n-states) to minimized DFA(max k-states) GATE-2001
     \item regular expression to NFA.
+    \item Meele and moore machine. Minimal DFA.
+    \item Product of two automata
+    \item Machine
+    \begin{enumerate}
+    \item GATE-2017-set-2, Minimum states in DFA \quad L = \{ PaQ,  \( |\text{P}|\text{=2, } | \text{Q}|>\text{=3} \) \}
+          \quad \(\sum\) = \{a, b\} is 8
+    \item GATE-2017-set-1, Minimum states in DFA for expression \( \mathbf { \text{(a+b)}^* \text{b} \text{(a+b)} } \)  is 4
+    \item GATE-2015-Set-3, Minimum states in \( \overline{L} \), L = \( \mathbf { \text{(a+b)}^* \text{0011} \text{(a+b)}^* } \)  is 5
+    \item GATE-2014-set-3, shortest string not in L =  \( \mathbf { \text{a}^*\text{b}^*\text{(ba)}^*\text{a}^*} \) is bab
+    \item GATE-2006, minimum states in DFA (111+11111)\(^*\) is 5
+    \item GATE-2008, match NFA with regular expression.
+
+    \end{enumerate}
 \end{enumerate}
 
 
