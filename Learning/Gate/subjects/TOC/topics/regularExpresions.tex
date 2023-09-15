@@ -20,11 +20,13 @@
         altlest two 0's & \{0, 1\}
                 & \( \mathbf { \text{(a+b)}^* \text{0} \text{(a+b)}^* \text{0} \text{(a+b)}^*} \) \\ \hline
 
-        s ends with bb or ba & \{a, b\}
-                             & \( \mathbf { \text{(a+b)}^* \text{b} \text{(a+b)} } \)  \\\hline
+        not containing 00 & \{0, 1\} &  \( \mathbf { \text{(10+1)}^* } \)  \\ \hline
 
         not containing 100 & \{1,0\}
                                       & \( \mathbf { \text{0}^*\text{(10+1)}^* } \) \\\hline
+
+        s ends with bb or ba & \{a, b\}
+                             & \( \mathbf { \text{(a+b)}^* \text{b} \text{(a+b)} } \)  \\\hline
 
         Similar Languages  &\{0,1\}
                            & \( \mathbf {(01 + 1)^*} \) \quad \( \mathbf {((01)^*1^*)^*} \) \\ \hline
@@ -38,6 +40,14 @@
         = \( \mathbf { (\text{a}^* + \text{b}^*)^*} \) = \( \mathbf { (\text{a}^* + \text{b})^*} \)  = \( \mathbf { (\text{a} + \text{b}^*)^*} \)
     \item \( \mathbf { \text{(a+b)}^* } \) = \( \mathbf { (\text{a}^*\text{b}^*)^*} \) = \( \mathbf { \text{a}^* (\text{b}\text{a}^*)^* } \)
         = \( \mathbf { (\text{b}^*\text{a})^* \text{b}^* } \)
+    \item String not containing 100. \qquad \( \mathbf { \text{0}^*\text{(10+1)}^* } \)
+    \begin{enumerate}
+        \item \( \mathbf { \text{(10+1)}^* } \) : no rule to add 1, but adding zero needs special case.
+        \item zero can only appear as 10. 00 is not allowed.
+        \item 0's can occur at the start of string.
+        \item once first 1 appears then pattern 00 can not come. \( \mathbf { \text{(10+1)}^* } \) pattern avoid 00
+        \item pattern(10) can only have 1 after it, that is 101.
+    \end{enumerate}
     \item Regular Languages can not perform counting.
     \item NFA(n-states) to minimized DFA(max k-states) GATE-2001
     \item regular expression to NFA.

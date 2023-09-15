@@ -1,6 +1,6 @@
 
 list wifi packages          :   apt list wpasupplicant libiw30 wireless-tools wireless-regdb iw
-list firmware packages      :   apt list firmware-iwlwifi  firmware-realtek  firmware-atheros  firmware-linux-freelist wifi list network manager pkg    :   apt list plasma-nm network-manager-gnome
+list firmware packages      :   apt list firmware-iwlwifi  firmware-realtek  firmware-atheros  firmware-linux-freelist wifi list network manager pkg         :   apt list plasma-nm network-manager-gnome
 
 wireless firmware package   :   Intel(firmware-iwlwifi), Realtek(firmware-realtek), Qualcomm Atheros(firmware-atheros)
 other important packages    :   wpasupplicant, iw, libiw30, wireless-tools, wireless-regdb, firmware-linux-free
