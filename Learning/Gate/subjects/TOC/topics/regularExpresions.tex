@@ -10,7 +10,8 @@
                      & \( \mathbf {0^*} \)  \quad \( \mathbf {(00)^*(\lambda+0)} \)  \\ \hline
 
         All strings &\{0,1\}
-                    & \( \mathbf {\text{(0+1)}^*} \)   \quad S \(\rightarrow\) aS\(|\)bS\(| \lambda \) \\ \hline
+                    & \( \mathbf {\text{(0+1)}^*} \) \;  \( \mathbf { (\text{1}^*\text{0}^*)^*} \)
+                    \quad S \(\rightarrow\) aS\(|\)bS\(| \lambda \) \\ \hline
 
          \(\left |\text{s}\right | \)  is even & \{0\}
                         &  \( \mathbf {(00)^*} \) \quad S \(\rightarrow\) 0S0\(|\)00 \\ \hline
@@ -32,9 +33,22 @@
                            & \( \mathbf {(01 + 1)^*} \) \quad \( \mathbf {((01)^*1^*)^*} \) \\ \hline
 
         Similar Languages  &\{0,1\}
-                           & \( \mathbf {(a + b^*)^*} \) \quad \( \mathbf {((a+b)^*} \) \\ \hline
+                           & \( \mathbf {(a + b^*)^*} \) \quad \( \mathbf {(a+b)^*} \) \\ \hline
 
     \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+    \item A string over \{a, b\} can be seen as alternate series of a's and b's.
+    \{. . . \(\text{a}^\text{s}\)\(\text{b}^\text{s}\)\(\text{a}^\text{s}\)\(\text{b}^\text{s}\)\(\text{a}^\text{s}\) . . . \}
+    = \( \mathbf { (\text{a}^*\text{b}^*)^*} \)
+    \begin{enumerate}
+        \item Re-arranging \( \mathbf { (\text{a}^*\text{b}^*)^*} \)
+          = \( \mathbf { \text{a}^*(\text{b}^*\text{a}^*)^*} \)
+          = \( \mathbf { \text{a}^*(\text{b}\text{a}^*)^*} \)
+
+        \item Re-arranging \( \mathbf { (\text{a}^*\text{b}^*)^*} \)
+          = \( \mathbf { (\text{b}^*\text{a}^*)^*}\text{b}^* \)
+          = \( \mathbf { (\text{b}^*\text{a})^*}\text{b}^* \)
+    \end{enumerate}
 
     \item \( \mathbf { \text{(a+b)}^* } \) = \( \mathbf { \text{(b+a)}^* } \)
         = \( \mathbf { (\text{a}^* + \text{b}^*)^*} \) = \( \mathbf { (\text{a}^* + \text{b})^*} \)  = \( \mathbf { (\text{a} + \text{b}^*)^*} \)
@@ -51,6 +65,7 @@
     \item Regular Languages can not perform counting.
     \item NFA(n-states) to minimized DFA(max k-states) GATE-2001
     \item regular expression to NFA.
+    \item regular grammer to regular expression.
     \item Meele and moore machine. Minimal DFA.
     \item Product of two automata
     \item Machine
@@ -62,6 +77,9 @@
     \item GATE-2014-set-3, shortest string not in L =  \( \mathbf { \text{a}^*\text{b}^*\text{(ba)}^*\text{a}^*} \) is bab
     \item GATE-2006, minimum states in DFA (111+11111)\(^*\) is 5
     \item GATE-2008, match NFA with regular expression.
+    \item GATE-2010, GATE-2011, minimum number of states.
+    \item GATE-2015-set-2 regular grammer.
+    \item GATE-2017-set-2 transition function transition table.
 
     \end{enumerate}
 \end{enumerate}
