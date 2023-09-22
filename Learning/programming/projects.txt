@@ -1,4 +1,9 @@
 
+# software architecture
+    --> projects on software architecture on bytebtego (https://bytebytego.com/)
+    --> Architecture of IOT projects
+    --> Architecture of respbery pi projects
+
 # gui appllication(appimages) for
     --> creating/editing/deletion of user account in linux
     --> edit nfs server config files
