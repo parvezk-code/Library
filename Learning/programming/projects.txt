@@ -46,8 +46,11 @@ Single board computers(SBCs)
     --> respberry-p, bread boards, aurdino uno, PLC, scada
 
 cloud computig
+    --> configure next-cloud on ubuntu. Nextcloud is similar to Dropbox, Google Drive. It is used with office suites Collabora Online or OnlyOffice.
     --> open stack : private cloud administration
+    --> Apache CloudStack
     --> amazon, google, microsoft cloud
+    --> Private cloud
 
 SCADA and plc software
 
