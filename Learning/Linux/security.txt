@@ -1,0 +1,12 @@
+
+CrowdSec
+        Security Engine, the open-source intrusion prevention system, protects against attacks on any server by parsing real-time service logs (servers, SSH, WordPress etc. logs) by detecting malicious behaviors.
+
+crowdsec-firewall-bouncer-iptables package.
+
+OPNsense firewall
+
+pfSense firewall
+
+
+Traefik is a leading modern reverse proxy and load balancer that makes deploying microservices easy.
