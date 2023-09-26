@@ -4,7 +4,7 @@ Autofs two files:
     # map file      :   [c2          options     host:dir]    (/etc/auto.xxxx)
 
     # map created   :   (/baseDir/c2)  <--- (host:dir)
-    # dynamic dir   :   dir d2 will be dynamically created.
+    # dynamic dir   :   dir c2 will be dynamically created.
 
 
 

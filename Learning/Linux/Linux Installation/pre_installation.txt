@@ -1,0 +1,6 @@
+
+--------------------------   flash installation iso to usd device -----------------------------
+
+AppImage                :   https://etcher.balena.io/#download-etcher
+
+Ubuntu utility          :   Startup Disk Creator

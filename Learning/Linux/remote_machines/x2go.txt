@@ -1,0 +1,8 @@
+
+X2Go enables you to access a graphical desktop of a computer.
+
+Multiple users/clients can access a single X2Go Server at the same time, with each user/client having an individual Desktop session by default
+
+The ability to access single applications by specifying the name of the desired executable in the client configuration or selecting one of the pre-defined common applications
+
+With X2Go, you mainly access Linux computers. The Linux computer you are accessing is the X2Go Server.
