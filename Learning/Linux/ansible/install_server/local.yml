@@ -1,58 +1,66 @@
----
-- hosts: localhost
-  connection: local
+# tasks to complete before running roles
+- hosts: all
+  tags: always
   become: true
+  pre_tasks:
+    - name: pre-run | update package cache (arch)
+      tags: always
+      pacman: update_cache=yes
+      changed_when: False
+      when: ansible_distribution == "Archlinux"
 
+    - name: pre-run | update package cache (debian, etc)
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+# run roles
+- hosts: all
+  tags: base
+  become: true
+  roles:
+    - base
+
+- hosts: workstation
+  tags: workstation
+  become: true
+  roles:
+    - workstation
+
+- hosts: server
+  tags: server
+  become: true
+  roles:
+    - server
+
+# end of run cleanup and reporting
+- hosts: all
+  become: true
   tasks:
-  - name: install packages
-    package:
-      name:
-        - htop
-        - tmux
-        - vim-nox
+  - name: cleanup package cache (debian and ubuntu)
+    tags: always
+    apt:
+      autoclean: yes
+    changed_when: false
+    when: ansible_distribution in ["Debian", "Pop!_OS", "Ubuntu"]
 
-  - name: copy wallpaper file
-    copy:
-      src: files/wallpaper.png
-      dest: /usr/share/backgrounds/ansible-wallpaper.png
-      owner: root
-      group: root
+  - name: autoremove orphan packages (debian and ubuntu)
+    tags: always
+    apt:
+      autoremove: yes
+      purge: yes
+    when: ansible_distribution in ["Debian", "Pop!_OS", "Ubuntu"]
 
-  - name: set wallpaper
-    become_user: jay
-    dconf:
-      key: "/org/gnome/desktop/background/picture-uri"
-      value: "'file:///usr/share/backgrounds/ansible-wallpaper.png'"
+  - name: send completion alert
+    include_tasks: playbooks/send_completion_alert.yml
+    tags: always
+    when:
+      - task_failed is not defined
 
-  - name: set wallpaper position
-    become_user: jay
-    dconf:
-      key: "/org/gnome/desktop/background/picture-options"
-      value: "'zoom'"
-
-  - name: copy .bashrc file
-    copy:
-     src: files/bashrc
-     dest: /home/jay/.bashrc
-     owner: jay
-     group: jay
-
-  - name: add ansible user
-    user:
-      name: velociraptor
-      system: yes
-
-  - name: set up sudo for ansible user
-    copy:
-      src: files/sudoer_velociraptor
-      dest: /etc/sudoers.d/velociraptor
-      owner: root
-      group: root
-      mode: 0440
-
-  - name: add ansible-pull cron job
-    cron:
-      name: ansible auto-provision
-      user: velociraptor
-      minute: "*/10"
-      job: ansible-pull -o -U https://github.com/jlacroix82/ansible_pull_tutorial.git
+  - name: send failure alert
+    include_tasks: playbooks/send_failure_alert.yml
+    tags: always
+    when:
+      - task_failed is defined
+      - task_failed == true
