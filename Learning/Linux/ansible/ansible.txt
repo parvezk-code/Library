@@ -1,0 +1,71 @@
+
+Create a role file for a specific job.
+A server runs the one or more role(job) assigned to it.
+
+Terminologies
+    --> ansible module              :   modules perform a basic task on server.
+                                        Ex - add a user, install a package, copy a file, start a service etc.
+    --> role(job)                   :   a collection of modules. Represents a job to be performed on a server.
+    --> role file(playbook)         :   one playbook file for each role. Extension is yml.
+
+Important directories files
+    --> files                       :   dir(roles, host_vars), files(inventory, main.yml, ansible.cfg)
+    --> roles directories           :   contains configuration for each host or host_group
+    --> host_vars directories       :   contains variables for each host.
+    --> For each group(role)        :   create a dir(role_name) inside roles directory. Contents(files, tasks, handlers)
+    --> file inventory              :   contains mapping of groups(roles) to IPs
+    --> file ansible.cfg            :   contain keys value pairs. Keys - inventory, private_key_file, remote_user
+    --> main.yml                    :   maps host_group to roles directory
+
+
+Steps to add a server for automation:
+    --> Add server IP               :   Map IP address to a host group in file(inventory)
+    --> Define variables            :   Add new file in directory(host_vars).
+    --> Define job(role)            :   Add new role directory and create playbook(yml) files.
+    --> Assign roles to host group  :   Make entry in file(main.yml)
+    --> Copy ssh key                :   copy local machine ssh public key to new server
+
+Steps to add a job:
+    --> Add servers to group(hosts) :   Add server IP address in file(inventory)
+    --> Define job(role)            :   Add new role directory and create playbook(yml) files.
+    --> Assign roles to host group  :   Make entry in file(main.yml)
+
+# Ansible use ssh so generate ssh key(ssh-keygen) and copy(ssh-copy-id) to the servers.
+
+# command                   :   ansible  all   --key-file [ssh_key_file_path]  -i  [ip_adds_file_path]  -m ls
+
+# command(config file)      :   ansible  all    -m  ls
+
+# command(sudo cmd)         :   ansible  all    -m  ls  --bscome  --ask-become-pass
+
+# command(playbook)         :   ansible-playbook  --ask-become-pass  [yml_file_name]
+
+# ansible.builtin.copy      :   module to copy files to remote server
+
+# ansible.builtin.template  :   module to generate a file from template and copy it to remote server. Template file contains variables.
+
+# ansible.builtin.script    :   module to runs a local script on a remote node
+
+# ansible.builtin.service   :   start stop a service on server
+
+# ansible.builtin.lineinfile:   replace a line in a file
+
+# ansible.builtin.user      :   add a user to server
+
+# ansible.builtin.authorized_key    :   copy ssh key to a server user
+
+# Ansible prompts(io)       :   https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_prompts.html
+
+# linux installation        :   sudo ansible-pull -U  [git_repository]  [playbook_yml_file]
+
+
+
+#   GUI : https://www.ansible-semaphore.com/
+#   https://www.learnlinux.tv/tag/learn-ansible/
+#   https://www.learnlinux.tv/category/ansible/
+#   https://www.youtube.com/watch?v=-Q4T9wLsvOQ
+#   https://docs.ansible.com/ansible/latest/index.html
+#   https://docs.ansible.com
+#   https://github.com/learnLinuxTV
+
+

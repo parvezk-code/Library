@@ -1,0 +1,9 @@
+
+dconf is a simple key/value storage system that is heavily optimised for reading. This makes it an ideal system for storing user preferences
+
+You can tweak parameters from dconf with dconf-editor
+
+
+sudo apt install dconf-cli  python3-psutil
+
+command  to print configuration settings in a file   :       dconf dump / > dump.txt
