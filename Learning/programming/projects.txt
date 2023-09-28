@@ -37,6 +37,7 @@
     --> describe and modify booting process of linux
     --> linux servers :https://docs.linuxserver.io/
     --> linux automation using awk etc...
+    --> automation using ansible
 
 
 Single board computers(SBCs)
