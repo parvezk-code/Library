@@ -1,3 +1,7 @@
+# export LANGUAGE=en_US
+# export LANG=en_US.UTF-8
+# ansible-pull -U   https://github.com/parvezk-code/Library.git     Learning/Linux/installation/ansible/local.yml
+
 [debian12]
 
 
