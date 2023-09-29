@@ -80,3 +80,8 @@
       - gnome_desktop is defined
       - gnome_desktop == true
 
+  - import_tasks: handlers/gnome_desktop.yml
+    when:
+      - getGithubRepo is defined
+      - getGithubRepo == true
+
