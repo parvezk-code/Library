@@ -29,4 +29,4 @@ kde_desktop: true
 
 gnome_desktop: false
 
-getGithubRepo: false
+cloneGitRepo: true
