@@ -1,0 +1,26 @@
+
+------------------------------------------ Debian ------------------------------------------------
+
+KDE
+    --> https://wiki.debian.org/KDE
+
+    --> plasma-desktop  <   kde-plasma-desktop  <   kde-standard    <   kde-full
+
+    --> task-kde-desktop is Debian's selection of applications for a KDE desktop
+
+GNOME
+    --> gnome-core  <   gnome
+
+    --> task-gnome-desktop is Debian's selection of applications
+
+    --> gnome-session, gdm3
+
+    --> https://packages.debian.org/bookworm/gnome-core
+
+    --> adwaita-icon-theme 	at-spi2-core
+
+
+Display managers
+    --> gdm3 , kdm , and lightdm
+
+------------------------------------------------------------------------------------------

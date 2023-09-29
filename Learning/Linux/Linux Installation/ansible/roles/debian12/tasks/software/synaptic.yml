@@ -1,0 +1,4 @@
+- name: package manager | synaptic | install package
+  tags: synaptic
+  package:
+    name: synaptic

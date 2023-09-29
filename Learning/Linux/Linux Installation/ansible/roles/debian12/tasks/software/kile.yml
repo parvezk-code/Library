@@ -1,0 +1,4 @@
+- name: latex editor | kile | install package
+  tags: kile
+  package:
+    name: kile

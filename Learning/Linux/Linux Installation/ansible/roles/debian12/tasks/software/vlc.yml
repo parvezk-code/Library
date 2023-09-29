@@ -1,0 +1,6 @@
+- name: media player | install package | vlc libavcodec
+  tags: vlc media player
+  package:
+    name:
+      - vlc
+      - libavcodec59

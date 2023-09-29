@@ -1,0 +1,9 @@
+- name: office | install package | writer, math, draw, calc, impress
+  tags: libreoffice
+  package:
+    name:
+      - libreoffice-writer
+      - libreoffice-math
+      - libreoffice-draw
+      - libreoffice-calc
+      - libreoffice-impress

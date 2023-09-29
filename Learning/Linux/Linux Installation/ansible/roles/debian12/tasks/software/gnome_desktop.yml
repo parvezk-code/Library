@@ -1,0 +1,8 @@
+- name: Gnome Desktop | install package |
+  tags: Gnome
+  package:
+    name:
+      - gnome-core
+      - network-manager-gnome
+
+#  gnome-core, gnome

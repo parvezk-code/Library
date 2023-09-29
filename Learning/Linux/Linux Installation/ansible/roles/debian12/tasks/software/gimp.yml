@@ -1,0 +1,5 @@
+- name: draw paint | install package | gimp
+  tags: gimp
+  package:
+    name:
+      - gimp

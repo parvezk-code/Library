@@ -1,0 +1,82 @@
+# Load distro-specific variables
+- include_vars: "{{ ansible_distribution }}.yml"
+  tags: always
+
+
+- block:
+
+  - include_tasks: software/synaptic.yml
+    when:
+      - synaptic is defined
+      - synaptic == true
+
+  - include_tasks: software/gnome_disks.yml
+    when:
+      - gnome_disks is defined
+      - gnome_disks == true
+
+  - include_tasks: software/hp_printer.yml
+    when:
+      - hp_printer is defined
+      - hp_printer == true
+
+  - include_tasks: software/vlc.yml
+    when:
+      - vlc is defined
+      - vlc == true
+
+  - include_tasks: software/gimp.yml
+    when:
+      - gimp is defined
+      - gimp == true
+
+  - include_tasks: software/kate.yml
+    when:
+      - kate is defined
+      - kate == true
+
+  - include_tasks: software/kile.yml
+    when:
+      - kile is defined
+      - kile == true
+
+  - include_tasks: software/latex.yml
+    when:
+      - latex is defined
+      - latex == true
+
+  - include_tasks: software/chromium.yml
+    when:
+      - chromium is defined
+      - chromium == true
+
+  - include_tasks: software/firefox.yml
+    when:
+      - firefox is defined
+      - firefox == true
+
+  - include_tasks: software/okular.yml
+    when:
+      - okular is defined
+      - okular == true
+
+  - include_tasks: software/gwenview.yml
+    when:
+      - gwenview is defined
+      - gwenview == true
+
+  - include_tasks: software/libreoffice.yml
+    when:
+      - libreoffice is defined
+      - libreoffice == true
+
+  - include_tasks: software/kde_desktop.yml
+    when:
+      - kde_desktop is defined
+      - kde_desktop == true
+
+  - include_tasks: software/gnome_desktop.yml
+    when:
+      - gnome_desktop is defined
+      - gnome_desktop == true
+

@@ -1,0 +1,30 @@
+---
+synaptic: true
+
+gnome_disks: false
+
+hp_printer: true
+
+vlc: true
+
+gimp: true
+
+kile: true
+
+latex: true
+
+kate: true
+
+chromium: false
+
+firefox: true
+
+okular: true
+
+gwenview: true
+
+libreoffice: true
+
+kde_desktop: true
+
+gnome_desktop: false

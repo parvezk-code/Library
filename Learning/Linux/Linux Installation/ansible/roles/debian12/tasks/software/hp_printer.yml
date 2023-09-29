@@ -1,0 +1,7 @@
+- name: hp printer | install package | hplip, hplip-data, hplip-gui
+  tags: hp printer
+  package:
+    name:
+      - hplip
+      - hplip-data
+      - hplip-gui

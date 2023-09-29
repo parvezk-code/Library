@@ -1,0 +1,4 @@
+- name: install package | gnome-disk-utility | partition manager
+  tags: gnome disks
+  package:
+    name: gnome-disk-utility

@@ -1,0 +1,6 @@
+- name: latex | install package | texlive-latex-extra, texlive-bibtex-extra
+  tags: latex
+  package:
+    name:
+      - texlive-latex-extra
+      - texlive-bibtex-extra
