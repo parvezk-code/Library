@@ -32,7 +32,13 @@ kde_desktop: true
 gnome_desktop: false
 
 cloneGitRepo: true
+gitRepoUrl: https://github.com/parvezk-code/Library.git
+gitRepoDir: /home/newuser/zz_data/temp_delete/ansible/Library
 
 createDataDir: true
+dataDirPath: /home/newuser/zz_data/temp_delete/ansible
+dataDirOwner: newuser
+dataDirGroup: newuser
+
 
 

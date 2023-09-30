@@ -1,17 +1,28 @@
 
+- name: Check repo directory exists
+  stat:
+    path: '{{ gitRepoDir }}'
+  register: repoDirExists
+
+- debug: var=repoDirExists.stat.exists
+
+- debug: var=repoDirExists.stat.isdir
 
 - name: Example clone of a single branch
   ansible.builtin.git:
-    repo: https://github.com/parvezk-code/Library.git
-    dest: /home/newuser/zz_data/temp_delete/ansible/Library
+    repo: '{{ gitRepoUrl }}'
+    dest: '{{ gitRepoDir }}'
     single_branch: yes
     version: master
+    force: false
   ignore_errors: true
+  when: not (repoDirExists.stat.exists and repoDirExists.stat.isdir)
 
 - name: Change directory permissions
   ansible.builtin.file:
-    path: /home/newuser/zz_data/temp_delete/ansible/Library
+    path: '{{ gitRepoDir }}'
     state: directory
     recurse: yes
-    owner: newuser
-    group: newuser
+    owner: '{{ dataDirOwner }}'
+    group: '{{ dataDirGroup }}'
+  when: not (repoDirExists.stat.exists and repoDirExists.stat.isdir)

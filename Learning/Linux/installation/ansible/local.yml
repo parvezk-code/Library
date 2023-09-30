@@ -19,8 +19,10 @@
 - hosts: localhost
   become: true
   tasks:
+  - include_vars: "{{ ansible_distribution }}.yml"
   - name: Install debian
     import_tasks: roles/debian12/controler.yml
+    #import_tasks: roles/debian12/testDeleteControler.yml
     when: ansible_distribution in ["Debian"]
 
 
