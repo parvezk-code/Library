@@ -17,10 +17,11 @@
 
 
 - hosts: localhost
-  tags: base
   become: true
-  roles:
-    - debian12
+  tasks:
+  - name: Install debian
+    import_tasks: roles/debian12/controler.yml
+    when: ansible_distribution in ["Debian"]
 
 
     # end of run cleanup and reporting

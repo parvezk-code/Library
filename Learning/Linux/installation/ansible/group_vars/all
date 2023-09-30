@@ -1,4 +1,6 @@
 ---
+test_var: software/synaptic
+
 synaptic: true
 
 gnome_disks: false
