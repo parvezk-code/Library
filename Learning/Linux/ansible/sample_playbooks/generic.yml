@@ -1,0 +1,26 @@
+
+- name: software | install git
+  tags: install package
+  package:
+    name: git
+
+- name: software | remove packages on debian and ubuntu hosts
+  tags: remove packages
+  package:
+    state: absent
+    name:
+      - firefox*
+      - libreoffice-draw
+      - libreoffice-writer
+      - thunderbird*
+  when: ansible_distribution in ["Debian", "Pop!_OS", "Ubuntu"]
+
+
+- name: software | install misc game packages
+  tags: gaming
+  package:
+    name:
+      - chromium-bsu
+      - extremetuxracer
+      - frozen-bubble
+  when: games is defined and games == true

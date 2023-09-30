@@ -6,3 +6,14 @@
       - network-manager-gnome
 
 #  gnome-core, gnome
+
+- name: software | remove packages on debian and ubuntu hosts
+  tags: remove packages
+  package:
+    state: absent
+    name:
+      - firefox*
+      - libreoffice-draw
+      - libreoffice-math
+      - thunderbird*
+  when: ansible_distribution in ["Pop!_OS", "Ubuntu"]

@@ -1,0 +1,13 @@
+- name: copy file
+  tags: copy
+  file:
+    src: share/applications/apple.txt
+    dest: /home/newuser/repo/cat.txt
+    owner: newuser
+    group: newuser
+
+- name: replace a line in file
+  ansible.builtin.lineinfile:
+    path: /etc/selinux/config
+    regexp: '^SELINUX='
+    line: SELINUX=enforcing

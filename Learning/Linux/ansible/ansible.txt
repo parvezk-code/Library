@@ -2,6 +2,13 @@
 Create a role file for a specific job.
 A server runs the one or more role(job) assigned to it.
 
+Major tasks
+    --> install packages (apt, yum, flatpak, snap, packman etc..)
+    --> create, copy, update file and directories
+    --> change file permissions
+    --> start, stop, enable, disable services
+    --> allow/block ports(services) in firewall
+
 Terminologies
     --> ansible module              :   modules perform a basic task on server.
                                         Ex - add a user, install a package, copy a file, start a service etc.

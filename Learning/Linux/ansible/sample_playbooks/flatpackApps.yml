@@ -1,0 +1,24 @@
+- name: software | audacious | install package
+  tags: packages,flatpak,audacious,workstation-packages
+  become_user: jay
+  flatpak:
+    name: org.atheme.audacious
+    method: user
+    state: present
+  when: audacious is defined and audacious == true
+
+
+# set up flatpak support
+- name: system setup | tweaks | add flatpak support
+  package:
+    name: flatpak
+    state: present
+
+- name: system setup | tweaks | flatpak | add flathub remote
+  tags: packages,flatpak,workstation-packages
+  become_user: jay
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: user
+    state: present
