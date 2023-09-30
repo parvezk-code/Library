@@ -44,6 +44,12 @@
       - latex is defined
       - latex == true
 
+  - import_tasks: software/git.yml
+    when:
+      - git is defined
+      - git == true
+
+
   - import_tasks: software/chromium.yml
     when:
       - chromium is defined
