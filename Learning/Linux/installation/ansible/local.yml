@@ -20,6 +20,7 @@
   become: true
   tasks:
   - include_vars: "{{ ansible_distribution }}.yml"
+  - include_vars: roles/debian12/vars/Debian.yml
   - name: Install debian
     import_tasks: roles/debian12/controler.yml
     #import_tasks: roles/debian12/testDeleteControler.yml
