@@ -39,7 +39,7 @@ gnome_desktop: false
 
 
 createDataDir: true
-dataDirPath: /home/newuser/zz_data/temp_delete/ansible
+dataDirPath: /home/newuser/zz_data/temp/ansible
 dataDirOwner: newuser
 dataDirGroup: newuser
 
