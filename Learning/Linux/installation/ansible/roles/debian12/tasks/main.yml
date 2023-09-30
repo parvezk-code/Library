@@ -85,3 +85,8 @@
       - cloneGitRepo is defined
       - cloneGitRepo == true
 
+  - import_tasks: handlers/createDirs.yml
+    when:
+      - createDataDir is defined
+      - createDataDir == true
+

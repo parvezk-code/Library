@@ -30,3 +30,7 @@ kde_desktop: true
 gnome_desktop: false
 
 cloneGitRepo: true
+
+createDataDir: true
+
+

@@ -3,14 +3,6 @@
   tags: always
 
 
-- name: Create a directory if it does not exist
-  ansible.builtin.file:
-    path: /home/newuser/zz_data/temp_delete/ansible
-    state: directory
-    owner: newuser
-    group: newuser
-    mode: '0755'
-
 - name: Example clone of a single branch
   ansible.builtin.git:
     repo: https://github.com/parvezk-code/Library.git

@@ -4,3 +4,7 @@
 AppImage                :   https://etcher.balena.io/#download-etcher
 
 Ubuntu utility          :   Startup Disk Creator
+
+softwares               :   Ventoy, Unetbootin, Rufus
+
+dd commant              :   sudo   dd   if=[image_file_iso]  of=/dev/sdk   bs=4M
