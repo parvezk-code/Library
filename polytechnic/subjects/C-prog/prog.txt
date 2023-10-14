@@ -3,9 +3,9 @@ Obj).
 
 
 U1).
-        M2).    What is a variable?
-        M4).    Types of Tokens in C.           What is structue of C program.
-        M6).    Explain data types is C.
+        M2).    What is a variable?                                             Types of Tokens in C.
+        M4).    What is the use of main function in a C program.                What is structue of C program.
+        M6).    Explain data types is C.                                        What is the use of int, float, char in C.
 
 U2).
         M2).    Explain increment(++) operator, decrement(--) operator and assignment operator.
@@ -19,7 +19,7 @@ U3).
 
 U4).
         M2).    Explain 1-d array with example.                                 Explain 2-d array with example.
-        M4).    Explain strings in C.
+        M4).    Explain strings in C.                                           What is the use of char in creating a string.
         M6).    How to declare and define a functions.                          Explain user defined and built-in function.
 
 U5).
@@ -36,4 +36,27 @@ U5).
         M2).    Explain call-by-value tachnique of parameter passing.           Explain call-by refrence tachnique of parameter passing.
         M4).    Explain file handling in C.                                     Explain functions used for file handling.
         M6).    Write a program to print sum of first 100 numbers.              Write a program to print table of a number.
+
+
+        Properties of Array in C
+
+        What is the use of header files in C.
+
+        Explain bitwise operator.               Explain sizeof operator.
+
+        Explain ternary operator
+
+        Explain the use of format specifiers - %d, %c, %f, %s
+
+        Explain getch(), putchar(), gets(), puts()
+
+        Features of C Programming Language
+
+        Types of comments in C
+
+        What is the use of return, void, const, goto keywords in C.             Write short note on Storage Classes in C. auto, extern, static, register
+
+        C program to read string from user
+
+
 
