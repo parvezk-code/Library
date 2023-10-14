@@ -3,12 +3,37 @@ Obj).
 
 
 U1).
+        M2).    What is a variable?
+        M4).    Types of Tokens in C.
+        M6).    Explain data types is C.
 
 U2).
+        M2).    Explain increment(++) operator, decrement(--) operator and assignment operator.
+        M4).    Explain printf() function.
+        M6).    Explain arithmatic, relational, logical operators.
 
 U3).
+        M2).    What is nested loops?
+        M4).    Explain syntax of if-else statements in C. Give example.
+        M6).    Explain syntax of for loop in C.
 
 U4).
+        M2).
+        M4).
+        M6).
 
 U5).
+        M2).
+        M4).
+        M6).
+
+6).
+        M2).
+        M4).
+        M6).
+
+7).
+        M2).
+        M4).
+        M6).
 
