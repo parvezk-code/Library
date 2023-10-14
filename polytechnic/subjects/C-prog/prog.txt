@@ -4,36 +4,36 @@ Obj).
 
 U1).
         M2).    What is a variable?
-        M4).    Types of Tokens in C.
+        M4).    Types of Tokens in C.           What is structue of C program.
         M6).    Explain data types is C.
 
 U2).
         M2).    Explain increment(++) operator, decrement(--) operator and assignment operator.
-        M4).    Explain printf() function.
-        M6).    Explain arithmatic, relational, logical operators.
+        M4).    Explain printf() function.                                      Explain scanf() function.
+        M6).    Explain arithmatic, relational, logical operators.              Explain different types of operators in C.
 
 U3).
-        M2).    What is nested loops?
-        M4).    Explain syntax of if-else statements in C. Give example.
-        M6).    Explain syntax of for loop in C.
+        M2).    What is nested loops?                                           Explain the use of continus and break statement in C.
+        M4).    Explain syntax of if-else statements in C. Give example.        Explain conditional statements with example.
+        M6).    Write a program to find factorial of  number.
 
 U4).
-        M2).
-        M4).
-        M6).
+        M2).    Explain 1-d array with example.                                 Explain 2-d array with example.
+        M4).    Explain strings in C.
+        M6).    How to declare and define a functions.                          Explain user defined and built-in function.
 
 U5).
-        M2).
-        M4).
-        M6).
+        M2).    What is recursion?
+        M4).    Explain syntax of for loop in C.                                Explain syntax of while loop in C.
+        M6).    Explain switch case statement with example                      What is the use of break statement in switch-case.
 
 6).
-        M2).
-        M4).
-        M6).
+        M2).    Explain column-major order technique to store array             Explain row-major order technique to store array.
+        M4).    while Vs do while.                                              Explain syntax of do-while loop in C.
+        M6).    Write a program to find largest of 2 numbers.                   Write a program to find if given number is odd or even.
 
 7).
-        M2).
-        M4).
-        M6).
+        M2).    Explain call-by-value tachnique of parameter passing.           Explain call-by refrence tachnique of parameter passing.
+        M4).    Explain file handling in C.                                     Explain functions used for file handling.
+        M6).    Write a program to print sum of first 100 numbers.              Write a program to print table of a number.
 
