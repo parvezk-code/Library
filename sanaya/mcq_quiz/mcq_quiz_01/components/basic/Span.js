@@ -10,19 +10,27 @@ class Span
         this.span.innerHTML = innerHTML;
     }
 
-    function hide()
+    hide()
     {
         this.span.style.display = "none";
     }
 
-    function show(type)
+    show(type)
     {
         // type = block, inline etc..
         this.span.style.display = type;
     }
 
-    function appendChild(childElement)
+    appendChild(childElement)
     {
         this.span.appendChild(childElement);
     }
 }
+
+var teacher = {
+    name : "ABC",
+    age : 18,
+    dept : "CSE",
+    score : 90
+};
+

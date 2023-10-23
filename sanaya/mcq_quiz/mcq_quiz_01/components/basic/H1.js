@@ -10,18 +10,18 @@ class H1
         this.h1.innerHTML = innerHTML;
     }
 
-    function hide()
+    hide()
     {
         this.h1.style.display = "none";
     }
 
-    function show(type)
+    show(type)
     {
         // type = block, inline etc..
         this.h1.style.display = type;
     }
 
-    function appendChild(childElement)
+    appendChild(childElement)
     {
         this.h1.appendChild(childElement);
     }

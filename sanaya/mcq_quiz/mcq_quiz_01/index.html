@@ -1,3 +1,4 @@
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,6 @@
 
     <script src="quiz_files/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 
-
   <title>CodePen - JavaScript quiz application</title>
 
     <!--link rel="canonical" href="https://codepen.io/abhilashn/pen/BRepQz" -->
@@ -27,7 +27,6 @@
   <script>
   window.console = window.console || function(t) {};
 </script>
-
 
 
 </head>
@@ -44,6 +43,7 @@
 	<div class="row">
 		<div class="col-sm-12">
         	<div id="quiz-structure" class="quiz-body">
+        	<hr>
         	<button onclick="openDialog(event)" name="Choose" id="ChooseBtn" class="btn btn-success">Select Question Paper</button>
             <button onclick="showResult(event)" name="Result" id="ResultBtn" class="btn btn-success">Finish</button>
             <hr>
@@ -57,45 +57,32 @@
                 </h4>
 
                 <div class="option-block-container" id="question-options" >
+
                     <div id="o1" class="form-check option-block">
                       <label class="form-check-label">
                         <input type="radio" class="form-check-input" name="option" id="r1" value="1" onchange="makeChoice(event)" >
-                        <span id="o1val" ></span>
+                        <span id="o1val" id="optionval"></span>
                       </label>
                     </div>
 
                     <div id="o2" class="form-check option-block">
                       <label class="form-check-label">
                         <input type="radio" class="form-check-input" name="option" id="r2" value="2" onchange="makeChoice(event)" >
-                        <span id="o2val"></span>
+                        <span id="o2val" id="optionval"></span>
                       </label>
                     </div>
 
                     <div id="o3" class="form-check option-block">
                       <label class="form-check-label">
                         <input type="radio" class="form-check-input" name="option" id="r3" value="3" onchange="makeChoice(event)" >
-                        <span id="o3val"></span>
+                        <span id="o3val" id="optionval"></span>
                       </label>
                     </div>
 
                     <div id="o4" class="form-check option-block">
                       <label class="form-check-label">
                         <input type="radio" class="form-check-input" name="option" id="r4" value="4" onchange="makeChoice(event)" >
-                        <span id="o4val" ></span>
-                      </label>
-                    </div>
-
-                    <div id="o5" class="form-check option-block">
-                      <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="option" id="r5" value="5" onchange="makeChoice(event)" >
-                        <span id="o5val"></span>
-                      </label>
-                    </div>
-
-                    <div id="o6" class="form-check option-block">
-                      <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="option" id="r6" value="6" onchange="makeChoice(event)" >
-                        <span id="o6val"></span>
+                        <span id="o4val" id="optionval"></span>
                       </label>
                     </div>
 
@@ -123,8 +110,7 @@
          <div class="row">
             <div class="column red" >
               <div>Maths</div>
-              <p><a href="?paperChoice=maths_8_01">8:Decimals-1</a></p>
-              <p><a href="?paperChoice=maths_8_02">8:Decimals-2</a></p>
+              <p><a href="?paperChoice=maths_8">8:Decimals</a></p>
             </div>
             <div class="column green " >
               <div>Science</div>
@@ -133,22 +119,14 @@
             <div class="column orange" >
               <div>Social</div>
               <p><a href="?paperChoice=social_10">10:Transport</a></p>
-              <p><a href="?paperChoice=social_11">11:Natural Resource</a></p>
             </div>
             <div class="column yellow" >
               <div>English</div>
-              <p><a href="?paperChoice=english_07">07:TV Chocolate</a></p>
-              <p><a href="?paperChoice=english_08">08:Chips</a></p>
+              <p><a href="?paperChoice=english_10">10:TV Chocolate</a></p>
             </div>
             <div class="column blue" >
               <div>Computer</div>
-              <p><a href="?paperChoice=cs_05">05:Presentation Software</a></p>
-            </div>
-            <div class="column pink" >
-              <div>GK</div>
-              <p><a href="?paperChoice=gk_06_01">06:Famous quotes</a></p>
-              <p><a href="?paperChoice=gk_06_02">06:Idioms, information</a></p>
-              <p><a href="?paperChoice=gk_07_01">07:Games</a></p>
+              <p></p>
             </div>
         </div>
 
@@ -159,11 +137,9 @@
 
   <script src="quiz_files/jquery.min.js"></script>
 <script src="quiz_files/bootstrap.min.js"></script>
-
+<script src="./components/master.js" ></script>
 <script id="rendered-js" src="quiz_files/index.js"></script>
-
-
-
-
-
+<script src="./components/test.js" ></script>
 </body>
+
+</html>

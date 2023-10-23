@@ -10,18 +10,18 @@ class Div
         this.div.innerHTML = innerHTML;
     }
 
-    function hide()
+    hide()
     {
         this.div.style.display = "none";
     }
 
-    function show(type)
+    show(type)
     {
         // type = block, inline etc..
         this.div.style.display = type;
     }
 
-    function appendChild(childElement)
+    appendChild(childElement)
     {
         this.div.appendChild(childElement);
     }

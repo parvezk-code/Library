@@ -10,18 +10,18 @@ class Label
         this.label.innerHTML = innerHTML;
     }
 
-    function hide()
+    hide()
     {
         this.label.style.display = "none";
     }
 
-    function show(type)
+    show(type)
     {
         // type = block, inline etc..
         this.label.style.display = type;
     }
 
-    function appendChild(childElement)
+    appendChild(childElement)
     {
         this.label.appendChild(childElement);
     }
