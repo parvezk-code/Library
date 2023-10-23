@@ -1,0 +1,47 @@
+#!/bin/sh
+# /etc/grub.d/40_custom
+
+# edit this file to add custom boot entries to grub menu
+# run following commands after editing this file
+# export PATH=$PATH:/usr/sbin
+# sudo update-grub
+
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+# Boot directly from ISO file. Without extraction. (2nd hdd, partion no 6)
+menuentry "Try or Install Ubuntu 22.04" {
+    rmmod tpm
+    set isofile="/home/newuser/zz_data/ubuntu-22.04.3-desktop-amd64.iso"
+    loopback loop (hd1,6)$isofile
+    linux    (loop)/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed  boot=casper iso-scan/filename=${isofile} quiet splash
+    initrd   (loop)/casper/initrd
+}
+
+
+# disable secure boot for error(bad shim signature)
+# ISO extracted at a local partition (2nd hdd, partion no 7)
+menuentry "Try or Install Ubuntu 22.04 from extracted ISO" {
+        set root=(hd1,7)
+        linux  /casper/vmlinuz  file=/cdrom/preseed/ubuntu.seed  boot=casper ignore_uuid
+        initrd /casper/initrd
+}
+
+
+# ISO extracted at custom directory (2nd hdd, partion no 8)
+menuentry "Try or Install Ubuntu 22.04 from extracted ISO custom root directory" {
+        set root=(hd1,8)
+        linux  /soft/linux_installation/ubuntu/casper/vmlinuz  root=/dev/sdb8/soft/linux_installation/ubuntu file=/cdrom/preseed/ubuntu.seed  boot=casper ignore_uuid
+        initrd /soft/linux_installation/ubuntu/casper/initrd
+}
+
+
+# For Debian ISO file, insmod ext2
+menuentry "debian-live-10.8.0-amd64-lxqt.iso" {
+  set isofile="/home/debian-live-10.8.0-amd64-lxqt.iso"
+  loopback loop (hd0,5)$isofile
+  linux (loop)/live/vmlinuz-4.19.0-14-amd64 boot=live findiso=$isofile
+  initrd (loop)/live/initrd.img-4.19.0-14-amd64
+}

@@ -52,26 +52,13 @@ https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface#Obtaining
 
 ----------------------------- installation ISO extracted --------------------------------
 
-# add following custom boot entry to /etc/grub.d/40_custom
-# export PATH=$PATH:/usr/sbin       location of update-grub command
-# sudo update-grub
-# new grub entry will appear in grub menu. Which will start installation.
+edit /etc/grub.d/40_custom file
 
-# disable secure boot for error(bad shim signature)
-# ISO extracted at a local partition (2nd hdd, partion no 7)
-menuentry "Try or Install Ubuntu 22.04 from extracted ISO" {
-        set root=(hd1,7)
-        linux  /casper/vmlinuz  file=/cdrom/preseed/ubuntu.seed  boot=casper ignore_uuid
-        initrd /casper/initrd
-}
+boot entries of /etc/grub.d/40_custom gets appended to /boot/grub/grub.cfg file.
 
-# ISO extracted at custom directory (2nd hdd, partion no 8)
-menuentry "Try or Install Ubuntu 22.04 from extracted ISO custom root directory" {
-        set root=(hd1,8)
-        linux  /soft/linux_installation/ubuntu/casper/vmlinuz  root=/dev/sdb8/soft/linux_installation/ubuntu file=/cdrom/preseed/ubuntu.seed  boot=casper ignore_uuid
-        initrd /soft/linux_installation/ubuntu/casper/initrd
-}
-
+add a custom boot entry         : /etc/grub.d/40_custom
+path for update-grub cmd        : export PATH=$PATH:/usr/sbin
+update /boot/grub/grub.cfg file : sudo update-grub
 
 ----------------------------------------------------------------------------------------------------
 

@@ -1,0 +1,44 @@
+
+# ubuntu install grub on local machine
+
+        --> sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi
+        --> sudo update-grub
+
+--------------------------------------------------------------------------
+
+
+# ubuntu install grub on usb-drive
+        --> locate partition    :  Example (drive=sdb), (rootfs=sdb2), (efi=sdb1)
+        --> mount root(/) fs    :  sudo mount /dev/sdb2 /mnt
+        --> mount efi fs        :  sudo mount /dev/sdb1 /mnt/boot/efi
+        --> install grub        :  sudo grub-install --target=x86_64-efi --efi-directory=/mnt/boot/efi  --removable
+        --> make list           :  sudo update-grub
+
+-------------------- boot from iso on local partition ------------------------
+
+edit /etc/grub.d/40_custom file
+
+boot entries of /etc/grub.d/40_custom gets appended to /boot/grub/grub.cfg file.
+
+
+add a custom boot entry         : /etc/grub.d/40_custom
+path for update-grub cmd        : export PATH=$PATH:/usr/sbin
+update /boot/grub/grub.cfg file : sudo update-grub
+
+-----------------------------------------------------------------------------------
+
+ubuntu copy paste an ISO/files to a drive partition and boot
+Live Ubuntu Desktop from Hard Drive
+https://help.ubuntu.com/community/Installation/FromLinux
+https://www.geeksforgeeks.org/how-to-boot-linux-iso-image-directly-from-hard-drive/
+https://gist.github.com/kmcallister/2305890
+https://community.endlessos.com/t/how-to-run-from-a-live-iso-stored-on-vfat-with-grub2/2664
+https://www.linuxbabe.com/desktop-linux/boot-from-iso-files-using-grub2-boot-loader
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
