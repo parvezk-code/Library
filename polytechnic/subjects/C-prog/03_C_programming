@@ -1,0 +1,33 @@
+
+		
+		Unit-01:	Introduction to Problem Solving (computational way of thinking); 
+					[Data-types], [comments], Variables, [header-files] 
+					
+		Unit-02:	Arithmetic Operators[+, -, *, /, %, ++, --], Assignment[=, +=, -=, *=, /=]
+					Relational Operators(==, <, >, !=, <=, >=)
+					Logical Operators[&&, ||, !]
+					Bitwise Operators[&, |, ~, <<, >>]
+					Input[scanf], Output[printf], Formatting[%d, %f, %s, %c, %lf] 
+					File I/O[mode, fopen, fclose, fprintf, fgets]
+		
+		Unit-03:	Conditional Statements[if, if-else, if-elseif], [switch-case]
+					Loops[for, while], [do-while], [while-Vs-doWhile] 
+					Nested Loops, continue, break
+		
+		Unit-04:	Arrays, Multidimensional Arrays, Memory Organization
+					Strings [char array, strlen, strcpy, strcat, strcmp]
+					Functions[user defined, built-in] 
+					Parameter Passing[call-by-value, call-by-reference]
+		
+		Unit-05:	Recursion and Recursive solutions
+		
+		
+					Multidimensional Arrays, Memory Organization, File, switch, doWhile, unit-05
+					
+					
+		-------------------------------------------------------------------------------------------
+		
+		
+		Array  :  https://masterprogramming.in/array-in-c-in-hindi/ 
+		
+		
