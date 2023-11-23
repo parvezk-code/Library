@@ -2,26 +2,25 @@
 #include<stdio.h>
 
 
-	int max3(int a, int b, int c)
+int max3(int a, int b, int c)
+{
+	int max;
+		
+	if(a>b && a>c)		
 	{
-		int max;
-		
-		if(a>b && a>c)		
-		{
-			max=a;
-		}
-		else if(b>c)		
-		{
-			max=b;
-		}
-		else 				
-		{
-			max = c;
-		}
-		
-		return(max);
-		
+		max=a;
 	}
+	else if(b>c)		
+	{
+		max=b;
+	}
+	else 				
+	{
+		max = c;
+	}
+		
+	return(max);	
+}
 
 
 int main()

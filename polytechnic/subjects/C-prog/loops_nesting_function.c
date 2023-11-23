@@ -3,12 +3,12 @@
 
 void printTable(int a)
 {
-	int pro;
+	int multi;
 	
 	for(int i=1;i<11;i++)
     {
-		pro = a*i;
-        printf("%d ", pro);
+		    multi = a*i;
+        printf("%d ", multi);
     }
 }
 
@@ -19,9 +19,11 @@ int main()
     
     for(a=1;a<8;a++)
     {      
-		printTable(a);
-		printf("\n");
+		  printTable(a);
+		  printf("\n");
     }
     
     return(0);
 }
+
+

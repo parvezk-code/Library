@@ -4,20 +4,20 @@
 
 int main()
 {
-	int i=1;        //intialize
-    while(i<11)     // condition
+	int i=1;        		// intialize
+    while(i<11)     		// condition
     {
-        // s1
-        // s2
-        i++;        // increment
+        printf("%d", i);
+        i++;        		// increment
     }	
 
 
 	for(i=1; i<11; i++)
     {
-        //s1
-        //s2
+        printf("%d", i);
     }
 
 	return(0);
 }
+
+

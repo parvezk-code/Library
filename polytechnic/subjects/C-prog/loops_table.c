@@ -1,22 +1,20 @@
 
-		#include<stdio.h>
+#include<stdio.h>
 		
 
-		int main()
-		{
+int main()
+{
 			
-			int a, i, pro;
+	int a, i, multi;
+	a=7;
+			
+	for(i=1;i<11;i++)
+	{
+		multi = a*i;
+		printf("%d ", multi);
+	}
+			
+	return(0);
+}
 
-			a=7;
-			
-			i=1;
-			
-			while(i<11)
-			{
-				pro = a*i;
-				printf("%d ", pro);
-				i++;
-			}
-			
-			return(0);
-		}
+

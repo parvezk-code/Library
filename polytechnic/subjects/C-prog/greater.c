@@ -4,29 +4,33 @@
 // Place	: Nasrullaganj
 
 
-		#include<stdio.h>
+#include<stdio.h>
 
-		int main()
-		{
+int main()
+{
 			
-			int a, b, c, max;
+	int a, b, c, max;
 
-			a=100; b=15; c=1200;
+	a=10; 
+	b=15; 
+	c=20;
 			
-			if(a>b && a>c)		// a is greater
-			{
-				max=a;
-			}
-			else if(b>c)		// b is greater
-			{
-				max=b;
-			}
-			else 				// c is greater
-			{
-				max = c;
-			}
+	if(a>b && a>c)		// a is greater
+	{
+		max=a;
+	}
+	else if(b>c)		// b is greater
+	{
+		max=b;
+	}
+	else 				// c is greater
+	{
+		max = c;
+	}
+	
+	printf("%d", max);
 			
-			 
-			
-			return(0);
-		}
+	return(0);	
+}
+
+
