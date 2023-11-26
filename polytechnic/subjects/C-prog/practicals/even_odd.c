@@ -1,26 +1,24 @@
-
 #include<stdio.h>
-
 
 int main()
 {
 			
-	int a, rem;
+		int num, rem;
 
-	a=100;
-				
-	rem = a%2;
-				
-	if(rem==0)
-	{
-		printf("even");
-	}
-	else
-	{
-		printf("odd");
-	}
-				
-	return(0);
+		num	=	100;		// scanf("%d", &num);
+
+		rem = 	num % 2;
+
+		if(rem == 0)
+		{
+			printf("even");
+		}
+		else
+		{
+			printf("odd");
+		}
+
+		return(0);
 }
 
 

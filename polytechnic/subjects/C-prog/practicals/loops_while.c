@@ -4,18 +4,14 @@
 
 int main()
 {
-	int i=1;        		// intialize
-    while(i<11)     		// condition
+	int i=1;
+
+    do
     {
         printf("%d", i);
-        i++;        		// increment
-    }	
-
-
-	for(i=1; i<11; i++)
-    {
-        printf("%d", i);
+        i++;
     }
+    while(i<11);
 
 	return(0);
 }

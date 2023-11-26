@@ -3,21 +3,20 @@
 
 #include<stdio.h>
 
-
 int main()
 {
-    int a=7,i=1, multi;        
+        int num, i, multi;
 
-    for(a=1;a<8;a++)
-    {
-        for(i=1;i<11;i++)
+        for( num=1 ; num<8; num++ )
         {
-            multi = a*i;
-            printf("%d ", multi);
-        }
-        
-        printf("\n");
-    }
+                for( i=1; i<11; i++ )
+                {
+                    multi = num * i;
+                    printf("%d ", multi);
+                }
 
-    return(0);
+                printf("\n");
+        }
+
+        return(0);
 }
