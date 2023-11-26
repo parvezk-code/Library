@@ -22,7 +22,7 @@
   keywordstyle=\color{magenta},
   numberstyle=\tiny\color{codegray},
   stringstyle=\color{codepurple},
-  basicstyle=\ttfamily\footnotesize,   % \tiny, \small or \footnotesize etc.
+  basicstyle=\ttfamily\footnotesize,   % \tiny, \small or \footnotesize \large \huge etc.
   breakatwhitespace=false,
   breaklines=true,
   captionpos=b,
@@ -35,3 +35,6 @@
   tabsize=2
 }
 \lstset{style=mystyle}
+\lstset{
+    literate={~} {$\sim$}{1}
+}
