@@ -5,16 +5,16 @@
 
 int main()
 {
-	char name[] = 	"Cat Dog";
-	//   name[] = 	['C', 'a', 't', ' ', 'D','o','g'];
-				
-	printf("%s ", name);
-				
-	name[0] = 'B';
-				
-	printf("%c", name[0]);
+		char name[] = 	"Cat Dog";
+	//  char name[] = 	['C', 'a', 't', ' ', 'D','o','g'];
 
-	return(0);
+		printf("%s ", name);
+
+		name[0] = 'B';
+
+		printf("%c", name[0]);
+
+		return(0);
 }
 
 
