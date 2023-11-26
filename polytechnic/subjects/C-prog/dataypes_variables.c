@@ -14,6 +14,8 @@ int main()
 	char 	name[]  = 	"Cat Dog";
 	
 	int 	marks[] = 	{25, 50, 75, 100};
+	
+	FILE 	*fptr	=	fopen("./apple.text", "r");
 				
 	return(0);
 }

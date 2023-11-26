@@ -3,17 +3,15 @@
 #include<math.h>
 
 // parameter passing : call-by value
-void callValue(int a)
+void changeValue(int a)
 {
 	a = 10;
-	printf("%d", a);
 }
 
 // parameter passing : call-by refrence
-void callRefrence(int* a)
+void changeRefrence(int* a)
 {
 	*a = 10;
-	printf("%d", *a);
 }
 
 
@@ -22,9 +20,13 @@ int main()
 {
 	int p = 5;
 	
-	callValue(p);			// call-by value	
-	callRefrence(&p);		// call-by refrence
-	
+	changeValue(p);			// call-by value
+	printf("%d ", p);	
+		
+	changeRefrence(&p);		// call-by refrence
 	printf("%d", p);	
+	
 	return(0);
 }
+
+
