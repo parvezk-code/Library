@@ -1,8 +1,8 @@
 public class Student
 {
-		String	name;
-		int		age;
-		char	grade;
+		String	name, roll, city;
+
+		static String college;
 
 		student( String n, int a, char g)
 		{
