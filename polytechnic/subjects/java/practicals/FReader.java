@@ -6,14 +6,17 @@ public class FReader
 {
 		public static void main(String arg[]) throws IOException, FileNotFoundException
 		{
-			FileWriter fr    =   new FileReader("./sample.txt");
+			FileReader fr    =   new FileReader("./sample.txt");
 			int ascii;
+			char ch;
 
 			ascii	=	fr.read();
 
 			while (ascii!=-1)
 			{
-				System.out.print((char)ch);
+				ch		=	(char)ascii;	
+				System.out.print(ch);
+				
 				ascii	=	fr.read();
 			}
 
