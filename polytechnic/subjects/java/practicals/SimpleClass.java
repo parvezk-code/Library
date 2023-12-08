@@ -1,10 +1,10 @@
-public class Student
+class Student
 {
-		String	name, roll, city;
+		String	name, age, grade;
 
 		static String college;
 
-		student( String n, int a, char g)
+		Student( String n, String a, String g)
 		{
 			name 	= 	n;
 			age		=	a;
@@ -16,17 +16,16 @@ public class Student
 			System.out.println(name);
 			System.out.println(age);
 			System.out.println(grade);
-
 		}
 
+}
 
+public class SimpleClass
+{
 		public static void main(String arg[])
 		{
-			Student s1 =  new Student("Amit", 21, 'B');
-
-			Student s2 =  new Student("Ravi", 19, 'A');
-
+			Student s1 =  new Student("Amit", "21", "B");
+			Student s2 =  new Student("Ravi", "19", "A");
 			s1.show();
-
 		}
 }

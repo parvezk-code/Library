@@ -8,7 +8,7 @@ public class Overloading
 
 		void add(int a, int b, int c)
 		{
-			int c = a + b + c;
+			int d = a + b + c;
 		}
 
 

@@ -18,7 +18,7 @@ public class Overriding extends Parent
 		public static void main(String arg[])
 		{
 			Parent  	p1  =	new Parent();
-			Overriding  c1  =	new Child();
+			Overriding  c1  =	new Overriding();
 
 			p1.show();
 			c1.show();

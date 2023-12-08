@@ -23,8 +23,8 @@ public class ThreadUser
 			BlueThread t1	=	new BlueThread();
 			t1.start();
 
-			GreenThread obj	=	new GreenThread();
-			Thread t3	=	new Thread();
-			t3.start(obj);
+			Main obj		=	new Main();
+			Thread t3		=	new Thread(obj);
+			t3.start();
 		}
 }

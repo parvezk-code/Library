@@ -17,8 +17,8 @@ public class Cat extends Animal
 
 		public static void main(String arg[])
 		{
-			Parent  p1  =	new Parent();
-			Parent  p2  =	new Polym();
+			Animal  p1  =	new Animal();
+			Animal  p2  =	new Cat();
 
 			p1.poly();
 			p2.poly();

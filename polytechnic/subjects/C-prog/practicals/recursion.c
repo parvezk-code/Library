@@ -1,19 +1,19 @@
 #include<stdio.h>
 
-void print(int n)
+void show(int n)
 {
-	print("%d", n);
+	printf("%d", n);
 
 	if(n<100)
 	{
-		printf("%d ", n+1);
+		show(n+1);
 	}
 }
 
 
 int main()
 {
-	print(1);
+	show(1);
 
 	return(0);
 }

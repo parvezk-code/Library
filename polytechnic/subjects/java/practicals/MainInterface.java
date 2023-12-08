@@ -1,4 +1,4 @@
-public interface Shape
+interface Shape
 {
 	//implicitly public, static and final
 	public String LABLE    =   "Shape";
@@ -7,11 +7,11 @@ public interface Shape
 	int getArea();
 }
 
-public class Rectangle implements Shape
+class Rectangle implements Shape
 {
     int height, width;
 
-    int getArea()
+    public int getArea()
     {
         int area = height * width;
         return(area);
