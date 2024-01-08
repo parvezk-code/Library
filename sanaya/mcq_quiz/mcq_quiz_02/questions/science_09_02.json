@@ -52,7 +52,7 @@
       "number": 10,
       "question": "(Write)  Describe life-cycle of butterfly",
       "answers": [ "butterfly lay eggs in cluster", "larva(catterpillar) comes out of the egg",
-                   "catterpillar(pupa) form covering called cocoon", "catterpillar change ito butterfly", "all" ], "correct_answer": 5
+                   "catterpillar(pupa) form covering called cocoon", "catterpillar change in to butterfly", "all" ], "correct_answer": 5
     },
     {
       "number": 11,
