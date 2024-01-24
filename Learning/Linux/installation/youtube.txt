@@ -10,7 +10,9 @@
 
     yt-dlp      -F      url
 
-    yt-dlp      -f      37    url
+    yt-dlp      -f      37    urlyt-dlp -F
+
+    youtube-dl  -x  --audio-format  mp3     <video_url>
 
 ------------------------------ Debian 12 ----------------------------------------------
 
