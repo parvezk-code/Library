@@ -1,18 +1,26 @@
 
 ------------------------------ Debian 12 ----------------------------------------------
 
-    youtube-dl
+    yt-dlp
 
-    youtubedl-gui
-
-
+   
     command :  yt-dlp
 
     yt-dlp      -F      url
 
     yt-dlp      -f      37    urlyt-dlp -F
 
-    youtube-dl  -x  --audio-format  mp3     <video_url>
+    yt-dlp  	-x  --audio-format  mp3     <video_url>
+    
+    
+
+------------------------------ Ubuntut 22.04 ----------------------------------------------
+
+
+   yt-dlp  -x  --audio-format  mp3     <video_url>
+
+
 
 ------------------------------ Debian 12 ----------------------------------------------
+
 
