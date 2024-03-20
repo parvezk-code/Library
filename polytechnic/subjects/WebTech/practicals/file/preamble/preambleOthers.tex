@@ -1,0 +1,68 @@
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{multicol}
+
+% No word break in 2 lines : \usepackage[none]{hyphenat}  \hyphenpenalty=10000  \exhyphenpenalty 10000
+
+\newcommand\Myperm[2][^n]{\prescript{#1\mkern-2.5mu}{}P_{#2}}
+
+\newcommand\Mycomb[2][^n]{\prescript{#1\mkern-0.5mu}{}C_{#2}}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+% \begin{hl}[red]
+\newenvironment{hl}[1][blue]
+    {
+    \color{#1}
+    \underline
+    }
+    {
+    \color{black}
+    }
+
+
+% \begin{multiColList}[2]
+\newenvironment{multiColList}[1][2]
+{
+    \begin{multicols}{#1}
+    \begin{enumerate}
+}
+{
+    \end{enumerate}
+    \end{multicols}
+}
+
+
+\begin{comment}
+
+maths packages          :   amsthm, amssymb, ntheorem
+
+bold math sysmbol       :   \( \boldsymbol R_y\)  \( \mathbf {  } \)
+
+arrow                   :   \(\leftarrow\)     \( \overline{INTA} \)
+
+Math symbols            :   \textless,   \textgreater,  XOR \(\oplus\), >> \(\gg\),  =~ \(\thickapprox \)
+
+                          \Theta  \omega  \Omega  \log_{a}b   \frac{}{}
+
+                          \sum_{n=1}^{n} s_i     \forall i, s_i   \Sigma  \sum
+                          \(   \left | \text{s}  \right | \)
+
+text in math mode       :   \( \text { } \)
+
+force in one line       :   \mbox{}
+
+plain text              :    \begin{verbatim}     \end{verbatim}
+
+package to include pdf  :   pdfpages
+
+\end{comment}

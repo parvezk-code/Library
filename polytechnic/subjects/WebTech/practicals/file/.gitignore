@@ -1,0 +1,9 @@
+# Ignore
+
+*.pdf
+*.aux
+*.log
+*.out
+*.gz
+
+# Allow

@@ -1,0 +1,99 @@
+\usepackage{tikz}
+\usetikzlibrary{positioning, tikzmark, calc, shapes.geometric, arrows}  % shapes,backgrounds,fit
+
+\newenvironment{myTree}
+{
+    \begingroup
+    \begin{center}
+    \begin{tikzpicture}[level distance=1.5cm, level 1/.style={sibling distance=3cm}, level 2/.style={sibling distance=1.5cm}]
+}
+{
+    \end{tikzpicture}
+    \end{center}
+    \endgroup
+}
+
+
+\newenvironment{myTreeLThree}
+{
+    \begingroup
+    \begin{center}
+    \begin{tikzpicture}[level distance=1.5cm, level 1/.style={sibling distance=6cm}, level 2/.style={sibling distance=3cm}, level 3/.style={sibling distance=1.5cm}]
+}
+{
+    \end{tikzpicture}
+    \end{center}
+    \endgroup
+}
+
+\newenvironment{vArrow}[3][black]
+{
+    \draw[->, #1] (#2) -- (#3);
+}
+{
+
+}
+
+\newenvironment{tArcDown}[2][black]
+{
+    \draw[-latex,#1] ($#2$) arc [ start angle=-160, end angle=-20, x radius=0.9cm, y radius =0.7cm ] ;
+}
+{
+
+}
+
+
+\newenvironment{tArcUp}[2][red]
+{
+    \draw[-latex,#1] ($#2$) arc [ start angle=160, end angle=20, x radius=0.9cm, y radius =0.7cm ] ;
+}
+{
+
+}
+
+\tikzstyle{flowchart-arrow} = [thick,->,>=stealth]
+
+\tikzstyle{roundnode} = [rectangle, draw=green!60, fill=green!5, very thick, minimum size=7mm]
+
+\tikzstyle{squarednode} = [rectangle, draw=red!60, fill=red!5, very thick, minimum size=7mm]
+
+\tikzstyle{flowchart-start} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+
+\tikzstyle{flowchart-io} = [trapezium, trapezium stretches=true, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+
+\tikzstyle{flowchart-process} = [rectangle, minimum width=2cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=orange!30]
+
+\tikzstyle{flowchart-decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+
+\begin{comment}
+
+Arrows                      :   https://tikz.dev/tikz-arrows
+Node alignment              :   https://tikz.net/contents/chapter-03-drawing-positioning-and-aligning-nodes/
+Array/Matrix                :   https://tikz.dev/tikz-matrices
+draw in table               :   baseline=0 to fit picture in table cell.
+package for vectorgraphics  :   PGF, PGFPlots
+
+
+positioning         :   https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/
+
+\begin{tikzpicture}[ baseline=0, node distance=1.5cm]
+
+path                :   --  -|  |-
+cordinate           :   ++(x, y)    ++(2,0)     ++(-2, 0)
+Node                :   \node (lable) at (y,x)  [ params ] {text}
+Node params         :   xshift=-1cm, yshift=0.2cm, below left=2cm, of=node, draw=blue!60
+draw(line,arrow)    :   (node/cordinate)    path    (node/cordinate)
+
+\draw [flowchart-arrow]  node1 path1 (node/cordinate) path2 (node/cordinate) path3 (node/cordinate)
+
+
+arrow from bottom to up taking left turn : draw [flowchart-arrow] (bottomNode.west) -- +(-2,0) |- (topNode.west);
+\draw (0,0) -- ++(1,0) -- ++(0,1) -- ++(-1,0) -- cycle;
+
+\node (N1) [flowchart-start] {NodeText};
+\node (N2) [flowchart-process, below of=N1] { NodeText };
+\node (N2) [flowchart-process, below left=2cm of=N1] { NodeText };
+intermediate node   :   node [right of= S3, xshift=-1cm, yshift=0.2cm] { NodeText }
+
+\end{comment}
