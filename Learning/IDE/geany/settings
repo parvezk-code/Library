@@ -1,0 +1,8 @@
+
+
+Compile     gcc -Wall  -c  "%f"              gcc -Wall   "%f"   -o    a.out
+
+Built       gcc -Wall  -o  "%e"  "%f"        gcc -Wall   "%f"   -o    a.out
+
+Execute     "./%e"                              "a.out"
+

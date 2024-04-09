@@ -1,0 +1,4 @@
+
+# Windows convert old bios to gpt efi 
+    --> mbrtogpt.exe  /validate  
+    --> mbrtogpt.exe  /convert

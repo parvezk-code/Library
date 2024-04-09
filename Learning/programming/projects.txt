@@ -38,6 +38,28 @@
     --> linux servers :https://docs.linuxserver.io/
     --> linux automation using awk etc...
     --> automation using ansible
+    --> LINUX BIBLE E10  by Christopher Negus, 978-1119578888
+    --> https://edu.anarcho-copy.org/Against%20Security%20-%20Self%20Security/linux-bible-christopher-negus-10th.pdf
+    
+
+
+Arduino
+    --> https://www.uio.no/studier/emner/matnat/ifi/IN1060/v21/arduino/arduino-projects-book.pdf 
+    --> https://store-usa.arduino.cc/products/uno-r4-wifi?selectedStore=us 
+    --> https://store-usa.arduino.cc/products/giga-r1-wifi?selectedStore=us 
+    --> https://robu.in/product-category/microcontroller-development-board/official-arduino-boards/original-arduino-boards/ 
+    --> https://store-usa.arduino.cc/products/science-kit-r3 
+    --> https://projecthub.arduino.cc 
+    --> Arduino IoT Cloud 
+    --> https://rcciit.org/students_projects/projects/ece/2018/GR30.pdf 
+    --> https://srmus.ac.in/view/governance/naac/1.3.4/Supporting%20Documents/BCA%20_%20BIT/RFID%20Based%20Attendance%20System%20using%20Audrino%20Uno%20Bishal%20Tamang.pdf 
+    --> https://projecthub.arduino.cc/team_chkr/rfid-based-smart-attendance-system-beff99 
+    --> https://projecthub.arduino.cc/the_electro_artist/attendance-system-with-arduino-rfid-tag-a41084 
+    --> https://randomnerdtutorials.com/arduino-ide-2-install-esp8266-littlefs/ 
+    --> Arduino simulation virtualization 
+        = https://wokwi.com/arduino 
+        = epost_Ab_1_5 https://www.tinkercad.com/dashboard 
+        = https://www.youtube.com/watch?v=1QDx_vp4dsc 
 
 
 Single board computers(SBCs)
