@@ -2,6 +2,7 @@
 
 #  101 Activity Books (10 books)
 
+# teach statistics real mathematics suggested by Shaykh Hamza Yusuf youtube channel rational believer part 19 education system
 
 # give sanaya small taske to learn
     # draw diagrams in ms logo(kturtle ubuntu, debian)
