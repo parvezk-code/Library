@@ -20,6 +20,7 @@
 # Pandoc                         : a universal document converte
 
 
+VS-Codium           :   VSCodium-1.87.2.24072.glibc2.17-x86_64.appimage
 
 Latex               :   Texstudio(AppImage, texmaker), kile, LYX(WYSIWYM), TeXworks,
                         GNOME LaTeX zim(latex plugin), Papeeria(online)
