@@ -1,4 +1,13 @@
 
+--------------------- adding app image software for all users -----------------------
+
+=> use sudo for below commands
+=> create a directory /appimages
+=> create a directory for the software inside /appimages
+=> copy/move the app-image or extracted directory inside above directory
+=> permissions owner=rwx    group=r-x   others=r-w
+
+
 --------------------- Ubuntu creating shortcut in start menu-------------------------
 
     =>  /usr/share/applications/XXX.desktop file
