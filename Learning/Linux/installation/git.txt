@@ -17,14 +17,16 @@ Home Docker(ssh)    :   git@github.com:parvezk-code/Home-Docker-Env.git
 
     Copy ssh key                    :   cat  ~/.ssh/id_ed25519.pub
                                         #ssh-ed25519 AAAA....LpL parvez@newuser.com
+                                        key format -->  ssh-XXXX YYYYYY  ZZZZZ
 
-    Add key to github account       :   settings => SSH and GPG keys => New SSH key => paste the key => Add SSH key
+    Add key to github account       :   settings --> Security(Deploy Keys) --> "Add deploy keys" --> Allow write access --> add key
 
 
 
 ---------------------------------commands---------------------------------------
 
 git  clone  ssh_url                     # clone remote repo
+cd   dir_name                           # move into cloned directory
 git  remote add origin ssh_url          # Create alias origin for remote_url(remote repository).
 git  remote -v                          # display branches
 git  remote set-url origin new_url      # Update alias origin for new remote_url(remote repository).
