@@ -11,8 +11,8 @@
 => use sudo for below commands
 => create a directory /appimages
 => create a directory for the software inside /appimages
+=> use sudo to extract app-image. this will set proper permissions.
 => copy/move the app-image or extracted directory inside above directory
-=> permissions owner=rwx    group=r-x   others=r-w
 
 --------------------- Ubuntu creating shortcut in start menu-------------------------
 
