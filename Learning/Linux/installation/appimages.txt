@@ -6,4 +6,21 @@
     move the extracted directory to desired location which is comman to all users
     permision of this directory and its content : group=r_x, others=r_x
 
+--------------------- Ubuntu creating shortcut in start menu-------------------------
 
+    =>  /usr/share/applications/XXX.desktop file
+    =>  /home/newuser/.local/share/applications/appName.desktop file
+    =>  Create a file XXX.desktop and add following entries to it
+
+        [Desktop Entry]
+        Name=VSCodium
+        Version=1.9.12
+        Type=Application
+        Terminal=false
+        Exec=/home/newuser/zz_data/vs-codium/squashfs-root/AppRun
+        Icon=/home/newuser/zz_data/vs-codium/squashfs-root/vscodium.png
+        Keywords=Programming;IDE;
+        Categories=TextEditor;Development;IDE;
+        Comment=IDE For coding
+
+------------------------------------------------------------------------------------
