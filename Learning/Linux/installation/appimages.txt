@@ -10,6 +10,8 @@
 
     =>  /usr/share/applications/XXX.desktop file
     =>  /home/newuser/.local/share/applications/appName.desktop file
+
+    =>  Copy-paste an existing file from /usr/share/applications
     =>  Create a file XXX.desktop and add following entries to it
 
         [Desktop Entry]
@@ -22,5 +24,9 @@
         Keywords=Programming;IDE;
         Categories=TextEditor;Development;IDE;
         Comment=IDE For coding
+
+    ==>  give appropriate permissions to the software directory and exec files 
+
+    ==>  give appropriate permissions refer files in this directory /usr/share/applications/
 
 ------------------------------------------------------------------------------------
