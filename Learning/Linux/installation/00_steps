@@ -1,6 +1,4 @@
-install ubuntu 22.04 steps
-
-steps ubuntu 24.04
+install steps ubuntu 24.04
 
 update 
 
@@ -14,4 +12,4 @@ install qemu kvm
 
 install git	(copy directory ~/.ssh and repos)
 
-codium appImage
+codium appImage   Version: 1.87.2 Release: 24072 Date: 2024-03-12T18:30:28.994Z

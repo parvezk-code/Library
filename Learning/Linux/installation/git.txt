@@ -9,6 +9,8 @@ Home Docker(ssh)    :   git@github.com:parvezk-code/Home-Docker-Env.git
 
     set user name                   :   git config --global user.name "parvezk"
 
+    copy ssh key(optional)          :   ssh-copy-id -i key usr@host
+
     Generate ssh key                :   ssh-keygen -t ed25519 -C "parvez@newuser.com"
 
     Get agent id (Ex pid 7925)      :   eval "$(ssh-agent -s)"

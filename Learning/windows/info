@@ -2,3 +2,8 @@
 # Windows convert old bios to gpt efi 
     --> mbrtogpt.exe  /validate  
     --> mbrtogpt.exe  /convert
+
+# win 11 installation without internet
+    --> press (shift+f10) on connect to internet screen
+    --> on cmd prompt type OOBE\BYPASSNRO
+    --> system will restart and this tiome click  "i dont have internet"

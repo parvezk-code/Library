@@ -1,3 +1,7 @@
+------------------------ resize windows c partition --------------------------------
+if windows do not allow desired resize space.
+
+boot from ubuntu bootable and resize using gparted utility
 
 --------------------------   flash installation iso to usd device -----------------------------
 
