@@ -1,4 +1,0 @@
-- name: browser | chromium | install package
-  tags: chromium
-  package:
-    name: chromium

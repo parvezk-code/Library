@@ -1,4 +1,0 @@
-- name: browser | firefox-esr | install package
-  tags: firefox-esr
-  package:
-    name: firefox-esr

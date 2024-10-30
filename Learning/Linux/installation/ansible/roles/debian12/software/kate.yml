@@ -1,4 +1,0 @@
-- name: editor | kate | install package
-  tags: kate
-  package:
-    name: kate

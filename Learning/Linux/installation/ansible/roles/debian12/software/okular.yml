@@ -1,4 +1,0 @@
-- name: pdf | okular | install package
-  tags: okular
-  package:
-    name: okular

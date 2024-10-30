@@ -1,4 +1,0 @@
-- name: image viewer | gwenview | install package
-  tags: gwenview
-  package:
-    name: gwenview

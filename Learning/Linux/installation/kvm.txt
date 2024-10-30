@@ -1,5 +1,0 @@
-
-sudo apt -y install qemu-kvm  bridge-utils  virt-manager
-
-
-sudo apt -y install qemu-kvm  bridge-utils  virt-manager libvirt-daemon libvirt-daemon-system  virtinst libosinfo-bin

@@ -1,6 +1,0 @@
-
-- name: git | install package | git
-  tags: git
-  package:
-    name:
-      - git

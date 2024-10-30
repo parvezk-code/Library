@@ -1,5 +1,0 @@
-Only members of the libvirt and kvm user groups can run virtual machines.
-
-sudo adduser sanaya libvirt
-
-sudo adduser sanaya kvm
