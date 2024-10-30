@@ -8,6 +8,8 @@ setup firefox	(book-mark gmail, drive, github, chatgpt, youtube)
 
 install gimp
 
+create users --> sanaya, guest
+
 mount partition for all users 
 	open disks, edit mount options
 		turn off     -->  user session defaults,  
