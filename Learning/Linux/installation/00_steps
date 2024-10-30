@@ -8,6 +8,13 @@ setup firefox	(book-mark gmail, drive, github, chatgpt, youtube)
 
 install gimp
 
+mount partition for all users 
+	open disks, edit mount options
+		turn off     -->  user session defaults,  
+		tick options -->  mount at startup and show in user interface
+		mount point  -->  /media/data directory
+	sudo   setfacl   -m    u:newuser:rwx    /media/data
+
 install qemu kvm
 
 install git	(copy directory ~/.ssh and repos)
