@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <login-form></login-form>
+
+  <script src="login-form-component.js" type="module"></script>
+  <script>
+    document.querySelector('login-form')?.addEventListener('login-success', (e) => {
+      console.log('Login success:', e.detail)
+      // e.detail.username, e.detail.password
+    })
+  </script>
+
+</body>
+</html>

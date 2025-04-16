@@ -29,6 +29,13 @@ Live Preview                                    ms-vscode
 # choose a device to run flutter app
 from command palette choose : Flutter:select device
 
+#python
+python				ms-python
+Python Debugger			ms-python
+Jupyter				ms-toolsai
+
+
+
 
 
 
