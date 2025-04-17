@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute-Based Modal</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <!-- Content to be displayed in modal (can be any HTML element) -->
+    <div id="modalContent" style="display: none;">
+        <p>This is dynamic modal content.</p>
+        <form>
+            <label>Name: <input type="text"></label><br>
+            <label>Email: <input type="email"></label><br>
+            <button type="button">Submit</button>
+        </form>
+    </div>
+
+    <!-- Modal element -->
+    <custom-modal 
+        id="exampleModal"
+        config='{"title": "Custom Modal Title", "showClose": true}'
+        content="#modalContent">
+    </custom-modal>
+
+    <script src="modal.js"></script>
+    <script>
+        const modal = document.getElementById('exampleModal');
+        modal.setAttribute('open', '');
+    </script>
+</body>
+</html>

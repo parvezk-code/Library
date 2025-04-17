@@ -1,0 +1,109 @@
+login-form {
+  display: block;
+  max-width: 400px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+login-form .form-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+login-form .form-header h2 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+login-form .form-header p {
+  color: #7f8c8d;
+  margin: 0;
+}
+
+login-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+login-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+login-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+login-form input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+login-form .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+login-form .remember-me {
+  display: flex;
+  align-items: center;
+}
+
+login-form .remember-me input {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+login-form .forgot-password {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+login-form .forgot-password:hover {
+  text-decoration: underline;
+}
+
+login-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+login-form button:hover {
+  background-color: #2980b9;
+}
+
+login-form .signup-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #7f8c8d;
+}
+
+login-form .signup-link a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+login-form .signup-link a:hover {
+  text-decoration: underline;
+}
