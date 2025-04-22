@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Component Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <cart-container 
+        id="cartComponent" 
+        config='[
+            {"name": "Cart 1", "img": "https://via.placeholder.com/150", "role": "Category 1", "description": "This is the first cart.", "socials": {"twitter": "https://twitter.com", "facebook": "https://facebook.com"}}, 
+            {"name": "Cart 2", "img": "https://via.placeholder.com/150", "role": "Category 2", "description": "This is the second cart.", "socials": {"instagram": "https://instagram.com"}},
+            {"name": "Cart 3", "img": "https://via.placeholder.com/150", "role": "Category 3", "description": "This is the third cart.", "socials": {"instagram": "https://instagram.com"}},
+            {"name": "Cart 4", "img": "https://via.placeholder.com/150", "role": "Category 4", "description": "This is the fourth cart.", "socials": {"instagram": "https://instagram.com"}}
+        ]'>
+    </cart-container>
+
+  <script src="team-card.js"></script>
+  <script src="cart-container-component.js"></script>
+</body>
+</html>

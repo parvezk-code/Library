@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arsha Navbar - Pure CSS</title>
+
+  <link rel="stylesheet" href="navbar-component.css">
+</head>
+<body>
+
+  <!-- Custom NavBar Component -->
+  <nav-bar></nav-bar>
+
+  <main style="margin-top: 100px; padding: 20px;">
+    <h1>Welcome to Arsha (Plain CSS Version)</h1>
+    <p>This is a placeholder below the navigation bar.</p>
+  </main>
+
+  <script src="navbar-component.js"></script>
+  <script>
+    // Simple mobile menu toggle
+    document.addEventListener('click', e => {
+      const toggle = e.target.closest('.mobile-toggle');
+      if (toggle) {
+        document.querySelector('.nav-links').classList.toggle('active');
+      }
+    });
+  </script>
+</body>
+</html>
