@@ -50,3 +50,16 @@ class TeamCard extends HTMLElement {
   
   customElements.define('team-card', TeamCard);
   
+/*
+
+Following is a screenshot of html page. Create a component out of it. 
+GIve me separate html, css, and js file. Avoid external libraries. Make it responsive. 
+Package it into a reusable HTML custom element (e.g., class MyComponent extends HTMLElement).
+Do not use shadow dom.
+
+This component should take attribute(information) from a json file. 
+json will be passed as attribute named config to this component.  
+when ever the attribute config changes the conponent should ender automatically.
+
+Json information -->(url[img, facebook, inta, linkesdin, twitter] , role, description).
+*/
