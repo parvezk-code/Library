@@ -1,0 +1,31 @@
+
+Attached is a json containing information about various types of cart.
+
+create a  reusable HTML cart element (e.g., class MyComponent extends HTMLElement) for each type in the json file.
+Give me separate css, and js file for each cart component. 
+Do not use shadow dom.
+Each component should have attribute(named config).
+when ever the attribute config changes the conponent should ender automatically.
+config attribute will contain information in json format.  
+place each cart in a separate directory.
+Give a top level index.html index.css, index.js and data.js to diplay each of these carts in a single page index.html.
+Data.js will contain information of attached json which will be used  to display each cart. kep index.html simple do not write in it js and css code. js code will be written in index.js and data.js file
+Give me a downloadable zip file.
+
+
+------------------------------------------------------------------------------
+
+
+create an html page which contains atleast 10 types of cart components.
+
+Give me separate html, css, and js file for each cart component. 
+Avoid external libraries. Make it responsive. 
+Package it into a reusable HTML custom element (e.g., class MyComponent extends HTMLElement).
+Do not use shadow dom.
+Each component should take attribute(information) from a json file. 
+json will be passed as attribute named config to each component.  
+when ever the attribute config changes the conponent should ender automatically.
+give content to each cart and make ot look good. 
+Give a top level index.html index.css and index.js to diplay each of these carts in a single page index.html. give data to these carts.
+Give me a downloadable zip file.
+

@@ -1,0 +1,132 @@
+const cartData = {
+  "items": [
+    {
+      "id": 1,
+      "type": "product",
+      "name": "Wireless Noise-Cancelling Headphones",
+      "price": 249.99,
+      "quantity": 1,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200",
+      "description": "Premium over-ear headphones with active noise cancellation and 30-hour battery life",
+      "category": "Electronics",
+      "rating": 4.8,
+      "reviews": 1245,
+      "colors": [
+        "Black",
+        "Silver",
+        "Blue"
+      ],
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "type": "product",
+      "name": "Smart Fitness Watch",
+      "price": 199.99,
+      "quantity": 1,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200",
+      "description": "Track your heart rate, workouts, and sleep with this advanced smartwatch",
+      "category": "Wearables",
+      "rating": 4.6,
+      "reviews": 892,
+      "colors": [
+        "Black",
+        "Rose Gold",
+        "Midnight Blue"
+      ],
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "type": "product",
+      "name": "Premium USB-C Cable (6ft)",
+      "price": 19.99,
+      "quantity": 2,
+      "image": "https://images.unsplash.com/photo-1592890288564-7665a9b260d7?w=200",
+      "description": "Durable braided cable with fast charging and data transfer capabilities",
+      "category": "Accessories",
+      "rating": 4.5,
+      "reviews": 456,
+      "colors": [
+        "Black",
+        "White",
+        "Red"
+      ],
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "type": "product",
+      "name": "Wireless Charging Pad",
+      "price": 39.99,
+      "quantity": 1,
+      "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=200",
+      "description": "Fast wireless charging pad compatible with Qi-enabled devices",
+      "category": "Electronics",
+      "rating": 4.3,
+      "reviews": 321,
+      "colors": [
+        "White",
+        "Black"
+      ],
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "type": "profile",
+      "name": "Sophia Lin",
+      "role": "Frontend Developer",
+      "image": "https://randomuser.me/api/portraits/women/44.jpg",
+      "socials": {
+        "linkedin": "https://linkedin.com/in/sophia",
+        "twitter": "https://twitter.com/sophialin"
+      }
+    },
+    {
+      "id": 6,
+      "type": "testimonial",
+      "quote": "An exceptional experience from start to finish!",
+      "name": "David Kim",
+      "position": "Entrepreneur",
+      "image": "https://randomuser.me/api/portraits/men/46.jpg"
+    },
+    {
+      "id": 7,
+      "type": "event",
+      "title": "Tech Innovators Meetup 2025",
+      "date": "2025-07-20",
+      "location": "New York City, NY",
+      "image": "https://images.unsplash.com/photo-1551836022-4c4c79ecde16?w=200"
+    },
+    {
+      "id": 8,
+      "type": "course",
+      "course": "Mastering Vue.js",
+      "instructor": "Liam Tran",
+      "duration": "6 weeks",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200"
+    },
+    {
+      "id": 9,
+      "type": "blog",
+      "title": "Why You Should Learn Web Components",
+      "author": "Emily Dev",
+      "excerpt": "Web components allow developers to build encapsulated and reusable UI elements...",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200"
+    },
+    {
+      "id": 10,
+      "type": "team",
+      "name": "Carlos Mendoza",
+      "designation": "UX Designer",
+      "bio": "Carlos has designed interfaces for startups and Fortune 500s alike.",
+      "image": "https://randomuser.me/api/portraits/men/30.jpg"
+    }
+  ],
+  "subtotal": 529.95,
+  "tax": 42.4,
+  "shipping": 0.0,
+  "total": 572.35,
+  "coupon": "SUMMER20",
+  "saved": 45.0
+};

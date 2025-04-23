@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Beautiful Cart Components</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="components/cart-basic/cart-basic.css">
+    <link rel="stylesheet" href="components/cart-minimal/cart-minimal.css">
+    <link rel="stylesheet" href="components/cart-detailed/cart-detailed.css">
+    <link rel="stylesheet" href="components/cart-sidebar/cart-sidebar.css">
+    <link rel="stylesheet" href="components/cart-floating/cart-floating.css">
+    <link rel="stylesheet" href="components/cart-summary/cart-summary.css">
+    <link rel="stylesheet" href="components/cart-product-card/cart-product-card.css">
+    <link rel="stylesheet" href="components/cart-with-coupon/cart-with-coupon.css">
+    <link rel="stylesheet" href="components/cart-sticky-footer/cart-sticky-footer.css">
+    <link rel="stylesheet" href="components/cart-grid/cart-grid.css">
+    
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --danger-color: #f72585;
+            --success-color: #4cc9f0;
+            --dark-color: #2b2d42;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --border-color: #dee2e6;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--dark-color);
+            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+        
+        .component-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .component-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            color: var(--accent-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .component-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>10 Beautiful Cart Components</h1>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-shopping-cart"></i> 1. Basic Cart</h2>
+        <cart-basic id="basicCart"></cart-basic>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-stream"></i> 2. Minimal Cart</h2>
+        <cart-minimal id="minimalCart"></cart-minimal>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-list-alt"></i> 3. Detailed Cart</h2>
+        <cart-detailed id="detailedCart"></cart-detailed>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-columns"></i> 4. Sidebar Cart</h2>
+        <cart-sidebar id="sidebarCart"></cart-sidebar>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-window-restore"></i> 5. Floating Cart</h2>
+        <cart-floating id="floatingCart"></cart-floating>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-receipt"></i> 6. Cart Summary</h2>
+        <cart-summary id="cartSummary"></cart-summary>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-box-open"></i> 7. Product Card</h2>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <cart-product-card id="productCard1"></cart-product-card>
+            <cart-product-card id="productCard2"></cart-product-card>
+            <cart-product-card id="productCard3"></cart-product-card>
+        </div>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-tag"></i> 8. Cart with Coupon</h2>
+        <cart-with-coupon id="cartWithCoupon"></cart-with-coupon>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-window-minimize"></i> 9. Sticky Footer Cart</h2>
+        <cart-sticky-footer id="stickyFooterCart"></cart-sticky-footer>
+    </div>
+    
+    <div class="component-container">
+        <h2><i class="fas fa-th"></i> 10. Grid Cart</h2>
+        <cart-grid id="gridCart"></cart-grid>
+    </div>
+
+    <!-- Component Scripts -->
+    <script src="components/cart-basic/cart-basic.js"></script>
+    <script src="components/cart-minimal/cart-minimal.js"></script>
+    <script src="components/cart-detailed/cart-detailed.js"></script>
+    <script src="components/cart-sidebar/cart-sidebar.js"></script>
+    <script src="components/cart-floating/cart-floating.js"></script>
+    <script src="components/cart-summary/cart-summary.js"></script>
+    <script src="components/cart-product-card/cart-product-card.js"></script>
+    <script src="components/cart-with-coupon/cart-with-coupon.js"></script>
+    <script src="components/cart-sticky-footer/cart-sticky-footer.js"></script>
+    <script src="components/cart-grid/cart-grid.js"></script>
+    
+    <script>
+        // Enhanced cart data with realistic products
+        const cartData = {
+            items: [
+                {
+                    id: 1,
+                    name: "Wireless Noise-Cancelling Headphones",
+                    price: 249.99,
+                    quantity: 1,
+                    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200",
+                    description: "Premium over-ear headphones with active noise cancellation and 30-hour battery life",
+                    category: "Electronics",
+                    rating: 4.8,
+                    reviews: 1245,
+                    colors: ["Black", "Silver", "Blue"],
+                    inStock: true
+                },
+                {
+                    id: 2,
+                    name: "Smart Fitness Watch",
+                    price: 199.99,
+                    quantity: 1,
+                    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200",
+                    description: "Track your heart rate, workouts, and sleep with this advanced smartwatch",
+                    category: "Wearables",
+                    rating: 4.6,
+                    reviews: 892,
+                    colors: ["Black", "Rose Gold", "Midnight Blue"],
+                    inStock: true
+                },
+                {
+                    id: 3,
+                    name: "Premium USB-C Cable (6ft)",
+                    price: 19.99,
+                    quantity: 2,
+                    image: "https://images.unsplash.com/photo-1592890288564-7665a9b260d7?w=200",
+                    description: "Durable braided cable with fast charging and data transfer capabilities",
+                    category: "Accessories",
+                    rating: 4.5,
+                    reviews: 456,
+                    colors: ["Black", "White", "Red"],
+                    inStock: true
+                },
+                {
+                    id: 4,
+                    name: "Wireless Charging Pad",
+                    price: 39.99,
+                    quantity: 1,
+                    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=200",
+                    description: "Fast wireless charging pad compatible with Qi-enabled devices",
+                    category: "Electronics",
+                    rating: 4.3,
+                    reviews: 321,
+                    colors: ["White", "Black"],
+                    inStock: true
+                }
+            ],
+            subtotal: 529.95,
+            tax: 42.40,
+            shipping: 0.00,
+            total: 572.35,
+            coupon: "SUMMER20",
+            saved: 45.00
+        };
+        
+        // Set config for each component after they're defined
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('basicCart').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('minimalCart').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('detailedCart').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('sidebarCart').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('floatingCart').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('cartSummary').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('productCard1').setAttribute('config', JSON.stringify(cartData.items[0]));
+            document.getElementById('productCard2').setAttribute('config', JSON.stringify(cartData.items[1]));
+            document.getElementById('productCard3').setAttribute('config', JSON.stringify(cartData.items[2]));
+            document.getElementById('cartWithCoupon').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('stickyFooterCart').setAttribute('config', JSON.stringify(cartData));
+            document.getElementById('gridCart').setAttribute('config', JSON.stringify(cartData));
+        });
+        
+        // Demo: Change data after 5 seconds to show reactivity
+        setTimeout(() => {
+            const updatedData = {...cartData};
+            updatedData.items[0].quantity = 2;
+            updatedData.items[3].quantity = 0; // Remove this item
+            updatedData.items = updatedData.items.filter(item => item.quantity > 0);
+            updatedData.subtotal = 719.94;
+            updatedData.tax = 57.60;
+            updatedData.total = 777.54;
+            updatedData.coupon = "FALLSALE";
+            updatedData.saved = 72.00;
+            
+            document.getElementById('basicCart').setAttribute('config', JSON.stringify(updatedData));
+        }, 5000);
+    </script>
+</body>
+</html>
