@@ -1,0 +1,21 @@
+create a website with following features.
+
+website should be responsive and good looking.
+Project Structure should be MVC based model, view, controller. 
+creating components like nav-bar(header), footer
+It should have 3 top level files : index.html, index.js and index.css
+index.html should consists ofvarious reusable HTML custom element.
+HTML custom element Example : class MyComponent extends HTMLElement.
+Do not use shadow dom.
+Do not use modues.
+Each component has attribute named config and conifg will contain json information. 
+json will be passed as attribute(config)  to each component.  
+when ever the attribute config changes the component should render automatically.
+each compontent will have separate css file.
+use these individula components to create a top level index.html using index.js
+index.js will add appropriate coponents to index.html
+provide separate index.css file to top level html page
+Avoid external libraries. Make it responsive.
+Give me a downloadable zip file.
+
+beautiful cards,  Horizontal Scrolling Ticker, Carousel

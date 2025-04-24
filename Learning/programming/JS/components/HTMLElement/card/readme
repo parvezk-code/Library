@@ -29,3 +29,24 @@ give content to each cart and make ot look good.
 Give a top level index.html index.css and index.js to diplay each of these carts in a single page index.html. give data to these carts.
 Give me a downloadable zip file.
 
+----------------------------------------------------------------------------------
+
+this is  a link to a website : https://bootstrapmade.com/demo/Arsha/
+
+break this html page into various reusable HTML custom element.
+Example, class MyComponent extends HTMLElement.
+Do not use shadow dom.
+Do not use modues.
+Each component has attribute named config and conifg will contain json information. 
+json will be passed as attribute(config)  to each component.  
+when ever the attribute config changes the component should render automatically.
+each compontent will have separate css file.
+use these individula components to create a top level index.html using index.js
+index.js will add appropriate coponents to index.html
+provide separate index.css file to top level html page
+Avoid external libraries. Make it responsive.
+want these components filled with actual Arsha content
+
+
+
+

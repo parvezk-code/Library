@@ -1,0 +1,50 @@
+/* Ticker inspired by Arsha */
+.ticker-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--light-color);
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+.ticker-track {
+    display: inline-flex;
+    gap: 30px;
+    will-change: transform;
+}
+
+.ticker-item {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 250px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.ticker-item:hover {
+    transform: translateY(-5px);
+}
+
+.ticker-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.ticker-item span {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .ticker-item {
+        min-width: 200px;
+        padding: 15px;
+    }
+}
