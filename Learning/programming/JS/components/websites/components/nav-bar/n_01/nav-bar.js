@@ -1,5 +1,4 @@
-// nav-bar.js
-class NavBar extends HTMLElement {
+class NavBar_01 extends HTMLElement {
     constructor() {
         super();
         this._config = null;
@@ -38,4 +37,4 @@ class NavBar extends HTMLElement {
     }
 }
 
-customElements.define('nav-bar', NavBar);
+customElements.define('nav-bar-01', NavBar_01);

@@ -10,17 +10,27 @@ class Controller
   
     init() 
     {
-        this.renderNavBar();
+        //this.renderNavBar_01();
+        this.renderNavBar_02();
         this.root.appendChild(this.mainContent);
         this.renderTickers();
         this.renderCategoryList();
         this.renderFooter();
     }
   
-    renderNavBar() 
+    renderNavBar_01() 
     {
-        const navBar = document.createElement('nav-bar');
-        const config = window.siteData?.navBarConfig || {};
+        const navBar = document.createElement('nav-bar-01');
+        const config = window.siteData?.navBarConfig?.config01 || {};
+        navBar.setAttribute('config', JSON.stringify(config));
+        this.root.appendChild(navBar);
+    }
+
+    renderNavBar_02() 
+    {
+        const navBar = document.createElement('nav-bar-02');
+        const config = window.siteData?.navBarConfig?.config02 || {};
+        console.log("json1 ", JSON.stringify(config));
         navBar.setAttribute('config', JSON.stringify(config));
         this.root.appendChild(navBar);
     }
