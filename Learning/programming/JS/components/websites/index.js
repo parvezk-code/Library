@@ -13,7 +13,8 @@ class Controller
         //this.renderNavBar_01();
         this.renderNavBar_02();
         this.root.appendChild(this.mainContent);
-        this.renderTickers_01();
+        //this.renderTickers_01();
+        this.renderTickers_02();
         this.renderCategoryList();
         this.renderFooter();
     }
@@ -30,7 +31,6 @@ class Controller
     {
         const navBar = document.createElement('nav-bar-02');
         const config = window.siteData?.navBarConfig?.config02 || {};
-        console.log("json1 ", JSON.stringify(config));
         navBar.setAttribute('config', JSON.stringify(config));
         this.root.appendChild(navBar);
     }

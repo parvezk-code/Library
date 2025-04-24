@@ -37,10 +37,14 @@ window.siteData = {
     },
     config02: {
       items: [
-        { title: 'New Arrivals', description: 'Just launched', image: 'img/new1.jpg' },
-        { title: 'Top Sellers', description: 'Most popular', image: 'img/top1.jpg' },
-        { title: 'Limited Edition', description: 'Only a few left!', image: 'img/limited1.jpg' },
-        { title: 'Best Deals', description: 'Don’t miss out!', image: 'img/deals1.jpg' }
+        { title: 'Amit', description: 'SE', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-7.webp' },
+        { title: 'Rani', description: 'RA', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-8.webp' },
+        { title: 'Ravi', description: 'CEO', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-6.webp' },
+        { title: 'Gita', description: 'Manager', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-4.webp' },
+        { title: 'Shyam', description: 'HR', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-9.webp' },
+        { title: 'Sita', description: 'SSE', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-9.webp' },
+        { title: 'Rahul', description: 'JE', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-12.webp' },
+        { title: 'Reena', description: 'QA', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-12.webp' },
       ],
       interval: 3000,
       controls: true,
