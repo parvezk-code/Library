@@ -46,10 +46,24 @@ window.siteData = {
         { title: 'Rahul', description: 'JE', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-12.webp' },
         { title: 'Reena', description: 'QA', image: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-12.webp' },
       ],
-      interval: 3000,
       controls: true,
-      speed: 1.5
-    }
+      gap: 3
+    },
+    config03:{
+      images : [
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-7.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-8.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-6.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-4.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-9.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-9.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-12.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-12.webp',
+      'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-13.webp',
+      'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-1.jpg',
+      'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-2.jpg',
+      'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-3.jpg'
+    ]}
   },
   categoryConfig: {
     categories: [
