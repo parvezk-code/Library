@@ -6,12 +6,12 @@ class Controller
         if (!this.root) throw new Error(`Element with ID '${rootId}' not found.`);
         this.mainContent = document.createElement('div');
         this.mainContent.className = 'main-content';
-        this.root.appendChild(this.mainContent);
     }
   
     init() 
     {
         this.renderNavBar();
+        this.root.appendChild(this.mainContent);
         this.renderTickers();
         this.renderCategoryList();
         this.renderFooter();
