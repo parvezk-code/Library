@@ -24,13 +24,28 @@ window.siteData = {
         }
   },
   tickerConfig: {
-    items: [
-      { title: 'Mascenas nec', count: '8 Products' },
-      { title: 'Aenean tellus', count: '4 Products' },
-      { title: 'Donec quam', count: '12 Products' },
-      { title: 'Phasellus leo', count: '4 Products' }
-    ],
-    interval: 2000
+    config01: {
+      items: [
+        { title: 'Mascenas nec', count: '8 Products' },
+        { title: 'Aenean tellus', count: '4 Products' },
+        { title: 'Donec quam', count: '12 Products' },
+        { title: 'Phasellus leo', count: '4 Products' }
+      ],
+      interval: 2000,
+      controls: true,
+      speed: 1
+    },
+    config02: {
+      items: [
+        { title: 'New Arrivals', description: 'Just launched', image: 'img/new1.jpg' },
+        { title: 'Top Sellers', description: 'Most popular', image: 'img/top1.jpg' },
+        { title: 'Limited Edition', description: 'Only a few left!', image: 'img/limited1.jpg' },
+        { title: 'Best Deals', description: 'Don’t miss out!', image: 'img/deals1.jpg' }
+      ],
+      interval: 3000,
+      controls: true,
+      speed: 1.5
+    }
   },
   categoryConfig: {
     categories: [

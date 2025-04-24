@@ -13,7 +13,7 @@ class Controller
         //this.renderNavBar_01();
         this.renderNavBar_02();
         this.root.appendChild(this.mainContent);
-        this.renderTickers();
+        this.renderTickers_01();
         this.renderCategoryList();
         this.renderFooter();
     }
@@ -35,12 +35,19 @@ class Controller
         this.root.appendChild(navBar);
     }
 
-    renderTickers()
+    renderTickers_01()
     {
-        this.ticker = document.createElement('content-ticker');
-        this.ticker.setAttribute('config', JSON.stringify(window.siteData?.tickerConfig || {}));
-        this.mainContent.appendChild(this.ticker);
+        const ticker = document.createElement('content-ticker-01');
+        ticker.setAttribute('config', JSON.stringify(window.siteData?.tickerConfig?.config01 || {}));
+        this.mainContent.appendChild(ticker);
     }
+
+    renderTickers_02() {
+        const ticker = document.createElement('content-ticker-02');
+        ticker.setAttribute('config', JSON.stringify(window.siteData?.tickerConfig?.config02 || {}));
+        this.mainContent.appendChild(ticker);
+    }
+    
     
     renderCategoryList() 
     {
