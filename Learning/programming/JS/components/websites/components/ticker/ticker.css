@@ -1,28 +1,33 @@
-/* Ticker inspired by Arsha */
+/* Base styles */
 .ticker-container {
-    overflow: hidden;
+    overflow-x: auto;
     white-space: nowrap;
     background: var(--light-color);
     padding: 20px;
     margin-bottom: 40px;
     border-radius: 8px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .ticker-track {
-    display: inline-flex;
+    display: flex;
     gap: 30px;
     will-change: transform;
+    transition: transform 0.5s ease;
 }
 
 .ticker-item {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     min-width: 250px;
     padding: 20px;
     background: var(--white);
     border-radius: 8px;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    transition: transform 0.3s;
+    scroll-snap-align: start;
 }
 
 .ticker-item:hover {
@@ -42,9 +47,38 @@
     font-weight: 600;
 }
 
-@media (max-width: 768px) {
+/* Medium screen adjustments */
+@media (max-width: 1024px) {
     .ticker-item {
-        min-width: 200px;
+        min-width: 220px;
+        padding: 16px;
+    }
+
+    .ticker-item h3 {
+        font-size: 16px;
+    }
+
+    .ticker-item span {
+        font-size: 13px;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+    .ticker-container {
         padding: 15px;
+    }
+
+    .ticker-item {
+        min-width: 180px;
+        padding: 12px;
+    }
+
+    .ticker-item h3 {
+        font-size: 15px;
+    }
+
+    .ticker-item span {
+        font-size: 12px;
     }
 }

@@ -27,11 +27,11 @@ class ContentTicker extends HTMLElement {
         if (!this._config) return;
 
         this.innerHTML = `
-            <div class="ticker-container" style="overflow: hidden; white-space: nowrap;">
-                <div class="ticker-track" style="display: inline-flex; will-change: transform;">
+            <div class="ticker-container">
+                <div class="ticker-track">
                     ${this._config.items.map(item => `
-                        <div class="ticker-item" style="min-width: 200px; padding: 10px; flex-shrink: 0;">
-                            <h3 style="margin: 0;">${item.title}</h3>
+                        <div class="ticker-item">
+                            <h3>${item.title}</h3>
                             <span>${item.count}</span>
                         </div>
                     `).join('')}
