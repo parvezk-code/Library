@@ -13,8 +13,8 @@ class Controller
         //this.renderNavBar_01();
         this.renderNavBar_02();
         this.root.appendChild(this.mainContent);
-        //this.renderTickers_01();
-        this.renderTickers_02();
+        this.renderTickers_01();
+        this.renderTickers_04();
         this.renderTickers_03();
         this.renderCategoryList();
         this.renderFooter();
@@ -43,12 +43,13 @@ class Controller
         this.mainContent.appendChild(ticker);
     }
 
-    // Your render function
-    renderTickers_02() {
-        const ticker = document.createElement('content-ticker-02');
-        ticker.setAttribute('config', JSON.stringify(window.siteData?.tickerConfig?.config02 || {}));
-        this.mainContent.appendChild(ticker);
+    renderTickers_04() {
+        const scroller = document.createElement('card-scroller-04');
+        const config = window.siteData?.tickerConfig?.config02 || {};
+        scroller.setAttribute('config', JSON.stringify(config));
+        this.mainContent.appendChild(scroller);
     }
+    
 
     renderTickers_03() {
         const scroller = document.createElement('image-scroller-03');
