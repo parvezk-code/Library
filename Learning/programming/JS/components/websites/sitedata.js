@@ -63,6 +63,21 @@ window.siteData = {
       'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-1.jpg',
       'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-2.jpg',
       'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-3.jpg'
+    ]},
+    config04:{
+      images : [
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-7.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-8.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-6.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-4.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-9.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-9.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-12.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-12.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-13.webp',  alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-1.jpg', alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-2.jpg', alt: "Product 1"},
+      {src: 'https://bootstrapmade.com/content/demo/iLanding/assets/img/testimonials/testimonials-3.jpg', alt: "Product 1"}
     ]}
   },
   categoryConfig: {

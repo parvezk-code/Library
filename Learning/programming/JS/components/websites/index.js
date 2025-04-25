@@ -16,6 +16,7 @@ class Controller
         this.renderTickers_01();
         this.renderTickers_04();
         this.renderTickers_03();
+        this.renderTickers_05();
         this.renderCategoryList();
         this.renderFooter();
     }
@@ -48,6 +49,14 @@ class Controller
         const config = window.siteData?.tickerConfig?.config02 || {};
         scroller.setAttribute('config', JSON.stringify(config));
         this.mainContent.appendChild(scroller);
+    }
+
+    renderTickers_05() {
+        const scroller = document.createElement('image-carousel05');
+        const config = window.siteData?.tickerConfig?.config03 || {};
+        scroller.setAttribute('config', JSON.stringify(config));
+        this.mainContent.appendChild(scroller);
+        new FlickityCarousel04(scroller);
     }
     
 
