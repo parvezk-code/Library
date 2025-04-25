@@ -17,6 +17,7 @@ class Controller
         this.renderTickers_04();
         this.renderTickers_03();
         this.renderTickers_05();
+        this.renderCarousel_06();
         this.renderCategoryList();
         this.renderFooter();
     }
@@ -56,8 +57,35 @@ class Controller
         const config = window.siteData?.tickerConfig?.config03 || {};
         scroller.setAttribute('config', JSON.stringify(config));
         this.mainContent.appendChild(scroller);
-        new FlickityCarousel04(scroller);
+        // new FlickityCarousel04(scroller);
     }
+
+    renderCarousel_06() {
+        const scroller = document.createElement('image-carousel-06');
+      
+        /*
+        const images = [
+          { src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-7.webp', alt: 'Image 1' },
+          { src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-6.webp', alt: 'Image 2' },
+          { src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-9.webp', alt: 'Image 3' },
+          { src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-m-12.webp', alt: 'Image 4' },
+          { src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-8.webp', alt: 'Image 5' },
+          { src: 'https://bootstrapmade.com/content/demo/Arsha/assets/img/person/person-f-4.webp', alt: 'Image 6' }
+        ];
+        */
+
+        const images = window.siteData?.tickerConfig?.config04.images;
+      
+        images.forEach(({ src, alt }) => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = alt;
+          scroller.appendChild(img);
+        });
+      
+        this.mainContent.appendChild(scroller);
+      }
+      
     
 
     renderTickers_03() {
