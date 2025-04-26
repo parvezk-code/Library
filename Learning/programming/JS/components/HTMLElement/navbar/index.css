@@ -1,0 +1,67 @@
+/* Global Styles inspired by Arsha */
+:root {
+    --primary-color: #47b2e4;
+    --primary-dark: #209dd8;
+    --secondary-color: #37517e;
+    --light-color: #f3f5fa;
+    --text-color: #444444;
+    --white: #fff;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--white);
+}
+
+.main-content {
+    flex: 1;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Section styling */
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: var(--secondary-color);
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: calc(50% - 40px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 40px 15px;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
