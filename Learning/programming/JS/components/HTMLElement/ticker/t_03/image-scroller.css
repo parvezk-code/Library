@@ -1,0 +1,56 @@
+.scroller-wrapper-03 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container-03 {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.image-container-03::-webkit-scrollbar {
+    display: none;
+}
+
+.image-container-03 img {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    max-height: 140px;
+    width: auto;
+    object-fit: contain;
+}
+
+.ticker-03-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    border: none;
+}
+
+.ticker-03-prev {
+    left: 10px;
+}
+
+.ticker-03-next {
+    right: 10px;
+}

@@ -1,0 +1,69 @@
+.scroller-wrapper-04 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-container-04 {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.card-container-04::-webkit-scrollbar {
+  display: none;
+}
+
+.card-04 {
+  flex: 0 0 auto;
+  width: 200px;
+  margin-right: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card-04:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-04 {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content-04 {
+  padding: 10px;
+}
+.card-title-04 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.card-desc-04 {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.ticker-04-control {
+  background: #007bff;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+.ticker-04-prev {
+  margin-right: 8px;
+}
+.ticker-04-next {
+  margin-left: 8px;
+}
