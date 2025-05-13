@@ -5,10 +5,18 @@ boot from ubuntu bootable and resize using gparted utility
 
 --------------------------   flash installation iso to usd device -----------------------------
 
+
+GNOME Disks             :   Select USB --> Gear Icon --> "Restore partition Image"
+                        :   Choose your ISO and proceed
+                        
 AppImage                :   https://etcher.balena.io/#download-etcher
 
 Ubuntu utility          :   Startup Disk Creator
 
-softwares               :   Ventoy, Unetbootin, Rufus
+dd commant              :   sudo   dd   if=image_file_iso  of=/dev/sdk   bs=4M
+                        :   sudo   dd   if=image_file_iso  of=/dev/sdk   bs=4M  status=progress && sync
 
-dd commant              :   sudo   dd   if=[image_file_iso]  of=/dev/sdk   bs=4M
+
+USB Creator GTK         :   sudo apt install usb-creator-gtk
+
+softwares               :   Ventoy, Unetbootin, Rufus
