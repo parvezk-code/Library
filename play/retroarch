@@ -22,3 +22,5 @@ Performance Tweaks  :   gamemoderun retroarch
 
 Steam Deck Integration  :   Add RetroArch as a non-Steam game and - 
                         :   -launch it in Gaming Mode for console-like play.
+
+Launch with X11 for better compatibility:
