@@ -3,3 +3,10 @@ lutris : is game manager, handles native, Windows (via Wine/Proton), and emulate
 
 
 Disney's Aladdin    :   https://lutris.net/games/disneys-aladdin/
+
+
+install games on separate drive(partition)
+    create a directory(SteamLibrary) in the partition
+    Open Lutris -> click on a game -> Configure
+    Go to Game Options -> Set the install directory to /mnt/games/LutrisGames
+    You can set a default in Lutris Settings -> Directories

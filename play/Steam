@@ -2,3 +2,10 @@ Add following to steam as a Non-Steam Game
     EmulationStation Desktop Edition (ES-DE)  AppImage
     RetroArch(launch script)
     Lutris(launch script)
+
+
+install games on separate drive(partition)
+    create a directory(SteamLibrary) in the partition
+    Open Steam -> Settings -> Storage -> Add Drive
+    add directory(SteamLibrary)
+    

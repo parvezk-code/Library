@@ -1,0 +1,7 @@
+steps to download for mini pc
+    ->  Website         :   https://bazzite.gg/
+    ->  hardware        :   home theater pc
+    ->  GPU             :   AMD (RX 4xx+)
+    ->  Desktop         :   Gnome
+    
+write the iso image on to usb using disks software
