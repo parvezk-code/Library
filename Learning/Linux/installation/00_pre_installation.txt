@@ -3,20 +3,52 @@ if windows do not allow desired resize space.
 
 boot from ubuntu bootable and resize using gparted utility
 
+
+---------------------- MBR to GPT Disks ------------------------------
+
+update system               :   sudo apt update
+
+install gdisk               :   sudo apt install gdisk
+
+open gdisk                  :   sudo gdisk /dev/sdX
+
+print the partition table   :   Type p and press Enter
+
+write the GPT  table        :   Type w and press Enter
+
+confirm                     :   Press y
+
+Check it worked             :   sudo parted -l
+
+
+
+--------------------- create efi partition --------------------------
+
+Start               :   start Disks
+create partition    :   click + on free space
+set size            :   500 MB and click next
+choose Type         :   FAT   and click next
+Edit partition      :   click gear icon and Edit partititon
+choose Type         :   EFI
+Check it worked     :   sudo parted /dev/sdb print
+
+
 --------------------------   flash installation iso to usd device -----------------------------
 
 
-GNOME Disks             :   Select USB --> Gear Icon --> "Restore partition Image"
+GNOME Disks     :   Select USB --> Gear Icon --> "Restore partition Image"
                         :   Choose your ISO and proceed
                         
-AppImage                :   https://etcher.balena.io/#download-etcher
+AppImage        :   https://etcher.balena.io/#download-etcher
 
-Ubuntu utility          :   Startup Disk Creator
+Ubuntu utility  :   Startup Disk Creator
 
-dd commant              :   sudo   dd   if=image_file_iso  of=/dev/sdk   bs=4M
-                        :   sudo   dd   if=image_file_iso  of=/dev/sdk   bs=4M  status=progress && sync
+dd commant      :   run command(lsblk) to know the device name(/dev/sdX)
+                    sudo   dd   if=image_file_iso  of=/dev/sdk   bs=4M
+                    sudo dd if=./destro.iso of=/dev/sdX bs=4M status=progress oflag=sync
+                    
 
 
-USB Creator GTK         :   sudo apt install usb-creator-gtk
+USB Creator gtk :   sudo apt install usb-creator-gtk
 
-softwares               :   Ventoy, Unetbootin, Rufus
+softwares       :   Balena Etcher, Ventoy, Unetbootin, Rufus

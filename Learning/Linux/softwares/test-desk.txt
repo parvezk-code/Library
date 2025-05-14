@@ -1,0 +1,55 @@
+============================================================
+HOW TO RECOVER LOST PARTITIONS USING TESTDISK (Ubuntu)
+============================================================
+
+Step 1: Install TestDisk
+--------------------------
+Open Terminal and run:
+    sudo apt update
+    sudo apt install testdisk
+
+Step 2: Launch TestDisk
+--------------------------
+Run it with root permissions:
+    sudo testdisk
+
+Step 3: Select Disk
+--------------------------
+- Use arrow keys to select the affected disk (e.g., /dev/sdb).
+- Press ENTER.
+
+Step 4: Select Partition Table Type
+-------------------------------------
+- Usually "EFI GPT" for modern systems.
+- Let TestDisk auto-detect, or select manually.
+- Press ENTER.
+
+Step 5: Analyze the Disk
+--------------------------
+- Choose [Analyse] > press ENTER.
+- If partition not found, select [Quick Search] > ENTER.
+
+Step 6: Review and Verify Partitions
+--------------------------------------
+- Use arrow keys to navigate found partitions.
+- Press 'P' to list files and verify data is intact.
+- Press ENTER to go back.
+
+Step 7: Recover the Partition Table
+--------------------------------------
+- After selecting the correct partition, press ENTER.
+- Choose [Write] to save the partition structure.
+- Confirm with 'Y'.
+
+Step 8: Reboot the System
+---------------------------
+    sudo reboot
+
+Your partition should now be restored and accessible.
+
+Note:
+-----
+To only recover files without modifying the partition table, use PhotoRec:
+    sudo photorec
+
+============================================================

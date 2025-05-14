@@ -8,4 +8,6 @@ install games on separate drive(partition)
     create a directory(SteamLibrary) in the partition
     Open Steam -> Settings -> Storage -> Add Drive
     add directory(SteamLibrary)
-    
+
+
+Steam games are typically in ~/.steam and ~/.local/share/Steam

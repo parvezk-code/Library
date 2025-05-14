@@ -10,3 +10,9 @@ install games on separate drive(partition)
     Open Lutris -> click on a game -> Configure
     Go to Game Options -> Set the install directory to /mnt/games/LutrisGames
     You can set a default in Lutris Settings -> Directories
+
+
+Lutris configurations are in ~/.config/lutris and ~/.local/share/lutris
+
+
+Wine prefixes are in ~/.wine and ~/.local/share/wineprefixes
