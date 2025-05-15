@@ -43,6 +43,10 @@ flatpak install -y flathub com.heroicgameslauncher.hgl
 echo "⚙️ Installing ProtonUp-Qt (optional)..."
 flatpak install -y flathub net.davidotek.pupgui2
 
+# Install Flatseal to manage Flatpak permissions (e.g. Steam input device access)
+echo "🛡️ Installing Flatseal (Flatpak permission manager)..."
+flatpak install -y flathub com.github.tchx84.Flatseal
+
 # Set environment variables for MangoHUD and GameMode if not already set
 echo "🛠️ Enabling MangoHUD and GameMode in .profile..."
 PROFILE_UPDATED=false
@@ -62,5 +66,8 @@ else
   echo "✅ Environment variables already present in ~/.profile"
 fi
 
+echo ""
 echo "✅ All done! Please reboot or log out and back in to apply changes."
 echo "🎮 Your Ubuntu 24.04 system is now fully ready for gaming!"
+echo "🛡️ You can now launch Flatseal to manage Steam's Flatpak permissions (e.g. input devices)."
+echo "👉 Run: flatpak run com.github.tchx84.Flatseal"
