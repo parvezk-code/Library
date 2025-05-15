@@ -1,0 +1,9 @@
+Install and manage Proton-GE for Steam and Wine-GE for Lutris with this graphical user interface. 
+
+
+ProtonUp-Qt is a graphical user interface tool used for managing and installing custom versions of Proton for Steam and Wine-based compatibility tools for Lutris. It simplifies the process of installing and updating custom Proton versions, such as Proton-GE, which can improve compatibility with certain games on Linux. Proton-GE is a community-maintained fork of Proton, a compatibility layer that allows Windows games to run on Linux. It often includes fixes and improvements not yet present in the official Proton version.
+
+
+https://davidotek.github.io/protonup-qt/
+
+https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.12.0/ProtonUp-Qt-2.12.0-x86_64.AppImage
