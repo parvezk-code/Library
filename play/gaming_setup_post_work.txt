@@ -40,11 +40,11 @@ Command:
 🎮 2. LAUNCH YOUR GAME PLATFORMS
 ---------------------------------------
 Use the applications menu to open:
-
+• Flatseal – review or fine-tune app permissions.
 • Steam – for native and Windows games
 • Lutris – for non-Steam games, emulators
 • Heroic Games Launcher – for Epic & GOG
-• ProtonUp-Qt – to install Proton GE builds
+• ProtonUp-Qt – to install Proton GE builds for Steam or Lutris.
 
 
 ⚙️ 3. OPTIONAL SETUP FOR EACH PLATFORM
