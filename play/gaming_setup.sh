@@ -2,20 +2,63 @@
 
 set -euo pipefail
 
-echo "🎮 Starting Ubuntu Gaming Setup (Flatpak-based with multiarch fix)..."
+echo "🎮 Starting Ubuntu Gaming Setup..."
 
-# Update system
+# === FUNCTIONS ===
+
+install_apt_packages() {
+  for pkg in "$@"; do
+    if dpkg -s "$pkg" &>/dev/null; then
+      echo "✅ $pkg already installed"
+    else
+      echo "📦 Installing $pkg..."
+      sudo apt install -y "$pkg"
+    fi
+  done
+}
+
+install_flatpak_app() {
+  local app_id="$1"
+  local name="$2"
+  if flatpak list | grep -q "$app_id"; then
+    echo "✅ $name already installed"
+  else
+    echo "📦 Installing $name..."
+    flatpak install -y flathub "$app_id"
+  fi
+}
+
+apply_flatpak_override_if_needed() {
+  local app_id="$1"
+  shift
+  local current_overrides
+  current_overrides=$(flatpak info --show-permissions "$app_id" 2>/dev/null || echo "")
+  if [[ "$current_overrides" == *"$1"* ]]; then
+    echo "✅ Overrides for $app_id already applied"
+  else
+    echo "🛠️ Applying Flatpak overrides for $app_id..."
+    flatpak override --user "$app_id" "$@"
+  fi
+}
+
+# === SYSTEM UPDATE ===
+
 echo "🔄 Updating system packages..."
 sudo apt update && sudo apt upgrade -y
 
-# Enable 32-bit architecture support (for Wine/Vulkan/Proton)
-echo "🔧 Enabling 32-bit (i386) architecture support..."
-sudo dpkg --add-architecture i386
-sudo apt update
+# === MULTIARCH SUPPORT ===
 
-# Install essential system packages
-echo "📦 Installing dependencies..."
-sudo apt install -y \
+if ! dpkg --print-foreign-architectures | grep -q i386; then
+  echo "🔧 Enabling 32-bit (i386) architecture support..."
+  sudo dpkg --add-architecture i386
+  sudo apt update
+else
+  echo "✅ 32-bit architecture already enabled"
+fi
+
+# === APT PACKAGE INSTALLS ===
+
+install_apt_packages \
   flatpak gnome-software-plugin-flatpak \
   gamemode libgamemode0 libgamemodeauto0 \
   mangohud \
@@ -23,83 +66,39 @@ sudo apt install -y \
   mesa-vulkan-drivers mesa-vulkan-drivers:i386 \
   vulkan-tools
 
-# Enable Flathub
-echo "🔗 Adding Flathub repository..."
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# === FLATHUB ===
 
-# Install gaming platforms via Flatpak
-echo "🎮 Installing Steam..."
-flatpak install -y flathub com.valvesoftware.Steam
-
-echo "🕹️ Installing Lutris..."
-flatpak install -y flathub net.lutris.Lutris
-
-echo "🛍️ Installing Heroic Games Launcher..."
-flatpak install -y flathub com.heroicgameslauncher.hgl
-
-echo "⚙️ Installing ProtonUp-Qt (for custom Proton builds)..."
-flatpak install -y flathub net.davidotek.pupgui2
-
-echo "🔒 Installing Flatseal (to manage Flatpak permissions)..."
-flatpak install -y flathub com.github.tchx84.Flatseal
-
-# Set environment variables for MangoHUD and GameMode
-echo "🛠️ Configuring MangoHUD and GameMode in ~/.profile..."
-PROFILE_UPDATED=false
-
-grep -q "MANGOHUD=1" ~/.profile || {
-  echo "export MANGOHUD=1" >> ~/.profile
-  PROFILE_UPDATED=true
-}
-grep -q "GAMEMODERUN=1" ~/.profile || {
-  echo "export GAMEMODERUN=1" >> ~/.profile
-  PROFILE_UPDATED=true
-}
-
-if $PROFILE_UPDATED; then
-  echo "🔁 Environment variables added to ~/.profile (MANGOHUD, GAMEMODERUN)"
+if ! flatpak remote-list | grep -q flathub; then
+  echo "🔗 Adding Flathub..."
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 else
-  echo "✅ Environment variables already present in ~/.profile"
+  echo "✅ Flathub already added"
 fi
 
-# Apply essential Steam Flatpak overrides
-echo "🛠️ Applying Flatpak overrides for Steam..."
+# === FLATPAK INSTALLS ===
 
-flatpak override --user com.valvesoftware.Steam \
-  --filesystem=home \
-  --filesystem=/run/udev:ro \
-  --filesystem=/dev/input:ro \
-  --device=all \
-  --socket=wayland \
-  --socket=x11 \
-  --socket=pulseaudio \
-  --env=DISPLAY=:0 \
-  --env=STEAM_FORCE_DESKTOPUI_SCALING=1 \
-  --env=MANGOHUD=1 \
-  --env=GAMEMODERUN=1
+install_flatpak_app com.valvesoftware.Steam "Steam"
+install_flatpak_app net.lutris.Lutris "Lutris"
+install_flatpak_app com.heroicgameslauncher.hgl "Heroic Games Launcher"
+install_flatpak_app net.davidotek.pupgui2 "ProtonUp-Qt"
+install_flatpak_app com.github.tchx84.Flatseal "Flatseal"
 
-# Apply overrides for Lutris
-echo "🛠️ Applying Flatpak overrides for Lutris..."
+# === ENVIRONMENT VARIABLES ===
 
-flatpak override --user net.lutris.Lutris \
-  --filesystem=home \
-  --filesystem=/run/udev:ro \
-  --filesystem=/dev/input:ro \
-  --filesystem=/mnt \
-  --filesystem=/media \
-  --device=all \
-  --socket=wayland \
-  --socket=x11 \
-  --socket=pulseaudio \
-  --env=DISPLAY=:0 \
-  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \
-  --env=MANGOHUD=1 \
-  --env=GAMEMODERUN=1
+echo "🛠️ Ensuring MangoHUD and GameMode variables in ~/.profile..."
+PROFILE_UPDATED=false
+grep -q "MANGOHUD=1" ~/.profile || { echo "export MANGOHUD=1" >> ~/.profile; PROFILE_UPDATED=true; }
+grep -q "GAMEMODERUN=1" ~/.profile || { echo "export GAMEMODERUN=1" >> ~/.profile; PROFILE_UPDATED=true; }
 
-# Apply overrides for Heroic Games Launcher
-echo "🛠️ Applying Flatpak overrides for Heroic Games Launcher..."
+$PROFILE_UPDATED && echo "🔁 Added variables to ~/.profile" || echo "✅ Environment variables already present"
 
-flatpak override --user com.heroicgameslauncher.hgl \
+# === FLATPAK OVERRIDES ===
+
+echo "🚫 Skipping dangerous overrides for Steam (per Flathub policy)"
+flatpak override --user --reset com.valvesoftware.Steam
+
+# Safe override: Heroic
+apply_flatpak_override_if_needed com.heroicgameslauncher.hgl \
   --filesystem=home \
   --filesystem=/run/udev:ro \
   --filesystem=/dev/input:ro \
@@ -114,5 +113,23 @@ flatpak override --user com.heroicgameslauncher.hgl \
   --env=MANGOHUD=1 \
   --env=GAMEMODERUN=1
 
-echo "✅ All done! Please reboot or log out and back in to apply changes."
-echo "🎮 Your Ubuntu 24.04 system is now fully ready for gaming!"
+# Safe override: Lutris
+apply_flatpak_override_if_needed net.lutris.Lutris \
+  --filesystem=home \
+  --filesystem=/run/udev:ro \
+  --filesystem=/dev/input:ro \
+  --filesystem=/mnt \
+  --filesystem=/media \
+  --device=all \
+  --socket=wayland \
+  --socket=x11 \
+  --socket=pulseaudio \
+  --env=DISPLAY=:0 \
+  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \
+  --env=MANGOHUD=1 \
+  --env=GAMEMODERUN=1
+
+# === DONE ===
+
+echo "✅ All done! Please reboot or log out/in to apply changes."
+echo "🎮 Your Ubuntu 24.04 system is now gaming-ready!"
