@@ -64,52 +64,55 @@ fi
 
 # Apply essential Steam Flatpak overrides
 echo "🛠️ Applying Flatpak overrides for Steam..."
+
 flatpak override --user com.valvesoftware.Steam \
-  --filesystem=home \                             # Home access
-  --filesystem=/run/udev:ro \                     # Controller support
-  --filesystem=/dev/input:ro \                    # Gamepad/keyboard access
-  --device=all \                                  # USB/GPU access
-  --socket=wayland \                              # Wayland support
-  --socket=x11 \                                  # X11 fallback
-  --socket=pulseaudio \                           # Sound
-  --env=DISPLAY=:0 \                              # GPU rendering
-  --env=STEAM_FORCE_DESKTOPUI_SCALING=1 \         # HiDPI scaling
-  --env=MANGOHUD=1 \                              # Enable MangoHUD
-  --env=GAMEMODERUN=1                             # Enable GameMode
+  --filesystem=home \
+  --filesystem=/run/udev:ro \
+  --filesystem=/dev/input:ro \
+  --device=all \
+  --socket=wayland \
+  --socket=x11 \
+  --socket=pulseaudio \
+  --env=DISPLAY=:0 \
+  --env=STEAM_FORCE_DESKTOPUI_SCALING=1 \
+  --env=MANGOHUD=1 \
+  --env=GAMEMODERUN=1
 
 # Apply overrides for Lutris
 echo "🛠️ Applying Flatpak overrides for Lutris..."
+
 flatpak override --user net.lutris.Lutris \
-  --filesystem=home \                             # Home access
-  --filesystem=/run/udev:ro \                     # Controller support
-  --filesystem=/dev/input:ro \                    # Input devices
-  --filesystem=/mnt \                             # External drives
-  --filesystem=/media \                           # Removable media
-  --device=all \                                  # USB/GPU access
-  --socket=wayland \                              # Wayland support
-  --socket=x11 \                                  # X11 fallback
-  --socket=pulseaudio \                           # Sound
-  --env=DISPLAY=:0 \                              # GPU rendering
-  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \  # NVIDIA Vulkan support
-  --env=MANGOHUD=1 \                              # Enable MangoHUD
-  --env=GAMEMODERUN=1                             # Enable GameMode
+  --filesystem=home \
+  --filesystem=/run/udev:ro \
+  --filesystem=/dev/input:ro \
+  --filesystem=/mnt \
+  --filesystem=/media \
+  --device=all \
+  --socket=wayland \
+  --socket=x11 \
+  --socket=pulseaudio \
+  --env=DISPLAY=:0 \
+  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \
+  --env=MANGOHUD=1 \
+  --env=GAMEMODERUN=1
 
 # Apply overrides for Heroic Games Launcher
 echo "🛠️ Applying Flatpak overrides for Heroic Games Launcher..."
+
 flatpak override --user com.heroicgameslauncher.hgl \
-  --filesystem=home \                             # Home access
-  --filesystem=/run/udev:ro \                     # Controller support
-  --filesystem=/dev/input:ro \                    # Input devices
-  --filesystem=/mnt \                             # External drives
-  --filesystem=/media \                           # Removable media
-  --device=all \                                  # USB/GPU access
-  --socket=wayland \                              # Wayland support
-  --socket=x11 \                                  # X11 fallback
-  --socket=pulseaudio \                           # Sound
-  --env=DISPLAY=:0 \                              # GPU rendering
-  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \  # NVIDIA Vulkan support
-  --env=MANGOHUD=1 \                              # Enable MangoHUD
-  --env=GAMEMODERUN=1                             # Enable GameMode
+  --filesystem=home \
+  --filesystem=/run/udev:ro \
+  --filesystem=/dev/input:ro \
+  --filesystem=/mnt \
+  --filesystem=/media \
+  --device=all \
+  --socket=wayland \
+  --socket=x11 \
+  --socket=pulseaudio \
+  --env=DISPLAY=:0 \
+  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \
+  --env=MANGOHUD=1 \
+  --env=GAMEMODERUN=1
 
 echo "✅ All done! Please reboot or log out and back in to apply changes."
 echo "🎮 Your Ubuntu 24.04 system is now fully ready for gaming!"
