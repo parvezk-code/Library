@@ -1,0 +1,67 @@
+🎮 UBUNTU 24.04 GAMING SETUP – WHAT TO DO NEXT
+
+✅ 1. REBOOT YOUR SYSTEM
+---------------------------------------
+Reboot to apply changes like:
+- 32-bit architecture support
+- MangoHUD and GameMode activation
+
+Command:
+  reboot
+
+
+🎮 2. LAUNCH YOUR GAME PLATFORMS
+---------------------------------------
+Use the applications menu to open:
+
+• Steam – for native and Windows games
+• Lutris – for non-Steam games, emulators
+• Heroic Games Launcher – for Epic & GOG
+• ProtonUp-Qt – to install Proton GE builds
+
+
+⚙️ 3. OPTIONAL SETUP FOR EACH PLATFORM
+---------------------------------------
+
+🔧 Steam:
+- Launch Steam
+- Go to: Settings → Compatibility
+- Enable: “Proton Experimental” or install Proton GE via ProtonUp-Qt
+- Restart Steam
+
+🔧 ProtonUp-Qt:
+- Open ProtonUp-Qt
+- Choose Steam or Lutris
+- Install the latest Proton GE for better compatibility
+
+🔧 Lutris:
+- Open Lutris
+- Add games or install Wine runners
+- Great for Blizzard, Rockstar, and older games
+
+🔧 Heroic Games Launcher:
+- Login to Epic or GOG
+- Set Proton/Wine in game settings
+- Enable MangoHUD or GameMode per title
+
+
+🛠️ 4. TEST YOUR GAMING ENVIRONMENT
+---------------------------------------
+
+Test MangoHUD & GameMode:
+  gamemoderun mangohud glxgears
+
+Check Vulkan support:
+  vulkaninfo | less
+
+
+📦 5. OPTIONAL EXTRAS (Install via Flatpak)
+-------------------------------------------
+• Bottles (Wine manager):     flatpak install flathub com.usebottles.bottles
+• OBS Studio (streaming):     flatpak install flathub com.obsproject.Studio
+
+
+🚀 YOU’RE READY TO GAME!
+---------------------------------------
+Play your favorite games, tweak performance, or ask for more optimization help!
+
