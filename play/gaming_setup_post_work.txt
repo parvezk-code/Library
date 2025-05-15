@@ -1,3 +1,30 @@
+error : steam flatpak missing permissions for input devices
+
+Open Flatseal     :   flatpak run com.github.tchx84.Flatseal
+
+Select Steam      :   (com.valvesoftware.Steam) 
+                      In the left sidebar, scroll down and click on Steam.
+
+Grant Critical Permissions
+      Filesystem(/run/udev:ro)          :   Controller detection (Steam Input)
+      Filesystem(/dev/input:ro)         :   Keyboard/mouse/joystick access
+      All devices (toggle ON)           :   Gamepads, VR headsets, etc.
+      Sockets(x11, wayland, pulseaudio) :   Display + sound access
+      Environment(Add DISPLAY=:0)       :   Fixes GPU rendering issues
+
+Enable the following permissions under Device:
+      All devices
+      Expose session bus
+
+Optionally, under Filesystem:
+      Allow access to host file system (e.g. for mods, game files)
+
+Save and Restart Steam
+
+-----------------------------------------------------------------------
+
+
+
 🎮 UBUNTU 24.04 GAMING SETUP – WHAT TO DO NEXT
 
 ✅ 1. REBOOT YOUR SYSTEM
