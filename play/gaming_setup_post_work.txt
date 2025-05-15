@@ -1,28 +1,45 @@
-error : steam flatpak missing permissions for input devices
 
-Open Flatseal     :   flatpak run com.github.tchx84.Flatseal
+add directories to steam and protonUpQt using Flatseal
+open steam and add custom directory to install games
+install proton-ge using protonUpQt to directory created above
+add symbolic link(for proton-ge) to steam directory  
+open steam and enable proton-ge to it
 
-Select Steam      :   (com.valvesoftware.Steam) 
-                      In the left sidebar, scroll down and click on Steam.
+-----------------------------------------------------------------------------
+Add directory(library) to Steam to install games using Flatseal 
+Add directory to protonUpQt using Flatseal
 
-Grant Critical Permissions
-      Filesystem(/run/udev:ro)          :   Controller detection (Steam Input)
-      Filesystem(/dev/input:ro)         :   Keyboard/mouse/joystick access
-      All devices (toggle ON)           :   Gamepads, VR headsets, etc.
-      Sockets(x11, wayland, pulseaudio) :   Display + sound access
-      Environment(Add DISPLAY=:0)       :   Fixes GPU rendering issues
-
-Enable the following permissions under Device:
-      All devices
-      Expose session bus
-
-Optionally, under Filesystem:
-      Allow access to host file system (e.g. for mods, game files)
-
-Save and Restart Steam
+        • open Flatseal
+        • select protonUpQt/Steam from left side menu
+        • scroll down to Filesystem --> other files
+        • add desired directory
 
 -----------------------------------------------------------------------
+open steam and add custom directory to install games
 
+Steam -> setting -> storage -> add drive
+
+-----------------------------------------------------------------------
+proton-ge installation using protonUpQt
+        • open protonUpQtprotonUpQt
+        • change the directory in "install for" (added using Flatseal)
+        • add version and install proton-ge 
+
+add proton-ge to steam (needed if proton-ge is installed to some other directory[faster ssd] )
+        • go to stem directory : 
+          cd /home/newuser/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d
+        • create link to the directory where proton-ge is installed
+          ln -s /media/newuser/data/play_game/ProtonUpQt/GE-Proton10-1 Proton-10.1-GE 
+        • chek link is correct
+          ls -l
+
+proton-ge add to steam 
+        • open steam
+        • settings -> compatibility
+        • Enable proton Experimental
+        • select the proton-ge name( link you created above to proton-ge)
+
+-----------------------------------------------------------------------
 
 
 🎮 UBUNTU 24.04 GAMING SETUP – WHAT TO DO NEXT
