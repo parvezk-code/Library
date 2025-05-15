@@ -63,66 +63,53 @@ else
 fi
 
 # Apply essential Steam Flatpak overrides
-echo "🛠️ Applying essential Flatpak overrides for Steam..."
+echo "🛠️ Applying Flatpak overrides for Steam..."
 flatpak override --user com.valvesoftware.Steam \
-  --filesystem=home \
-  --filesystem=/run/udev:ro \
-  --filesystem=/dev/input:ro \
-  --device=all \
-  --socket=wayland \
-  --socket=x11 \
-  --socket=pulseaudio \
-  --env=DISPLAY=$DISPLAY \
-  --env=STEAM_FORCE_DESKTOPUI_SCALING=1 \
-  --env=MANGOHUD=1 \
-  --env=GAMEMODERUN=1
+  --filesystem=home \                             # Home access
+  --filesystem=/run/udev:ro \                     # Controller support
+  --filesystem=/dev/input:ro \                    # Gamepad/keyboard access
+  --device=all \                                  # USB/GPU access
+  --socket=wayland \                              # Wayland support
+  --socket=x11 \                                  # X11 fallback
+  --socket=pulseaudio \                           # Sound
+  --env=DISPLAY=:0 \                              # GPU rendering
+  --env=STEAM_FORCE_DESKTOPUI_SCALING=1 \         # HiDPI scaling
+  --env=MANGOHUD=1 \                              # Enable MangoHUD
+  --env=GAMEMODERUN=1                             # Enable GameMode
 
-# Apply essential Lutris Flatpak overrides
-echo "🛠️ Applying essential Flatpak overrides for Lutris..."
+# Apply overrides for Lutris
+echo "🛠️ Applying Flatpak overrides for Lutris..."
 flatpak override --user net.lutris.Lutris \
-  # Home directory access
-  --filesystem=home \
-  # Critical for controllers
-  --filesystem=/run/udev:ro \
-  # Gamepad/keyboard access
-  --filesystem=/dev/input:ro \
-  # For external drives
-  --filesystem=/mnt \
-  # For removable media
-  --filesystem=/media \
-  # USB/GPU access
-  --device=all \
-  # Wayland support
-  --socket=wayland \
-  # X11 fallback
-  --socket=x11 \
-  # Sound
-  --socket=pulseaudio \
-  # GPU rendering (use current DISPLAY)
-  --env=DISPLAY=$DISPLAY \
-  # NVIDIA Vulkan (optional)
-  --env="VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json" \
-  # Enable MangoHUD
-  --env=MANGOHUD=1 \
-  # Enable GameMode
-  --env=GAMEMODERUN=1
+  --filesystem=home \                             # Home access
+  --filesystem=/run/udev:ro \                     # Controller support
+  --filesystem=/dev/input:ro \                    # Input devices
+  --filesystem=/mnt \                             # External drives
+  --filesystem=/media \                           # Removable media
+  --device=all \                                  # USB/GPU access
+  --socket=wayland \                              # Wayland support
+  --socket=x11 \                                  # X11 fallback
+  --socket=pulseaudio \                           # Sound
+  --env=DISPLAY=:0 \                              # GPU rendering
+  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \  # NVIDIA Vulkan support
+  --env=MANGOHUD=1 \                              # Enable MangoHUD
+  --env=GAMEMODERUN=1                             # Enable GameMode
 
-# Apply essential Heroic Games Launcher Flatpak overrides
-echo "🛠️ Applying essential Flatpak overrides for Heroic Games Launcher..."
+# Apply overrides for Heroic Games Launcher
+echo "🛠️ Applying Flatpak overrides for Heroic Games Launcher..."
 flatpak override --user com.heroicgameslauncher.hgl \
-  --filesystem=home \
-  --filesystem=/run/udev:ro \
-  --filesystem=/dev/input:ro \
-  --filesystem=/mnt \
-  --filesystem=/media \
-  --device=all \
-  --socket=wayland \
-  --socket=x11 \
-  --socket=pulseaudio \
-  --env=DISPLAY=$DISPLAY \
-  --env="VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json" \
-  --env=MANGOHUD=1 \
-  --env=GAMEMODERUN=1
+  --filesystem=home \                             # Home access
+  --filesystem=/run/udev:ro \                     # Controller support
+  --filesystem=/dev/input:ro \                    # Input devices
+  --filesystem=/mnt \                             # External drives
+  --filesystem=/media \                           # Removable media
+  --device=all \                                  # USB/GPU access
+  --socket=wayland \                              # Wayland support
+  --socket=x11 \                                  # X11 fallback
+  --socket=pulseaudio \                           # Sound
+  --env=DISPLAY=:0 \                              # GPU rendering
+  --env=VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json \  # NVIDIA Vulkan support
+  --env=MANGOHUD=1 \                              # Enable MangoHUD
+  --env=GAMEMODERUN=1                             # Enable GameMode
 
 echo "✅ All done! Please reboot or log out and back in to apply changes."
 echo "🎮 Your Ubuntu 24.04 system is now fully ready for gaming!"
