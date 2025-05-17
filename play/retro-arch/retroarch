@@ -81,6 +81,11 @@ A Powerful, Cross-Platform Emulation Frontend
     Reset Game        F8            Select + L + R
 
 6. Configure Directories
+    Add links to saved dictories
+      ln -s /media/newuser/data/play_game/retro_arch/configs/cores/        cores
+      ln -s /media/newuser/data/play_game/retro_arch/configs/config/       config
+      ln -s /media/newuser/data/play_game/retro_arch/configs/autoconfig    autoconfig
+
     - ROMs: Settings > Directory > File Browser
     - Saves: Settings > Directory > Save Files
     - Screenshots: Settings > Directory > Screenshots
