@@ -80,11 +80,14 @@ A Powerful, Cross-Platform Emulation Frontend
     Fast Forward      Space         Right Stick Click
     Reset Game        F8            Select + L + R
 
-6. Configure Directories
+6. Configure Directories inside (~/.config/retroarch/)
     Add links to saved dictories
+      cd ~/.config/retroarch/
+      ln -s /media/newuser/data/play_game/retro_arch/configs/retroarch.cfg retroarch.cfg
       ln -s /media/newuser/data/play_game/retro_arch/configs/cores/        cores
       ln -s /media/newuser/data/play_game/retro_arch/configs/config/       config
       ln -s /media/newuser/data/play_game/retro_arch/configs/autoconfig    autoconfig
+      ln -s /media/newuser/data/play_game/retro_arch/roms                  start_dir
 
     - ROMs: Settings > Directory > File Browser
     - Saves: Settings > Directory > Save Files

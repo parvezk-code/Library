@@ -1,3 +1,28 @@
 
 over Wi-Fi network
     Ssh and Nautilus (GNOME Files) for machine running gnome desktop environment
+    sftp://user@192.168.1.45
+
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+systemctl status ssh
+
+# avahi usually pre-installed
+# to use hostname instead of ip address
+sudo apt install avahi-daemon
+sudo systemctl enable avahi-daemon
+sudo systemctl start avahi-daemon
+
+hostname
+ip   a
+
+ssh username@mypc.local
+ssh  user@192.168.1.45
+scp  -r   username@ip:~/games    ~/abc.txt
+
+sudo apt install sshfs
+mkdir ~/remote-share
+sshfs username@192.168.x.x:/path/to/remote/folder ~/remote-share
+fusermount -u ~/remote-share
+---------------------------------------------------------------------------
