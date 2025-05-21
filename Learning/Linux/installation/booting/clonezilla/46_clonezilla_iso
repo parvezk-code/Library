@@ -1,6 +1,10 @@
 #!/bin/sh
 exec tail -n +3 $0
 
+#  /etc/grub.d/46_clonezilla_iso_boot
+#  Add this file to grub directory(/etc/grub.d) for an entry in grub boot loader.
+
+
 # Path to the Clonezilla ISO file
 ISO_PATH="/clonezilla/clonezilla-live-2.9.4-10-amd64.iso"
 

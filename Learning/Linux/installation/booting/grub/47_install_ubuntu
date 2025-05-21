@@ -1,6 +1,9 @@
 #!/bin/sh
 exec tail -n +3 $0
 
+#  /etc/grub.d/47_install_ubuntu
+#  Add this file to grub directory(/etc/grub.d) for an entry in grub boot loader.
+
 # Path to the Ubuntu ISO file
 ISO_PATH="/home/newuser/zz_data/ubuntu-22.04.3-desktop-amd64.iso"
 
@@ -16,7 +19,7 @@ ISO_VAR="\$isofile"
 
 # Mount the ISO and check where vmlinuz(kernel image) is located.
 # KERNEL_PATH="/casper/vmlinuz.efi"
-KERNEL_PATH="/casper/vmlinuz"       
+KERNEL_PATH="/casper/vmlinuz"   
 
 # Mount the ISO and check where initrd.img(RAM disk image) is located.
 # INITRD_PATH="/casper/initrd.lz"
