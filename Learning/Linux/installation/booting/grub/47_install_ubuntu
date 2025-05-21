@@ -15,9 +15,11 @@ PARTITION="(hd1,6)"
 ISO_VAR="\$isofile"
 
 # Mount the ISO and check where vmlinuz(kernel image) is located.
-KERNEL_PATH="/casper/vmlinuz"
+# KERNEL_PATH="/casper/vmlinuz.efi"
+KERNEL_PATH="/casper/vmlinuz"       
 
 # Mount the ISO and check where initrd.img(RAM disk image) is located.
+# INITRD_PATH="/casper/initrd.lz"
 INITRD_PATH="/casper/initrd"
 
 # === GRUB menuentry output ===
