@@ -1,0 +1,37 @@
+#!/bin/sh
+exec tail -n +3 $0
+
+# Path to the Clonezilla ISO file
+ISO_PATH="/clonezilla/clonezilla-live-2.9.4-10-amd64.iso"
+
+# GRUB device and partition where the ISO file is located.
+# Format: (hdX,Y)
+# X is the disk number (starting at 0)
+# Y is the partition number (starting at 1)
+PARTITION="(hd1,6)"
+
+# Variable used in the GRUB menuentry for referencing the ISO file path.
+# The backslash before $ is necessary to defer expansion until boot time.
+ISO_VAR="\$isofile"
+
+# Mount the ISO and check where vmlinuz(kernel image) is located.
+KERNEL_PATH="/live/vmlinuz"
+
+# Mount the ISO and check where initrd.img(RAM disk image) is located.
+INITRD_PATH="/live/initrd.img"
+
+
+# === GRUB menuentry output ===
+cat << EOF
+menuentry "Clonezilla Live ISO" {
+    set isofile="${ISO_PATH}"
+    loopback loop ${PARTITION}\${ISO_VAR}
+    linux (loop)${KERNEL_PATH} boot=live union=overlay findiso=\${ISO_VAR} quiet splash
+    initrd (loop)${INITRD_PATH}
+}
+EOF
+
+
+# Make the file executable          :       sudo chmod +x /etc/grub.d/46_clonezilla_iso_boot
+
+# Update GRUB config                :       sudo update-grub

@@ -1,0 +1,14 @@
+#!/bin/sh
+exec tail -n +3 $0
+
+menuentry "Gaming (Ubuntu 24.04)" {
+    insmod ext2
+    search --no-floppy --fs-uuid --set=root 1234abcd-56ef-7890-gh12-34567890ijkl
+    linux /boot/vmlinuz-5.15.0-56-generic root=UUID=1234abcd-56ef-7890-gh12-34567890ijkl ro quiet splash
+    initrd /boot/initrd.img-5.15.0-56-generic
+}
+
+
+#   make this script executable     :       sudo chmod +x /etc/grub.d/45_external_ubuntu
+#   Update grub                     :       sudo update-grub
+
