@@ -20,7 +20,9 @@ confirm                     :   Press y
 
 Check it worked             :   sudo parted -l
 
+----------------------------  disk/partition cloning ---------------------------------------------------
 
+Clonezilla is an open-source suite of disk cloning, disk imaging and system deployment utilities
 
 --------------------- create efi partition --------------------------
 
