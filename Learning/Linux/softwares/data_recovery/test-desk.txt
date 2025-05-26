@@ -10,7 +10,7 @@ Open Terminal and run:
 
 Step 2: Launch TestDisk
 --------------------------
-Run it with root permissions:
+Run it with root permissions :
     sudo testdisk
 
 Step 3: Select Disk
