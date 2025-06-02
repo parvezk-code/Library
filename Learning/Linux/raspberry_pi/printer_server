@@ -1,0 +1,69 @@
+
+1. First Boot Setup
+    - Login with your credentials
+    - Open a terminal and run:
+        sudo apt update
+        sudo apt upgrade
+
+2. Install CUPS Print Server
+
+    - sudo apt install hplip hplip-gui -y
+
+    - In terminal:
+        sudo apt install cups
+        sudo usermod -aG lpadmin $USER
+        sudo systemctl enable cups
+        sudo systemctl start cups
+
+    - Open browser and go to:
+        http://localhost:631
+            - Click “Administration” > “Add Printer”
+            - if 2 printers are shown. Add the one with serial no (CN09C6.....6V7)
+            - Follow steps to detect and add your USB or network printer
+
+3. Allow Network Printing (Optional)
+    - Edit CUPS config:
+        sudo nano /etc/cups/cupsd.conf
+
+    - Change or ensure the following lines exist:
+        Port 631
+        Listen 0.0.0.0:631
+        Listen [::]:631
+
+        Browsing On
+        BrowseLocalProtocols dnssd
+
+        <Location />
+            Order allow,deny
+            Allow @LOCAL
+        </Location>
+
+        <Location /admin>
+            Order allow,deny
+            Allow @LOCAL
+        </Location>
+
+        <Location /printers>
+            Order allow,deny
+            Allow @LOCAL
+        </Location>
+
+            - Save (Ctrl+O, Enter, Ctrl+X)
+            - Restart CUPS:
+        
+5. restart cups 
+    sudo systemctl restart cups
+
+6. restart pc
+
+6. (Optional) Enable AirPrint Support for iOS/macOS
+    - Install Avahi:
+        sudo apt install avahi-daemon
+        sudo apt install avahi-daemon
+        sudo systemctl enable avahi-daemon
+        sudo systemctl start avahi-daemon
+
+
+8. (Optional) Enable SSH for Headless Access
+    sudo apt install openssh-server
+

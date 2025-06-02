@@ -1,0 +1,14 @@
+
+
+
+Raspberry Pi OS         :   (Raspbian) is  official OS.
+
+Raspberry Pi Imager     :   s/w to install Raspberry Pi OS to a microSD card
+
+
+
+https://www.raspberrypi.com/software/
+
+
+
+ # https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#network-booting

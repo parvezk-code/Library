@@ -1,0 +1,26 @@
+
+
+1. Download Raspberry Pi OS (for PC / x86)
+    - Visit: https://www.raspberrypi.com/software/operating-systems/
+    - Search and  download  "PC and Mac"
+    - Download the ISO file: `rpi-desktop.iso`
+
+2. Create Bootable USB (4GB+)
+    - Use Rufus (https://rufus.ie) or balenaEtcher (https://etcher.io)
+    - Select your USB drive
+    - Load the ISO
+    - Choose MBR partition scheme (for legacy BIOS)
+    - Click "Start" to write the ISO to USB
+
+3. Boot Laptop from USB
+    - Insert USB into old laptop
+    - Boot and enter boot menu (usually F12, ESC, F2, or DEL)
+    - Select the USB drive
+    - Choose “Install” when the Raspberry Pi Desktop menu appears
+
+4. Install Raspberry Pi OS
+    - Follow the guided installer:
+      - Set language, keyboard, and timezone
+      - Choose to erase disk (or manual partitioning if dual-booting)
+      - Set a username and password
+    - Finish installation and reboot
