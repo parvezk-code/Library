@@ -1,0 +1,22 @@
+
+file : nano ~/.var/app/com.valvesoftware.Steam/.steam/steam/userdata/<your_id>/config/localconfig.vdf
+
+Add or modify following section for each game(game id):
+
+
+"Software"
+{
+  "Valve"
+  {
+    "Steam"
+    {
+      "Apps"
+      {
+        "2560020 : this the game ID"
+        {
+          "LaunchOptions" "gamemoderun DXVK_FRAME_RATE=30 %command%"
+        }
+      }
+    }
+  }
+}
