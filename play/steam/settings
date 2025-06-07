@@ -1,4 +1,16 @@
 
+Check BIOS: enable UMA Buffer Size = 4GB (important for iGPU)
+
+-----------------------------------------------------------------------------------------
+
+
+use latest Proton GE
+
+settings --> Properties --> Compatibility --> check "Force Proton" and select Proton GE.
+
+------------------------------------------------------------------------------------------
+
+
 Right-click on any game --> Properties
 
 Under Launch Options, enter this:
@@ -7,16 +19,9 @@ Under Launch Options, enter this:
 optionally add : mangohud GALLIUM_HUD=fps
 
 
-
-
 gamemoderun         →   Enables performance tuning
 DXVK_FRAME_RATE=30  →   Limits FPS via DXVK layer
 mangohud            →   Shows FPS overlay (optional, can remove)
 GALLIUM_HUD=fps     →   FPS shown via Mesa HUD (for AMD GPU)
 
 ------------------------------------------------------------------------------------------
-
-
-use latest Proton GE
-
-settings --> Properties --> Compatibility --> check "Force Proton" and select Proton GE.

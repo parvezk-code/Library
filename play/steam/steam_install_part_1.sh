@@ -35,6 +35,8 @@ else
     echo "✅ Flatseal is already installed."
 fi
 
+#  App image : https://github.com/DavidoTek/ProtonUp-Qt/releases/download/v2.12.0/ProtonUp-Qt-2.12.0-x86_64.AppImage
+
 echo "🛠️ Checking for ProtonUp-Qt..."
 if ! flatpak list --user | grep -q net.davidotek.pupgui2; then
     echo "📥 Installing ProtonUp-Qt..."
