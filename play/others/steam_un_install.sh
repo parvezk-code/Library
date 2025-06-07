@@ -2,37 +2,39 @@
 
 set -e
 
-# Check if Steam is installed via Flatpak
-echo "Checking if Steam is installed via Flatpak..."
-if flatpak list | grep -q com.valvesoftware.Steam; then
-    echo "Removing Steam..."
-    flatpak uninstall -y com.valvesoftware.Steam
+echo "⚙️ Starting cleanup of Flatpak apps..."
+
+# Uninstall Steam
+if flatpak list --user | grep -q com.valvesoftware.Steam; then
+    echo "🧹 Uninstalling Steam..."
+    flatpak uninstall --user -y com.valvesoftware.Steam
 else
-    echo "Steam is not installed via Flatpak."
+    echo "✅ Steam is already uninstalled."
 fi
 
-# Check if Flathub repository exists
-echo "Checking if Flathub repository is added..."
-if flatpak remote-list | grep -q flathub; then
-    echo "Removing Flathub repository..."
-    sudo flatpak remote-remove flathub
+# Uninstall Flatseal
+if flatpak list --user | grep -q com.github.tchx84.Flatseal; then
+    echo "🧹 Uninstalling Flatseal..."
+    flatpak uninstall --user -y com.github.tchx84.Flatseal
 else
-    echo "Flathub repository not found."
+    echo "✅ Flatseal is already uninstalled."
 fi
 
-# Check if Flatpak was installed and remove it (only if it's not being used for other apps)
-echo "Checking if Flatpak is installed..."
-if command -v flatpak &> /dev/null; then
-    echo "Flatpak is installed. Checking if it's only used for Steam..."
-    if ! flatpak list | grep -q -v com.valvesoftware.Steam; then
-        echo "No other apps using Flatpak. Removing Flatpak..."
-        sudo apt remove --purge -y flatpak
-        sudo apt autoremove -y
-    else
-        echo "Other Flatpak apps are installed. Flatpak will not be removed."
-    fi
+# Uninstall ProtonUp-Qt
+if flatpak list --user | grep -q net.davidotek.pupgui2; then
+    echo "🧹 Uninstalling ProtonUp-Qt..."
+    flatpak uninstall --user -y net.davidotek.pupgui2
 else
-    echo "Flatpak is not installed."
+    echo "✅ ProtonUp-Qt is already uninstalled."
 fi
 
-echo "Steam and associated components have been removed."
+# Remove Flathub remote (optional)
+if flatpak remote-list --user | grep -q flathub; then
+    echo "🗑️ Removing Flathub remote (user)..."
+    flatpak remote-delete --user flathub
+else
+    echo "✅ Flathub user remote already removed."
+fi
+
+echo ""
+echo "🧼 Cleanup complete."

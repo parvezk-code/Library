@@ -2,38 +2,54 @@
 
 set -e
 
-# Check if Flatpak is installed
-echo "Checking if Flatpak is installed..."
+echo "🔍 Checking for Flatpak..."
 if ! command -v flatpak &> /dev/null; then
-    echo "Flatpak not found, installing..."
-    sudo apt update
-    sudo apt install -y flatpak
+    echo "❌ Flatpak not found. Please ask an admin to install Flatpak using:"
+    echo "   sudo apt install flatpak"
+    exit 1
 else
-    echo "Flatpak is already installed."
+    echo "✅ Flatpak is installed."
 fi
 
-# Check if Flathub repository is added
-echo "Checking if Flathub repository is added..."
-if ! flatpak remote-list | grep -q flathub; then
-    echo "Adding Flathub repository..."
-    sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+echo "🌐 Ensuring Flathub is added for current user..."
+if ! flatpak remote-list --user | grep -q flathub; then
+    echo "🔗 Adding Flathub repository..."
+    flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 else
-    echo "Flathub repository already exists."
+    echo "✅ Flathub is already added for user."
 fi
 
-# Install Steam via Flatpak
-echo "Checking if Steam is installed..."
-if ! flatpak list | grep -q com.valvesoftware.Steam; then
-    echo "Installing Steam from Flathub..."
-    flatpak install -y flathub com.valvesoftware.Steam
+echo "🎮 Checking for Steam..."
+if ! flatpak list --user | grep -q com.valvesoftware.Steam; then
+    echo "📥 Installing Steam from Flathub..."
+    flatpak install --user -y flathub com.valvesoftware.Steam
 else
-    echo "Steam is already installed via Flatpak."
+    echo "✅ Steam is already installed."
 fi
 
-# Launch Steam
-echo "Launching Steam..."
-flatpak run com.valvesoftware.Steam &
+echo "🛠️ Checking for Flatseal..."
+if ! flatpak list --user | grep -q com.github.tchx84.Flatseal; then
+    echo "📥 Installing Flatseal..."
+    flatpak install --user -y flathub com.github.tchx84.Flatseal
+else
+    echo "✅ Flatseal is already installed."
+fi
 
-# Final message
-echo "Steam installation complete and starting..."
-echo "Note: Some systems may require a restart for full Flatpak integration."
+echo "🛠️ Checking for ProtonUp-Qt..."
+if ! flatpak list --user | grep -q net.davidotek.pupgui2; then
+    echo "📥 Installing ProtonUp-Qt..."
+    flatpak install --user -y flathub net.davidotek.pupgui2
+else
+    echo "✅ ProtonUp-Qt is already installed."
+fi
+
+echo ""
+echo "🚀 Setup complete."
+echo "👉 To launch Steam, run:"
+echo "   flatpak run com.valvesoftware.Steam &"
+echo ""
+echo "👉 To launch flatseal:"
+echo "   flatpak run com.github.tchx84.Flatseal"
+echo ""
+echo "👉 To launch ProtonUp-Qt and install Proton GE:"
+echo "   flatpak run net.davidotek.pupgui2"
