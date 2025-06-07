@@ -25,3 +25,18 @@ mangohud            →   Shows FPS overlay (optional, can remove)
 GALLIUM_HUD=fps     →   FPS shown via Mesa HUD (for AMD GPU)
 
 ------------------------------------------------------------------------------------------
+
+sudo apt install cpufrequtils
+sudo cpufreq-set -g performance
+
+       
+ondemand/powersave(default)     :   CPU scales up/down based on load 
+                                    may introduce lag or stuttering
+
+performance                     :   CPU runs at **max frequency all the time**
+
+
+Not ideal                       :   Systems sensitive to thermal load
+                                    reduce battery life
+
+------------------------------------------------------------------------------------------
