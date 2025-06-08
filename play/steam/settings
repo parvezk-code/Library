@@ -1,28 +1,63 @@
 
-Check BIOS: enable UMA Buffer Size = 4GB (important for iGPU)
+set fps=30 from flatseal, add following variables to steam
+    MANGOHUD=1
+    MANGOHUD_CONFIG=fps_limit=30,position=top-left,no_display=1
 
------------------------------------------------------------------------------------------
+from steam settings : elable display of fps on left top.
 
-
-use latest Proton GE
-
-settings --> Properties --> Compatibility --> check "Force Proton" and select Proton GE.
-
-------------------------------------------------------------------------------------------
-
+-------------------------------------------------------------------------------------------
 
 Right-click on any game --> Properties
 
 Under Launch Options, enter this:
-    gamemoderun DXVK_FRAME_RATE=30 %command%
-
-optionally add : mangohud GALLIUM_HUD=fps
+    gamemoderun %command%
 
 
-gamemoderun         →   Enables performance tuning
-DXVK_FRAME_RATE=30  →   Limits FPS via DXVK layer
-mangohud            →   Shows FPS overlay (optional, can remove)
-GALLIUM_HUD=fps     →   FPS shown via Mesa HUD (for AMD GPU)
+-------------------------------------------------------------------------------------------
+
+Gamescope forcing 720p + FSR (if needed).
+		gamescope -W 1280 -H 720 -f
+		-f: Fullscreen (use -b for borderless).
+
+--------------------------------------------------------------------------------------------
+
+use Proton-GE 
+
+settings --> Properties --> Compatibility --> check "Force Proton" and select Proton GE.
+
+--------------------------------------------------------------------------------------------
+
+for SteamOS-Like Performance
+	use Proton-GE 
+	Shader Pre-Caching enabled.
+		Steam Settings → Shader Pre-Caching → Enable
+    Gamescope forcing 720p + FSR (if needed).
+		gamescope -W 1280 -H 720 -f
+		-f: Fullscreen (use -b for borderless).
+	AMD ACO Compiler 
+		RADV_PERFTEST=aco %command%
+	Disable HVV for D3D12 (if crashes):
+		VKD3D_CONFIG=no_upload_hvv %command%
+	FPS Cap (30/40/60) via MangoHud/Gamescope.
+        flatseal(steam): Environment variables → Add:
+            MANGOHUD=1
+            MANGOHUD_CONFIG=fps_limit=30,position=top-left
+		mangohud --fps_limit=30 %command%
+		gamescope -W 1280 -H 720 -f -r 30 -- %command%
+	GPU in Performance Mode (no power throttling).
+		echo "performance" | sudo tee /sys/class/drm/card0/device/power_dpm_force_performance_level
+	Use FSR (Upscaling for Better Performance)
+		WINE_FULLSCREEN_FSR=1 gamescope -W 1280 -H 720 -f -- %command%
+	If GNOME is too heavy, switch to Xfce or LXQt before gaming
+	Give Steam higher CPU priority:
+		sudo cpulimit -e steam -l 90 -b  # Limits CPU to 90% (prevents freezing)
+	
+
+
+--------------------------------------------------------------------------------------
+
+Check BIOS: enable UMA Buffer Size = 4GB (important for iGPU)
+
 
 ------------------------------------------------------------------------------------------
 

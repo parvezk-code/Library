@@ -10,8 +10,8 @@ sudo apt install -y gamemode libgamemode0 libgamemodeauto0
 
 #    monitor performance; can tune options like vsync, frame limiting.
 # 2. Install MangoHUD for performance overlay
-echo "📊 Installing MangoHUD..."
-sudo apt install -y mangohud
+echo "📊 Do not Install MangoHUD... installed by flatpak"
+# sudo apt install -y mangohud
 
 # 3. Install Vulkan drivers for 64-bit and 32-bit (for Proton/Wine)
 echo "🧩 Installing Vulkan drivers..."

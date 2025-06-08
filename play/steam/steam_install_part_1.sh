@@ -45,6 +45,17 @@ else
     echo "✅ ProtonUp-Qt is already installed."
 fi
 
+# if following fail install it globally
+# flatpak install flathub org.freedesktop.Platform.VulkanLayer.MangoHud
+echo "🛠️ Checking for MangoHud..."
+if ! flatpak list --user | grep -q com.valvesoftware.Steam.Utility.MangoHud; then
+    echo "📥 Installing MangoHud..."
+    flatpak install --user -y flathub com.valvesoftware.Steam.Utility.MangoHud
+else
+    echo "✅ MangoHud is already installed."
+fi
+
+
 echo ""
 echo "🚀 Setup complete."
 echo "👉 To launch Steam, run:"
