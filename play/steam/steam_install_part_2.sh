@@ -20,8 +20,8 @@ sudo apt install -y mesa-vulkan-drivers mesa-vulkan-drivers:i386
 
 #    diagnostic tool, not performance improvement
 # 4. Install Vulkan tools (e.g., vulkaninfo)
-echo "🔍 Not installing Vulkan tools... because it is a diagnostic tool, not performance improvement"
-# sudo apt install -y vulkan-tools
+echo "🔍 installing Vulkan tools(diagnostic)..."
+sudo apt install -y vulkan-tools
 
 
 echo ""

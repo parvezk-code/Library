@@ -55,6 +55,13 @@ else
     echo "✅ MangoHud is already installed."
 fi
 
+if ! flatpak list --user | grep -q org.freedesktop.Platform.VulkanLayer.gamescope; then
+    echo "📥 Installing gamescope..."
+    flatpak install --user -y flathub org.freedesktop.Platform.VulkanLayer.gamescope
+else
+    echo "✅ gamescope is already installed."
+fi
+
 
 echo ""
 echo "🚀 Setup complete."
