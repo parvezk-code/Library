@@ -1,0 +1,101 @@
+Analyze the following contents of a text file, finalize them for me, and provide the finalized content in a window so I can copy it back into my text file. only add major improvements if they are not included and are necessary for major performance boost
+
+----------------------------------------------------------------------
+
+
+System Configuration:
+---------------------
+Processor: AMD Ryzen 9 6900HX (8 cores, 16 threads @ 3.3GHz)
+Cache: L1 (8x32KB), L1 Data (8x32KB), L2 (8x512KB), L3 (16MB)
+GPU: AMD Radeon 680M (12 CUs, 768 shaders)
+TDP: 45W
+RAM: 16GB DDR5 (Dual Channel)
+OS: Ubuntu 24.04 LTS
+
+Installed Packages:
+--------------------
+Flatpak: com.valvesoftware.Steam, Flatseal, ProtonUp-Qt (pupgui2), Gamescope  
+APT: gamemode, libgamemode0, libgamemodeauto0, mangohud, mesa-vulkan-drivers, mesa-vulkan-drivers:i386, vulkan-tools
+
+Flatseal: Essential Environment Variables for Steam
+----------------------------------------------------
+# Core performance tuning
+RADV_PERFTEST=aco,rt
+AMD_VULKAN_ICD=RADV
+VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+
+# Proton/Wine optimizations
+DXVK_ASYNC=1
+PROTON_USE_WINED3D=0
+VKD3D_CONFIG=no_upload_hvv
+PROTON_HIDE_NVIDIA_GPU=0
+PROTON_ENABLE_NVAPI=1
+PROTON_LOG=0
+
+# Gamemode + HUD
+GAMEMODERUN=1
+MANGOHUD=1
+MANGOHUD_CONFIG=fps_limit=60,position=top-left,no_display=0
+
+# iGPU-specific tuning
+R600_DEBUG=nohyperz
+RADV_DEBUG=nodcc
+mesa_glthread=true
+
+# Memory Management
+PROTON_FORCE_LARGE_ADDRESS_AWARE=1
+WINE_LARGE_ADDRESS_AWARE=1
+
+Flatseal: Filesystem Access (Add Read/Write Permissions)
+----------------------------------------------------------
+/mnt/ldata/games/steam:rw
+~/.local/share:rw
+~/.cache:rw
+~/.config:rw
+~/.steam:rw
+~/.var/app:rw
+/tmp:rw
+
+Flatseal: Device Permissions
+-----------------------------
+--device=dri
+--share=ipc
+
+Proton Version:
+---------------
+Use Proton-GE (latest) via ProtonUp-Qt for best compatibility and performance
+
+CPU Affinity (Pin Game to Specific Cores):
+------------------------------------------
+taskset -c 2-6 gamescope -- %command%
+
+CPU Governor (Set to Performance):
+-----------------------------------
+sudo apt install cpufrequtils
+echo 'GOVERNOR="performance"' | sudo tee /etc/default/cpufrequtils
+sudo systemctl enable cpufrequtils
+sudo cpufreq-set -g performance
+
+VRAM Allocation for Radeon 680M:
+---------------------------------
+In BIOS: Set UMA Buffer Size or Shared Memory to 4GB
+
+Kernel Boot Parameters (/etc/default/grub):
+--------------------------------------------
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=1-15 threadirqs rcu_nocbs=1-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9"
+
+
+After editing, run:
+sudo update-grub
+sudo reboot
+
+Sysctl Tuning (/etc/sysctl.d/99-gaming.conf):
+----------------------------------------------
+vm.compaction_proactiveness=0
+vm.dirty_ratio=5
+vm.dirty_background_ratio=5
+
+Set Runtime Performance Mode:
+------------------------------
+echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
