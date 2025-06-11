@@ -1,0 +1,266 @@
+{
+    "system_configuration": {
+      "processor": {
+        "model": "AMD Ryzen 9 6900HX",
+        "cores": 8,
+        "threads": 16,
+        "base_clock": "3.3GHz",
+        "cache": {
+          "L1": "8x32KB",
+          "L1_data": "8x32KB",
+          "L2": "8x512KB",
+          "L3": "16MB"
+        }
+      },
+      "graphics": {
+        "model": "AMD Radeon 680M",
+        "compute_units": 12,
+        "shaders": 768,
+        "type": "iGPU"
+      },
+      "power": {
+        "tdp": "45W"
+      },
+      "memory": {
+        "size": "16GB",
+        "type": "DDR5",
+        "channel": "Dual"
+      },
+      "operating_system": {
+        "name": "Ubuntu",
+        "version": "24.04 LTS"
+      }
+    },
+    "installed_packages": {
+      "package_managers": {
+        "flatpak": {
+          "packages": [
+            { "name": "com.valvesoftware.Steam", "purpose": "Gaming platform", "category": "Gaming" },
+            { "name": "Flatseal", "purpose": "Flatpak permission manager", "category": "System Tool" },
+            { "name": "ProtonUp-Qt (pupgui2)", "purpose": "Install custom Proton versions", "category": "Gaming" },
+            { "name": "Gamescope", "purpose": "Wayland session wrapper", "category": "Graphics/Performance" }
+          ]
+        },
+        "apt": {
+          "packages": [
+            { "name": "gamemode", "purpose": "CPU/GPU performance tuning daemon", "category": "Performance" },
+            { "name": "libgamemode0", "purpose": "GameMode library", "category": "Performance" },
+            { "name": "libgamemodeauto0", "purpose": "Auto-activation for GameMode", "category": "Performance" },
+            { "name": "mangohud", "purpose": "In-game performance overlay", "category": "Monitoring" },
+            { "name": "mesa-vulkan-drivers", "purpose": "Vulkan driver support", "category": "Graphics", "architecture": "amd64" },
+            { "name": "mesa-vulkan-drivers:i386", "purpose": "Vulkan driver for 32-bit apps", "category": "Graphics", "architecture": "i386" },
+            { "name": "vulkan-tools", "purpose": "Vulkan diagnostic tools", "category": "Graphics" }
+          ]
+        }
+      }
+    },
+    "flatseal_settings": {
+      "environment_variables": [
+        { "name": "RADV_PERFTEST", "value": "aco,rt", "description": "Enable ACO shader compiler and ray tracing features" },
+        { "name": "AMD_VULKAN_ICD", "value": "RADV", "description": "Use RADV driver for Vulkan" },
+        { "name": "VK_ICD_FILENAMES", "value": "/usr/share/vulkan/icd.d/radeon_icd.x86_64.json", "description": "Path to Vulkan ICD for RADV" },
+        { "name": "DXVK_ASYNC", "value": "1", "description": "Enable async shader compilation" },
+        { "name": "PROTON_USE_WINED3D", "value": "0", "description": "Use Vulkan backend instead of OpenGL" },
+        { "name": "VKD3D_CONFIG", "value": "no_upload_hvv", "description": "Optimizes Direct3D 12 translation" },
+        { "name": "PROTON_HIDE_NVIDIA_GPU", "value": "0", "description": "Prevent Proton from spoofing GPU" },
+        { "name": "PROTON_ENABLE_NVAPI", "value": "1", "description": "Enable NVAPI support in Proton" },
+        { "name": "PROTON_LOG", "value": "0", "description": "Disable Proton debug logging" },
+        { "name": "GAME_MODE", "value": "1", "description": "Enable legacy Feral GameMode" },
+        { "name": "GAMEMODERUN", "value": "1", "description": "Enable GameMode integration" },
+        { "name": "MANGOHUD", "value": "1", "description": "Enable MangoHud overlay" },
+        { "name": "MANGOHUD_CONFIG", "value": "fps_limit=60,position=top-left,no_display=0,gpu_stats=1,gpu_temp=1", "description": "Configure MangoHud options" },
+        { "name": "R600_DEBUG", "value": "nohyperz", "description": "Disable hyperz for Radeon iGPU" },
+        { "name": "RADV_DEBUG", "value": "nodcc", "description": "Disable DCC for compatibility" },
+        { "name": "mesa_glthread", "value": "true", "description": "Enable OpenGL threading" },
+        { "name": "PROTON_FORCE_LARGE_ADDRESS_AWARE", "value": "1", "description": "Allow games to use >2GB memory" },
+        { "name": "WINE_LARGE_ADDRESS_AWARE", "value": "1", "description": "Allow Wine to access more memory" }
+      ],
+      "filesystem_access": [
+        {"entry": "/mnt/ldata/games/steam:rw", "description":""},
+        {"entry": "~/.local/share:rw", "description":""},
+        {"entry": "~/.cache:rw", "description":""},
+        {"entry": "~/.config:rw", "description":""},
+        {"entry": "~/.steam:rw", "description":""},
+        {"entry": "~/.var/app:rw", "description":""},
+        {"entry": "/tmp:rw", "description":""}
+      ],
+      "device_permissions": [
+        {"entry": "--device=dri" , "description":""},
+        {"entry": "--share=ipc", "description":""}
+      ]
+    },
+    "steam_settings": {
+      "proton": {
+        "version": {
+          "type": "Proton-GE",
+          "source": "ProtonUp-Qt",
+          "recommendation": "Use latest Proton-GE for best performance",
+          "installation_method": "via ProtonUp-Qt GUI"
+        }
+      },
+      "launch_options": [
+        {"description": "", 
+         "command":"gamemoderun taskset -c 8-15 gamescope -f -e -- %command%",
+         "components":[
+          {
+                "name": "gamemoderun",
+                "value": null,
+                "purpose": ""
+              },
+          {
+                "name": "-c",
+                "value": "c 8-15",
+                "purpose": ""
+              },
+              {
+                "name": "gamescope -f -e",
+                "value": null,
+                "purpose": ""
+              }
+         ]
+        },
+        {"description": "", 
+         "command":"gamemoderun taskset -c 8-15 gamescope -W 1280 -H 720 -f -- %command%",
+         "components":[
+          {
+                "name": "gamescope -W 1280 -H 720 -f",
+                "value": null,
+                "purpose": ""
+              }
+         ]
+        }
+    ],
+      "optimization_notes": {
+        "cpu_isolation": "Only isolate cores 8-15, keep 0-7 for OS tasks",
+        "resolution_tradeoffs": "Lower resolution may improve frame pacing on iGPU"
+      }
+    },
+    "kernel_parameters": {
+      "file": {
+        "path": "/etc/default/grub",
+        "purpose": "System boot configuration for GRUB",
+        "post_edit_commands": [
+          { "command": "sudo update-grub", "description": "Apply GRUB changes", "critical": true },
+          { "command": "sudo reboot", "description": "Reboot system to apply kernel parameters", "critical": true }
+        ]
+      },
+      "parameters": {
+        "GRUB_CMDLINE_LINUX_DEFAULT": {
+          "combined_value": "quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15",
+          "components": [
+            {
+              "name": "quiet",
+              "value": null,
+              "description": "Suppresses most boot messages for a cleaner boot experience"
+            },
+            {
+              "name": "splash",
+              "value": null,
+              "description": "Displays splash screen during boot"
+            },
+            {
+              "name": "amdgpu.ppfeaturemask",
+              "value": "0xffffffff",
+              "description": "Enables all AMD GPU power features"
+            },
+            {
+              "name": "mitigations",
+              "value": "off",
+              "description": "Disables security mitigations for performance (not recommended for exposed systems)"
+            },
+            {
+              "name": "nowatchdog",
+              "value": null,
+              "description": "Disables kernel hardware watchdog timer"
+            },
+            {
+              "name": "preempt",
+              "value": "full",
+              "description": "Enables full kernel preemption for lower latency, useful in gaming and audio work"
+            },
+            {
+              "name": "nohz_full",
+              "value": "8-15",
+              "description": "Isolates CPU cores 8–15 from regular timer ticks to reduce latency"
+            },
+            {
+              "name": "threadirqs",
+              "value": null,
+              "description": "Enables threaded interrupt handling for better responsiveness"
+            },
+            {
+              "name": "rcu_nocbs",
+              "value": "8-15",
+              "description": "Avoids scheduling RCU callbacks on CPU cores 8–15 to improve isolation"
+            },
+            {
+              "name": "rcutree.enable_rcu_lazy",
+              "value": "1",
+              "description": "Enables lazy RCU processing for reduced CPU overhead"
+            },
+            {
+              "name": "amdgpu.sg_display",
+              "value": "0",
+              "description": "Disables scatter-gather display support in AMDGPU driver for stability"
+            },
+            {
+              "name": "amdgpu.dc",
+              "value": "1",
+              "description": "Enables the new AMD Display Core (DC) support"
+            },
+            {
+              "name": "amdgpu.vm_fragment_size",
+              "value": "9",
+              "description": "Sets the GPU virtual memory fragment size to 512KB (2^9)"
+            },
+            {
+              "name": "isolcpus",
+              "value": "8-15",
+              "description": "Isolates CPU cores 8–15 from the general scheduler to dedicate them for games"
+            }
+          ]
+        }
+      },
+      "notes": [
+        "Isolate CPU cores 8-15 for game processes to avoid OS contention",
+        "Enables high-performance AMD GPU features",
+        "Disables watchdog and mitigations to reduce latency"
+      ]
+    },
+    "cpu_governor_configuration": {
+      "file": {
+        "path": "/etc/default/cpufrequtils",
+        "purpose": "Set CPU to performance mode"
+      },
+      "setup_commands": [
+        { "command": "sudo apt install cpufrequtils", "description": "Install CPU frequency management tool" },
+        { "command": "echo 'GOVERNOR=\"performance\"' | sudo tee /etc/default/cpufrequtils", "description": "Configure persistent performance governor" },
+        { "command": "sudo systemctl enable cpufrequtils", "description": "Enable the service for CPU governor at boot" },
+        { "command": "sudo cpufreq-set -g performance", "description": "Set performance mode immediately" }
+      ],
+      "verification_commands": [
+        { "command": "cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor", "description": "Check current governor for all CPUs" }
+      ]
+    },
+    "sysctl_settings": {
+      "file": "/etc/sysctl.d/99-gaming.conf",
+      "parameters": [
+        { "name": "vm.compaction_proactiveness", "value": "0", "description": "Minimize background memory compaction" },
+        { "name": "vm.dirty_ratio", "value": "5", "description": "Smaller dirty cache threshold improves responsiveness" },
+        { "name": "vm.dirty_background_ratio", "value": "5", "description": "Trigger background writeback sooner" },
+        { "name": "vm.swappiness", "value": "10", "description": "Lower tendency to swap to disk" },
+        { "name": "vm.vfs_cache_pressure", "value": "50", "description": "Favor keeping file metadata in memory" },
+        { "name": "kernel.numa_balancing", "value": "0", "description": "Disable automatic NUMA rebalancing (beneficial on AMD)" },
+        { "name": "kernel.sched_energy_aware", "value": "0", "description": "Disable energy-based scheduling decisions" }
+      ],
+      "apply_command": "sudo sysctl --system"
+    },
+    "bios_settings": {
+      "vram_allocation": {
+        "description": "Set UMA Frame Buffer Size or Shared Memory to 4GB in BIOS",
+        "recommended_value": "4GB",
+        "component": "Integrated GPU (Radeon 680M)"
+      }
+    }
+  }
+  

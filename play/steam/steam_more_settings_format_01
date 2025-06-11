@@ -1,0 +1,163 @@
+============================================
+          SYSTEM GAMING CONFIGURATION          
+============================================
+
+1. SYSTEM CONFIGURATION
++-------------------+--------------------------------------------------------+
+| Component         | Specification                                          |
++-------------------+--------------------------------------------------------+
+| Processor         | AMD Ryzen 9 6900HX (8 cores, 16 threads @ 3.3GHz)      |
+| Cache             | L1 (8x32KB), L1 Data (8x32KB), L2 (8x512KB), L3 (16MB) |
+| GPU               | AMD Radeon 680M (12 CUs, 768 shaders)                  |
+| TDP               | 45W                                                    |
+| RAM               | 16GB DDR5 (Dual Channel)                               |
+| OS                | Ubuntu 24.04 LTS                                       |
++-------------------+--------------------------------------------------------+
+
+2. INSTALLED PACKAGES
++-------------------+----------------------------------+------------+
+| Package Type      | Package Name                     | Configured |
++-------------------+----------------------------------+------------+
+| Flatpak           | com.valvesoftware.Steam          | Yes        |
+| Flatpak           | Flatseal                         | Yes        |
+| Flatpak           | ProtonUp-Qt (pupgui2)            | Yes        |
+| Flatpak           | Gamescope                        | Yes        |
+| APT               | gamemode                         | Yes        |
+| APT               | libgamemode0                     | Yes        |
+| APT               | mangohud                         | Yes        |
+| APT               | mesa-vulkan-drivers              | Yes        |
+| APT               | mesa-vulkan-drivers:i386         | Yes        |
+| APT               | vulkan-tools                     | Yes        |
++-------------------+----------------------------------+------------+
+
+3. FLATSEAL ENVIRONMENT VARIABLES
+---------------------------------
++-----------------------------+-----------------------------------+------------+
+| Variable                    | Description                       | Configured |
++-----------------------------+-----------------------------------+------------+
+| RADV_PERFTEST=aco,rt        | Enables ACO compiler and RT       | Yes        |
+| AMD_VULKAN_ICD=RADV         | Forces RADV Vulkan driver         | Yes        |
+| DXVK_ASYNC=1                | Enables async shader compilation  | Yes        |
+| PROTON_USE_WINED3D=0        | Forces DX11 games to use DXVK     | Yes        |
+| GAME_MODE=1                 | Enables Feral GameMode            | Yes        |
+| GAMEMODERUN=1               | Runs games with gamemode          | Yes        |
+| MANGOHUD=1                  | Enables MangoHUD overlay          | Yes        |
+| mesa_glthread=true          | Enables multithreaded OpenGL      | Yes        |
++-----------------------------+-----------------------------------+------------+
+
+4. FILESYSTEM ACCESS PERMISSIONS
++---------------------------+------------+------------+
+| Path                      | Permission | Configured |
++---------------------------+------------+------------+
+| /mnt/ldata/games/steam    | rw         | Yes        |
+| ~/.local/share            | rw         | Yes        |
+| ~/.cache                  | rw         | Yes        |
+| ~/.config                 | rw         | Yes        |
+| ~/.steam                  | rw         | Yes        |
+| ~/.var/app                | rw         | Yes        |
+| /tmp                      | rw         | Yes        |
++---------------------------+------------+------------+
+
+5. DEVICE PERMISSIONS
++------------------+------------+-------------------------------------------------------------+
+| Permission       | Configured | Explanation                                                 |
++------------------+------------+-------------------------------------------------------------+
+| --device=dri     | Yes        | Grants access to Direct Rendering Infrastructure (DRI)       |
+|                  |            | - Required for GPU acceleration in games                     |
+|                  |            | - Allows Vulkan/OpenGL applications to use the GPU           |
++------------------+------------+-------------------------------------------------------------+
+| --share=ipc      | Yes        | Enables Inter-Process Communication (IPC) sharing            |
+|                  |            | - Needed for Steam client ↔ game communication               |
+|                  |            | - Allows shared memory between processes                     |
++------------------+------------+-------------------------------------------------------------+
+
+6. PROTON VERSION
+Use Proton-GE (latest) via ProtonUp-Qt for best compatibility and performance
+
+7. CPU AFFINITY
+Launch Options:
+- gamemoderun taskset -c 8-15 gamescope -f -e -- %command%
+- gamemoderun taskset -c 8-15 gamescope -W 1280 -H 720 -f -- %command% (720p boost)
+
++-------------+---------------------+---------------------------------------------------------+----------+
+| gamemoderun | (no value)          | Wrapper that activates Feral GameMode optimizations     | Optional |
+| taskset     | -c 8-15             | Pins process to CPU cores 8-15 (for core isolation)     | Optional |
+| gamescope   | (no value)          | Compositor that provides better fullscreen performance  | Optional |
+| -W          | 1280                | Sets output width in pixels (here 720p width)           | Optional |
+| -H          | 720                 | Sets output height in pixels (here 720p height)         | Optional |
+| -f          | (flag)              | Forces fullscreen mode                                  | Optional |
+| -e          | (flag)              | Enables vsync (adaptive sync if available)              | Optional |
+| --          | (separator)         | Indicates end of gamescope options                      | Required |
+| %command%   | (Steam placeholder) | Replaced with actual game executable command            | Required |
++-------------+---------------------+---------------------------------------------------------+----------+
+
+
+8. KERNEL BOOT PARAMETERS
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15"
+
++---------------------------+---------------------+-----------------------------------------------------------+------------------+
+| Parameter                 | Value               | Explanation                                               | Recommended For  |
++---------------------------+---------------------+-----------------------------------------------------------+------------------+
+| quiet                     | (none)              | Suppresses boot messages for cleaner startup              | All systems      |
+| splash                    | (none)              | Enables splash screen during boot                         | All systems      |
+| amdgpu.ppfeaturemask      | 0xffffffff          | Enables all AMD GPU power/performance features            | AMD GPU systems  |
+| mitigations               | off                 | Disables CPU vulnerability mitigations for performance    | Gaming systems   |
+| nowatchdog                | (none)              | Disables hardware watchdog timers                         | Performance tuning|
+| preempt                   | full                | Enables full preemption for lower latency                 | Low-latency needs|
+| nohz_full                 | 8-15                | Disables timer interrupts on cores 8-15                   | Core isolation   |
+| threadirqs                | (none)              | Forces thread-specific IRQs for better core isolation     | Core isolation   |
+| rcu_nocbs                 | 8-15                | Moves RCU callbacks from cores 8-15 to others             | Core isolation   |
+| rcutree.enable_rcu_lazy   | 1                   | Enables lazy RCU callback processing for better perf      | Performance tuning|
+| amdgpu.sg_display         | 0                   | Disables scatter-gather display support                   | AMD GPU systems  |
+| amdgpu.dc                 | 1                   | Enables Display Core hardware acceleration                | AMD GPU systems  |
+| amdgpu.vm_fragment_size   | 9                   | Sets VM fragment size (512MB chunks) for better allocation| AMD GPU systems  |
+| isolcpus                  | 8-15                | Isolates cores 8-15 from general kernel scheduling        | Core isolation   |
++---------------------------+---------------------+-----------------------------------------------------------+------------------+
+
+
+After editing:
+1. sudo update-grub
+2. sudo reboot
+
+9. CPU GOVERNOR
+Commands:
++----+---------------------------------------------------+----------------------+-----------+
+| #  | Command                                           | Description          | Executed  |
++----+---------------------------------------------------+----------------------+-----------+
+| 1  | sudo apt install cpufrequtils                     | Install package      | NO        |
+| 2  | echo 'GOVERNOR="performance"' | sudo tee /etc/    | Set performance      | NO        |
+|    | default/cpufrequtils                              | governor as default  |           |
+| 3  | sudo systemctl enable cpufrequtils                | Enable service       | NO        |
+| 4  | sudo cpufreq-set -g performance                   | Apply immediately    | NO        |
++----+---------------------------------------------------+------------------+---------------+
+
+10. VRAM ALLOCATION
+In BIOS: Set UMA Buffer Size or Shared Memory to 4GB
+
+11. SYSCTL TUNING : /etc/sysctl.d/99-gaming.conf contents:
+
+SYSTEM TUNING PARAMETERS
+========================
+
++--------------------------------+-----------------------------------------------+------------+
+| Parameter                      | Description                                   | Configured |
++--------------------------------+-----------------------------------------------+------------+
+| vm.compaction_proactiveness=0  | Reduces background memory compaction          | Yes        |
+| vm.dirty_ratio=5               | Maximum % of dirty memory before writeback    | Yes        |
+| vm.dirty_background_ratio=5    | % of dirty memory to start writeback          | Yes        |
+| vm.swappiness=10               | How aggressively to swap (10=moderate)        | Yes        |
+| vm.vfs_cache_pressure=50       | Filesystem cache retention (50=balanced)      | Yes        |
+| kernel.numa_balancing=0        | Disables NUMA balancing for AMD systems       | Yes        |
+| kernel.sched_energy_aware=0    | Disables energy-aware scheduling              | Yes        |
++--------------------------------+-----------------------------------------------+------------+
+
+APPLICATION INSTRUCTIONS:
+1. Add to /etc/sysctl.d/99-gaming.conf
+2. Apply changes: sudo sysctl --system
+3. Verify: sysctl -a | grep <parameter>
+
+Apply with: sudo sysctl --system
+
+12. RUNTIME PERFORMANCE MODE
+Command:
+echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor

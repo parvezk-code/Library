@@ -65,6 +65,8 @@ Flatseal: Device Permissions
 --device=dri
 --share=ipc
 
+Steam's settings 
+
 Proton Version:
 ---------------
 Use Proton-GE (latest) via ProtonUp-Qt for best compatibility and performance
@@ -72,7 +74,7 @@ Use Proton-GE (latest) via ProtonUp-Qt for best compatibility and performance
 CPU Affinity (Pin Game to Specific Cores):
 ------------------------------------------
 
-# Steam Launch Option
+# Launch Option
 # since isolcpus=8-15, nohz_full=8-15 and rcu_nocbs=8-15
 gamemoderun taskset -c 8-15 gamescope -f -e -- %command%
 
