@@ -30,12 +30,16 @@ PROTON_USE_WINED3D=0
 VKD3D_CONFIG=no_upload_hvv
 PROTON_HIDE_NVIDIA_GPU=0
 PROTON_ENABLE_NVAPI=1
+# dont want debugging Logging as it slows the system.
 PROTON_LOG=0
+
+# is Feral’s legacy variable(still works) , Only works if using gamemoderun
+GAME_MODE=1                   
 
 # Gamemode + HUD
 GAMEMODERUN=1
 MANGOHUD=1
-MANGOHUD_CONFIG=fps_limit=60,position=top-left,no_display=0
+MANGOHUD_CONFIG=fps_limit=60,position=top-left,no_display=0,gpu_stats=1,gpu_temp=1
 
 # iGPU-specific tuning
 R600_DEBUG=nohyperz
@@ -67,7 +71,29 @@ Use Proton-GE (latest) via ProtonUp-Qt for best compatibility and performance
 
 CPU Affinity (Pin Game to Specific Cores):
 ------------------------------------------
-taskset -c 2-6 gamescope -- %command%
+
+# Steam Launch Option
+# since isolcpus=8-15, nohz_full=8-15 and rcu_nocbs=8-15
+gamemoderun taskset -c 8-15 gamescope -f -e -- %command%
+
+# use following for 720p low-res performance boost 
+gamemoderun taskset -c 8-15 gamescope -W 1280 -H 720 -f -- %command%
+
+
+Kernel Boot Parameters (/etc/default/grub):
+--------------------------------------------
+
+# leaving 0-7 for OS tasks.
+# isolate cores 8-15 and not 1-15.
+# do not isolate 1-15, risks starving the OS. It risks starving the OS.
+
+
+# /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15"
+
+After editing, run:
+sudo update-grub
+sudo reboot
 
 CPU Governor (Set to Performance):
 -----------------------------------
@@ -80,21 +106,26 @@ VRAM Allocation for Radeon 680M:
 ---------------------------------
 In BIOS: Set UMA Buffer Size or Shared Memory to 4GB
 
-Kernel Boot Parameters (/etc/default/grub):
---------------------------------------------
 
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=1-15 threadirqs rcu_nocbs=1-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9"
-
-
-After editing, run:
-sudo update-grub
-sudo reboot
 
 Sysctl Tuning (/etc/sysctl.d/99-gaming.conf):
 ----------------------------------------------
 vm.compaction_proactiveness=0
 vm.dirty_ratio=5
 vm.dirty_background_ratio=5
+
+# Memory & Cache Optimization
+vm.swappiness=10                # Reduces swapping (better for 16GB RAM)
+vm.vfs_cache_pressure=50        # Keeps more files in cache
+kernel.numa_balancing=0         # Disables NUMA balancing (helps on AMD)
+kernel.sched_energy_aware=0     # Prevents CPU freq fluctuations
+
+Apply changes immediately:
+sudo sysctl --system
+
+Verify isolation post-boot:
+cat /proc/cmdline | grep isolcpus  # Should show isolcpus=8-15
+
 
 Set Runtime Performance Mode:
 ------------------------------
