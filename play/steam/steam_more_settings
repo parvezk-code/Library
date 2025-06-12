@@ -65,7 +65,7 @@ Flatseal: Device Permissions
 --device=dri
 --share=ipc
 
-Steam's settings 
+Steam's settings' 
 
 Proton Version:
 ---------------
@@ -91,11 +91,10 @@ Kernel Boot Parameters (/etc/default/grub):
 
 
 # /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.ppfeaturemask=0xffffffff  # Warning: Enables experimental GPU features
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15"
+
+amdgpu.ppfeaturemask=0xffffffff  # Warning: Enables experimental GPU features
 mitigations=off  # SECURITY WARNING: Disables CPU vulnerability protections
-nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 
-rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 
-amdgpu.vm_fragment_size=9 isolcpus=8-15"
 
 After editing, run:
 sudo update-grub
