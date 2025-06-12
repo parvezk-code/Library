@@ -153,47 +153,50 @@ const systemConfiguration = {
     ]
   };
   
-  // CPU Affinity and Launch Options
-  const cpuAffinity = {
-    launchOptions: [
-      { 
-        type: "default", 
-        command: "gamemoderun taskset -c 8-15 gamescope -f -e -- %command%",
-        explanation: "Isolates game to cores 8-15 with full gamescope features"
-      },
-      { 
-        type: "720p", 
-        command: "gamemoderun taskset -c 8-15 gamescope -W 1280 -H 720 -f -- %command%",
-        explanation: "720p low-res performance mode with core isolation"
-      },
-      { 
-        type: "physical-cores", 
-        command: "gamemoderun taskset -c 4,5,6,7 gamescope -f -e -- taskset -c 4,5,6,7 %command%",
-        explanation: "Pins gamescope and game to physical cores 4-7 for minimal OS interference"
-      },
-      { 
-        type: "game-only-physical", 
-        command: "gamemoderun taskset -c 4,5,6,7 %command%",
-        explanation: "Runs game on physical cores 4-7 without gamescope"
-      },
-      { 
-        type: "smt-paired", 
-        command: "gamemoderun taskset -c 4,5,12,13 gamescope -f -e -- taskset -c 4,5,12,13 %command%",
-        explanation: "Uses physical cores 4-5 and their SMT siblings 12-13 for wider thread pool"
-      }
-    ],
-    breakdown: [
-      { command: "gamemoderun", value: "(no value)", explanation: "Wrapper that activates Feral GameMode optimizations", required: false },
-      { command: "taskset", value: "-c 8-15", explanation: "Pins process to CPU cores 8-15 (for core isolation)", required: false },
-      { command: "gamescope", value: "(no value)", explanation: "Compositor that provides better fullscreen performance", required: false },
-      { command: "-W", value: "1280", explanation: "Sets output width in pixels (here 720p width)", required: false },
-      { command: "-H", value: "720", explanation: "Sets output height in pixels (here 720p height)", required: false },
-      { command: "-f", value: "(flag)", explanation: "Forces fullscreen mode", required: false },
-      { command: "-e", value: "(flag)", explanation: "Enables vsync (adaptive sync if available)", required: false },
-      { command: "--", value: "(separator)", explanation: "Indicates end of gamescope options", required: true },
-      { command: "%command%", value: "(Steam placeholder)", explanation: "Replaced with actual game executable command", required: true }
-    ],
-    explanation: "Cores 8-15 are isolated from system tasks for dedicated game performance. "
+  // Steam Launch Options
+  const steamSettings = {
+    steamLaunchOptions:{
+      launchOptions: [
+        { 
+          type: "default", 
+          command: "gamemoderun taskset -c 8-15 gamescope -f -e -- %command%",
+          explanation: "Isolates game to cores 8-15 with full gamescope features"
+        },
+        { 
+          type: "720p", 
+          command: "gamemoderun taskset -c 8-15 gamescope -W 1280 -H 720 -f -- %command%",
+          explanation: "720p low-res performance mode with core isolation"
+        },
+        { 
+          type: "physical-cores", 
+          command: "gamemoderun taskset -c 4,5,6,7 gamescope -f -e -- taskset -c 4,5,6,7 %command%",
+          explanation: "Pins gamescope and game to physical cores 4-7 for minimal OS interference"
+        },
+        { 
+          type: "game-only-physical", 
+          command: "gamemoderun taskset -c 4,5,6,7 %command%",
+          explanation: "Runs game on physical cores 4-7 without gamescope"
+        },
+        { 
+          type: "smt-paired", 
+          command: "gamemoderun taskset -c 4,5,12,13 gamescope -f -e -- taskset -c 4,5,12,13 %command%",
+          explanation: "Uses physical cores 4-5 and their SMT siblings 12-13 for wider thread pool"
+        }
+      ],
+      breakdown: [
+        { command: "gamemoderun", value: "(no value)", explanation: "Wrapper that activates Feral GameMode optimizations", required: false },
+        { command: "taskset", value: "-c 8-15", explanation: "Pins process to CPU cores 8-15 (for core isolation)", required: false },
+        { command: "gamescope", value: "(no value)", explanation: "Compositor that provides better fullscreen performance", required: false },
+        { command: "-W", value: "1280", explanation: "Sets output width in pixels (here 720p width)", required: false },
+        { command: "-H", value: "720", explanation: "Sets output height in pixels (here 720p height)", required: false },
+        { command: "-f", value: "(flag)", explanation: "Forces fullscreen mode", required: false },
+        { command: "-e", value: "(flag)", explanation: "Enables vsync (adaptive sync if available)", required: false },
+        { command: "--", value: "(separator)", explanation: "Indicates end of gamescope options", required: true },
+        { command: "%command%", value: "(Steam placeholder)", explanation: "Replaced with actual game executable command", required: true }
+      ],
+      explanation: "Cores 8-15 are isolated from system tasks for dedicated game performance. "
+    },
+    protonSettings: "Use Proton-GE (latest) via ProtonUp-Qt for best compatibility and performance"
   };
   
   // Kernel Boot Parameters
