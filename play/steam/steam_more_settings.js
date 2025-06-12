@@ -86,9 +86,9 @@ const systemConfiguration = {
     ],
     
     Low_Power_GPU_Tuning: [
-      { variable: "R600_DEBUG=nohyperz", explanation: "Disables HyperZ for older R600 GPUs (may improve stability)", configured: true },
+      { variable: "R600_DEBUG=nohyperz", explanation: "Not for radeon 680m, Disables HyperZ for older R600 GPUs (may improve stability)", configured: false },
       { variable: "RADV_DEBUG=nodcc", explanation: "Disables DCC (Delta Color Compression) - may help with VRAM limitations", configured: true },
-      { variable: "mesa_glthread=true", explanation: "Enables multithreaded OpenGL command processing", configured: true }
+      { variable: "mesa_glthread=true", explanation: "Use it in games launch options. It may break some titles, Enables multithreaded OpenGL command processing", configured: false }
     ],
     
     Proton_Performance: [
@@ -99,8 +99,8 @@ const systemConfiguration = {
     ],
     
     Nvidia_GPU_Features: [
-      { variable: "PROTON_HIDE_NVIDIA_GPU=0", explanation: "Makes Nvidia GPUs visible to Proton", configured: true, warning: "Only relevant for Nvidia GPUs" },
-      { variable: "PROTON_ENABLE_NVAPI=1", explanation: "Enables Nvidia's NVAPI support in Proton", configured: true, warning: "Only relevant for Nvidia GPUs" }
+      { variable: "PROTON_HIDE_NVIDIA_GPU=0", explanation: "Makes Nvidia GPUs visible to Proton", configured: false },
+      { variable: "PROTON_ENABLE_NVAPI=1", explanation: "Enables Nvidia's NVAPI support in Proton", configured: false}
     ],
     
     Memory_Management: [
@@ -109,7 +109,7 @@ const systemConfiguration = {
     ],
     
     System_Performance: [
-      { variable: "GAME_MODE=1", explanation: "Legacy variable for Feral's GameMode", configured: true },
+      { variable: "GAME_MODE=1", explanation: "not really used by newer GameMode setups. Legacy variable for Feral's GameMode", configured: false },
       { variable: "GAMEMODERUN=1", explanation: "Activates gamemode optimizations for games", configured: true }
     ],
     
@@ -165,6 +165,21 @@ const systemConfiguration = {
         type: "720p", 
         command: "gamemoderun taskset -c 8-15 gamescope -W 1280 -H 720 -f -- %command%",
         explanation: "720p low-res performance mode with core isolation"
+      },
+      { 
+        type: "physical-cores", 
+        command: "gamemoderun taskset -c 4,5,6,7 gamescope -f -e -- taskset -c 4,5,6,7 %command%",
+        explanation: "Pins gamescope and game to physical cores 4-7 for minimal OS interference"
+      },
+      { 
+        type: "game-only-physical", 
+        command: "gamemoderun taskset -c 4,5,6,7 %command%",
+        explanation: "Runs game on physical cores 4-7 without gamescope"
+      },
+      { 
+        type: "smt-paired", 
+        command: "gamemoderun taskset -c 4,5,12,13 gamescope -f -e -- taskset -c 4,5,12,13 %command%",
+        explanation: "Uses physical cores 4-5 and their SMT siblings 12-13 for wider thread pool"
       }
     ],
     breakdown: [
@@ -178,14 +193,39 @@ const systemConfiguration = {
       { command: "--", value: "(separator)", explanation: "Indicates end of gamescope options", required: true },
       { command: "%command%", value: "(Steam placeholder)", explanation: "Replaced with actual game executable command", required: true }
     ],
-    explanation: "Cores 8-15 are isolated from system tasks for dedicated game performance"
+    explanation: "Cores 8-15 are isolated from system tasks for dedicated game performance. "
   };
   
   // Kernel Boot Parameters
   const kernelBootParameters = {
-    grubCmdlineLinuxDefault:
-      "quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15",
-    parameters: [
+    GRUB_CMDLINE_LINUX_DEFAULT: [
+      {
+        value: "quiet splash amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15",
+        explanation: "Base configuration with AMD full feature mask, GPU memory optimizations, CPU isolation, and system latency reductions.",
+        configured: false
+      },
+      {
+        value: "quiet splash amd_pstate=active amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15",
+        explanation: "Adds `amd_pstate=active` to enable modern CPU frequency scaling with better responsiveness and efficiency for gaming workloads.",
+        configured: false
+      },
+      {
+        value: "quiet splash amd_pstate=active amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15 amdgpu.gpu_recovery=0",
+        explanation: "Disables AMD GPU crash recovery for more stable fullscreen performance (if system is stable without crashes).",
+        configured: false
+      },
+      {
+        value: "quiet splash amd_pstate=active amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15 rcutree.use_softirq=0",
+        explanation: "Reduces CPU latency by offloading RCU callbacks from soft IRQ context.",
+        configured: false
+      },
+      {
+        value: "quiet splash amd_pstate=active amdgpu.ppfeaturemask=0xffffffff mitigations=off nowatchdog preempt=full nohz_full=8-15 threadirqs rcu_nocbs=8-15 rcutree.enable_rcu_lazy=1 amdgpu.sg_display=0 amdgpu.dc=1 amdgpu.vm_fragment_size=9 isolcpus=8-15 idle=poll",
+        explanation: "Forces CPU to avoid deep sleep states (C-states) to reduce input latency, at the cost of higher power usage and heat.",
+        configured: false
+      }
+    ],
+      parameters: [
         { 
           parameter: "quiet", 
           explanation: "Suppresses boot messages for cleaner startup | Recommended for: All systems", 
@@ -280,7 +320,7 @@ const systemConfiguration = {
     recommendation: "Set UMA Buffer Size or Shared Memory in BIOS",
     options: [
       { size: "2GB", explanation: "Works for most games" },
-      { size: "4GB", explanation: "Only for heavy games", explanation: "May be excessive for many titles" }
+      { size: "4GB", explanation: "Only for heavy games, May be excessive for many small game titles" }
     ]
   };
   
@@ -294,17 +334,47 @@ const systemConfiguration = {
       { setting: "vm.swappiness=10", explanation: "How aggressively to swap (10=moderate)", configured: true },
       { setting: "vm.vfs_cache_pressure=50", explanation: "Filesystem cache retention (50=balanced)", configured: true },
       { setting: "kernel.numa_balancing=0", explanation: "Disables NUMA balancing for AMD systems", configured: true },
-      { setting: "kernel.sched_energy_aware=0", explanation: "Disables energy-aware scheduling", configured: true }
+      { setting: "kernel.sched_energy_aware=0", explanation: "Disables energy-aware scheduling", configured: true },
+      { setting: "kernel.sched_autogroup_enabled=0", explanation: "Disables task autogrouping to prevent latency in games", configured: false },
+      { setting: "kernel.sched_latency_ns=6000000", explanation: "may cause overheating, Tightens scheduler latency window (6ms)", configured: false },
+      { setting: "kernel.sched_min_granularity_ns=1000000", explanation: "Prevents excessive CPU switching.. Minimum time a task runs before preemption (0.75ms)", configured: false },
+      { setting: "kernel.sched_wakeup_granularity_ns=1000000", explanation: "How early tasks can preempt (1ms)", configured: false },
+      { setting: "fs.inotify.max_user_watches=524288", explanation: "Allows more file system watchers (useful for gaming platforms)", configured: false },
+      { setting: "net.core.wmem_max=26214400", explanation: "Max send buffer size", configured: false },
+      { setting: "kernel.timer_migration=0", explanation: "may cause issues with power management, Use this only if you've fully isolated CPU cores (e.g., using isolcpus, nohz_full, rcu_nocbs). Pins timers to cores, avoids waking idle CPUs", configured: false }
     ],
     postEditSteps: [
       { command: "sudo sysctl --system", explanation: "Applies all sysctl changes", executed: false },
-      { command: "cat /proc/cmdline | grep isolcpus", explanation: "Verify core isolation", executed: false }
+      { command: "cat /proc/cmdline | grep isolcpus", explanation: "Verify core isolation", executed: false },
+      { command: "sysctl -a | grep sched", explanation: "Verify scheduler settings", executed: false },
+      { command: "sysctl -a | grep vm", explanation: "Verify memory tuning settings", executed: false },
+      { command: "glxinfo | grep \"OpenGL renderer\" ", explanation: "Verify memory tuning settings", executed: false }
     ]
   };
   
   // Runtime Performance Mode
-  const runtimePerformanceMode = {
-    command: "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor",
-    explanation: "Sets CPU governor to 'performance' mode for all CPU cores at runtime. Temporary setting that resets on reboot (use cpufrequtils for persistence)",
+  const runtimePerformanceMode = [
+    {
+      command: "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor",
+      explanation: "Forces all CPU cores into 'performance' mode at runtime using sysfs. This ensures max clock speeds and responsiveness but increases power consumption and system temperatures. Temporary until reboot.",
+      executed: false
+    },
+    {
+      command: "sudo cpupower frequency-set -g performance",
+      explanation: "Applies the 'performance' governor via cpupower, pushing the CPU to run at its highest frequency at all times. Improves frame times and consistency in games but may significantly raise system heat and reduce battery life on laptops.",
+      executed: false
+    },
+    {
+      command: "sudo cpupower frequency-set -g ondemand",
+      explanation: "Sets the CPU to the 'ondemand' governor, which dynamically scales CPU frequency based on load. Conserves energy and reduces heat under light workloads but may introduce lag spikes or slower ramp-up under heavy gaming loads.",
+      executed: false
+    }
+  ];
+  
+
+  // Runtime Performance Mode
+  const monitorSystem = {
+    command: "watch -n 1 \"cat /proc/cpuinfo | grep MHz && sensors | grep Tdie\"",
+    explanation: "Monitors real-time CPU clock speeds (MHz) and die temperatures (Tdie) every second",
     executed: false
   };
