@@ -158,27 +158,27 @@ const systemConfiguration = {
     steamLaunchOptions:{
       launchOptions: [
         { 
-          type: "default", configured: true, 
+          type: "default",  configured: true,
           command: "gamemoderun taskset -c 8-15 gamescope -f -e -- %command%",
           explanation: "Isolates game to cores 8-15 with full gamescope features"
         },
         { 
-          type: "720p", configured: true, 
+          type: "720p",  configured: true,
           command: "gamemoderun taskset -c 8-15 gamescope -W 1280 -H 720 -f -- %command%",
           explanation: "720p low-res performance mode with core isolation"
         },
         { 
-          type: "physical-cores", configured: true, 
+          type: "physical-cores",  configured: true,
           command: "gamemoderun taskset -c 4,5,6,7 gamescope -f -e -- taskset -c 4,5,6,7 %command%",
           explanation: "Pins gamescope and game to physical cores 4-7 for minimal OS interference"
         },
         { 
-          type: "game-only-physical", configured: true, 
+          type: "game-only-physical",  configured: true,
           command: "gamemoderun taskset -c 4,5,6,7 %command%",
           explanation: "Runs game on physical cores 4-7 without gamescope"
         },
         { 
-          type: "smt-paired", configured: true, 
+          type: "smt-paired",  configured: true,
           command: "gamemoderun taskset -c 4,5,12,13 gamescope -f -e -- taskset -c 4,5,12,13 %command%",
           explanation: "Uses physical cores 4-5 and their SMT siblings 12-13 for wider thread pool"
         }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steam Optimization Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Steam Gaming Optimization Dashboard</h1>
+
+  <div class="tab-buttons">
+    <button class="tab-button active" onclick="showTab('system-tab')">System Info</button>
+    <button class="tab-button" onclick="showTab('flatseal-tab')">Flatseal Settings</button>
+    <button class="tab-button" onclick="showTab('steam-tab')">Steam Settings</button>
+    <button class="tab-button" onclick="showTab('kernel-tab')">Kernel Boot</button>
+    <button class="tab-button" onclick="showTab('cpu-tab')">CPU & Performance</button>
+
+  </div>
+
+  <div class="tab-content active" id="system-tab"></div>
+  <div class="tab-content" id="flatseal-tab"></div>
+  <div class="tab-content" id="steam-tab"></div>
+  <div id="kernel-tab" class="tab-content"></div>
+  <div id="cpu-tab" class="tab-content"></div>
+
+
+
+  <script src="steam_more_settings.js"></script>
+  <script src="script.js"></script>
+  <script src="./components/systemInfoComponent.js"></script>
+  <script src="./components/flatsealComponent.js"></script>
+  <script src="./components/steamSettingsComponent.js"></script>
+  <script src="./components/kernelBootComponent.js"></script>
+  <script src="./components/cpuPerformanceComponent.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
