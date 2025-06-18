@@ -8,6 +8,7 @@ create sudo   users    --> 	newuser
 create normal users    --> 	sanaya, nosuser(non open source apps), guest
 
 set up flatpak and install non open source apps only for nosuser user
+	- optional : Use AppArmor or Bubblewrap, advanced sandboxing beyond Flatpak built-in
 
 login with nosuser user and install flatseal and non open source apps
 
