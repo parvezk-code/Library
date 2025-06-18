@@ -4,11 +4,16 @@ update
 
 setup task_bar
 
-setup firefox	(book-mark gmail, drive, github, chatgpt, youtube)
+create sudo   users    --> 	newuser
+create normal users    --> 	sanaya, nosuser(non open source apps), guest
 
-install gimp
+set up flatpak and install non open source apps only for nosuser user
 
-create users --> sanaya, guest
+login with nosuser user and install flatseal and non open source apps
+
+setup firefox	(book-mark gmail, drive, github, chatgpt, youtube) 
+
+install gimp app image
 
 mount partition for all users 
 	open disks, edit mount options
