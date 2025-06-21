@@ -1,0 +1,76 @@
+╔══════════════════════════════════════════════════════════════╗
+║        🎮 NOBARA OS – GAMING SYSTEM SETUP REFERENCE         ║
+║       Replicate these settings to build your own distro     ║
+╚══════════════════════════════════════════════════════════════╝
+
+1️⃣  PERFORMANCE TUNING (Kernel & Drivers)
+────────────────────────────────────────────
+✔ Custom kernel patches (based on Fedora kernel)
+✔ FSR (FidelityFX Super Resolution) global support
+✔ Tweakable TDP/fan controls (Steam Deck / AMD platforms)
+✔ Latest Mesa drivers + Vulkan RADV backend
+✔ Full support for AMD Radeon 600M/700M iGPUs (like 680M, 780M)
+✔ Enabled zram swap (compressed RAM)
+
+2️⃣  CORE GAMING PACKAGES
+────────────────────────────────────────────
+✔ Steam (Native or Flatpak)
+✔ Lutris
+✔ Proton-GE (via ProtonUp-Qt or system install)
+✔ Wine-GE & Wine-Staging
+✔ DXVK, VKD3D, and all dependencies preinstalled
+✔ GameMode – auto CPU governor switcher
+✔ Gamescope – game session compositor
+✔ MangoHud – performance overlay
+✔ vkBasalt – post-processing effects (e.g., sharpening)
+✔ GOverlay – GUI for MangoHud & vkBasalt
+
+3️⃣  CREATIVE TOOLS (optional)
+────────────────────────────────────────────
+✔ OBS Studio + Browser Plugin (for streaming)
+✔ Kdenlive (video editing)
+✔ Blender (3D modeling)
+✔ DaVinci Resolve (setup wizard included)
+✔ Audacity (audio editing)
+
+4️⃣  SYSTEM UTILITIES
+────────────────────────────────────────────
+✔ CoreCtrl – power profiles (CPU/GPU tuning)
+✔ Flatseal – manage Flatpak permissions
+✔ Flatpak + Flathub + Flatpost (GUI app manager)
+✔ Nobara Driver Manager – auto detect proprietary drivers
+✔ Nobara Package Manager (yumex + bauh)
+✔ GNOME or KDE Tweaks tool
+✔ Discord Canary (Flatpak)
+✔ Microsoft Fonts preinstalled (for Wine UI compatibility)
+
+5️⃣  PERFORMANCE SETTINGS & POLICIES
+────────────────────────────────────────────
+✔ GameMode autostarts with Steam & Lutris games
+✔ Global MangoHud overlay with custom toggle
+✔ Per-app GameMode toggle supported
+✔ Filesystem tweaks for shader cache performance
+✔ Latest Proton & Wine prefixes configured via user tools
+✔ Optional: real-time audio support (low-latency gaming)
+
+6️⃣  OPTIONAL: GAMING UI SHELL (Steam Deck Mode)
+────────────────────────────────────────────
+✔ Steam Deck UI mode available via session switch
+✔ Gamescope integrated with Deck-style window management
+
+╔═════════════════════════════════════════════╗
+║     To replicate on other distros:          ║
+╠═════════════════════════════════════════════╣
+║ - Use Flatpak or APT/Pacman/DNF versions    ║
+║ - Install GameMode, MangoHud, vkBasalt      ║
+║ - Use ProtonUp-Qt for Proton-GE/Wine-GE     ║
+║ - Add zram, install CoreCtrl                ║
+║ - Set kernel boot params (FSR, perf)        ║
+║ - Configure Flatseal for Steam/Lutris       ║
+╚═════════════════════════════════════════════╝
+
+✅ Recommended Base Distros:
+  - Fedora Kinoite / Workstation (RPM-based)
+  - Ubuntu Minimal or Server + Flatpaks
+  - Arch / EndeavourOS / Garuda (for rolling users)
+  
