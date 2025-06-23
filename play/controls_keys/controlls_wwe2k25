@@ -2,13 +2,17 @@
  WWE 2K25 - Xbox Controls
 =========================
 
+Create FSA(finite state automata) machine for states and connect(by keys)
+
 🎮 BASIC MOVEMENT
 ------------------
-Left Stick       - Move
-LT (Hold)        - Run
-Right Stick      - Face/Target
-LB (Near Ropes)  - Enter/Exit Ring
-LB (Corner)      - Climb Turnbuckle
+Left Stick        -    Move
+Right Stick       -    Change Face/Target/opponent direction
+LT (Hold)         -    Run
+LB (Near Ropes)   -    Enter/Exit Ring
+LB (Corner)       -    Climb Turnbuckle
+LB (Near Object)  -    Pick Up
+LB (Near Table)   -    Set Up
 
 👊 STRIKES & COMBOS
 ---------------------
