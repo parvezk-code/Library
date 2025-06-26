@@ -19,13 +19,23 @@
 # Anytype                        : https://download.anytype.io/
 # Pandoc                         : a universal document converte
 
+Buzz                :   audio to text converter AI
+
+Frog                :   Converts image into text
 
 VS-Codium           :   VSCodium-1.87.2.24072.glibc2.17-x86_64.appimage
+                        open source IDE for vs-code
+
+PTYXIS              :   new terminal
 
 Latex               :   Texstudio(AppImage, texmaker), kile, LYX(WYSIWYM), TeXworks,
                         GNOME LaTeX zim(latex plugin), Papeeria(online)
 
 GNOME Boxes         :   access virtual machines
+
+Distrobox           :   create container images of different Linux destros.
+
+Boxbuddy            :   GUI for Distrobox apps
 
 vi                  :   create encripted file
 
@@ -34,6 +44,14 @@ gimp                :   image editor
 disks               :   gnome partition manager
 
 libre-office        :   office utility
+
+Mission center      :   for system monitor
+
+Lm-studio           :   run all all AI models
+
+Logseq              :   automatic organizer for your randomly coming thoughts
+
+AppFlowy            :   workspace for notetaking, knowledge and data management, as well as project and task management
 
 Anytype             :   project management, storing docs, notes, managing tasks, collections of books/articles/websites
 
@@ -45,13 +63,13 @@ gparted             :   partition manager
 
 hplip               :   hp printer utility
 
-codium              :   open source IDE for vs-code
+putty               :   remote open a GUI software on your local machine
 
-putty               : remote open a GUI software on your local machine
+disks               :   copy complete file system to other usb derive by creating images
 
-disks               : copy complete file system to other usb derive by creating images
+test desk           :   recover deleted data from filesystem
 
-test desk           : recover deleted data from filesystem
+Foliate             :   free book library
 
 PXE Booting         :
 
