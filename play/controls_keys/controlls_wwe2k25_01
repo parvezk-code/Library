@@ -4,9 +4,11 @@
 
 -------------------------------------------------------------------------------------------
 steps
-    -   walk and run in all directions
+    -   walk(LS) and run(LT) in all directions
+    -   move out and inside the ring(RB)
+    -   climb corners : middle rope and top rope
     -   reposotion(RS)
-    -   drag opponent
+    -   drag opponent(B, LB)
     -   carry(lift) opponent in all 4 directons (B, RB, LS)
     -   perform simple attacks(X/A)
     -   perform running attacks(X/A/B)
@@ -14,9 +16,9 @@ steps
     -   perform corner attacks  on standing opponent simple/grap/grapple/running attack
     -   move opponent to rope and then then do grap/simple attack
     -   carry(lift) opponent and then attack(A)
-    -   irish  : wips, throw outside, rebound attack, irish attack 
+    -   irish  : wips, throw outside, rebound attack, irish attack (B, LS, B, A/X/B)
     -   apron/spring board moves : (Run, A) (LB, A)
-    -   climb corners : middle rope and top rope and then attack
+    -   climb corners, middle/top rope and then attack
     -   reposition opponent at the corner(up/down) and then do simple/grap/running attack
     -   reposition supin(lie down) opponent to sitting and then do simple/grap attack
     -   reposotion standing opponent and then do simple/running/grapple attack
