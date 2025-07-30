@@ -31,6 +31,11 @@ PTYXIS              :   new terminal
 Latex               :   Texstudio(AppImage, texmaker), kile, LYX(WYSIWYM), TeXworks,
                         GNOME LaTeX zim(latex plugin), Papeeria(online)
 
+Sync n/w files      :   Syncthing
+
+Android file        :   Packet, LocalSend, GSConnect, KDE connect 
+transfer
+
 GNOME Boxes         :   access virtual machines
 
 Distrobox           :   create container images of different Linux destros.
