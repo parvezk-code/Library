@@ -5,7 +5,7 @@ Front Ends(GUI) : Texstudio(appImage, texmaker), LYX(WYSIWYM), TeXworks, kile, G
 sudo apt-cache search xifthen
 
 # install latex
-full        :   sudo apt install texlive-full
+full(6 GB)        :   sudo apt install texlive-full
 minimal     :   sudo apt install texlive-latex-base texlive-latex-extra  texlive-bibtex-extra
 
 
