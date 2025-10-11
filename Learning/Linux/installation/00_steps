@@ -34,6 +34,8 @@ install qemu kvm
 
 install git	(copy directory ~/.ssh and repos)
 
+install hplip
+
 
 
 
