@@ -1,0 +1,26 @@
+% \documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{book}
+
+\input{preamble/preamble.tex}
+
+\begin{document}
+
+\frontmatter
+\input{frontmatter/titlepage}
+\input{frontmatter/abstract}
+\input{frontmatter/acknowledgments}
+\input{frontmatter/dedication}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\subfile{chapters/chap01-introduction/intro}
+\subfile{chapters/chap02-methods/methods}
+\subfile{chapters/chap03-results/results}
+\subfile{chapters/chap04-conclusion/conclusion}
+
+\backmatter
+\printbibliography
+
+\end{document}

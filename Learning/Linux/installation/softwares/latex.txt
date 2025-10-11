@@ -7,7 +7,7 @@ sudo apt-cache search xifthen
 # install latex
 minimal                 :   sudo apt install texlive-latex-base texlive-latex-extra  texlive-bibtex-extra
 full(6 GB, hangs)       :   sudo apt install texlive-full
-
+latexmk                 :   sudo apt install latexmk biber texlive-science
 
 
 sudo apt update
