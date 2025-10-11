@@ -7,15 +7,6 @@ setup task_bar
 create sudo   users    --> 	newuser
 create normal users    --> 	sanaya, nosuser(non open source apps), guest
 
-set up flatpak and install non open source apps only for nosuser user
-	- optional : Use AppArmor or Bubblewrap, advanced sandboxing beyond Flatpak built-in
-
-login with nosuser user and install flatseal and non open source apps
-
-setup firefox	(book-mark gmail, drive, github, chatgpt, youtube) 
-
-install gimp app image
-
 mount partition for all users 
 	open disks, edit mount options
 		turn off     -->  user session defaults,  
@@ -23,8 +14,26 @@ mount partition for all users
 		mount point  -->  /media/data directory
 	sudo   setfacl   -m    u:newuser:rwx    /media/data
 
+
+set up flatpak and install non open source apps only for nosuser user
+	- optional : Use AppArmor or Bubblewrap, advanced sandboxing beyond Flatpak built-in
+
+login with nosuser user and install flatseal and non open source apps
+
+setup firefox	(book-mark gmail, drive, github, chatgpt, youtube) 
+
+install app images
+	copy appImage files to a location shared with all users
+	create .desktop files for each appImage  
+	
+	gimp app image
+	codium appImage   Version: 1.87.2 Release: 24072 Date: 2024-03-12T18:30:28.994Z
+	tex-studio
+
 install qemu kvm
 
 install git	(copy directory ~/.ssh and repos)
 
-codium appImage   Version: 1.87.2 Release: 24072 Date: 2024-03-12T18:30:28.994Z
+
+
+
