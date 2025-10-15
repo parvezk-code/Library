@@ -5,8 +5,13 @@ Home Docker(ssh)    :   git@github.com:parvezk-code/Home-Docker-Env.git
 Sanaya              :   git@github.com:sanaya-code/sanaya-code.github.io.git
 
 accept invitation   :	https://github.com/sanaya-code/data/invitations
+                        https://github.com/other_user_id/repo_name/invitations
 
-==> setup git in debian
+You need to add key to your github account only once even if,you have 
+repositories from multipe users on you machine. You should create a ssh key and add same key
+to all users that you created on github account.
+
+==> setup git in debian (SSH keys identify a user, not a repository.)
 
     set user email                  :   git config --global user.email "parvezk"
 
