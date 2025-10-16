@@ -1,0 +1,15 @@
+
+Create a VS Code task
+    open Command Palette 
+    choose “Tasks: Configure Task”
+    Create tasks.json from template
+    Others
+
+to run the task :   Terminal --> Run Task --> task_name
+
+
+Make it the default build task
+    Open Command Palette 
+    Tasks: Configure Default Build Task
+    pick “Build LaTeX PDF (script)”.
+    Now press Ctrl/Cmd+Shift+B to build the currently file.
