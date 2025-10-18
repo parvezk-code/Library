@@ -1,0 +1,35 @@
+% Core packages
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{amsmath,amssymb}
+
+\usepackage{booktabs}       % For professional looking tables
+\usepackage{colortbl}       % For colored rows/columns
+\usepackage{multirow}       % For multirow cells
+\usepackage{longtable}      % For tables across multiple pages
+\usepackage{array}          % For better column formatting
+\usepackage[table]{xcolor}  % For color in tables
+\usepackage{float}          % For [H] placement specifier
+\usepackage{graphicx}
+\usepackage{makecell}
+
+
+
+% Listings for showing code
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{gray!5},
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  captionpos=b,
+  autogobble=true,
+  keywordstyle=\color{blue!70!black},
+  commentstyle=\color{gray!70},
+  showstringspaces=false
+}
