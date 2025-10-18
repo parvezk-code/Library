@@ -10,15 +10,25 @@
 \usepackage{array}          % For better column formatting
 \usepackage[table]{xcolor}  % For color in tables
 \usepackage{float}          % For [H] placement specifier
-\usepackage{graphicx}
-\usepackage{makecell}
+\usepackage{graphicx}       % For including images
+\usepackage{makecell}       % For line breaks in cells
 
-
-
+% ==================================================
 % Listings for showing code
+% ==================================================
 \usepackage{listings}
-\usepackage{lstautogobble}
+\usepackage{lstautogobble}  % auto remove extra indentation
+\usepackage{caption}        % For captions in floats
+\usepackage{newfloat}       % Define custom float for listings
 
+% Define a float environment "listing"
+\DeclareFloatingEnvironment[
+    fileext=lol,
+    listname=List of Listings,
+    name=Listing
+]{listing}
+
+% Set default style for listings
 \lstset{
   basicstyle=\ttfamily\small,
   backgroundcolor=\color{gray!5},
