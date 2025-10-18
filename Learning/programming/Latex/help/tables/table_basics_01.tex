@@ -1,0 +1,271 @@
+\documentclass[12pt,a4paper]{article}
+
+% ====== PACKAGES ======
+\usepackage[margin=1in]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{diagbox}
+\usepackage{makecell}
+\usepackage{threeparttable}
+\usepackage{float}
+\usepackage{longtable}
+\renewcommand{\arraystretch}{1.2}
+
+\setlength{\tabcolsep}{8pt}
+
+\begin{document}
+	\section*{Comprehensive Table Gallery}
+	
+	% ==========================================================
+	% 1. Basic bordered table
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Basic Bordered Table}
+		\begin{tabular}{|l|c|r|}
+			\hline
+			Item & Quantity & Price (\$) \\
+			\hline
+			Apple & 10 & 5.50 \\
+			Banana & 7 & 3.25 \\
+			Cherry & 3 & 2.10 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 2. Booktabs professional table
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Booktabs Professional Table}
+		\begin{tabular}{lcr}
+			\toprule
+			\textbf{Item} & \textbf{Quantity} & \textbf{Price (\$)} \\
+			\midrule
+			Apple & 10 & 5.50 \\
+			Banana & 7 & 3.25 \\
+			Cherry & 3 & 2.10 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 3. Alternate Row Coloring
+	% ==========================================================
+	\rowcolors{2}{gray!10}{white}
+	\begin{table}[H]
+		\centering
+		\caption{Alternate Row Coloring}
+		\begin{tabular}{l c r}
+			\toprule
+			\textbf{Fruit} & \textbf{Stock} & \textbf{Cost (\$)} \\
+			\midrule
+			Apple & 50 & 25.00 \\
+			Mango & 35 & 22.00 \\
+			Banana & 80 & 30.00 \\
+			Cherry & 25 & 18.00 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 4. Header Color Band
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Colored Header Band}
+		\arrayrulecolor{gray!60}
+		\rowcolors{2}{gray!05}{white}
+		\begin{tabular}{>{\columncolor{gray!20}}l c c r}
+			\toprule
+			\rowcolor{blue!20}
+			\textbf{Product} & \textbf{ID} & \textbf{Quantity} & \textbf{Price} \\
+			\midrule
+			Keyboard & K-101 & 40 & 1100 \\
+			Mouse & M-201 & 55 & 600 \\
+			Monitor & MN-301 & 20 & 7000 \\
+			Laptop & L-401 & 10 & 65000 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 5. Table with Multirow / Multicolumn
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Multirow and Multicolumn Example}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{\textbf{Year}} & \multicolumn{3}{c|}{\textbf{Sales (in \$)}} \\
+			\cline{2-4}
+			& Q1 & Q2 & Q3+Q4 \\
+			\hline
+			2023 & 1500 & 1700 & 4000 \\
+			2024 & 1800 & 2100 & 4300 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 6. Table with Diagonal Cell (diagbox)
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Diagonal Header Cell}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\diagbox{Score}{Subject} & Math & Science \\
+			\hline
+			A & 12 & 9 \\
+			B & 8 & 11 \\
+			C & 4 & 7 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 7. Tabularx (Auto-width columns)
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Auto Width Table with TabularX}
+		\begin{tabularx}{0.9\textwidth}{l c X}
+			\toprule
+			\textbf{ID} & \textbf{Dept.} & \textbf{Description} \\
+			\midrule
+			1 & HR & Handles recruitment, payroll, and training operations \\
+			2 & IT & Manages hardware, network, and software systems \\
+			3 & Finance & Responsible for budgeting and audits \\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	% ==========================================================
+	% 8. Colored Block Table
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Color-blocked Sections}
+		\arrayrulecolor{white}
+		\rowcolors{1}{gray!20}{gray!10}
+		\begin{tabular}{p{3cm}p{3cm}p{3cm}}
+			\rowcolor{blue!30}
+			\textbf{Name} & \textbf{Department} & \textbf{Score} \\
+			\rowcolor{blue!10}
+			John & Sales & 92 \\
+			Maria & Marketing & 89 \\
+			Lee & R\&D & 95 \\
+			\rowcolor{blue!10}
+			Nina & HR & 88 \\
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 9. Table with Notes (threeparttable)
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Table with Notes}
+		\begin{threeparttable}
+			\begin{tabular}{lcc}
+				\toprule
+				\textbf{Experiment} & \textbf{Trials} & \textbf{Accuracy (\%)} \\
+				\midrule
+				Test A & 50 & 89.4 \\
+				Test B & 45 & 91.2 \\
+				Test C & 60 & 94.7 \\
+				\bottomrule
+			\end{tabular}
+			\begin{tablenotes}
+				\footnotesize
+				\item Note: Accuracy is averaged over three datasets.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{table}
+	
+	% ==========================================================
+	% 10. Table with custom column colors
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Custom Column Colors}
+		\arrayrulecolor{white}
+		\begin{tabular}{
+				>{\columncolor{gray!15}}l 
+				>{\columncolor{gray!10}}c 
+				>{\columncolor{gray!05}}r}
+			\toprule
+			\textbf{Country} & \textbf{Population (M)} & \textbf{GDP (B\$)} \\
+			\midrule
+			India & 1400 & 3300 \\
+			USA & 335 & 26000 \\
+			China & 1450 & 17600 \\
+			Japan & 125 & 4200 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 11. Table with Merged Cells & Color Bands
+	% ==========================================================
+	\begin{table}[H]
+		\centering
+		\caption{Merged Cells and Color Bands}
+		\arrayrulecolor{gray!60}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\rowcolor{gray!20}
+			\multicolumn{2}{|c|}{\textbf{Group A}} & \multicolumn{2}{c|}{\textbf{Group B}} \\
+			\hline
+			X1 & X2 & Y1 & Y2 \\
+			\hline
+			12 & 15 & 19 & 22 \\
+			14 & 18 & 21 & 25 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	% ==========================================================
+	% 12. Longtable Example (auto-splits across pages)
+	% ==========================================================
+	\begin{longtable}{l c c}
+		\caption{Longtable Example (auto page split)}\\
+		\toprule
+		\textbf{Name} & \textbf{Age} & \textbf{City} \\
+		\midrule
+		\endfirsthead
+		\toprule
+		\textbf{Name} & \textbf{Age} & \textbf{City} \\
+		\midrule
+		\endhead
+		Alice & 22 & New York \\
+		Bob & 24 & Chicago \\
+		Charlie & 28 & Boston \\
+		David & 31 & San Francisco \\
+		Edward & 27 & Austin \\
+		Frank & 33 & Miami \\
+		Grace & 26 & Seattle \\
+		Hannah & 29 & Denver \\
+		Ian & 30 & Dallas \\
+		James & 25 & Portland \\
+		Kate & 32 & Phoenix \\
+		Leo & 34 & Detroit \\
+		Mona & 23 & Atlanta \\
+		Nick & 35 & Baltimore \\
+		Olivia & 28 & Tampa \\
+		Paul & 29 & Orlando \\
+		Quinn & 26 & Raleigh \\
+		Rita & 24 & Houston \\
+		Steve & 27 & Nashville \\
+		Tina & 25 & San Diego \\
+		\bottomrule
+	\end{longtable}
+	
+\end{document}

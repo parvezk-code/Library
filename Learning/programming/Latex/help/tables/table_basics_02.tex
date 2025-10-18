@@ -1,0 +1,94 @@
+\begin{enumerate}
+
+     \item Lists Basics
+
+          \begin{myTableStyle} \begin{tabular}{ |m{10cm}| } \hline
+               \lstinputlisting[language=Octave]{./code/list_01.c} \\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+     \item Table Basics
+
+          \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
+               \lstinputlisting[language=Octave]{./code/table_01.c} \\ \hline
+               multiple lines in one cell : \textbackslash makecell[l]\{ line1 \textbackslash \textbackslash \; line2 \}  \\ \hline
+               tabular, (table, tblr) \\ \hline
+               packages : array, tabularray            \\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+     \item Comments  :  \textbackslash begin\{comment\}      ...   \textbackslash end\{comment\}
+
+     \item non breakable paragraph or block :
+
+          \begin{myTableStyle} \begin{tabular}{ |m{8cm}| } \hline
+              \lstinputlisting[language=Octave]{./code/noBreakCode.c} \\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+
+     %\begin{minipage}{\linewidth}
+     \item Code listing(programming)Basics \\
+     \begin{enumerate}
+          \item Type code \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    % \lstinputlisting[language=Octave]{./code/coding_01.c} \\ \hline
+                    \lstinputlisting[language=Octave, firstline=7, lastline=9]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+
+          \item syntax \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    \lstinputlisting[language=Octave, firstline=1, lastline=4]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+
+          \item Custom styling \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    \lstinputlisting[language=Octave, firstline=13, lastline=32]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+
+          \item Custom Colors \\
+               \begin{myTableStyle} \begin{tabular}{ |m{15cm}| } \hline
+                    \lstinputlisting[language=Octave, firstline=34, lastline=38]{./code/text_blocks.c} \\ \hline
+               \end{tabular} \end{myTableStyle}
+     \end{enumerate}
+     %\end{minipage}
+
+     \begin{minipage}{\linewidth}
+     \item image :
+
+          \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
+              \lstinputlisting[language=Octave]{./code/image_01.c} \\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+     \end{minipage}
+
+     \item   General
+
+          \begin{myTableStyle} \begin{tabular}{ |m{4cm}|m{10cm}| } \hline
+               Math Mode    &  \textbackslash ( Equation \textbackslash ) \\ \hline
+               Math symbols &  P\_\{2\} \(P_{2}\)  \quad
+                               \( \forall i, s_i \)  \textbackslash forall i, s\_i  \qquad
+                               \( \sum_{n=1}^{10} s_i \)   \textbackslash sum\_\{n=1\}\textasciicircum\{10\} s\_i        \\ \hline
+
+               Spaces  & \textbackslash qquad  \qquad \textbackslash \qquad \textbackslash ; \qquad \textbackslash : \\ \hline
+
+               display text as it is    &    \textbackslash begin\{verbatim\}  \textbackslash end\{verbatim\}     \\ \hline
+
+               Restart numbering &  \textbackslash setcounter\{question\}\{0\} \\ \hline
+
+               New Environment &  \lstinputlisting[language=Octave]{./code/newEnv_01.c} \\ \hline
+
+               Font size &  \{\textbackslash huge \}   (large Large LARGE) (small, tiny, footnotesize etc ) \\ \hline
+
+               line spacing & \textbackslash linespread\{1.3\} \\ \hline
+
+               diagrams, graphics       &    TikZ, geogebra, circuitikz, mindmap     \\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+
+     \begin{minipage}{\linewidth}
+     \item mcq exam, question and options
+
+          \begin{myTableStyle} \begin{tabular}{ |m{14cm}| } \hline
+               \lstinputlisting[language=Octave]{./code/exam_questions_01.c} \\ \hline
+          \end{tabular} \end{myTableStyle} \vspace{0.08in}
+     \end{minipage}
+
+     \item Multi file latex document : https://www.overleaf.com/learn/latex/Multi-file\_LaTeX\_projects
+
+\end{enumerate}
