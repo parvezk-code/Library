@@ -1,45 +1,60 @@
-% Core packages
-\usepackage[a4paper,margin=1in]{geometry}
-\usepackage{subfiles}
-\usepackage{amsmath,amssymb}
-
-\usepackage{booktabs}       % For professional looking tables
-\usepackage{colortbl}       % For colored rows/columns
-\usepackage{multirow}       % For multirow cells
-\usepackage{longtable}      % For tables across multiple pages
-\usepackage{array}          % For better column formatting
-\usepackage[table]{xcolor}  % For color in tables
-\usepackage{float}          % For [H] placement specifier
-\usepackage{graphicx}       % For including images
-\usepackage{makecell}       % For line breaks in cells
+% ==================================================
+% Core Document Setup
+% ==================================================
+\usepackage[a4paper,margin=1in]{geometry}   % Set page size and margins
+\usepackage{subfiles}                       % Allow compiling subfiles (chapters) independently
+\usepackage{amsmath,amssymb}                % Math symbols and environments
 
 % ==================================================
-% Listings for showing code
+% Table Packages
 % ==================================================
-\usepackage{listings}
-\usepackage{lstautogobble}  % auto remove extra indentation
-\usepackage{caption}        % For captions in floats
-\usepackage{newfloat}       % Define custom float for listings
+\usepackage{booktabs}       % Professional-quality table rules (\toprule, \midrule, \bottomrule)
+\usepackage{colortbl}       % Add color shading to table rows and columns
+\usepackage{multirow}       % Merge multiple rows in a table cell
+\usepackage{longtable}      % Create tables that span multiple pages
+\usepackage{array}          % Enhanced column formatting and alignment options
+\usepackage[table]{xcolor}  % Define and use colors in tables (extends colortbl)
+\usepackage{float}          % Precise table/figure placement using [H]
+\usepackage{graphicx}       % Include external images (used in figure examples)
+\usepackage{makecell}       % Allow line breaks and formatting inside table cells
 
-% Define a float environment "listing"
+% ==================================================
+% List and Enumeration Packages
+% ==================================================
+\usepackage{enumitem}       % Customization of itemize, enumerate, and description lists
+
+% ==================================================
+% Code Listings (for showing LaTeX source in the PDF)
+% ==================================================
+\usepackage{listings}       % Core package for syntax-highlighted code listings
+\usepackage{lstautogobble}  % Automatically remove common indentation in code blocks
+\usepackage{caption}        % Better control of captions for figures, tables, and listings
+\usepackage{newfloat}       % Define custom float environments (e.g., for code listings)
+
+% ==================================================
+% Custom Float for Listings
+% ==================================================
+% Define a float type "listing" for displaying code blocks with captions and numbering
 \DeclareFloatingEnvironment[
     fileext=lol,
     listname=List of Listings,
     name=Listing
 ]{listing}
 
-% Set default style for listings
+% ==================================================
+% Default Style for Code Listings
+% ==================================================
 \lstset{
-  basicstyle=\ttfamily\small,
-  backgroundcolor=\color{gray!5},
-  frame=single,
-  breaklines=true,
-  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-  numbers=left,
-  numberstyle=\tiny\color{gray},
-  captionpos=b,
-  autogobble=true,
-  keywordstyle=\color{blue!70!black},
-  commentstyle=\color{gray!70},
-  showstringspaces=false
+  basicstyle=\ttfamily\small,                % Monospaced small font
+  backgroundcolor=\color{gray!5},            % Light gray background
+  frame=single,                              % Draw a box around the code
+  breaklines=true,                           % Allow automatic line breaking
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Indicate wrapped lines
+  numbers=left,                              % Line numbers on the left
+  numberstyle=\tiny\color{gray},             % Style of line numbers
+  captionpos=b,                              % Caption position (bottom)
+  autogobble=true,                           % Trim indentation from source
+  keywordstyle=\color{blue!70!black},        % Color for keywords
+  commentstyle=\color{gray!70},              % Color for comments
+  showstringspaces=false                     % Don’t mark spaces in strings
 }
