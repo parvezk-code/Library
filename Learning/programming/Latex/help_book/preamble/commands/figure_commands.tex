@@ -1,0 +1,28 @@
+
+% #1=img_path, #2=width, #3=caption (opt), #4=label (opt)
+\NewDocumentEnvironment{customSimpleImage}{ m m o o } 
+{
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=#2]{#1} 
+    \IfValueTF{#3}{\caption{#3}}{}
+    \IfValueTF{#4}{\label{#4}}{}
+}
+{
+  \end{figure}
+}
+
+% #1=img_path, #2=width_minpage, #3=width_img #4=caption (opt), #5=label (opt)
+\NewDocumentEnvironment{customBoxedImage}{ m m m o o } 
+{
+  \begin{center}
+    \fbox{%
+      \begin{minipage}{#2}
+        \centering
+        \includegraphics[#3]{#1}%
+        \IfNoValueF{#3}{\captionof{figure}{#4}}%
+        \IfNoValueF{#4}{\label{#4}}%
+      \end{minipage}%
+    }
+  \end{center}
+}{}

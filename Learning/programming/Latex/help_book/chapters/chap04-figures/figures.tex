@@ -1,0 +1,30 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Figures in \LaTeX}
+
+\section{ Environment For Using Figures}
+\lstinputlisting[
+    language=TeX,
+    linerange={1-17}
+]{\subfix{example_codes/figure_environment.tex}}
+
+\lstinputlisting[
+    language=TeX,
+    linerange={19-22}
+]{\subfix{example_codes/figure_environment.tex}}
+\newpage
+
+\section{ Simple Figures}
+
+\input{\subfix{example_codes/basic_figure.tex}}
+\lstinputlisting{\subfix{example_codes/basic_figure.tex}}
+
+\section{ Figures in Box, keep in list}
+
+\input{\subfix{example_codes/figure_box.tex}}
+\lstinputlisting{\subfix{example_codes/figure_box.tex}}
+
+
+\end{document}

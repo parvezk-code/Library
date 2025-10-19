@@ -1,0 +1,22 @@
+\NewDocumentEnvironment{simpleImage}{ m m o o } 
+{
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=#2]{#1} 
+    \IfValueTF{#3}{\caption{#3}}{}
+    \IfValueTF{#4}{\label{#4}}{}
+}
+{
+  \end{figure}
+}
+\begin{simpleImage}
+	{\subfix{example_codes/img_02.jpg}}
+	{0.6\linewidth}
+	[A simple example image]
+	[fig:simple_image]    % use [] to provide empty values
+\end{simpleImage}}
+
+% 2 mandatory, 2 optional args
+% #1=image, #2=width, #3=caption, #4=label
+% \usepackage{xparse}  to use NewDocumentEnvironment
+% m(mandatory), o(optional []), O({default}), s(starred version)
