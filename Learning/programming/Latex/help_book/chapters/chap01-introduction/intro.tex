@@ -1,0 +1,35 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+Here is a list of tips to make your LaTeX projects more modular, readable, and maintainable:
+
+\begin{itemize}
+    \item \textbf{Use \texttt{subfiles}} to divide the content into separate files, allowing independent compilation of chapters or sections.
+    
+    \item \textbf{Define reusable variables and commands} with \texttt{\textbackslash newcommand} or \texttt{\textbackslash def} to keep your code cleaner and avoid repetition.
+    
+    \item \textbf{Use \texttt{\textbackslash begingroup} and \texttt{\textbackslash endgroup}} to limit the scope of variables or formatting changes, which are automatically destroyed after use.
+    
+    \item \textbf{Create custom environments} with \texttt{NewDocumentEnvironment} to define consistent styles or formatting for repeated structures.
+    
+    \item \textbf{Organize packages and settings} in a separate preamble file or style file (\texttt{.sty}) to avoid cluttering the main document.
+    
+    \item \textbf{Use \texttt{\textbackslash input} or \texttt{\textbackslash include}} to separate sections or chapters into different files for better structure.
+    
+    \item \textbf{Comment generously} and maintain a changelog for collaborative projects or long-term maintenance.
+    
+    \item \textbf{Keep figures and tables modular} by storing them in separate files and using \texttt{\textbackslash input} to include them.
+    
+    \item \textbf{Use bibliographies modularly} with BibTeX or BibLaTeX in separate files for easier management of references.
+    
+    \item \textbf{Avoid hard-coded formatting} in the main document; define styles and colors globally using commands or custom environments.
+    
+    \item \textbf{Use consistent naming conventions} for labels, commands, and files to reduce confusion and improve readability.
+    
+    \item \textbf{Test small sections independently} before compiling the whole document to quickly catch errors.
+\end{itemize}
+
+\clearpage
+
+\end{document}

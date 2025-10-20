@@ -1,0 +1,21 @@
+% !TeX root = ../../main.tex
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+
+\chapter{Variables in \LaTeX}
+
+Ways to store variables - \texttt{\textbackslash newcommand}, \texttt{\textbackslash def}, \texttt{\textbackslash newsavebox} / \texttt{lrbox}, \texttt{\textbackslash newtoks}
+
+%----------------------------------------------
+\section{Example 1: Simple Text Variables}
+
+\input{\subfix{example_codes/variable_table_example.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={1-19}
+]{\subfix{example_codes/variable_table_example.tex}}
+
+\clearpage
+
+\end{document}
