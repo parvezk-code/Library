@@ -13,6 +13,15 @@ Here is a list of tips to make your LaTeX projects more modular, readable, and m
     
     \item \textbf{Create custom environments} with \texttt{NewDocumentEnvironment} to define consistent styles or formatting for repeated structures.
     
+    \item \textbf{Clean architecture of modular pages:} Use a group to safely define macros in one subfile and use them in another, without polluting the global scope. For example:
+    \begin{verbatim}
+        \begingroup
+            \input{\subfix{cat.tex}}   % defines macros (e.g., \myVar)
+            \input{\subfix{apple.tex}} % uses \myVar
+        \endgroup
+    \end{verbatim}
+    This ensures macros like \texttt{\textbackslash myVar} do not affect other parts of the document.
+
     \item \textbf{Organize packages and settings} in a separate preamble file or style file (\texttt{.sty}) to avoid cluttering the main document.
     
     \item \textbf{Use \texttt{\textbackslash input} or \texttt{\textbackslash include}} to separate sections or chapters into different files for better structure.
