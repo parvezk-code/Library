@@ -19,6 +19,8 @@
 # Anytype                        : https://download.anytype.io/
 # Pandoc                         : a universal document converte
 
+KeePassXC           :   FOSS password manager (AppImage)
+
 Buzz                :   audio to text converter AI
 
 Frog                :   Converts image into text
