@@ -1,0 +1,16 @@
+\begingroup
+    \newsavebox{\figBox}
+    \begin{lrbox}{\figBox}
+        \begin{tikzpicture}[scale=0.8]
+            \draw[fill=orange!40] (2.5,0) rectangle (3.5,1);
+            \node at (3,0.5) {Box};
+        \end{tikzpicture}
+    \end{lrbox}
+
+    \begin{figure}[h]
+        \centering
+        \usebox{\figBox}
+        \caption{Stored Figure}
+    \end{figure}
+\bigskip
+\endgroup

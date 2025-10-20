@@ -1,0 +1,14 @@
+\begingroup
+	\newsavebox{\tableBox}
+	\begin{lrbox}{\tableBox}
+		\begin{tabular}{|c|c|} \hline
+			\textbf{Fruit} & \textbf{Color} \\ \hline
+			Apple & Red \\ \hline
+		\end{tabular}
+	\end{lrbox}
+
+	\begin{center}
+		\usebox{\tableBox}\\[3pt]
+		\textbf{Stored Figure}
+	\end{center}
+\endgroup

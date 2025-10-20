@@ -4,10 +4,10 @@
 
 \chapter{Variables in \LaTeX}
 
-Ways to store variables - \texttt{\textbackslash newcommand}, \texttt{\textbackslash def}, \texttt{\textbackslash newsavebox} / \texttt{lrbox}, \texttt{\textbackslash newtoks}
+Variables are destroyed after endgroup. (begingroup - endgroup)
 
 %----------------------------------------------
-\section{Example 1: Simple Text Variables}
+\section{Simple Text Variables in tables}
 
 \input{\subfix{example_codes/variable_table_example.tex}}
 
@@ -17,5 +17,62 @@ Ways to store variables - \texttt{\textbackslash newcommand}, \texttt{\textbacks
 ]{\subfix{example_codes/variable_table_example.tex}}
 
 \clearpage
+
+\section{Simple Text Variables}
+
+\input{\subfix{example_codes/variable_text.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={4-4}
+]{\subfix{example_codes/variable_text.tex}}
+
+\section{Simple Maths Variables}
+
+\input{\subfix{example_codes/variable_maths.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={4-4}
+]{\subfix{example_codes/variable_maths.tex}}
+
+\section{Simple tikz image Variables}
+
+\input{\subfix{example_codes/variable_figure.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={1-16}
+]{\subfix{example_codes/variable_figure.tex}}
+
+\clearpage
+
+\section{Simple Table Variables}
+
+\input{\subfix{example_codes/variable_table.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={1-16}
+]{\subfix{example_codes/variable_table.tex}}
+
+\section{Dynamic content variable using newtoks}
+
+\input{\subfix{example_codes/variable_newtoks.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={1-5}
+]{\subfix{example_codes/variable_newtoks.tex}}
+
+
+\section{Temporary macros (auto-destroyed after scope)}
+
+\input{\subfix{example_codes/variable_macros.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={1-5}
+]{\subfix{example_codes/variable_macros.tex}}
 
 \end{document}

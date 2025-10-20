@@ -1,11 +1,16 @@
+\usepackage[a4paper,margin=1in]{geometry}   % Set page size and margins
+
+\PassOptionsToPackage{table}{xcolor}        % resolves dependency clash with tikz package
+
+
 % ==================================================
 % Core Document Setup
 % ==================================================
-\usepackage[a4paper,margin=1in]{geometry}   % Set page size and margins
 \usepackage{subfiles}                       % Allow compiling subfiles (chapters) independently
 \usepackage{amsmath,amssymb}                % Math symbols and environments
 \usepackage{xparse}                         % flexible to create commands/environments
 \usepackage{caption}                        % Better captions for figures, tables, and listings
+\usepackage{tikz}
 
 % ==================================================
 % Best Listings Setup For Copy-Paste issues in pdf
