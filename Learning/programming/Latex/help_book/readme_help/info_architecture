@@ -19,11 +19,11 @@ latex-help-book/
 ├── main.tex
 │
 ├── preamble/
-│   ├── main_preamble.tex
+│   ├── main.tex
 │   ├── packages.tex
 │   ├── macros_constants.tex
 │   └── styles
-│           ├── main_styles.tex
+│           ├── main.tex
 │           ├── tables              --> tex files for various table styles
 │           ├── figures             --> tex files for various figure styles
 │           ├── misc
