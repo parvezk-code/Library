@@ -10,6 +10,8 @@ a latex tutorial PDF, created using latex which contains “live code + output�
 => Page control is done manually:
     : \newpage → Starts a new page.
     : \clearpage → Starts a new page and flushes pending floats, ensuring clean layout control.
+    : \documentclass[../../main.tex]{subfiles}
+    : \subfile, \subfix, \input
 
 
 latex-help-book/
@@ -17,10 +19,16 @@ latex-help-book/
 ├── main.tex
 │
 ├── preamble/
-│   ├── preamble.tex
-│   ├── commands.tex
+│   ├── main_preamble.tex
 │   ├── packages.tex
-│   └── style.tex
+│   ├── macros_constants.tex
+│   └── styles
+│           ├── main_styles.tex
+│           ├── tables              --> tex files for various table styles
+│           ├── figures             --> tex files for various figure styles
+│           ├── misc
+│           ├── text_styles.tex
+│           └── ... more ...
 │
 ├── chapters/
 │   └── chap02-tables/
@@ -34,11 +42,13 @@ latex-help-book/
 │   ├── chap03-lists/
 │   │   ├── lists.tex
 │   │   └── example_codes/
-│   │       ├── itemize_example.tex
-│   │       └── enumerate_example.tex
+│   │       └── ... more ...
 │   │
 │   └── chap04-figures/
-│
+│   │   ├── figures.tex
+│   │   └── example_codes/
+│   │       └── ... more ...
+│   │        
 ├── bib/
 │   └── references.bib
 │

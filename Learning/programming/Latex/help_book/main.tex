@@ -1,4 +1,9 @@
-\documentclass[12pt,a4paper]{book}
+% \documentclass[12pt,a4paper]{book}
+% \documentclass[oneside,openany]{book}
+
+% following avoids blank page when new chaper starts with odd no
+\documentclass[12pt,a4paper,openany]{book}
+
 
 \input{preamble/preamble.tex}
 
@@ -14,15 +19,21 @@
 
 \subfile{chapters/chap01-introduction/intro}
 
+\clearpage
+
 \subfile{chapters/chap02-tables/tables}
 
-\newpage
+\clearpage
 
 \subfile{chapters/chap03-lists/lists}
 
-\newpage
+\clearpage
 
 \subfile{chapters/chap04-figures/figures}
+
+\clearpage
+
+\subfile{chapters/chap05-variables/variables}
 
 % \backmatter
 % \bibliographystyle{plain}
