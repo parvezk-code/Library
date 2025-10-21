@@ -1,0 +1,16 @@
+\providecommand{\bibpath}{../../bib/references.bib}
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Introduction}
+
+% Pull in section files from the local sections/ folder.
+% Each of these files should start with \section{...} (not \chapter).
+
+% following file should define path to main using \documentclass
+\subfile{sections/background}
+
+\input{\subfix{sections/conclusion.tex}}
+
+\end{document}

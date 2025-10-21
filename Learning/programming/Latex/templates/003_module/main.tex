@@ -1,0 +1,28 @@
+% \documentclass[12pt,a4paper]{book}
+% \documentclass[oneside,openany]{book}
+
+% following avoids blank page when new chaper starts with odd no
+\documentclass[12pt,a4paper,openany]{book}
+
+
+\input{preamble/main_preamble.tex}
+
+\begin{document}
+
+% \frontmatter
+% \title{The \LaTeX{} Help Book}
+% \author{Your Name}
+% \maketitle
+% \tableofcontents
+
+\mainmatter
+
+\subfile{chapters/chap01-introduction/intro}
+
+\clearpage
+
+\backmatter
+
+\printbibliography
+
+\end{document}
