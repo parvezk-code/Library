@@ -9,20 +9,26 @@
 
 \begin{document}
 
-% \frontmatter
-% \title{The \LaTeX{} Help Book}
-% \author{Your Name}
-% \maketitle
-% \tableofcontents
+\frontmatter
+\title{The \LaTeX{} Help Book}
+\author{New User}
+\maketitle
+\tableofcontents  
+\listoffigures  
+\listoftables
 
+\input{frontmatter/titlepage}
+\input{frontmatter/abstract}
+\input{frontmatter/acknowledgments}
+\input{frontmatter/dedication}
+
+% If the document class is report, remove \mainmatter
 \mainmatter
-
 \subfile{chapters/chap01-introduction/intro}
-
 \clearpage
 
+% If the document class is report, remove \backmatter
 \backmatter
-
 \printbibliography
 
 \end{document}
