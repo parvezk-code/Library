@@ -9,18 +9,28 @@
 
 \begin{document}
 
+% Front Matter (unnumbered pages)
 \frontmatter
-\title{The \LaTeX{} Help Book}
-\author{New User}
-\maketitle
+
+% \title{The \LaTeX{} Help Book}
+% \author{New User}
+% \maketitle
+
+\input{frontmatter/titlepage.tex}
+%\cleardoublepage
+
+\input{frontmatter/abstract.tex}
+%\cleardoublepage
+
+\input{frontmatter/dedication.tex}
+%\cleardoublepage
+
+\input{frontmatter/acknowledgments.tex}
+%\cleardoublepage
+
 \tableofcontents  
 \listoffigures  
 \listoftables
-
-\input{frontmatter/titlepage}
-\input{frontmatter/abstract}
-\input{frontmatter/acknowledgments}
-\input{frontmatter/dedication}
 
 % If the document class is report, remove \mainmatter
 \mainmatter
