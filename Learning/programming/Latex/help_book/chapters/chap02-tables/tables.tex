@@ -3,7 +3,19 @@
 
 \chapter{Tables in \LaTeX}
 % -------------------
+\section{Simple Table With Variables}
+
+\input{\subfix{example_codes/table_04_table_vaiables.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={1-19}
+]{\subfix{example_codes/table_04_table_vaiables.tex}}
+
+\clearpage
+
 \section{Simple Table}
+
 \begin{myTableStyle}
 \input{\subfix{example_codes/table_01_simple_example.tex}}
 \end{myTableStyle}
@@ -15,14 +27,13 @@
     linerange={16-26}
 ]{\subfix{example_codes/table_01_simple_example.tex}}
 
-\clearpage
-
 \lstinputlisting[
     language=TeX,
     caption={Simple Table Example},
     linerange={4-11}
 ]{\subfix{example_codes/table_01_simple_example.tex}}
 
+\clearpage
 % -------------------
 \section{Colored Table}
 \begin{myTableStyle}
@@ -36,13 +47,13 @@
       linerange={4-13}
 ]{\subfix{example_codes/table_02_color_table.tex}}
 
-\clearpage
-
 \lstinputlisting[
       language=TeX, 
       caption={Colored Table Example},
       linerange={18-29}
 ]{\subfix{example_codes/table_02_color_table.tex}}
+
+\clearpage
 
 % -------------------
 \section{Fancy Table with Borders and Multirow}
@@ -57,12 +68,12 @@
       linerange={4-11}
 ]{\subfix{example_codes/table_03_fancy_table_example.tex}}
 
-\clearpage
-
 \lstinputlisting[
       language=TeX, 
       caption={Fancy Table with Borders Example},
       linerange={16-27}
 ]{\subfix{example_codes/table_03_fancy_table_example.tex}}
+
+\clearpage
 
 \end{document}
