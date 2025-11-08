@@ -1,9 +1,9 @@
 % usepackage : xparse(NewDocumentEnvironment), [table]{xcolor}, float(h!), caption
-% \makecell{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}
+% \makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}
 
 \begin{myTableStyle}{Customizing The Cells}
     \def\cellOneA{\textbf{Fruit}}
-    \def\cellOneB{\makecell{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}}
+    \def\cellOneB{\makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}}
     \def\cellTwoA{\textbf{Animal}}
     \def\cellTwoB{\textcolor{blue}{Cat}}
     
