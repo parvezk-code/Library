@@ -1,0 +1,14 @@
+% usepackage : xparse(NewDocumentEnvironment), [table]{xcolor}, float(h!), caption
+% \makecell{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}
+
+\begin{myTableStyle}{Customizing The Cells}
+    \def\cellOneA{\textbf{Fruit}}
+    \def\cellOneB{\makecell{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}}
+    \def\cellTwoA{\textbf{Animal}}
+    \def\cellTwoB{\textcolor{blue}{Cat}}
+    
+    \begin{tabular}{|c|c|} \hline
+        \cellOneA & \cellOneB    \\ \hline
+        \cellTwoA & \cellTwoB    \\ \hline
+    \end{tabular}
+\end{myTableStyle}

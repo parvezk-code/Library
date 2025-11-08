@@ -1,5 +1,4 @@
 % usepackage : xparse(NewDocumentEnvironment), [table]{xcolor}, float(h!), caption
-
 \NewDocumentEnvironment{simpleCenteringTempChapterTable}{m} % #1 = caption
 {%
   \begingroup                         % <--- start local scope
@@ -13,9 +12,6 @@
   \endgroup                           % <--- end local scope (cleans variables)
 }
 
-% ==============================
-% Simple Table
-% ==============================
 \begin{simpleCenteringTempChapterTable}{Table with environment}
     \def\cellOneA{\textbf{Fruit}}
     \def\cellOneB{\textcolor{red}{Apple}}

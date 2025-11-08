@@ -9,15 +9,39 @@
     language=TeXish,
     linerange={1-19}
 ]{\subfix{example_codes/table_02_table_vaiables.tex}}
+\clearpage
+% -------------------
 
+% -------------------
+\section{Simple Table using centering without begin(center) }
+\input{\subfix{example_codes/table_04_simple_environment.tex}}
+\noindent\textbf{Code:}
+\lstinputlisting[
+    language=TeX,
+    caption={Simple Table Example},
+    linerange={15-25}
+]{\subfix{example_codes/table_04_simple_environment.tex}}
+
+\lstinputlisting[
+    language=TeX,
+    caption={Simple Table Example},
+    linerange={2-13}
+]{\subfix{example_codes/table_04_simple_environment.tex}}
 \clearpage
 
 % -------------------
+\section{Line break in a  Table Cell using makecell }
+\input{\subfix{example_codes/table_05_format_cells.tex}}
+\noindent\textbf{Code:}
+\lstinputlisting[
+    language=TeX,
+    linerange={2-2}
+]{\subfix{example_codes/table_05_format_cells.tex}}
 
-\section{Simple Table With Variables and Environment}
+\clearpage
 
+\section{Not recommended : Table Using begin\{center\}.}
 \input{\subfix{example_codes/table_03_simple_environment.tex}}
-
 \noindent\textbf{Code:}
 \lstinputlisting[
     language=TeX,
@@ -30,26 +54,6 @@
     caption={Simple Table Example},
     linerange={3-15}
 ]{\subfix{example_codes/table_03_simple_environment.tex}}
-
 \clearpage
-
-% -------------------
-
-\section{Simple Table using centering without begin(center) }
-
-\input{\subfix{example_codes/table_04_simple_environment.tex}}
-
-\noindent\textbf{Code:}
-\lstinputlisting[
-    language=TeX,
-    caption={Simple Table Example},
-    linerange={19-29}
-]{\subfix{example_codes/table_04_simple_environment.tex}}
-
-\lstinputlisting[
-    language=TeX,
-    caption={Simple Table Example},
-    linerange={3-14}
-]{\subfix{example_codes/table_04_simple_environment.tex}}
 
 \end{document}
