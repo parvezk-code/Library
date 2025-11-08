@@ -4,76 +4,31 @@
 \chapter{Tables in \LaTeX}
 % -------------------
 \section{Simple Table With Variables}
-
-\input{\subfix{example_codes/table_04_table_vaiables.tex}}
-
+\input{\subfix{example_codes/table_02_table_vaiables.tex}}
 \lstinputlisting[
     language=TeXish,
     linerange={1-19}
-]{\subfix{example_codes/table_04_table_vaiables.tex}}
+]{\subfix{example_codes/table_02_table_vaiables.tex}}
 
 \clearpage
 
-\section{Simple Table}
+\section{Simple Table With Variables and Environment}
 
 \begin{myTableStyle}
-\input{\subfix{example_codes/table_01_simple_example.tex}}
+\input{\subfix{example_codes/table_03_simple_environment.tex}}
 \end{myTableStyle}
 
 \noindent\textbf{Code:}
 \lstinputlisting[
     language=TeX,
     caption={Simple Table Example},
-    linerange={16-26}
-]{\subfix{example_codes/table_01_simple_example.tex}}
+    linerange={21-31}
+]{\subfix{example_codes/table_03_simple_environment.tex}}
 
 \lstinputlisting[
     language=TeX,
     caption={Simple Table Example},
-    linerange={4-11}
-]{\subfix{example_codes/table_01_simple_example.tex}}
-
-\clearpage
-% -------------------
-\section{Colored Table}
-\begin{myTableStyle}
-\input{\subfix{example_codes/table_02_color_table.tex}}
-\end{myTableStyle}
-
-\noindent\textbf{Code:}
-\lstinputlisting[
-      language=TeX, 
-      caption={Colored Table Example},
-      linerange={4-13}
-]{\subfix{example_codes/table_02_color_table.tex}}
-
-\lstinputlisting[
-      language=TeX, 
-      caption={Colored Table Example},
-      linerange={18-29}
-]{\subfix{example_codes/table_02_color_table.tex}}
-
-\clearpage
-
-% -------------------
-\section{Fancy Table with Borders and Multirow}
-\begin{myTableStyle}
-\input{\subfix{example_codes/table_03_fancy_table_example.tex}}
-\end{myTableStyle}
-
-\noindent\textbf{Code:}
-\lstinputlisting[
-      language=TeX, 
-      caption={Fancy Table with Borders Example},
-      linerange={4-11}
-]{\subfix{example_codes/table_03_fancy_table_example.tex}}
-
-\lstinputlisting[
-      language=TeX, 
-      caption={Fancy Table with Borders Example},
-      linerange={16-27}
-]{\subfix{example_codes/table_03_fancy_table_example.tex}}
-
-\clearpage
+    linerange={4-16}
+]{\subfix{example_codes/table_03_simple_environment.tex}}
 
 \end{document}

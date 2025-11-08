@@ -1,0 +1,30 @@
+% usepackage : xparse(NewDocumentEnvironment), [table]{xcolor}, float(h!), caption
+
+\NewDocumentEnvironment{simpleTableEnv}{m}
+{
+    \begingroup
+    \setlength{\tabcolsep}{10pt}
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2}
+}{
+    \begin{table}[!h]
+        \caption{#1}
+    \end{table}
+    \end{center}
+    \endgroup
+}
+
+% ==============================
+% Simple Table
+% ==============================
+\begin{simpleTableEnv}{Table with environment}
+    \def\cellOneA{\textbf{Fruit}}
+    \def\cellOneB{\textcolor{red}{Apple}}
+    \def\cellTwoA{\textbf{Animal}}
+    \def\cellTwoB{\textcolor{orange}{Cat}}
+
+    \begin{tabular}{|c|c|} \hline
+        \cellOneA    & \cellOneB     \\ \hline
+        \cellTwoA    & \cellTwoB		\\ \hline
+    \end{tabular}
+\end{simpleTableEnv}

@@ -1,0 +1,19 @@
+% usepackage : [table]{xcolor}, float(h!), caption
+\begingroup 
+    % Define variables(macros) for table using \def or \newcommand
+    \def\cellOneA{\textbf{Apple}}
+    \def\cellOneB{\textcolor{red}{Fruit}}
+    \setlength{\tabcolsep}{10pt}
+    % Now use these variables inside a table
+    \begin{center} 
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|c|c|}
+        \hline
+        \cellOneA & \cellOneB \\ \hline
+        \end{tabular}
+        \begin{table}[!h]
+          \caption{Simple table}
+        \end{table}
+    \end{center}
+    \medskip
+\endgroup % After \endgroup, macros \cellOneA etc. are no longer defined.
