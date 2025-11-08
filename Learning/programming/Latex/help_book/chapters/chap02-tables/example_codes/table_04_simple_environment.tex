@@ -1,23 +1,22 @@
 % usepackage : xparse(NewDocumentEnvironment), [table]{xcolor}, float(h!), caption
 
-\NewDocumentEnvironment{simpleTableEnvTempChapterTable}{m}
-{
-    \begingroup
+\NewDocumentEnvironment{simpleCenteringTempChapterTable}{m} % #1 = caption
+{%
+  \begingroup                         % <--- start local scope
+  \begin{table}[!h]
+    \centering
     \setlength{\tabcolsep}{10pt}
-    \begin{center}
-    \renewcommand{\arraystretch}{1.2}
-}{
-    \begin{table}[!h]
-        \caption{#1}
-    \end{table}
-    \end{center}
-    \endgroup
+    \renewcommand{\arraystretch}{1.4}
+}{%
+    \caption{#1}
+  \end{table}
+  \endgroup                           % <--- end local scope (cleans variables)
 }
 
 % ==============================
 % Simple Table
 % ==============================
-\begin{simpleTableEnvTempChapterTable}{Table with environment}
+\begin{simpleCenteringTempChapterTable}{Table with environment}
     \def\cellOneA{\textbf{Fruit}}
     \def\cellOneB{\textcolor{red}{Apple}}
     \def\cellTwoA{\textbf{Animal}}
@@ -27,4 +26,4 @@
         \cellOneA    & \cellOneB     \\ \hline
         \cellTwoA    & \cellTwoB		\\ \hline
     \end{tabular}
-\end{simpleTableEnvTempChapterTable}
+\end{simpleCenteringTempChapterTable}
