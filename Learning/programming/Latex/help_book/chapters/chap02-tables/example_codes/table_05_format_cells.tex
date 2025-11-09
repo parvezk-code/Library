@@ -4,16 +4,25 @@
 %                             & Parrot & Banana \\ \hline
 
 \begin{myTableStyle}{Customizing The Cells}
-    \def\cellOneA{\textbf{Fruit}}
+    \def\HA{\textbf{Description}}
+    \def\HB{\textbf{Content}}
+    \def\HC{\textbf{Tag Used}}
+    
+    \def\cellOneA{Table Cell with 2 rows}
     \def\cellOneB{\makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}}
-    \def\cellTwoA{\textbf{Animal}}
-    \def\cellTwoB{\textcolor{blue}{Cat}}
-    \def\cellThreeA{\multirow{2}{4em}{Birds}}
+    \def\cellOneC{makecell}
 
+    \def\cellThreeA{\multirow{2}{6em}{A multi row cell}}
+    \def\cellThreeB{Eagle}
+    \def\cellThreeC{multirow}
+    
+    \def\cellFourB{Parrot}
+    \def\cellFourC{cline}
+    
     \begin{tabular}{|c|c|c|} \hline
-        \cellOneA       & \cellOneB     &   Apple   \\ \hline
-        \cellTwoA       & \cellTwoB     &   Banana  \\ \hline
-        \cellThreeA     & Eagle         &   Apple   \\ \cline{2-3}
-                        & Parrot        &   Banana  \\ \hline
+        \HA             & \HB           &   \HC             \\ \hline
+        \cellOneA       & \cellOneB     &   \cellOneC       \\ \hline
+        \cellThreeA     & \cellThreeB   &   \cellThreeC     \\ \cline{2-3}
+                        & \cellFourB    &   \cellFourC      \\ \hline
     \end{tabular}
 \end{myTableStyle}
