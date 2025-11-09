@@ -1,14 +1,19 @@
 % usepackage : xparse(NewDocumentEnvironment), [table]{xcolor}, float(h!), caption
 % \makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}
+% \multirow{2}{4em}{Birds}    & Eagle  & Apple  \\ \cline{2-3}
+%                             & Parrot & Banana \\ \hline
 
 \begin{myTableStyle}{Customizing The Cells}
     \def\cellOneA{\textbf{Fruit}}
     \def\cellOneB{\makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}}
     \def\cellTwoA{\textbf{Animal}}
     \def\cellTwoB{\textcolor{blue}{Cat}}
-    
-    \begin{tabular}{|c|c|} \hline
-        \cellOneA & \cellOneB    \\ \hline
-        \cellTwoA & \cellTwoB    \\ \hline
+    \def\cellThreeA{\multirow{2}{4em}{Birds}}
+
+    \begin{tabular}{|c|c|c|} \hline
+        \cellOneA       & \cellOneB     &   Apple   \\ \hline
+        \cellTwoA       & \cellTwoB     &   Banana  \\ \hline
+        \cellThreeA     & Eagle         &   Apple   \\ \cline{2-3}
+                        & Parrot        &   Banana  \\ \hline
     \end{tabular}
 \end{myTableStyle}
