@@ -1,6 +1,6 @@
 % usepackage : xparse(NewDocumentEnvironment), [table]{xcolor}, float(h!), caption
 % \makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}
-% \multirow{2}{4em}{Birds}    & Eagle  & Apple  \\ \cline{2-3}
+% \multirow{2}{6em}{Birds}    & Eagle  & Apple  \\ \cline{2-3}
 %                             & Parrot & Banana \\ \hline
 
 \begin{myTableStyle}{Customizing The Cells}
@@ -14,10 +14,10 @@
 
     \def\cellThreeA{\multirow{2}{6em}{A multi row cell}}
     \def\cellThreeB{Eagle}
-    \def\cellThreeC{multirow}
+    \def\cellThreeC{multirow, cline}
     
     \def\cellFourB{Parrot}
-    \def\cellFourC{cline}
+    \def\cellFourC{6em or *}
     
     \begin{tabular}{|c|c|c|} \hline
         \HA             & \HB           &   \HC             \\ \hline
