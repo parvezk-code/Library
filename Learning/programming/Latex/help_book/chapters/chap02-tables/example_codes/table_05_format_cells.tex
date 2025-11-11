@@ -4,13 +4,17 @@
 %                             & Parrot & Banana \\ \hline
 
 \begin{myTableStyle}{Customizing The Cells}
-    \def\HA{\textbf{Description}}
-    \def\HB{\textbf{Content}}
-    \def\HC{\textbf{Tag Used}}
+    \def\HA{\textbf{Description(c)}}
+    \def\HB{\textbf{Content(c)}}
+    \def\HC{\textbf{Tag Used(p)}}
     
     \def\cellOneA{Table Cell with 2 rows}
     \def\cellOneB{\makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}}
-    \def\cellOneC{makecell}
+    \def\cellOneC{makecell, \texttt{\textbackslash\textbackslash}}
+
+    \def\cellTwoA{Table Cell with 2 rows}
+    \def\cellTwoB{\textcolor{red}{newline} \newline \textcolor{green}{col c}}
+    \def\cellTwoC{\textcolor{red}{newline} \newline \textcolor{green}{col p}}
 
     \def\cellThreeA{\multirow{2}{6em}{A multi row cell}}
     \def\cellThreeB{Eagle}
@@ -19,9 +23,10 @@
     \def\cellFourB{Parrot}
     \def\cellFourC{6em or *}
     
-    \begin{tabular}{|c|c|c|} \hline
+    \begin{tabular}{|c|c|p{6cm}|} \hline
         \HA             & \HB           &   \HC             \\ \hline
         \cellOneA       & \cellOneB     &   \cellOneC       \\ \hline
+        \cellTwoA       & \cellTwoB     &   \cellTwoC       \\ \hline
         \cellThreeA     & \cellThreeB   &   \cellThreeC     \\ \cline{2-3}
                         & \cellFourB    &   \cellFourC      \\ \hline
     \end{tabular}
