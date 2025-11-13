@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LaTeX Build",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Remove-Item *.pdf -ErrorAction Ignore; pdflatex -interaction=nonstopmode main_temp.tex; bibtex main_temp; pdflatex -interaction=nonstopmode main_temp.tex; pdflatex -interaction=nonstopmode main_temp.tex; if (-not (Test-Path \"${workspaceFolder}\\zz_pdf\")) { New-Item -ItemType Directory -Force -Path \"${workspaceFolder}\\zz_pdf\" | Out-Null }; Move-Item -Force \"main_temp.pdf\" \"${workspaceFolder}\\zz_pdf\\\"; Get-ChildItem -Include *.aux,*.bbl,*.bcf,*.blg,*.fdb_latexmk,*.fls,*.log,*.lof,*.lot,*.out,*.run.xml,*.toc,*.tmp,*.gz,*.run -Recurse | Remove-Item -Force -ErrorAction Ignore"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "LaTeX Clean",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "Get-ChildItem -Include *.pdf,*.aux,*.bbl,*.bcf,*.blg,*.fdb_latexmk,*.fls,*.log,*.lof,*.lot,*.out,*.run.xml,*.toc,*.tmp,*.gz,*.run -Recurse | Remove-Item -Force -ErrorAction Ignore; if (Test-Path \"${workspaceFolder}\\zz_pdf\\${fileBasenameNoExtension}.pdf\") { Remove-Item \"${workspaceFolder}\\zz_pdf\\${fileBasenameNoExtension}.pdf\" -Force -ErrorAction Ignore }"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
