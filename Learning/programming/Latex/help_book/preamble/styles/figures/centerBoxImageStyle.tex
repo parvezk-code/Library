@@ -1,6 +1,22 @@
 % usepackage :  xparse(NewDocumentEnvironment), graphicx(includegraphics), 
 %               subfiles(subfix), caption
 
+\NewDocumentEnvironment{centerBoxImageStyle}{ m m m m m }
+{
+\begin{center}
+  \fbox{%
+    \begin{minipage}{#2}
+      \centering
+      \includegraphics[width=#3]{#1}
+      \captionof{figure}{#4}
+      \label{#5}
+    \end{minipage}
+  }
+\end{center}
+}{}
+
+\begin{comment}
+
 \NewDocumentEnvironment{centerBoxImageStyle}{ m m m O{} O{} }
 {
 \begin{center}
@@ -16,6 +32,7 @@
 \end{center}
 }{}
 
+\end{comment}
 
 \begin{comment}
 
@@ -24,7 +41,7 @@
         {0.6\linewidth}                         % #2 minipage width (box width)
         {0.9\linewidth}                         % #3 image width inside box
         {A simple example image inside a box.}  % #4 caption
-        {fig:simple_boxed_image}                % #5 label
+        {}                                      % #5 label
     \end{centerBoxImageStyle}
 
 \end{comment}

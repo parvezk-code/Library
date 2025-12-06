@@ -1,4 +1,4 @@
-\usepackage[a4paper,margin=1in]{geometry}   % Set page size and margins
+\usepackage[a4paper,margin=0.6in]{geometry}   % Set page size and margins
 
 \PassOptionsToPackage{table}{xcolor}        % resolves dependency clash with tikz package
 
@@ -14,6 +14,12 @@
 \usepackage{comment}                        % multi-line comment
 
 % ==================================================
+% Unified bibliography with biblatex+biber
+% ==================================================
+\usepackage[backend=biber,style=authoryear,maxcitenames=2,maxbibnames=99]{biblatex}
+
+
+% ==================================================
 % Best Listings Setup For Copy-Paste issues in pdf
 % ==================================================
 % \usepackage[T1]{fontenc}
@@ -27,12 +33,12 @@
 \usepackage{colortbl}       % Add color shading to table rows and columns
 \usepackage{multirow}       % Merge multiple rows in a table cell
 \usepackage{longtable}      % Create tables that span multiple pages
+\usepackage{tabularx}
 \usepackage{array}          % Enhanced column formatting and alignment options
 \usepackage[table]{xcolor}  % Define and use colors in tables (extends colortbl)
 \usepackage{float}          % Precise table/figure placement using [H]
-\usepackage{makecell}       % Allow line breaks and formatting inside table cells
-
 \usepackage{graphicx}       % Include external images (used in figure examples)
+\usepackage{makecell}       % Allow line breaks and formatting inside table cells
 
 % ==================================================
 % List and Enumeration Packages
