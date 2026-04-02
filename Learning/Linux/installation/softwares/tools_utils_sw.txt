@@ -23,6 +23,8 @@ KeePassXC           :   FOSS password manager (AppImage)
 
 winboat             :   run windows apps in linux (AppImage)
 
+winapps             :   run windows apps using Virtual Machines
+
 Buzz                :   audio to text converter AI
 
 Frog                :   Converts image into text
