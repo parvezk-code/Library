@@ -1,0 +1,19 @@
+
+% A lightweight LaTeX language so LaTeX code looks colorful
+\lstdefinelanguage{TeXish}{
+  sensitive=true,
+  morekeywords=[1]{\\begin,\\end,\\usepackage,\\documentclass,\\section,\\subsection,\\emph,\\textbf,\\textit,\\item,\\label,\\ref,\\cite,\\caption,\\includegraphics,\\color,\\lstset,\\lstdefinestyle,\\lstdefinelanguage,\\NewDocumentEnvironment,\\IfBooleanTF,\\IfValueTF,\\centering},
+  
+  morekeywords=[2]{\\newcommand,\\renewcommand,\\DeclareMathOperator,\\title,\\author,\\date,\\maketitle,\\includegraphics},
+  
+  morekeywords=[3]{\\LaTeX,\\TeX},
+  
+  alsoletter=\\,
+  
+  morecomment=[l]{\%},
+  
+  morestring=[b]",
+  
+  morestring=[b]'
+}
+

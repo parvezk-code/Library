@@ -1,0 +1,21 @@
+
+
+% Core package for syntax-highlighted code listings
+% \usepackage{listings}
+
+% Automatically remove common indentation in code blocks
+% \usepackage{lstautogobble}  
+
+% Define custom float environments (e.g., for code listings)
+% \usepackage{newfloat}       
+
+
+\input{\subfix{example_codes/variable_newtoks.tex}}
+
+\lstinputlisting[
+    language=TeXish,
+    linerange={1-19}
+]{\subfix{example_codes/code_01.tex}}
+
+
+\lstinputlisting{\subfix{example_codes/itemize_example.tex}}
