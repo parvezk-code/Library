@@ -1,0 +1,30 @@
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}[node distance=1.5cm, scale=0.95, transform shape, framed, background rectangle/.style={draw=black, thick}]
+
+\node[rectangle_a_blue] (n1) {Docs};
+
+\node[rec_b_pink, right=of n1] (n2) {pre-processing};
+
+\node[rec_b_pink, right=of n2] (n3) {tokenizaton};
+
+\node[rec_b_pink, right=of n3] (n4) {Chunking};
+
+\node[rec_b_pink, below=of n4] (n5) {Emb Model};
+
+\node[cylinder_a_db, text width=1.8cm, left=3cm of n5] (n6) {Vector\\Database};
+
+
+\draw[arrow] (n1) -- (n2);
+\draw[arrow] (n2) -- (n3);
+\draw[arrow] (n3) -- (n4);
+\draw[arrow] (n4) -- node[anchor=west] {Chunks} (n5);
+\draw[arrow] (n5) -- node[anchor=south] {Vectors} (n6);
+
+\end{tikzpicture}
