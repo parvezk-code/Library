@@ -7,7 +7,14 @@
 % \usepackage{lstautogobble}  
 
 % Define custom float environments (e.g., for code listings)
-% \usepackage{newfloat}       
+% \usepackage{newfloat} 
+      
+% Define a float type "listing" for displaying code blocks with captions and numbering
+\DeclareFloatingEnvironment[
+    fileext=lol,
+    listname=List of Listings,
+    name=Listing
+]{listing}
 
 
 \input{\subfix{example_codes/variable_newtoks.tex}}
