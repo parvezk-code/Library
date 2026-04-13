@@ -1,16 +1,18 @@
 
+% package needed \usetikzlibrary{calc}
 
 \begin{tikzpicture}[node distance=1.5cm, scale=0.95, transform shape, framed, background rectangle/.style={draw=black, thick}]
-
-% Nodes with explicit positioning to prevent overlap
-\node[rectangle_a_blue] (ui) {User input};
-\node[rec_b_pink, right=of ui] (emb) {Emb Model};
-\node[cylinder_a_db, text width=1.8cm, right=3cm of emb] (db) {Vector\\Database};
-\node[cloud_a, aspect=1.7, text width=2cm, right=of db] (chunks) {Relevant\\Chunks};
-
-% Arrows
-\draw[arrow] (ui) -- (emb);
-\draw[arrow] (emb) -- node[anchor=south] {Vectors} (db);
-\draw[arrow] (db) -- (chunks);
-
+    \node[rectangle_a_blue_a] at (0,0) (A) {User Input};
+    % \coordinate (x) at ([yshift=-1cm]n3.south);
+    % \coordinate (y) at (start |- x);
+    \node[rec_b_pink_a, right= 2cm of A] (B) {OCI};
+    \node[rec_b_pink_a, right= 2cm of B] (C) {Template 1};
+    \node[circle,draw,minimum size=0.5cm,right= 3cm of C] (F) {LLM};
+    \node[rectangle_a_blue_a,right= 1cm of F] (G) {Response};
+    
+    \draw[arrow] (A) -- node[anchor=south] {PDF} (B);
+    \draw[arrow] (B) -- node[anchor=south] {text} (C);
+    \draw[arrow] (C) -- node[anchor=south] {Sys Prompt} (F);
+    \draw[->] (A.south) |- ($(A.south) + (0,-1)$) -- node[midway, above] {User Prompt} ($(F.south) + (0,-1)$) -| (F.south);
+    \draw[arrow] (F) -- (G);
 \end{tikzpicture}
