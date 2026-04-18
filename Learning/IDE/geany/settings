@@ -6,3 +6,27 @@ Built       gcc -Wall  -o  "%e"  "%f"        gcc -Wall   "%f"   -o    a.out
 
 Execute     "./%e"                              "a.out"
 
+
+-----------------------------------------------------------------------
+
+Following steps were not usefull
+
+Tools --> Plugin Manager
+
+apt-cache search geany
+
+sudo apt update
+sudo apt install geany-plugins
+
+sudo apt install geany-plugin-vc
+
+sudo apt install geany-plugin-latex
+
+sudo apt install geany-plugin-treebrowser
+
+sudo apt install geany-plugin-git-changebar
+
+
+-----------------------------------------------------------------------
+
+

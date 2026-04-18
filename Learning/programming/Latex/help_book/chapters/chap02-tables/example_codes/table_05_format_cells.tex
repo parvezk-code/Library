@@ -5,28 +5,19 @@
 % \multicolumn{2}{|l|}{Multi column cell} &  Apple \\ \hline
 
 \begin{myTableStyle}{Customizing The Cells}
-    \def\HA{\textbf{Description(c)}}
-    \def\HB{\textbf{Content(c)}}
+    \def\HA{\textbf{Description(c)}}    \def\HB{\textbf{Content(c)}}
     \def\HC{\textbf{Tag Used(p)}}
-    
     \def\cellOneA{Table Cell with 2 rows}
     \def\cellOneB{\makecell[l]{\textcolor{red}{Apple} \\ \textcolor{green}{Mango}}}
     \def\cellOneC{makecell, \texttt{\textbackslash\textbackslash}}
-
     \def\cellTwoA{Table Cell with 2 rows}
     \def\cellTwoB{\textcolor{red}{newline} \newline \textcolor{green}{col c}}
     \def\cellTwoC{\textcolor{red}{newline} \newline \textcolor{green}{col p}}
-
     \def\cellThreeA{\multirow{2}{6em}{A multi row cell}}
-    \def\cellThreeB{Eagle}
-    \def\cellThreeC{multirow, cline}
-    
-    \def\cellFourB{Parrot}
-    \def\cellFourC{6em or *}
-
+    \def\cellThreeB{Eagle}  \def\cellThreeC{multirow, cline}
+    \def\cellFourB{Parrot}  \def\cellFourC{6em or *}
     \def\cellFiveAB{\multicolumn{2}{|l|}{Multi column cell}}
     \def\cellFiveC{multicolumn, l, c, r}
-    
     \begin{tabular}{|c|c|p{6cm}|} \hline
         \HA             & \HB           &   \HC             \\ \hline
         \cellOneA       & \cellOneB     &   \cellOneC       \\ \hline
@@ -34,6 +25,5 @@
         \cellThreeA     & \cellThreeB   &   \cellThreeC     \\ \cline{2-3}
                         & \cellFourB    &   \cellFourC      \\ \hline
         \cellFiveAB                     &   \cellFiveC      \\ \hline
-        
     \end{tabular}
 \end{myTableStyle}

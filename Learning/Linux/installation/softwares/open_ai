@@ -1,0 +1,23 @@
+
+# codex cli linux mint xfce
+# Official method is by using Node.js + npm
+# Following steps are without npm + nodejs
+
+website             :       https://github.com/openai/codex/
+Releases            :       https://github.com/openai/codex/releases/latest
+installed version   :       rust-v0.121.0
+
+
+download file named :       codex-x86_64-unknown-linux-musl.tar.gz
+
+un pack the file    :       tar -xzf codex-x86_64-unknown-linux-musl.tar.gz 
+
+rename the file     :       mv codex-x86_64-unknown-linux-musl codex
+
+Make it executable  :       chmod +x codex
+
+Move to system PATH :       sudo mv codex /usr/local/bin/
+
+Verify installation :       codex --version
+
+Login/setup         :       codex login
