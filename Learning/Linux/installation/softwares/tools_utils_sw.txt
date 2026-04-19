@@ -29,6 +29,8 @@ Buzz                :   audio to text converter AI
 
 Frog                :   Converts image into text
 
+Remote desktop      :   rustdesk
+
 VS-Codium           :   VSCodium-1.87.2.24072.glibc2.17-x86_64.appimage
                         open source IDE for vs-code
 
